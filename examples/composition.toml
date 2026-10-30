@@ -20,8 +20,11 @@ max_step = 80.0
 null_tolerance = 1e-5
 
 [background]
+mode = "starfield"
 longitude_degrees = 15.0
 latitude_degrees = 18.0
 roll_degrees = 25.0
 exposure = 6.0
 resolution = 8
+spacing_degrees = 15.0
+line_width_degrees = 0.25

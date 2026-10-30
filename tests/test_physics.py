@@ -8,11 +8,11 @@ from numerical_observatory.geodesic import Integration, hamilton_rhs, trace
 from numerical_observatory.metric import ETA, Schwarzschild
 
 
-def angular_ray(angle, settings=Integration(), radius=20.0, mass=1.0):
+def angular_ray(angle, settings=Integration(), radius=20.0, mass=1.0, critical_guard=True):
     metric = Schwarzschild(mass)
     camera = Camera(position=(0, 0, radius))
     p = camera.momentum(metric, [np.sin(angle), 0, -np.cos(angle)])
-    return trace(metric, camera.event, p, settings)
+    return trace(metric, camera.event, p, settings, critical_guard=critical_guard)
 
 
 def test_inverse_derivatives_and_horizon_regularity():
@@ -47,7 +47,7 @@ def test_finite_distance_critical_boundary(radius):
     low, high = critical*0.95, critical*1.05
     for _ in range(18):
         mid = (low + high)/2
-        result = angular_ray(mid, radius=radius)
+        result = angular_ray(mid, radius=radius, critical_guard=False)
         assert result.status != "unresolved"
         if result.status == "captured":
             low = mid

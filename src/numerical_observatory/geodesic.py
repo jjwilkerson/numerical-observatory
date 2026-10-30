@@ -1,5 +1,6 @@
 """Canonical null-geodesic integration, events, and sampled constraint diagnostics."""
 from dataclasses import dataclass
+from typing import Callable
 
 import numpy as np
 from scipy.integrate import quad, solve_ivp
@@ -27,11 +28,13 @@ class RayResult:
     status: str
     direction: np.ndarray | None
     max_null_error: float
-    energy_drift: float
-    angular_momentum_drift: float
+    energy_drift: float | None
+    angular_momentum_drift: float | None
     steps: int
     evaluations: int
     reason: str
+    raw_status: str | None = None
+    critical_uncertainty: float | None = None
 
 
 def hamilton_rhs(metric: Metric, state):
@@ -61,42 +64,74 @@ def asymptotic_direction(metric: Schwarzschild, state):
     return direction / np.linalg.norm(direction)
 
 
-def trace(metric: Schwarzschild, event, momentum, settings: Integration):
+@dataclass(frozen=True)
+class TraceDomain:
+    """Explicit physical/domain policy for a general metric.
+
+    Level sets use negative-going capture and positive-going escape crossings.
+    source_direction maps an escaped state to a unit sky direction in the
+    background's frame. It must be supplied: no asymptotic flatness is assumed.
+    Optional valid_region is positive inside the numerical-data domain.
+    """
+    capture: Callable
+    escape: Callable
+    source_direction: Callable
+    valid_region: Callable | None = None
+
+
+def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
+          return_solution=False, critical_guard=True):
     """Integrate toward the past with increasing affine parameter.
 
-    The ODE uses only Metric; spherical boundaries and the tail currently
-    implement the Schwarzschild observing problem and are intentionally explicit.
+    The ODE uses only Metric. Non-Schwarzschild geometries require TraceDomain;
+    only the exact Schwarzschild class gets the default spherical policy/tail.
+    return_solution exposes dense output for audits. critical_guard=False is
+    intended for measuring raw solver error, not ordinary production rendering.
     """
-    radius = np.linalg.norm(event[1:])
-    if not 0 < settings.capture_radius < 2 * metric.mass:
-        raise ValueError("capture radius must be inside the horizon and above zero")
-    if not settings.escape_radius > max(radius, 3 * metric.mass):
-        raise ValueError("escape radius must exceed the camera radius and 3M")
-    if radius <= 2 * metric.mass:
-        raise ValueError("ray must start outside the horizon")
+    schwarzschild = type(metric) is Schwarzschild
+    builtin_domain = domain is None and schwarzschild
+    if domain is None:
+        if not schwarzschild:
+            raise ValueError("non-Schwarzschild metrics require an explicit TraceDomain")
+        radius = np.linalg.norm(event[1:])
+        if not 0 < settings.capture_radius < 2 * metric.mass:
+            raise ValueError("capture radius must be inside the horizon and above zero")
+        if not settings.escape_radius > max(radius, 3 * metric.mass):
+            raise ValueError("escape radius must exceed the camera radius and 3M")
+        if radius <= 2 * metric.mass:
+            raise ValueError("ray must start outside the horizon")
+        domain = TraceDomain(lambda x: np.linalg.norm(x[1:])-settings.capture_radius,
+                             lambda x: np.linalg.norm(x[1:])-settings.escape_radius,
+                             lambda y: asymptotic_direction(metric, y))
 
     def capture(_, state):
-        return np.linalg.norm(state[1:4]) - settings.capture_radius
+        return domain.capture(state[:4])
 
     def escape(_, state):
-        return np.linalg.norm(state[1:4]) - settings.escape_radius
+        return domain.escape(state[:4])
 
     capture.terminal, capture.direction = True, -1
     escape.terminal, escape.direction = True, 1
+    events = [capture, escape]
+    if domain.valid_region is not None:
+        def data_boundary(_, state):
+            return domain.valid_region(state[:4])
+        data_boundary.terminal, data_boundary.direction = True, -1
+        events.append(data_boundary)
     sol = solve_ivp(lambda _, y: hamilton_rhs(metric, y), (0, settings.max_affine),
                     np.r_[event, momentum], method="DOP853", rtol=settings.rtol,
                     atol=settings.atol, max_step=settings.max_step,
-                    events=(capture, escape), dense_output=True)
+                    events=events, dense_output=True)
     # Accepted endpoints AND interval midpoints; this is a sampled diagnostic,
     # not a rigorous bound between samples. Never project p back onto the cone.
     times = np.sort(np.r_[sol.t, (sol.t[1:] + sol.t[:-1]) / 2])
     samples = sol.sol(times).T
     p = samples[:, 4:]
     inverse = np.array([metric.inverse(y[:4]) for y in samples])
-    energy_scale = momentum[0] ** 2
+    energy_scale = momentum[0] ** 2 if abs(momentum[0]) > 1e-14 else np.dot(momentum, momentum)
     null = np.abs(np.einsum("ni,nij,nj->n", p, inverse, p)) / energy_scale
     angular = np.cross(samples[:, 1:4], p[:, 1:])
-    angular_scale = max(np.linalg.norm(angular[0]), metric.mass * abs(momentum[0]))
+    angular_scale = max(np.linalg.norm(angular[0]), metric.mass * abs(momentum[0])) if schwarzschild else 1
     null_error = float(np.max(null))
     status, reason, direction = "unresolved", "affine_limit", None
     if not sol.success:
@@ -104,11 +139,30 @@ def trace(metric: Schwarzschild, event, momentum, settings: Integration):
     elif not np.isfinite(null_error) or null_error > settings.null_tolerance:
         reason = "null_constraint_exceeded"
     elif len(sol.t_events[0]):
-        status, reason = "captured", "horizon_crossing"
+        status, reason = "captured", "capture_boundary"
     elif len(sol.t_events[1]):
         status, reason = "escaped", "outward_escape"
-        direction = asymptotic_direction(metric, sol.y[:, -1])
-    return RayResult(status, direction, null_error,
-                     float(np.max(np.abs(p[:, 0] / momentum[0] - 1))),
-                     float(np.max(np.linalg.norm(angular - angular[0], axis=1)) / angular_scale),
-                     len(sol.t) - 1, sol.nfev, reason)
+        direction = np.asarray(domain.source_direction(sol.y[:, -1]), dtype=float)
+        if direction.shape != (3,) or not np.isfinite(direction).all() or np.linalg.norm(direction) == 0:
+            raise ValueError("source_direction must return a finite, nonzero three-vector")
+        direction /= np.linalg.norm(direction)
+    elif len(events) == 3 and len(sol.t_events[2]):
+        reason = "data_domain_exit"
+    raw_status = status
+    critical_uncertainty = None
+    if builtin_domain and radius > 3*metric.mass:
+        initial_velocity = metric.inverse(event) @ momentum
+        if np.dot(event[1:], initial_velocity[1:]) < 0:
+            impact = np.linalg.norm(angular, axis=1)/np.abs(p[:, 0])
+            critical_uncertainty = float(max(np.max(np.abs(impact-impact[0]))/metric.critical_impact_parameter,
+                                             null_error, 64*np.finfo(float).eps))
+            margin = abs(impact[0]/metric.critical_impact_parameter-1)
+            # An empirical reliability guard, not a rigorous global error bound.
+            # A small null residual alone cannot certify a near-critical outcome.
+            if critical_guard and margin <= critical_uncertainty and status != "unresolved":
+                status, reason, direction = "unresolved", "near_critical_uncertainty", None
+    result = RayResult(status, direction, null_error,
+                     float(np.max(np.abs(p[:, 0] / momentum[0] - 1))) if schwarzschild else None,
+                     float(np.max(np.linalg.norm(angular - angular[0], axis=1)) / angular_scale) if schwarzschild else None,
+                     len(sol.t) - 1, sol.nfev, reason, raw_status, critical_uncertainty)
+    return (result, sol) if return_solution else result

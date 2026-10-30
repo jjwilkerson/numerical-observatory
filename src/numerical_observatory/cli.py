@@ -5,7 +5,7 @@ from pathlib import Path
 import tomllib
 
 from .camera import Camera
-from .background import Starfield
+from .background import make_background
 from .geodesic import Integration
 from .metric import Schwarzschild
 from .render import render
@@ -34,6 +34,9 @@ def main():
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument("--width", type=int, help="override pixel width")
     parser.add_argument("--height", type=int, help="override pixel height")
+    parser.add_argument("--background", choices=("starfield", "grid"), help="override background mode")
+    parser.add_argument("--method", choices=("ode", "quadrature"), default="ode")
+    parser.add_argument("--samples", type=int, default=1, help="subpixel samples per axis for quadrature rendering")
     args = parser.parse_args()
     try:
         metric, camera, integration = load_configuration(args.config)
@@ -46,8 +49,12 @@ def main():
             if row % max(1, total // 8) == 0 or row == total:
                 print(f"Rows {row}/{total}", flush=True)
         data = {} if args.config is None else tomllib.loads(args.config.read_text(encoding="utf-8"))
-        background = Starfield(**data.get("background", {}))
-        diagnostics = render(metric, camera, integration, args.output, progress, background)
+        background_options = data.get("background", {})
+        if args.background:
+            background_options["mode"] = args.background
+        background = make_background(background_options)
+        diagnostics = render(metric, camera, integration, args.output, progress, background,
+                             method=args.method, samples=args.samples)
     except (ValueError, TypeError, OSError) as exc:
         parser.error(str(exc))
     print(f"Saved {args.output / 'shadow.png'} and diagnostics.json")

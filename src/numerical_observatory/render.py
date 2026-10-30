@@ -1,6 +1,6 @@
 """Serial CPU rendering, portable image output, and compact JSON diagnostics."""
 from collections import Counter
-from dataclasses import asdict
+from dataclasses import asdict, replace
 import json
 from pathlib import Path
 import time
@@ -12,15 +12,40 @@ import scipy
 from . import __version__
 from .background import Starfield
 from .symmetry import CenteredRayCache
+from .metric import Schwarzschild
+from .schwarzschild_orbit import compatible
 
 
 def render(metric, camera, integration, output, progress=None, background=None,
-           use_symmetry=True):
+           use_symmetry=True, domain=None, method="ode", samples=1):
+    if method not in ("ode", "quadrature"):
+        raise ValueError("method must be ode or quadrature")
+    if not isinstance(samples, int) or samples < 1:
+        raise ValueError("samples must be a positive integer")
+    if method == "quadrature" and compatible(metric, camera) and domain is None:
+        from .diagnostic_render import render_quadrature
+        return render_quadrature(metric, camera, integration, output,
+                                 Starfield() if background is None else background, samples)
+    if samples > 1:
+        from .diagnostic_render import shade, save_image
+        background = Starfield() if background is None else background
+        sampled_camera = replace(camera, width=camera.width*samples, height=camera.height*samples)
+        report = render(metric, sampled_camera, integration, output, progress, background,
+                        use_symmetry=use_symmetry, domain=domain, method="ode")
+        output = Path(output)
+        with np.load(output/"rays.npz") as rays:
+            directions, status = rays["directions"], rays["status"]
+        save_image(output/"shadow.png", shade(directions, status, background, samples))
+        np.savez_compressed(output/"rays.npz", directions=directions, status=status, samples=samples)
+        report.update(camera=asdict(camera), samples_per_axis=samples, requested_method=method,
+                      count_units="subpixel rays")
+        (output/"diagnostics.json").write_text(json.dumps(report, indent=2, allow_nan=False)+"\n", encoding="utf-8")
+        return report
     # Validate the camera before allocating or tracing an image.
     camera.tetrad(metric)
     image = np.zeros((camera.height, camera.width, 3))
     background = Starfield() if background is None else background
-    tracer = CenteredRayCache(metric, camera, integration, enabled=use_symmetry)
+    tracer = CenteredRayCache(metric, camera, integration, enabled=use_symmetry, domain=domain)
     directions = np.full((camera.height, camera.width, 3), np.nan)
     statuses = np.zeros((camera.height, camera.width), dtype=np.uint8)
     counts, reasons = Counter(), Counter()
@@ -38,14 +63,16 @@ def render(metric, camera, integration, output, progress=None, background=None,
             statuses[row, col] = 2
             image[row, col] = (1.0, 0.0, 0.7)
         maxima["null_error"] = max(maxima["null_error"], result.max_null_error)
-        maxima["energy_drift"] = max(maxima["energy_drift"], result.energy_drift)
-        maxima["angular_momentum_drift"] = max(maxima["angular_momentum_drift"], result.angular_momentum_drift)
+        for key in ("energy_drift", "angular_momentum_drift"):
+            value = getattr(result, key)
+            maxima[key] = max(maxima[key], value) if value is not None else None
         if progress and col == camera.width - 1:
             progress(row + 1, camera.height)
     radius = np.linalg.norm(camera.position)
     diagnostics = {
+        "method": "ode", "requested_method": method,
         "version": __version__, "numpy": np.__version__, "scipy": scipy.__version__,
-        "mass": metric.mass, "camera": asdict(camera), "integration": asdict(integration),
+        "mass": getattr(metric, "mass", None), "camera": asdict(camera), "integration": asdict(integration),
         "counts": {k: counts[k] for k in ("captured", "escaped", "unresolved")},
         "termination_reasons": dict(reasons), "maxima": maxima,
         "diagnostic_sampling": "accepted steps and dense-output midpoints; null error = |g^ab p_a p_b| / p_t(initial)^2",
@@ -53,8 +80,8 @@ def render(metric, camera, integration, output, progress=None, background=None,
         "integrated_rays": tracer.integrated_rays,
         "rotational_symmetry_reuse": tracer.enabled,
         "elapsed_seconds": time.perf_counter() - start,
-        "analytic_critical_impact_parameter": metric.critical_impact_parameter,
-        "analytic_shadow_radius_degrees": float(np.rad2deg(metric.shadow_angle(radius))) if radius > 3*metric.mass else None,
+        "analytic_critical_impact_parameter": metric.critical_impact_parameter if type(metric) is Schwarzschild else None,
+        "analytic_shadow_radius_degrees": float(np.rad2deg(metric.shadow_angle(radius))) if type(metric) is Schwarzschild and radius > 3*metric.mass else None,
         "background": background.description,
     }
     output = Path(output)

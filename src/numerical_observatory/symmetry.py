@@ -14,11 +14,14 @@ class CenteredRayCache:
     Off-center views and other metrics take the direct tracing path.
     """
 
-    def __init__(self, metric, camera, integration, enabled=True):
+    def __init__(self, metric, camera, integration, enabled=True, domain=None):
         self.metric, self.camera, self.integration = metric, camera, integration
+        self.domain = domain
         self.forward, self.right, self.up = camera.axes()
-        radial = np.asarray(camera.position)/np.linalg.norm(camera.position)
-        self.enabled = bool(enabled and type(metric) is Schwarzschild
+        radius = np.linalg.norm(camera.position)
+        radial = np.asarray(camera.position)/radius if radius else np.zeros(3)
+        self.enabled = bool(enabled and type(metric) is Schwarzschild and domain is None
+                            and camera.observer_frame is None
                             and np.linalg.norm(self.forward+radial) < 1e-14)
         self.cache = {}
         self.integrated_rays = 0
@@ -33,7 +36,7 @@ class CenteredRayCache:
             if self.enabled:
                 offset = np.sqrt(key)*np.tan(np.deg2rad(self.camera.fov_degrees)/2)/self.camera.width
                 momentum = self.camera.momentum(self.metric, self.forward+offset*self.right)
-            result = trace(self.metric, self.camera.event, momentum, self.integration)
+            result = trace(self.metric, self.camera.event, momentum, self.integration, domain=self.domain)
             self.integrated_rays += 1
             self.steps += result.steps
             self.evaluations += result.evaluations

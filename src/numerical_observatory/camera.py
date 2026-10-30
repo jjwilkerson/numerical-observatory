@@ -1,9 +1,9 @@
-"""Pinhole camera and a static Schwarzschild observer's orthonormal frame."""
+"""Pinhole camera in a local orthonormal frame for an event-based metric."""
 from dataclasses import dataclass
 
 import numpy as np
 
-from .metric import Schwarzschild
+from .metric import ETA, Metric
 
 
 def unit(vector):
@@ -23,6 +23,7 @@ class Camera:
     width: int = 320
     height: int = 240
     time: float = 0.0
+    observer_frame: tuple | None = None
 
     def __post_init__(self):
         if (not isinstance(self.width, int) or not isinstance(self.height, int)
@@ -32,7 +33,8 @@ class Camera:
             raise ValueError("horizontal FOV must lie between 0 and 180 degrees")
         if not np.isfinite(self.time):
             raise ValueError("camera time must be finite")
-        unit(self.position)
+        if np.asarray(self.position).shape != (3,) or not np.isfinite(self.position).all():
+            raise ValueError("position must be a finite three-vector")
         self.axes()
 
     @property
@@ -45,22 +47,32 @@ class Camera:
         up = unit(np.cross(right, forward))
         return forward, right, up
 
-    def tetrad(self, metric: Schwarzschild):
-        """Rows are u, e_x, e_y, e_z, spatial axes anchored to Cartesian axes.
+    def tetrad(self, metric: Metric):
+        """Rows are u,e_x,e_y,e_z. Default: observer at fixed coordinates.
 
-        Radial spatial axis has time component -f/sqrt(1-f). Tangential
-        axes are unchanged. This map is an isometry from local Euclidean 3-space.
+        Symmetric orthonormalization of its rest-space metric preserves the
+        previous Schwarzschild frame without assuming spherical symmetry.
+        Supply a future-directed observer_frame for a moving observer or where
+        the coordinate-time direction is not timelike (e.g. an ergoregion).
         """
-        r = np.linalg.norm(self.position)
-        f = 2 * metric.mass / r
-        if f >= 1:
-            raise ValueError("a static camera must be outside r=2M")
-        n = np.asarray(self.position) / r
-        a = np.sqrt(1 - f)
+        g = metric.covariant(self.event)
+        if self.observer_frame is not None:
+            frame = np.asarray(self.observer_frame, dtype=float)
+            if (frame.shape != (4, 4) or not np.isfinite(frame).all()
+                    or not np.allclose(frame @ g @ frame.T, ETA, atol=1e-10, rtol=1e-10)):
+                raise ValueError("observer_frame must be an orthonormal tetrad")
+            return frame
+        if g[0, 0] >= 0:
+            raise ValueError("coordinate-static observer is not timelike; supply observer_frame")
+        rest = g[1:, 1:] - np.outer(g[0, 1:], g[0, 1:])/g[0, 0]
+        values, vectors = np.linalg.eigh(rest)
+        if np.any(values <= 0):
+            raise ValueError("observer rest-space metric must be positive definite")
+        spatial = (vectors / np.sqrt(values)) @ vectors.T
         frame = np.zeros((4, 4))
-        frame[0, 0] = 1 / a
-        frame[1:, 0] = -f / a * n
-        frame[1:, 1:] = np.eye(3) + (a - 1) * np.outer(n, n)
+        frame[0, 0] = 1/np.sqrt(-g[0, 0])
+        frame[1:, 1:] = spatial
+        frame[1:, 0] = -spatial @ g[0, 1:]/g[0, 0]
         return frame
 
     def momentum(self, metric, direction):

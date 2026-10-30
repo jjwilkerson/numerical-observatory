@@ -1,0 +1,1145 @@
+{
+  "cross_checks": [
+    {
+      "case": "capture",
+      "angle_radians": 0.01036658164201309,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "captured",
+          "expected": "captured",
+          "reason": "capture_boundary",
+          "raw_status": "captured",
+          "critical_uncertainty": 1.3278433963760666e-08,
+          "null_error": 1.3278433963760666e-08,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.574984919126537e-10
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "captured",
+          "expected": "captured",
+          "reason": "capture_boundary",
+          "raw_status": "captured",
+          "critical_uncertainty": 1.6500859863301693e-10,
+          "null_error": 1.6500859863301693e-10,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 5.435311208566243e-12
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "captured",
+          "expected": "captured",
+          "reason": "capture_boundary",
+          "raw_status": "captured",
+          "critical_uncertainty": 2.8507626187083538e-12,
+          "null_error": 2.8507626187083538e-12,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.072996609764186e-13
+        }
+      ]
+    },
+    {
+      "case": "near_capture",
+      "angle_radians": 0.01295822692293409,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "unresolved",
+          "expected": "captured",
+          "reason": "near_critical_uncertainty",
+          "raw_status": "captured",
+          "critical_uncertainty": 1.0556846887453444e-07,
+          "null_error": 1.0556846887453444e-07,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.6044054954907492e-08
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "captured",
+          "expected": "captured",
+          "reason": "capture_boundary",
+          "raw_status": "captured",
+          "critical_uncertainty": 1.0147311243641963e-09,
+          "null_error": 1.0147311243641963e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.6173571562818924e-10
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "captured",
+          "expected": "captured",
+          "reason": "capture_boundary",
+          "raw_status": "captured",
+          "critical_uncertainty": 9.530734660440439e-12,
+          "null_error": 9.530734660440439e-12,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.604025163859801e-12
+        }
+      ]
+    },
+    {
+      "case": "critical_b_plus_0.01",
+      "angle_radians": 0.013087816685667988,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.1165041911668187e-07,
+          "null_error": 1.1165041911668187e-07,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 5.1905037945846424e-08,
+          "quadrature_phase": 7.358133805517639,
+          "phase_turns": 1.1710833670797112,
+          "quadrature_turning_radius": 3.2729455163647714,
+          "quadrature_error_estimate": 8.169169569158333e-14,
+          "direction_error_radians": 3.093451680964423e-08,
+          "ode_phase": 7.358133836452156,
+          "phase_error_radians": 3.093451717006701e-08,
+          "max_unwrap_step_radians": 0.2320853074899567,
+          "ode_turning_radius": 3.2729455095135576,
+          "turning_radius_error": 6.851213818492852e-09
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.2687352006511657e-09,
+          "null_error": 1.2687352006511657e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 5.51535920791567e-10,
+          "quadrature_phase": 7.358133805517639,
+          "phase_turns": 1.1710833670797112,
+          "quadrature_turning_radius": 3.2729455163647714,
+          "quadrature_error_estimate": 8.169169569158333e-14,
+          "direction_error_radians": 3.988183297217922e-10,
+          "ode_phase": 7.358133805916457,
+          "phase_error_radians": 3.9881786761952753e-10,
+          "max_unwrap_step_radians": 0.1272155392751646,
+          "ode_turning_radius": 3.2729455162760184,
+          "turning_radius_error": 8.875300494537441e-11
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 2.7248778331423136e-11,
+          "null_error": 2.7248778331423136e-11,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 1.1437670286102604e-11,
+          "quadrature_phase": 7.358133805517639,
+          "phase_turns": 1.1710833670797112,
+          "quadrature_turning_radius": 3.2729455163647714,
+          "quadrature_error_estimate": 8.169169569158333e-14,
+          "direction_error_radians": 4.188829566152071e-12,
+          "ode_phase": 7.3581338055218275,
+          "phase_error_radians": 4.1886494273057906e-12,
+          "max_unwrap_step_radians": 0.06964602519723195,
+          "ode_turning_radius": 3.2729455163636376,
+          "turning_radius_error": 1.1337597527472099e-12
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        7.358133805517639,
+        7.358133805517639,
+        7.358133805517639
+      ],
+      "one_ulp_angle_phase_sensitivity": 9.769962616701378e-15
+    },
+    {
+      "case": "critical_b_plus_0.0001",
+      "angle_radians": 0.012959522947767003,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0494677232211603e-07,
+          "null_error": 1.0494677232211603e-07,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.374362465330853e-08,
+          "quadrature_phase": 11.939086964371736,
+          "phase_turns": 1.9001647063837732,
+          "quadrature_turning_radius": 3.0247629017139914,
+          "quadrature_error_estimate": 1.359671181057693e-13,
+          "direction_error_radians": 1.3759761801850736e-06,
+          "ode_phase": 11.939088340347917,
+          "phase_error_radians": 1.3759761809950533e-06,
+          "max_unwrap_step_radians": 0.231350736519504,
+          "ode_turning_radius": 3.0247628845571963,
+          "turning_radius_error": 1.715679509572965e-08
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0595013420480705e-09,
+          "null_error": 1.0595013420480705e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.442543627066638e-10,
+          "quadrature_phase": 11.939086964371736,
+          "phase_turns": 1.9001647063837732,
+          "quadrature_turning_radius": 3.0247629017139914,
+          "quadrature_error_estimate": 1.359671181057693e-13,
+          "direction_error_radians": 1.720051323104935e-08,
+          "ode_phase": 11.939086981572249,
+          "phase_error_radians": 1.720051301390413e-08,
+          "max_unwrap_step_radians": 0.12467500921252128,
+          "ode_turning_radius": 3.024762901527458,
+          "turning_radius_error": 1.865334553485809e-10
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.010097923784998e-11,
+          "null_error": 1.010097923784998e-11,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.998135295106868e-12,
+          "quadrature_phase": 11.939086964371736,
+          "phase_turns": 1.9001647063837732,
+          "quadrature_turning_radius": 3.0247629017139914,
+          "quadrature_error_estimate": 1.359671181057693e-13,
+          "direction_error_radians": 2.2606777718384837e-10,
+          "ode_phase": 11.939086964597804,
+          "phase_error_radians": 2.2606805316627288e-10,
+          "max_unwrap_step_radians": 0.06912357552648496,
+          "ode_turning_radius": 3.024762901711124,
+          "turning_radius_error": 2.8674840280018543e-12
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        11.939086964371738,
+        11.939086964371738,
+        11.939086964371736
+      ],
+      "one_ulp_angle_phase_sensitivity": 1.1182166304024577e-12
+    },
+    {
+      "case": "critical_b_plus_1e-06",
+      "angle_radians": 0.01295824001146876,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0595559817579126e-07,
+          "null_error": 1.0595559817579126e-07,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.615013065074337e-08,
+          "quadrature_phase": 16.543887453406256,
+          "phase_turns": 2.633041466165594,
+          "quadrature_turning_radius": 3.002452157747446,
+          "quadrature_error_estimate": 6.099977740131941e-13,
+          "direction_error_radians": 0.00013121785767649072,
+          "ode_phase": 16.544018671263935,
+          "phase_error_radians": 0.00013121785767822303,
+          "max_unwrap_step_radians": 0.231393627217098,
+          "ode_turning_radius": 3.0024519911354446,
+          "turning_radius_error": 1.666120015286765e-07
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0793619487862745e-09,
+          "null_error": 1.0793619487862745e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 4.24155185676844e-10,
+          "quadrature_phase": 16.543887453406256,
+          "phase_turns": 2.633041466165594,
+          "quadrature_turning_radius": 3.002452157747446,
+          "quadrature_error_estimate": 6.099977740131941e-13,
+          "direction_error_radians": 1.5815775278368096e-06,
+          "ode_phase": 16.543889034983785,
+          "phase_error_radians": 1.5815775284977462e-06,
+          "max_unwrap_step_radians": 0.12451841871543268,
+          "ode_turning_radius": 3.0024521556954515,
+          "turning_radius_error": 2.051994574259197e-09
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0408201380606492e-11,
+          "null_error": 1.0408201380606492e-11,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 4.141415055753484e-12,
+          "quadrature_phase": 16.543887453406256,
+          "phase_turns": 2.633041466165594,
+          "quadrature_turning_radius": 3.002452157747446,
+          "quadrature_error_estimate": 6.099977740131941e-13,
+          "direction_error_radians": 3.70394409953317e-08,
+          "ode_phase": 16.543887490445698,
+          "phase_error_radians": 3.703944173594209e-08,
+          "max_unwrap_step_radians": 0.0704531254711438,
+          "ode_turning_radius": 3.0024521577017693,
+          "turning_radius_error": 4.567679567912819e-11
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        16.54388745340628,
+        16.543887453406256,
+        16.543887453406256
+      ],
+      "one_ulp_angle_phase_sensitivity": 2.219717742946159e-10
+    },
+    {
+      "case": "critical_b_plus_1e-08",
+      "angle_radians": 0.012958227182105885,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "unresolved",
+          "expected": "escaped",
+          "reason": "near_critical_uncertainty",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0619327393984158e-07,
+          "null_error": 1.0619327393984158e-07,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.6214509486195505e-08,
+          "quadrature_phase": 21.149052681854137,
+          "phase_turns": 3.365976276027992,
+          "quadrature_turning_radius": 3.0002449756415386,
+          "quadrature_error_estimate": 2.3816334380014417e-13,
+          "direction_error_radians": 0.013064393163550868,
+          "ode_phase": 21.162117075017687,
+          "phase_error_radians": 0.013064393163549681,
+          "max_unwrap_step_radians": 0.23140583485260402,
+          "ode_turning_radius": 3.0002433808415985,
+          "turning_radius_error": 1.594799940107805e-06
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0568687187271653e-09,
+          "null_error": 1.0568687187271653e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.743620133912978e-10,
+          "quadrature_phase": 21.149052681854137,
+          "phase_turns": 3.365976276027992,
+          "quadrature_turning_radius": 3.0002449756415386,
+          "quadrature_error_estimate": 2.3816334380014417e-13,
+          "direction_error_radians": 0.00017495441469774045,
+          "ode_phase": 21.149227636268833,
+          "phase_error_radians": 0.0001749544146960602,
+          "max_unwrap_step_radians": 0.12466337738789157,
+          "ode_turning_radius": 3.000244954242627,
+          "turning_radius_error": 2.1398911531633757e-08
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 9.439685214400828e-12,
+          "null_error": 9.439685214400828e-12,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.6707735832902008e-12,
+          "quadrature_phase": 21.149052681854137,
+          "phase_turns": 3.365976276027992,
+          "quadrature_turning_radius": 3.0002449756415386,
+          "quadrature_error_estimate": 2.3816334380014417e-13,
+          "direction_error_radians": 2.418785989793941e-06,
+          "ode_phase": 21.149055100640126,
+          "phase_error_radians": 2.418785989277694e-06,
+          "max_unwrap_step_radians": 0.06836696747162785,
+          "ode_turning_radius": 3.0002449753455833,
+          "turning_radius_error": 2.9595526029879693e-10
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        21.149052681854062,
+        21.149052681854062,
+        21.149052681854137
+      ],
+      "one_ulp_angle_phase_sensitivity": 1.1102102348559129e-08
+    },
+    {
+      "case": "critical_b_plus_1e-10",
+      "angle_radians": 0.012958227053812258,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "unresolved",
+          "expected": "escaped",
+          "reason": "near_critical_uncertainty",
+          "raw_status": "captured",
+          "critical_uncertainty": 1.0539879499601372e-07,
+          "null_error": 1.0539879499601372e-07,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.5997930418264436e-08,
+          "quadrature_phase": 25.75422493719197,
+          "phase_turns": 4.09891220425466,
+          "quadrature_turning_radius": 3.0000244951379136,
+          "quadrature_error_estimate": 2.4670096870310153e-11
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "unresolved",
+          "expected": "escaped",
+          "reason": "near_critical_uncertainty",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0631448820125037e-09,
+          "null_error": 1.0631448820125037e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.8106971808925754e-10,
+          "quadrature_phase": 25.75422493719197,
+          "phase_turns": 4.09891220425466,
+          "quadrature_turning_radius": 3.0000244951379136,
+          "quadrature_error_estimate": 2.4670096870310153e-11,
+          "direction_error_radians": 0.01667458512783753,
+          "ode_phase": 25.77089952231981,
+          "phase_error_radians": 0.016674585127837815,
+          "max_unwrap_step_radians": 0.12463525356690885,
+          "ode_turning_radius": 3.000024291829804,
+          "turning_radius_error": 2.0330810945878852e-07
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 9.632049485200201e-12,
+          "null_error": 9.632049485200201e-12,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.1533382050757258e-12,
+          "quadrature_phase": 25.75422493719197,
+          "phase_turns": 4.09891220425466,
+          "quadrature_turning_radius": 3.0000244951379136,
+          "quadrature_error_estimate": 2.4670096870310153e-11,
+          "direction_error_radians": 0.00023405777242345747,
+          "ode_phase": 25.754458994964395,
+          "phase_error_radians": 0.00023405777242402337,
+          "max_unwrap_step_radians": 0.06916156697147358,
+          "ode_turning_radius": 3.000024492272071,
+          "turning_radius_error": 2.8658426742822485e-09
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        25.75422493719197,
+        25.75422493719197,
+        25.75422493719197
+      ],
+      "one_ulp_angle_phase_sensitivity": 1.110230893885955e-06
+    },
+    {
+      "case": "inside_outer_arc",
+      "angle_radians": 0.08292170093559735,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 4.439544655963402e-09,
+          "null_error": 4.439544655963402e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.771202769030456e-10,
+          "quadrature_phase": 3.1908985361336057,
+          "phase_turns": 0.5078472749303562,
+          "quadrature_turning_radius": 32.16462985799635,
+          "quadrature_error_estimate": 3.694731266976817e-13,
+          "direction_error_radians": 1.1303477609733175e-10,
+          "ode_phase": 3.1908985362466407,
+          "phase_error_radians": 1.1303491476155614e-10,
+          "max_unwrap_step_radians": 0.13377838288797106,
+          "ode_turning_radius": 32.16462984112165,
+          "turning_radius_error": 1.6874700747848692e-08
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0627881454109651e-10,
+          "null_error": 9.429564889945199e-11,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 1.6626920610960367e-11,
+          "quadrature_phase": 3.1908985361336057,
+          "phase_turns": 0.5078472749303562,
+          "quadrature_turning_radius": 32.16462985799635,
+          "quadrature_error_estimate": 3.694731266976817e-13,
+          "direction_error_radians": 6.917511596767909e-12,
+          "ode_phase": 3.1908985361405233,
+          "phase_error_radians": 6.917577621834425e-12,
+          "max_unwrap_step_radians": 0.08186492205787721,
+          "ode_turning_radius": 32.16462985762126,
+          "turning_radius_error": 3.750955102077569e-10
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 9.721983129205013e-13,
+          "null_error": 9.721983129205013e-13,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 1.5084625791599509e-13,
+          "quadrature_phase": 3.1908985361336057,
+          "phase_turns": 0.5078472749303562,
+          "quadrature_turning_radius": 32.16462985799635,
+          "quadrature_error_estimate": 3.694731266976817e-13,
+          "direction_error_radians": 4.7504843012144847e-14,
+          "ode_phase": 3.1908985361336533,
+          "phase_error_radians": 4.75175454539567e-14,
+          "max_unwrap_step_radians": 0.04459978184385627,
+          "ode_turning_radius": 32.16462985799324,
+          "turning_radius_error": 3.112177182629239e-12
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        3.1908985361336057,
+        3.1908985361336057,
+        3.1908985361336057
+      ],
+      "one_ulp_angle_phase_sensitivity": 0.0
+    },
+    {
+      "case": "outer_alignment_ring",
+      "angle_radians": 0.10365212616949668,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 2.4353753226092665e-09,
+          "null_error": 1.7841261689685567e-09,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.0499941053097043e-10,
+          "quadrature_phase": 3.141592653589793,
+          "phase_turns": 0.5,
+          "quadrature_turning_radius": 40.451827550992135,
+          "quadrature_error_estimate": 3.00969008200313e-13,
+          "direction_error_radians": 4.3391483779062077e-11,
+          "ode_phase": 3.1415926535464016,
+          "phase_error_radians": 4.339151260523977e-11,
+          "max_unwrap_step_radians": 0.1329901031362335,
+          "ode_turning_radius": 40.45182753840766,
+          "turning_radius_error": 1.2584472131038638e-08
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 2.7451497404742175e-10,
+          "null_error": 1.0398069898130516e-10,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.43794909271923e-11,
+          "quadrature_phase": 3.141592653589793,
+          "phase_turns": 0.5,
+          "quadrature_turning_radius": 40.451827550992135,
+          "quadrature_error_estimate": 3.00969008200313e-13,
+          "direction_error_radians": 1.3259227214726359e-11,
+          "ode_phase": 3.1415926536030523,
+          "phase_error_radians": 1.325917153849332e-11,
+          "max_unwrap_step_radians": 0.0751445902724539,
+          "ode_turning_radius": 40.451827550933025,
+          "turning_radius_error": 5.911005018788273e-11
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 8.721108703990174e-13,
+          "null_error": 8.721108703990174e-13,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 1.032299841752367e-13,
+          "quadrature_phase": 3.141592653589793,
+          "phase_turns": 0.5,
+          "quadrature_turning_radius": 40.451827550992135,
+          "quadrature_error_estimate": 3.00969008200313e-13,
+          "direction_error_radians": 5.01734572407436e-14,
+          "ode_phase": 3.1415926535898433,
+          "phase_error_radians": 5.0182080713057076e-14,
+          "max_unwrap_step_radians": 0.050205581897568186,
+          "ode_turning_radius": 40.45182755098782,
+          "turning_radius_error": 4.312994406063808e-12
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        3.141592653589793,
+        3.141592653589793,
+        3.141592653589793
+      ],
+      "one_ulp_angle_phase_sensitivity": 0.0
+    },
+    {
+      "case": "outside_outer_arc",
+      "angle_radians": 0.124382551403396,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 6.968414201079016e-08,
+          "null_error": 1.4608145848750144e-08,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 7.278273034900994e-09,
+          "quadrature_phase": 3.1024374687340455,
+          "phase_turns": 0.49376825878253083,
+          "quadrature_turning_radius": 48.71747829315465,
+          "quadrature_error_estimate": 2.7082103102958983e-13,
+          "direction_error_radians": 3.072641273958624e-09,
+          "ode_phase": 3.1024374718066867,
+          "phase_error_radians": 3.0726412525439173e-09,
+          "max_unwrap_step_radians": 0.15553824810623795,
+          "ode_turning_radius": 48.71747828764729,
+          "turning_radius_error": 5.507359901457676e-09
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.0212277701316106e-10,
+          "null_error": 1.0212277701316106e-10,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 9.633015622879802e-12,
+          "quadrature_phase": 3.1024374687340455,
+          "phase_turns": 0.49376825878253083,
+          "quadrature_turning_radius": 48.71747829315465,
+          "quadrature_error_estimate": 2.7082103102958983e-13,
+          "direction_error_radians": 4.276444364088864e-12,
+          "ode_phase": 3.102437468738322,
+          "phase_error_radians": 4.276579090856103e-12,
+          "max_unwrap_step_radians": 0.08851631199501708,
+          "ode_turning_radius": 48.717478292631576,
+          "turning_radius_error": 5.230731403571554e-10
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 2.6405268959336262e-12,
+          "null_error": 8.863931364444463e-13,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 2.759516872086298e-13,
+          "quadrature_phase": 3.1024374687340455,
+          "phase_turns": 0.49376825878253083,
+          "quadrature_turning_radius": 48.71747829315465,
+          "quadrature_error_estimate": 2.7082103102958983e-13,
+          "direction_error_radians": 6.648536779165352e-14,
+          "ode_phase": 3.102437468734112,
+          "phase_error_radians": 6.661338147750939e-14,
+          "max_unwrap_step_radians": 0.049825676551295106,
+          "ode_turning_radius": 48.71747829314767,
+          "turning_radius_error": 6.977529665164184e-12
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        3.1024374687340455,
+        3.1024374687340455,
+        3.1024374687340455
+      ],
+      "one_ulp_angle_phase_sensitivity": 2.220446049250313e-16
+    },
+    {
+      "case": "frame_edge",
+      "angle_radians": 0.3441665481739509,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 1.1398305429423158e-07,
+          "null_error": 1.4110563861969574e-08,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 4.377366519460766e-09,
+          "quadrature_phase": 2.826778210415467,
+          "phase_turns": 0.4498957252120834,
+          "quadrature_turning_radius": 134.29226021527145,
+          "quadrature_error_estimate": 1.9302019119919701e-13,
+          "direction_error_radians": 5.953663181127389e-10,
+          "ode_phase": 2.8267782098201004,
+          "phase_error_radians": 5.95366422828647e-10,
+          "max_unwrap_step_radians": 0.21691133158512388,
+          "ode_turning_radius": 134.29226075538435,
+          "turning_radius_error": 5.401128930770938e-07
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 9.135812827890585e-10,
+          "null_error": 7.112735860928935e-11,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.508494526629952e-11,
+          "quadrature_phase": 2.826778210415467,
+          "phase_turns": 0.4498957252120834,
+          "quadrature_turning_radius": 134.29226021527145,
+          "quadrature_error_estimate": 1.9302019119919701e-13,
+          "direction_error_radians": 1.3732447985456443e-11,
+          "ode_phase": 2.8267782104291994,
+          "phase_error_radians": 1.3732570636193486e-11,
+          "max_unwrap_step_radians": 0.10231962622781521,
+          "ode_turning_radius": 134.29226021367236,
+          "turning_radius_error": 1.5990906376828207e-09
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 8.521886905985686e-12,
+          "null_error": 2.084876102022216e-12,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 3.2702929330420606e-13,
+          "quadrature_phase": 2.826778210415467,
+          "phase_turns": 0.4498957252120834,
+          "quadrature_turning_radius": 134.29226021527145,
+          "quadrature_error_estimate": 1.9302019119919701e-13,
+          "direction_error_radians": 1.9454379575003244e-13,
+          "ode_phase": 2.8267782104156614,
+          "phase_error_radians": 1.9451107391432743e-13,
+          "max_unwrap_step_radians": 0.06594943462177738,
+          "ode_turning_radius": 134.2922602152956,
+          "turning_radius_error": 2.4158453015843406e-11
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        2.826778210415467,
+        2.826778210415467,
+        2.826778210415467
+      ],
+      "one_ulp_angle_phase_sensitivity": 0.0
+    },
+    {
+      "case": "weak_control_outside_frame",
+      "angle_radians": 0.8,
+      "runs": [
+        {
+          "rtol": 1e-08,
+          "atol": 1e-10,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 2.44155888688861e-09,
+          "null_error": 1.486624335638198e-10,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 4.410271564992501e-11,
+          "quadrature_phase": 2.353519632670743,
+          "phase_turns": 0.3745742832033705,
+          "quadrature_turning_radius": 286.65723045285324,
+          "quadrature_error_estimate": 1.696363409832666e-13,
+          "direction_error_radians": 3.827447030768983e-13,
+          "ode_phase": 2.3535196326711256,
+          "phase_error_radians": 3.82804898890754e-13,
+          "max_unwrap_step_radians": 0.13944388293263865,
+          "ode_turning_radius": 286.65723045067824,
+          "turning_radius_error": 2.174999735871097e-09
+        },
+        {
+          "rtol": 1e-10,
+          "atol": 1e-12,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 6.184767626659907e-10,
+          "null_error": 1.1399161904742141e-10,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 1.1171780180207389e-11,
+          "quadrature_phase": 2.353519632670743,
+          "phase_turns": 0.3745742832033705,
+          "quadrature_turning_radius": 286.65723045285324,
+          "quadrature_error_estimate": 1.696363409832666e-13,
+          "direction_error_radians": 5.8106939152344854e-12,
+          "ode_phase": 2.3535196326765533,
+          "phase_error_radians": 5.810463221678219e-12,
+          "max_unwrap_step_radians": 0.12726771436916878,
+          "ode_turning_radius": 286.65723045329855,
+          "turning_radius_error": 4.4531134335557e-10
+        },
+        {
+          "rtol": 1e-12,
+          "atol": 1e-14,
+          "status": "escaped",
+          "expected": "escaped",
+          "reason": "outward_escape",
+          "raw_status": "escaped",
+          "critical_uncertainty": 6.0057970621131465e-12,
+          "null_error": 1.1548551060171226e-12,
+          "energy_drift": 0.0,
+          "angular_momentum_drift": 1.0852667459505678e-13,
+          "quadrature_phase": 2.353519632670743,
+          "phase_turns": 0.3745742832033705,
+          "quadrature_turning_radius": 286.65723045285324,
+          "quadrature_error_estimate": 1.696363409832666e-13,
+          "direction_error_radians": 5.709828552468728e-15,
+          "ode_phase": 2.3535196326707486,
+          "phase_error_radians": 5.773159728050814e-15,
+          "max_unwrap_step_radians": 0.07264282145032697,
+          "ode_turning_radius": 286.65723045300956,
+          "turning_radius_error": 1.5631940186722204e-10
+        }
+      ],
+      "quadrature_tolerances": [
+        1e-08,
+        1e-10,
+        1e-12
+      ],
+      "quadrature_phases": [
+        2.353519632670743,
+        2.353519632670743,
+        2.353519632670743
+      ],
+      "one_ulp_angle_phase_sensitivity": 2.220446049250313e-16
+    }
+  ],
+  "alignment_rings": [
+    {
+      "phase_pi": 1,
+      "angle_degrees": 5.938829367069678,
+      "radius_pixels": 116.08897726532929,
+      "separation_from_shadow_pixels": 101.6271411794286
+    },
+    {
+      "phase_pi": 2,
+      "angle_degrees": 0.7651060069871374,
+      "radius_pixels": 14.903159001796787,
+      "separation_from_shadow_pixels": 0.4413229158960963
+    },
+    {
+      "phase_pi": 3,
+      "angle_degrees": 0.7433724262387332,
+      "radius_pixels": 14.479772060191763,
+      "separation_from_shadow_pixels": 0.0179359742910723
+    },
+    {
+      "phase_pi": 4,
+      "angle_degrees": 0.7424913656727287,
+      "radius_pixels": 14.462608408491105,
+      "separation_from_shadow_pixels": 0.000772322590414376
+    },
+    {
+      "phase_pi": 5,
+      "angle_degrees": 0.7424534329830106,
+      "radius_pixels": 14.461869454366807,
+      "separation_from_shadow_pixels": 3.336846611645683e-05
+    },
+    {
+      "phase_pi": 6,
+      "angle_degrees": 0.7424517941018454,
+      "radius_pixels": 14.461837527867674,
+      "separation_from_shadow_pixels": 1.4419669831511328e-06
+    }
+  ],
+  "shadow_sweep": [
+    {
+      "radius_M": 20.0,
+      "fov_degrees": 32.0,
+      "expected_angle_degrees": 14.269027327916007,
+      "ode_angle_bracket_degrees": [
+        14.269027327916007,
+        14.269027872236201
+      ],
+      "expected_radius_pixels": 283.81548016991746,
+      "ode_radius_bracket_pixels": [
+        283.81548016991746,
+        283.81549145758356
+      ]
+    },
+    {
+      "radius_M": 20.0,
+      "fov_degrees": 60.0,
+      "expected_angle_degrees": 14.269027327916007,
+      "ode_angle_bracket_degrees": [
+        14.269027327916007,
+        14.269027872236201
+      ],
+      "expected_radius_pixels": 140.95910868782295,
+      "ode_radius_bracket_pixels": [
+        140.95910868782295,
+        140.95911429392783
+      ]
+    },
+    {
+      "radius_M": 100.0,
+      "fov_degrees": 32.0,
+      "expected_angle_degrees": 2.9485551976780786,
+      "ode_angle_bracket_degrees": [
+        2.9485551976780786,
+        2.948555310156533
+      ],
+      "expected_radius_pixels": 57.48093095221335,
+      "ode_radius_bracket_pixels": [
+        57.48093095221335,
+        57.48093314881302
+      ]
+    },
+    {
+      "radius_M": 100.0,
+      "fov_degrees": 60.0,
+      "expected_angle_degrees": 2.9485551976780786,
+      "ode_angle_bracket_degrees": [
+        2.9485551976780786,
+        2.948555310156533
+      ],
+      "expected_radius_pixels": 28.548339888717226,
+      "ode_radius_bracket_pixels": [
+        28.548339888717226,
+        28.548340979675096
+      ]
+    },
+    {
+      "radius_M": 400.0,
+      "fov_degrees": 32.0,
+      "expected_angle_degrees": 0.7424517200814361,
+      "ode_angle_bracket_degrees": [
+        0.7424517200814361,
+        0.7424517484037215
+      ],
+      "expected_radius_pixels": 14.461836085900691,
+      "ode_radius_bracket_pixels": [
+        14.461836085900691,
+        14.461836637637715
+      ]
+    },
+    {
+      "radius_M": 400.0,
+      "fov_degrees": 60.0,
+      "expected_angle_degrees": 0.7424517200814361,
+      "ode_angle_bracket_degrees": [
+        0.7424517200814361,
+        0.7424517484037215
+      ],
+      "expected_radius_pixels": 7.18258046896353,
+      "ode_radius_bracket_pixels": [
+        7.18258046896353,
+        7.182580742987905
+      ]
+    }
+  ],
+  "expected_shadow_angle_degrees": 0.7424517200814361,
+  "expected_shadow_radius_pixels": 14.461836085900691,
+  "inner_grid": {
+    "window_pixels": [
+      216,
+      264,
+      296,
+      344
+    ],
+    "pixels_per_original_pixel": 16,
+    "note": "Fresh rays in the same camera window, not an enlarged low-resolution bitmap"
+  },
+  "configuration": {
+    "mass": 1.0,
+    "camera": {
+      "position": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov_degrees": 32.0,
+      "width": 640,
+      "height": 480,
+      "time": 0.0
+    },
+    "integration": {
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "capture_radius": 1.99,
+      "escape_radius": 800.0,
+      "max_affine": 2000.0,
+      "max_step": 80.0,
+      "null_tolerance": 1e-05
+    },
+    "background": {
+      "mode": "starfield",
+      "longitude_degrees": 15.0,
+      "latitude_degrees": 18.0,
+      "roll_degrees": 25.0,
+      "exposure": 6.0,
+      "resolution": 8,
+      "spacing_degrees": 15.0,
+      "line_width_degrees": 0.25
+    }
+  },
+  "samples_per_axis": 4,
+  "distinct_orbits": 416715,
+  "subpixel_counts": {
+    "captured": 10500,
+    "escaped": 4904700,
+    "unresolved": 0
+  },
+  "rendered_shadow_radius_bracket_pixels": [
+    14.45791305825291,
+    14.466556259179308
+  ],
+  "shadow_area_equivalent_radius_pixels": 14.45305721320277,
+  "sampling": [
+    {
+      "mode": "starfield",
+      "samples_per_axis": 1,
+      "reference_samples_per_axis": 4,
+      "display_rgb_mae": {
+        "all": 0.006390064818928649,
+        "near_shadow": 0.0356120168153652,
+        "outer_arc": 0.007771897064251437
+      }
+    },
+    {
+      "mode": "grid",
+      "samples_per_axis": 1,
+      "reference_samples_per_axis": 4,
+      "display_rgb_mae": {
+        "all": 0.001875581595562918,
+        "near_shadow": 0.1017415068917494,
+        "outer_arc": 0.001184647695144838
+      }
+    },
+    {
+      "mode": "starfield",
+      "samples_per_axis": 2,
+      "reference_samples_per_axis": 4,
+      "display_rgb_mae": {
+        "all": 0.0015352704457459508,
+        "near_shadow": 0.025735259300398817,
+        "outer_arc": 0.0011971880999009357
+      }
+    },
+    {
+      "mode": "grid",
+      "samples_per_axis": 2,
+      "reference_samples_per_axis": 4,
+      "display_rgb_mae": {
+        "all": 0.0006497782746075995,
+        "near_shadow": 0.07247215409357122,
+        "outer_arc": 0.00022072584385899382
+      }
+    }
+  ]
+}

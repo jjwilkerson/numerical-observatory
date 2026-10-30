@@ -5,12 +5,11 @@ import json
 from pathlib import Path
 
 import numpy as np
-from scipy.integrate import quad
-from scipy.optimize import brentq
 
 from .camera import Camera
 from .geodesic import Integration, trace
 from .metric import Schwarzschild
+from .schwarzschild_orbit import orbit
 
 
 def orbit_direction(angle, radius=20.0):
@@ -19,34 +18,24 @@ def orbit_direction(angle, radius=20.0):
     Uses the outer turning point and conserved impact parameter, without the
     Hamiltonian ODE. Restricted to M=1 and a camera on the positive z axis.
     """
-    b = radius*np.sin(angle)/np.sqrt(1-2/radius)
-    turning = brentq(lambda r: r*r/(1-2/r)-b*b, 3.0, radius, xtol=1e-13)
-    u0 = 1/turning
-    # u=u0*(1-s²) removes the turning-point square-root singularity.
-    # Factored radicand avoids cancellation near s=0.
-    def integrand(s):
-        u = u0*(1-s*s)
-        factor = b*b*((u0+u)-2*(u0*u0+u0*u+u*u))
-        return 2*b*np.sqrt(u0)/np.sqrt(factor)
-    phi = quad(integrand, 0, np.sqrt(1-turning/radius), epsabs=1e-11)[0]
-    phi += quad(integrand, 0, 1, epsabs=1e-11)[0]
-    return np.array([np.sin(phi), 0, np.cos(phi)])
+    return orbit(angle, radius).direction
 
 
 def validation_report():
     metric = Schwarzschild()
     settings = Integration()
-    def ray(angle, radius=20.0, config=settings):
+    def ray(angle, radius=20.0, config=settings, critical_guard=True):
         camera = Camera(position=(0, 0, radius))
         return trace(metric, camera.event,
-                     camera.momentum(metric, [np.sin(angle), 0, -np.cos(angle)]), config)
+                     camera.momentum(metric, [np.sin(angle), 0, -np.cos(angle)]), config,
+                     critical_guard=critical_guard)
     boundaries = []
     for radius in (8.0, 20.0, 50.0):
         analytic = metric.shadow_angle(radius)
         low, high = 0.95*analytic, 1.05*analytic
         for _ in range(20):
             mid = (low+high)/2
-            result = ray(mid, radius)
+            result = ray(mid, radius, critical_guard=False)
             if result.status == "unresolved":
                 raise RuntimeError(f"Unresolved boundary probe: {result.reason}")
             if result.status == "captured":

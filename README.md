@@ -5,7 +5,14 @@ It traces null geodesics toward the past from a local camera, lenses an astronom
 star map at infinity, and saves a PNG plus numerical diagnostics. No existing C++
 project, CarpetX installation, GPU, CUDA, or compiler is required.
 
-![Updated composition](examples/composition/shadow.png)
+![Validated starfield](examples/validated/starfield.png)
+
+![Matching celestial grid](examples/validated/grid.png)
+
+The [lensing validation report](examples/validated/REPORT.md) gives measured
+shadow size, ODE/quadrature convergence, winding counts, and sampling limits.
+The outer arcs are physical; the finest near-shadow structure is under-resolved.
+Both images above use exactly the same saved 4×4 subpixel ray directions.
 
 The updated composition above uses a **32° horizontal field of view**, a static
 camera at **400M**, and a **640×480** image. This shows a narrower sky patch than
@@ -14,15 +21,10 @@ border around the strong lensing region. It uses the 8k version of the same NASA
 star map. Weak gravitational deflection decreases continuously toward the edges;
 there is no artificial cutoff or blend to an unlensed background.
 
-After setup, reproduce it with `python examples/render_composition.py` using your
-virtual environment's Python. This specialized example uses exact Schwarzschild
-orbital quadrature and checks eight representative rays against the independent
-Hamiltonian ODE tracer. Its diagnostics distinguish those sampled null checks
-from the quadrature-rendered image. Outputs are in `examples/composition/`,
-including `unlensed.png` showing the same sky patch without deflection.
-Settings are in `examples/composition.toml`. The normal ODE CLI also accepts
-that configuration: `python -m numerical_observatory --config examples/composition.toml`.
-The original, closer-camera example remains in `examples/rendered/`.
+Settings are in `examples/composition.toml`. After setup, the commands below
+regenerate both backgrounds, unlensed references, a labelled grid atlas, a freshly
+traced near-shadow close-up, and quantitative diagnostics in `examples/validated/`.
+Historical renders remain in `examples/composition/` and `examples/rendered/`.
 
 ## Setup and execution
 
@@ -38,6 +40,7 @@ py -3 -m venv .venv
 .\.venv\Scripts\python -m numerical_observatory --config examples/default.toml --output output
 .\.venv\Scripts\python -m pytest -q
 .\.venv\Scripts\python -m numerical_observatory.validation --output output/validation.json
+.\.venv\Scripts\python -m numerical_observatory.lensing_validation
 ```
 
 Ubuntu (install `python3-venv` with the system package manager if unavailable):
@@ -48,6 +51,7 @@ python3 -m venv .venv
 .venv/bin/python -m numerical_observatory --config examples/default.toml --output output
 .venv/bin/python -m pytest -q
 .venv/bin/python -m numerical_observatory.validation --output output/validation.json
+.venv/bin/python -m numerical_observatory.lensing_validation
 ```
 
 After activating the environment, `numerical-observatory` is also an installed
@@ -72,6 +76,31 @@ orbits; capture/escape counts refer to all image pixels. `rays.npz` contains
 `directions` (height×width×3 source unit vectors) and `status` (0 captured,
 1 escaped, 2 unresolved). Non-escaping directions are NaN. This allows another
 background or display exposure to be applied without integrating again.
+
+## Select a background or integration method
+
+Set `[background] mode = "starfield"` or `mode = "grid"` in TOML, or use the
+CLI override. For example, after activating the virtual environment:
+
+```bash
+python -m numerical_observatory --config examples/composition.toml --method quadrature --samples 4 --background starfield --output output/starfield
+python -m numerical_observatory --config examples/composition.toml --method quadrature --samples 4 --background grid --output output/grid
+```
+
+`--method ode` is the default and uses SciPy's full Hamiltonian integrator.
+`--method quadrature` is optional and restricted to compatible Schwarzschild
+views; other metrics/cameras fall back to ODE. `--samples N` traces N×N subpixel
+rays per output pixel with either method and averages in linear RGB. Saved ray
+maps then have N times the output width and height; counts are subpixel rays.
+No interpolation between photon directions is used. Supersampling reduces
+aliasing but cannot resolve arbitrarily thin higher-order images.
+
+The grid's cool cyan/blue meridians and warm red/gold parallels are spaced by
+`spacing_degrees` (default 15), with minor lines at one-third that interval.
+`line_width_degrees` (default 0.25) sets a fixed angular width on the sky.
+Sky orientation is shared with the starfield. Starfield-only settings
+`exposure` and `resolution` are ignored in grid mode; grid-only spacing/width
+are ignored in starfield mode. Grid colors are diagnostic, not disk emission.
 
 ## Configuration and units
 
@@ -133,6 +162,8 @@ residual |g^ab p_a p_b|/p_t(initial)² is monitored at accepted steps and dense
 output midpoints. This is a sampled diagnostic, not a bound everywhere along
 the curve. Energy p_t and the Cartesian angular momentum vector are monitored
 as independent stationary/spherical-symmetry diagnostics.
+These conservation diagnostics apply only to the Schwarzschild implementation;
+other metrics report them as unavailable rather than assuming symmetries.
 
 An inward crossing of the capture sphere classifies a ray as captured. An
 outward crossing of the escape sphere classifies it as escaped. Because the
@@ -140,6 +171,11 @@ escape sphere lies outside the photon sphere, an exact outward null orbit
 there reaches infinity. Solver failure, exhausted affine budget, or a null
 residual exceeding `null_tolerance` instead produce an unresolved ray, shown
 in magenta. Captured rays are black.
+For inward Schwarzschild rays near the critical impact parameter, sampled
+impact drift and the null residual also set an empirical reliability margin.
+An uncertain outcome becomes unresolved even when the ordinary null threshold
+passes. The audit retains raw outcomes to show when a coarse solver would have
+misclassified a ray. Tighten tolerances and check convergence in this regime.
 
 For escaped rays we integrate the remaining orbital angle analytically by
 one-dimensional quadrature, using b=|L|/|p_t| and u=1/r:
@@ -163,7 +199,7 @@ It is an astronomical catalog visualization, not a telescope photograph.
 Escaping source directions sample the spherical map with bilinear interpolation
 in linear RGB and periodic longitude wrapping. Distorted and repeated stellar
 images, together with the bent Milky Way background, show gravitational lensing.
-The shadow is black. There are no grid lines, orange equator, artificial glow,
+In starfield mode the shadow is black. There are no grid lines, orange equator, artificial glow,
 or accretion disk. Any bright structures are lensed background light. This is
 illustrative RGB rendering without spectral/redshift transfer, scattering, or
 time variability. One ray per pixel and finite texture resolution can alias
@@ -210,12 +246,14 @@ at all three camera radii. Its near-critical ray gave:
 | 10⁻⁹ | 8.05×10⁻⁹ | 5.08×10⁻⁹ |
 | 10⁻¹² | 1.27×10⁻¹¹ | 7.26×10⁻¹² |
 
-All 19 automated tests passed on Windows, including sky seam/pole handling,
+The expanded automated tests cover sky seam/pole handling,
 saved ray maps, and rotational reuse compared with direct ODE integration
 for both axis-aligned and arbitrarily positioned centered cameras. Run
 `render(..., use_symmetry=False)` through the Python API to force direct tracing.
-The installed CLI smoke render also passed on Windows
-with Python 3.13. The Ubuntu commands use the same portable Python source;
+They also cover general-metric frames, ODE fallback, time-dependent energy,
+numerical-domain exit, near-critical rejection, and multi-winding convergence.
+Tests and CLI smoke renders run on Windows with Python 3.13.
+The Ubuntu commands use the same portable Python source;
 an Ubuntu runtime was not available for an execution check. In restricted
 environments where pytest cannot write to the system temporary directory,
 use `python -m pytest -q --basetemp .tmp/pytest-run` (pytest clears that chosen
@@ -227,18 +265,35 @@ temporary test directory).
 | --- | --- |
 | `metric.py` | Four-dimensional event-based metric and all four inverse-metric derivatives |
 | `geodesic.py` | Generic Hamiltonian RHS, SciPy integration, Schwarzschild boundaries and asymptotic continuation |
-| `camera.py` | Camera geometry and Schwarzschild static-observer tetrad |
+| `camera.py` | Camera geometry, metric-based rest-space tetrad or supplied observer frame |
 | `background.py` | Direction-to-RGB emission model |
 | `symmetry.py` | Exact rotational reuse for centered Schwarzschild views |
+| `schwarzschild_orbit.py` | Guarded optional orbit quadrature and subpixel ray maps |
+| `diagnostic_render.py` | Shared-ray background comparisons and sampling |
 | `render.py` | Pixel loop, statistics and file output |
 | `cli.py` | Minimal TOML configuration and CLI |
 | `validation.py` | Reproducible boundary and convergence diagnostics |
+| `lensing_validation.py` | Systematic trajectory/winding checks, shadow sweep, matched renders |
 
 The metric contract always receives (t,x,y,z), even though this metric is
 stationary. The RHS includes the time derivative and can evolve p_t for a
-time-dependent metric. The observer frame, capture policy, symmetry diagnostics,
-and continuation to infinity are explicitly Schwarzschild-specific; a future
-numerical metric must supply suitable replacements. Future CarpetX support
+time-dependent metric. The camera's default observer follows coordinate time
+where it is timelike. It uses the positive-definite rest-space metric
+`h_ij = g_ij - g_0i g_0j/g_00` and its symmetric inverse square root; this
+reproduces the old Schwarzschild frame. A supplied `observer_frame` handles
+moving observers and regions where a coordinate-static observer is impossible.
+The supplied frame must be orthonormal; the caller chooses its future direction.
+
+Non-Schwarzschild metrics must supply a `TraceDomain` with capture/escape level
+sets and a source-direction mapping in the background's sky frame. An optional
+valid-data level set terminates unavailable numerical data as unresolved. No
+generic metric is presumed spherical or asymptotically flat. The exact
+Schwarzschild implementation alone supplies the default horizon, escape sphere,
+conservation diagnostics, and analytic continuation to infinity. Quadrature and
+rotational reuse require this exact type, a centered coordinate-static camera,
+and no custom domain; subclasses cannot silently inherit these optimizations.
+Low-level quadrature rejects incompatible inputs; the renderer selects ODE.
+Future CarpetX support
 should read saved spacetime fields, interpolate their values/derivatives at
 events, and enforce data-domain boundaries. It should not import or require
 the CarpetX simulation software. No such loader is implemented here.

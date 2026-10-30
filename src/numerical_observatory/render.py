@@ -17,11 +17,15 @@ from .schwarzschild_orbit import compatible
 
 
 def render(metric, camera, integration, output, progress=None, background=None,
-           use_symmetry=True, domain=None, method="ode", samples=1):
+           use_symmetry=True, domain=None, method="ode", samples=1, disk=None):
     if method not in ("ode", "quadrature"):
         raise ValueError("method must be ode or quadrature")
     if not isinstance(samples, int) or samples < 1:
         raise ValueError("samples must be a positive integer")
+    if disk is not None:
+        from .surface_render import render_surface
+        return render_surface(metric, camera, integration, output, disk, background, samples,
+                              domain, progress, requested_method=method, use_symmetry=use_symmetry)
     if method == "quadrature" and compatible(metric, camera) and domain is None:
         from .diagnostic_render import render_quadrature
         return render_quadrature(metric, camera, integration, output,

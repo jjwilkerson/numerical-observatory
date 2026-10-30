@@ -5,6 +5,94 @@ It traces null geodesics toward the past from a local camera, lenses an astronom
 star map at infinity, and saves a PNG plus numerical diagnostics. No existing C++
 project, CarpetX installation, GPU, CUDA, or compiler is required.
 
+An optional opaque luminous disk now adds circular orbital motion, gravitational
+redshift, Doppler beaming, and higher-order surface images. It is **disabled by
+default**; existing starfield/grid configurations retain their original results.
+See the [disk validation report](examples/disks/REPORT.md).
+
+## Optional luminous disk
+
+![Inclined disk](examples/disks/inclined_starfield/shadow.png)
+![Nearly edge-on disk](examples/disks/edge_on_starfield/shadow.png)
+
+Use `examples/disk_inclined.toml` (60°) or `examples/disk_edge_on.toml` (85°).
+After the platform-specific setup below, these commands work with either
+PowerShell or Ubuntu when the virtual environment is activated; alternatively
+replace `python` with `.venv/Scripts/python` or `.venv/bin/python` respectively.
+
+```text
+python -m numerical_observatory --config examples/disk_inclined.toml --output output/disk
+python -m numerical_observatory --config examples/disk_edge_on.toml --background grid --output output/disk-grid
+python -m numerical_observatory --config examples/disk_inclined.toml --no-disk --method quadrature --output output/no-disk
+python examples/render_disks.py
+python -m numerical_observatory.disk_validation
+python examples/validate_disk_sampling.py
+python -m pytest -q
+```
+
+`render_disks.py` produces all six matched starfield/grid examples in
+`examples/disks/`, including diskless controls. Defaults are 192×144 with one
+ray per pixel; `--width 384 --height 288 --samples 2` increases resolution and
+uses 2×2 subpixel rays. CPU rendering takes minutes at the default size.
+The sampling audit renders additional low-resolution scenes and asserts
+convergence of physical observables; `--measure-only` rechecks saved results.
+
+Minimal optional configuration (the example files include all settings):
+
+```toml
+[disk]
+enabled = true
+inner_radius = 6.0
+outer_radius = 20.0
+inclination_degrees = 60.0
+position_angle_degrees = 0.0
+rotation = 1
+temperature_inner = 10000.0
+temperature_index = 0.75
+emissivity_scale = 1.0
+
+[disk.display]
+exposure = 2.0
+reference_temperature = 10000.0
+tone_mapping = "reinhard"
+palette = "thermal"
+```
+
+Radii are in M; temperature is in kelvin. The normal is
+`(sin(i) sin(PA), sin(i) cos(PA), cos(i))`: inclination is relative to global
++z and equals the observer inclination for these cameras on +z. Moving or
+reorienting a camera requires interpreting the angle relative to its actual
+view. Rotation is +1 or -1 around that normal. Both disk faces emit identically.
+Timelike circular orbits require r>3M; those below 6M are unstable. The factory
+rejects an inner radius at or below 3M. This is a toy emitting surface, not a
+realistic accretion-flow solution.
+
+The physical model is `T(r)=T_inner*(r/r_inner)**(-temperature_index)` and
+`I_bol,emit=emissivity_scale*sigma*T**4/pi`. Covector/four-velocity contractions
+give g; observed bolometric intensity is **g⁴ I_bol,emit**. The separate spectral
+function implements **g³ I_nu,emit(nu_obs/g)**, preserving I_nu/nu³. Saved
+`disk_rays.npz` includes physical intensity, g, hit locations, crossing index,
+and escaped directions. Status codes are 0 captured, 1 escaped, 2 unresolved,
+3 emitted. RGB uses an illustrative thermal palette, exposure and tone mapping;
+it is not a calibrated color observation. `palette="gray"` and
+`tone_mapping="linear"` are alternatives. Starfield exposure is independent.
+
+Disk tracing uses the general ODE path even when `--method quadrature` is
+requested; diagnostics record this fallback. Plane crossings through the inner
+hole or outside the outer radius are skipped, and the first valid opaque hit
+occludes everything behind it. No screen-space glow is added. Exact rotational
+reuse, where allowed, reuses trajectories only: surface hits and Doppler shifts
+are calculated separately for each pixel. The independent orbital-quadrature
+audit checks intersections and photon momenta but is not a production disk
+backend.
+
+The added modules separate `surfaces.py` (geometry), `emitter_motion.py`
+(Schwarzschild orbits), `emission.py` (radiance), `display.py` (visualization),
+`disk.py` (scene assembly), and `surface_render.py` (opaque rendering).
+The camera and metric-provider interfaces remain general. New spacetime models
+need their own emitter motion and trace domain; they cannot silently use the
+Schwarzschild-only optimizations.
+
 ![Validated starfield](examples/validated/starfield.png)
 
 ![Matching celestial grid](examples/validated/grid.png)

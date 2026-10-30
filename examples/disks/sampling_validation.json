@@ -1,0 +1,82 @@
+{
+  "inclined": {
+    "sampling": [
+      {
+        "width": 32,
+        "height": 24,
+        "emitting_solid_angle": 0.20873099761024538,
+        "bolometric_flux": 4814509.491895577,
+        "secondary_solid_angle": 0.005142904598737315,
+        "approaching_flux": 4066141.1991036534,
+        "receding_flux": 748368.292791924,
+        "relative_flux_difference_vs_192": 0.10271632095960714
+      },
+      {
+        "width": 64,
+        "height": 48,
+        "emitting_solid_angle": 0.20532676322718696,
+        "bolometric_flux": 4347179.961856274,
+        "secondary_solid_angle": 0.001287908075866919,
+        "approaching_flux": 3646479.9420073656,
+        "receding_flux": 700700.0198489082,
+        "relative_flux_difference_vs_192": 0.004320938164753874
+      },
+      {
+        "width": 192,
+        "height": 144,
+        "emitting_solid_angle": 0.20376018560991468,
+        "bolometric_flux": 4366045.373941585,
+        "secondary_solid_angle": 0.0013576195358940709,
+        "approaching_flux": 3670734.6307273447,
+        "receding_flux": 695310.7432142418,
+        "relative_flux_difference_vs_192": 0.0
+      }
+    ],
+    "integration_convergence": {
+      "classification_changes": 0,
+      "crossing_order_changes": 0,
+      "max_g_difference": 1.2314221864428987e-09,
+      "max_relative_intensity_difference": 2.1361544977338554e-08
+    }
+  },
+  "edge_on": {
+    "sampling": [
+      {
+        "width": 32,
+        "height": 24,
+        "emitting_solid_angle": 0.0721736567081575,
+        "bolometric_flux": 1731467.2496188614,
+        "secondary_solid_angle": 0.015271001063325618,
+        "approaching_flux": 1453578.917952571,
+        "receding_flux": 277888.3316662904,
+        "relative_flux_difference_vs_192": 0.09217139434221489
+      },
+      {
+        "width": 64,
+        "height": 48,
+        "emitting_solid_angle": 0.06854539630914461,
+        "bolometric_flux": 1867504.1245080812,
+        "secondary_solid_angle": 0.01271316050579388,
+        "approaching_flux": 1599451.818598526,
+        "receding_flux": 268052.30590955506,
+        "relative_flux_difference_vs_192": 0.020845663823253036
+      },
+      {
+        "width": 192,
+        "height": 144,
+        "emitting_solid_angle": 0.07042974284050346,
+        "bolometric_flux": 1907262.2726668683,
+        "secondary_solid_angle": 0.013000413659194791,
+        "approaching_flux": 1629525.6046005047,
+        "receding_flux": 277736.6680663637,
+        "relative_flux_difference_vs_192": 0.0
+      }
+    ],
+    "integration_convergence": {
+      "classification_changes": 0,
+      "crossing_order_changes": 0,
+      "max_g_difference": 1.0415825979492865e-09,
+      "max_relative_intensity_difference": 3.0361132496992127e-09
+    }
+  }
+}

@@ -6,6 +6,7 @@ import numpy as np
 from scipy.integrate import quad, solve_ivp
 
 from .metric import Metric, Schwarzschild
+from .surfaces import CoplanarRay, SurfaceHit
 
 
 @dataclass(frozen=True)
@@ -35,6 +36,7 @@ class RayResult:
     reason: str
     raw_status: str | None = None
     critical_uncertainty: float | None = None
+    hit: SurfaceHit | None = None
 
 
 def hamilton_rhs(metric: Metric, state):
@@ -80,7 +82,7 @@ class TraceDomain:
 
 
 def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
-          return_solution=False, critical_guard=True):
+          return_solution=False, critical_guard=True, surface=None):
     """Integrate toward the past with increasing affine parameter.
 
     The ODE uses only Metric. Non-Schwarzschild geometries require TraceDomain;
@@ -122,9 +124,50 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
                     np.r_[event, momentum], method="DOP853", rtol=settings.rtol,
                     atol=settings.atol, max_step=settings.max_step,
                     events=events, dense_output=True)
+    result = summarize_solution(metric, event, momentum, settings, sol, domain,
+                                builtin_domain, critical_guard, surface)
+    if return_solution and result.hit is not None:
+        # The public opaque-ray solution terminates at the emitting surface.
+        # Only geometry caches (which call without a surface) retain later data.
+        original = sol
+        stop = result.hit.affine
+        sol = type(original)(original)
+        sol.t = np.r_[original.t[original.t < stop], stop]
+        sol.y = original.sol(sol.t)
+        sol.t_events = [t[t <= stop] for t in original.t_events]+[np.array([stop])]
+        sol.y_events = [original.sol(t).T if len(t) else np.empty((0, 8))
+                        for t in sol.t_events]
+        def terminated_dense(t):
+            if np.any(np.asarray(t) > stop+1e-10):
+                raise ValueError("opaque ray terminates at the first emitting surface")
+            return original.sol(t)
+        sol.sol = terminated_dense
+        sol.success, sol.status, sol.message = True, 1, "First opaque surface reached"
+    return (result, sol) if return_solution else result
+
+
+def summarize_solution(metric, event, momentum, settings, sol, domain=None,
+                       builtin_domain=True, critical_guard=True, surface=None):
+    """First-hit termination and diagnostics on a precomputed dense trajectory.
+
+    Dense solutions can be reused under exact Schwarzschild rotations. The
+    opaque ray ends at its first valid surface hit; later solver data never
+    contributes emission or constraint checks. Retaining that later geometry
+    is a computational convenience, not transmission through an opaque surface.
+    """
+    schwarzschild = type(metric) is Schwarzschild
+    radius = np.linalg.norm(event[1:])
+    hit, coplanar = None, False
+    if surface is not None:
+        try:
+            hit = surface.first_hit(sol)
+        except CoplanarRay:
+            coplanar = True
+    stop = sol.t[-1] if hit is None else hit.affine
+    accepted = np.r_[sol.t[sol.t < stop], stop]
     # Accepted endpoints AND interval midpoints; this is a sampled diagnostic,
     # not a rigorous bound between samples. Never project p back onto the cone.
-    times = np.sort(np.r_[sol.t, (sol.t[1:] + sol.t[:-1]) / 2])
+    times = np.sort(np.r_[accepted, (accepted[1:] + accepted[:-1]) / 2])
     samples = sol.sol(times).T
     p = samples[:, 4:]
     inverse = np.array([metric.inverse(y[:4]) for y in samples])
@@ -134,19 +177,24 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
     angular_scale = max(np.linalg.norm(angular[0]), metric.mass * abs(momentum[0])) if schwarzschild else 1
     null_error = float(np.max(null))
     status, reason, direction = "unresolved", "affine_limit", None
-    if not sol.success:
+    if coplanar:
+        reason = "coplanar_surface"
+    elif not sol.success and hit is None:
         reason = "solver_failure: " + sol.message
     elif not np.isfinite(null_error) or null_error > settings.null_tolerance:
         reason = "null_constraint_exceeded"
+    elif hit is not None:
+        status, reason = "emitted", "first_opaque_surface"
     elif len(sol.t_events[0]):
         status, reason = "captured", "capture_boundary"
     elif len(sol.t_events[1]):
         status, reason = "escaped", "outward_escape"
-        direction = np.asarray(domain.source_direction(sol.y[:, -1]), dtype=float)
+        direction = np.asarray(asymptotic_direction(metric, sol.y[:, -1]) if domain is None
+                               else domain.source_direction(sol.y[:, -1]), dtype=float)
         if direction.shape != (3,) or not np.isfinite(direction).all() or np.linalg.norm(direction) == 0:
             raise ValueError("source_direction must return a finite, nonzero three-vector")
         direction /= np.linalg.norm(direction)
-    elif len(events) == 3 and len(sol.t_events[2]):
+    elif len(sol.t_events) == 3 and len(sol.t_events[2]):
         reason = "data_domain_exit"
     raw_status = status
     critical_uncertainty = None
@@ -159,10 +207,11 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
             margin = abs(impact[0]/metric.critical_impact_parameter-1)
             # An empirical reliability guard, not a rigorous global error bound.
             # A small null residual alone cannot certify a near-critical outcome.
-            if critical_guard and margin <= critical_uncertainty and status != "unresolved":
+            if critical_guard and margin <= critical_uncertainty and status in ("captured", "escaped"):
                 status, reason, direction = "unresolved", "near_critical_uncertainty", None
     result = RayResult(status, direction, null_error,
                      float(np.max(np.abs(p[:, 0] / momentum[0] - 1))) if schwarzschild else None,
                      float(np.max(np.linalg.norm(angular - angular[0], axis=1)) / angular_scale) if schwarzschild else None,
-                     len(sol.t) - 1, sol.nfev, reason, raw_status, critical_uncertainty)
-    return (result, sol) if return_solution else result
+                     len(sol.t) - 1, sol.nfev, reason, raw_status, critical_uncertainty,
+                     hit if status == "emitted" else None)
+    return result

@@ -1,0 +1,97 @@
+{
+  "method": "ode_surface",
+  "requested_method": "ode",
+  "quadrature_used": false,
+  "exact_rotational_path_reuse": true,
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      60.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 192,
+    "height": 144,
+    "time": 0.0,
+    "observer_frame": null
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110.0,
+    "capture_radius": 1.99,
+    "max_affine": 400.0,
+    "max_step": 4.0,
+    "null_tolerance": 1e-05
+  },
+  "background": {
+    "model": "celestial coordinate grid",
+    "longitude_degrees": 15.0,
+    "latitude_degrees": 18.0,
+    "roll_degrees": 25.0,
+    "spacing_degrees": 15.0,
+    "line_width_degrees": 0.25,
+    "legend": "cool cyan/blue meridians; warm red/gold parallels; gray minor lines at spacing/3",
+    "accretion_disk": false
+  },
+  "geometry": {
+    "inner_radius": 6.0,
+    "outer_radius": 20.0,
+    "normal": [
+      0.0,
+      0.8660254037844386,
+      0.5000000000000001
+    ]
+  },
+  "emission": {
+    "inner_radius": 6.0,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0
+  },
+  "display": {
+    "exposure": 2.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "thermal"
+  },
+  "rotation": 1,
+  "mass": 1.0,
+  "counts": {
+    "captured": 540,
+    "escaped": 21054,
+    "unresolved": 0,
+    "emitted": 6054
+  },
+  "termination_reasons": {
+    "outward_escape": 21054,
+    "first_opaque_surface": 6054,
+    "capture_boundary": 540
+  },
+  "max_sampled_null_error": 4.5517096758374e-08,
+  "samples_per_axis": 1,
+  "elapsed_seconds": 315.7164119000081,
+  "count_units": "subpixel rays",
+  "g_range": [
+    0.5102381555648388,
+    1.2542966981777939
+  ],
+  "crossing_counts": {
+    "1": 6016,
+    "2": 34,
+    "3": 4
+  },
+  "intensity_units": "bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
+  "solver_note": "dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit",
+  "ray_data_source": "D:\\numerical-observatory\\examples\\disks\\inclined_starfield"
+}

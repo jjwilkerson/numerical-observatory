@@ -9,11 +9,12 @@ from .background import make_background
 from .geodesic import Integration
 from .metric import Schwarzschild
 from .render import render
+from .disk import make_disk
 
 
 def load_configuration(path=None):
     data = {} if path is None else tomllib.loads(Path(path).read_text(encoding="utf-8"))
-    unknown = set(data) - {"mass", "camera", "integration", "background"}
+    unknown = set(data) - {"mass", "camera", "integration", "background", "disk"}
     if unknown:
         raise ValueError(f"unknown configuration keys: {sorted(unknown)}")
     metric = Schwarzschild(data.get("mass", 1.0))
@@ -29,14 +30,16 @@ def load_configuration(path=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CPU Schwarzschild black-hole shadow tracer")
+    parser = argparse.ArgumentParser(description="CPU Schwarzschild observatory with optional luminous disk")
     parser.add_argument("--config", type=Path, help="TOML configuration (lengths in M)")
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument("--width", type=int, help="override pixel width")
     parser.add_argument("--height", type=int, help="override pixel height")
     parser.add_argument("--background", choices=("starfield", "grid"), help="override background mode")
     parser.add_argument("--method", choices=("ode", "quadrature"), default="ode")
-    parser.add_argument("--samples", type=int, default=1, help="subpixel samples per axis for quadrature rendering")
+    parser.add_argument("--samples", type=int, default=1, help="subpixel samples per image axis")
+    parser.add_argument("--disk", action=argparse.BooleanOptionalAction, default=None,
+                        help="override the optional disk enabled state (--no-disk disables it)")
     args = parser.parse_args()
     try:
         metric, camera, integration = load_configuration(args.config)
@@ -53,8 +56,12 @@ def main():
         if args.background:
             background_options["mode"] = args.background
         background = make_background(background_options)
+        disk_options = dict(data.get("disk", {}))
+        if args.disk is not None:
+            disk_options["enabled"] = args.disk
+        disk = make_disk(metric, disk_options)
         diagnostics = render(metric, camera, integration, args.output, progress, background,
-                             method=args.method, samples=args.samples)
+                             method=args.method, samples=args.samples, disk=disk)
     except (ValueError, TypeError, OSError) as exc:
         parser.error(str(exc))
     print(f"Saved {args.output / 'shadow.png'} and diagnostics.json")

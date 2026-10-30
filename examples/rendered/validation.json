@@ -1,0 +1,63 @@
+{
+  "critical_impact_parameter": 5.196152422706632,
+  "boundary_validation": [
+    {
+      "camera_radius": 8.0,
+      "analytic_angle_radians": 0.5974064166453502,
+      "numerical_angle_bracket": [
+        0.5974064166453502,
+        0.5974064736184659
+      ],
+      "measured_impact_parameter": 5.19615264027631,
+      "relative_impact_error": 4.187130397959038e-08
+    },
+    {
+      "camera_radius": 20.0,
+      "analytic_angle_radians": 0.2490415079291829,
+      "numerical_angle_bracket": [
+        0.2490415079291829,
+        0.2490415316796319
+      ],
+      "measured_impact_parameter": 5.196152665334774,
+      "relative_impact_error": 4.669380770927489e-08
+    },
+    {
+      "camera_radius": 50.0,
+      "analytic_angle_radians": 0.10200015330371326,
+      "numerical_angle_bracket": [
+        0.10200015330371326,
+        0.1020001630312059
+      ],
+      "measured_impact_parameter": 5.196152669618615,
+      "relative_impact_error": 4.751823334814276e-08
+    }
+  ],
+  "convergence": [
+    {
+      "rtol": 1e-06,
+      "atol": 1e-08,
+      "direction_error_vs_orbit_quadrature": 1.1774616912869841e-05,
+      "max_null_error": 4.06292645009169e-06,
+      "angular_momentum_drift": 1.8676607880688288e-06,
+      "energy_drift": 0.0
+    },
+    {
+      "rtol": 1e-09,
+      "atol": 1.0000000000000001e-11,
+      "direction_error_vs_orbit_quadrature": 8.048049986800402e-09,
+      "max_null_error": 5.08067662015795e-09,
+      "angular_momentum_drift": 2.274111698713403e-09,
+      "energy_drift": 0.0
+    },
+    {
+      "rtol": 1e-12,
+      "atol": 1e-14,
+      "direction_error_vs_orbit_quadrature": 1.2733341654214843e-11,
+      "max_null_error": 7.2608585810485246e-12,
+      "angular_momentum_drift": 4.2510033304821806e-12,
+      "energy_drift": 0.0
+    }
+  ],
+  "reference": "independent Schwarzschild turning-point orbit quadrature",
+  "convergence_ray_angle_radians": 0.2527771305481206
+}

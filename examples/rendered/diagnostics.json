@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "mass": 1.0,
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      20.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 320,
+    "height": 240,
+    "time": 0.0
+  },
+  "integration": {
+    "rtol": 1e-08,
+    "atol": 1e-10,
+    "escape_radius": 100.0,
+    "capture_radius": 1.99,
+    "max_affine": 500.0,
+    "max_step": 5.0,
+    "null_tolerance": 1e-05
+  },
+  "counts": {
+    "captured": 15584,
+    "escaped": 61216,
+    "unresolved": 0
+  },
+  "termination_reasons": {
+    "outward_escape": 61216,
+    "horizon_crossing": 15584
+  },
+  "maxima": {
+    "null_error": 2.913044728892878e-07,
+    "energy_drift": 0.0,
+    "angular_momentum_drift": 5.8551902351105515e-08
+  },
+  "diagnostic_sampling": "accepted steps and dense-output midpoints; null error = |g^ab p_a p_b| / p_t(initial)^2",
+  "total_steps": 241368,
+  "rhs_evaluations": 4165038,
+  "integrated_rays": 7629,
+  "rotational_symmetry_reuse": true,
+  "elapsed_seconds": 374.823825499996,
+  "analytic_critical_impact_parameter": 5.196152422706632,
+  "analytic_shadow_radius_degrees": 14.269027327916007,
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false
+  }
+}

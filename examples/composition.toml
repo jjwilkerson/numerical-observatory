@@ -1,0 +1,27 @@
+# A narrower sky patch with the strong lensing comfortably inside the frame.
+mass = 1.0
+
+[camera]
+position = [0.0, 0.0, 400.0]
+target = [0.0, 0.0, 0.0]
+up = [0.0, 1.0, 0.0]
+fov_degrees = 32.0
+width = 640
+height = 480
+time = 0.0
+
+[integration]
+rtol = 1e-9
+atol = 1e-11
+capture_radius = 1.99
+escape_radius = 800.0
+max_affine = 2000.0
+max_step = 80.0
+null_tolerance = 1e-5
+
+[background]
+longitude_degrees = 15.0
+latitude_degrees = 18.0
+roll_degrees = 25.0
+exposure = 6.0
+resolution = 8

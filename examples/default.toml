@@ -1,0 +1,28 @@
+# G=c=1; physical mass parameter M=GM_physical/c^2.
+# All camera lengths/times and integration lengths below are multiples of M.
+mass = 1.0
+
+[camera]
+position = [0.0, 0.0, 20.0]
+target = [0.0, 0.0, 0.0]
+up = [0.0, 1.0, 0.0]
+fov_degrees = 60.0 # horizontal; vertical FOV follows the aspect ratio
+width = 320
+height = 240
+time = 0.0
+
+[integration]
+rtol = 1e-8
+atol = 1e-10
+capture_radius = 1.99
+escape_radius = 100.0
+max_affine = 500.0
+max_step = 5.0
+null_tolerance = 1e-5
+
+[background]
+# NASA catalog-based all-sky map, bundled for offline rendering. No disk.
+longitude_degrees = 0.0
+latitude_degrees = 10.0
+roll_degrees = 25.0
+exposure = 3.0

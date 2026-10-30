@@ -1,0 +1,113 @@
+{
+  "method": "Schwarzschild exact orbit quadrature, no direction interpolation",
+  "config": {
+    "mass": 1.0,
+    "camera": {
+      "position": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov_degrees": 32.0,
+      "width": 640,
+      "height": 480,
+      "time": 0.0
+    },
+    "integration": {
+      "rtol": 1e-09,
+      "atol": 1e-11,
+      "capture_radius": 1.99,
+      "escape_radius": 800.0,
+      "max_affine": 2000.0,
+      "max_step": 80.0,
+      "null_tolerance": 1e-05
+    },
+    "background": {
+      "longitude_degrees": 15.0,
+      "latitude_degrees": 18.0,
+      "roll_degrees": 25.0,
+      "exposure": 6.0,
+      "resolution": 8
+    }
+  },
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 8k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 15.0,
+    "latitude_degrees": 18.0,
+    "roll_degrees": 25.0,
+    "exposure": 6.0,
+    "accretion_disk": false,
+    "resolution": 8
+  },
+  "counts": {
+    "captured": 648,
+    "escaped": 306552,
+    "unresolved": 0
+  },
+  "distinct_orbits": 28772,
+  "analytic_shadow_radius_pixels": 14.46183608590069,
+  "ode_cross_checks": [
+    {
+      "angle_radians": 0.01036658164201309,
+      "status": "captured",
+      "direction_error": null,
+      "ode_max_null_error": 1.334972333682541e-09
+    },
+    {
+      "angle_radians": 0.01295693122981111,
+      "status": "captured",
+      "direction_error": null,
+      "ode_max_null_error": 1.13206420229117e-08
+    },
+    {
+      "angle_radians": 0.012959522875221613,
+      "status": "escaped",
+      "direction_error": 9.35056321337151e-08,
+      "ode_max_null_error": 1.1143567810555582e-08
+    },
+    {
+      "angle_radians": 0.014254049757767999,
+      "status": "escaped",
+      "direction_error": 3.9951122782327727e-10,
+      "ode_max_null_error": 8.381800209232842e-09
+    },
+    {
+      "angle_radians": 0.025916454105032724,
+      "status": "escaped",
+      "direction_error": 5.433034143814997e-11,
+      "ode_max_null_error": 4.3126909079103425e-10
+    },
+    {
+      "angle_radians": 0.1,
+      "status": "escaped",
+      "direction_error": 1.782726671623411e-10,
+      "ode_max_null_error": 1.201679961567876e-09
+    },
+    {
+      "angle_radians": 0.20616636182802564,
+      "status": "escaped",
+      "direction_error": 2.7377094109281486e-10,
+      "ode_max_null_error": 1.3151691907491293e-09
+    },
+    {
+      "angle_radians": 0.34361060304670943,
+      "status": "escaped",
+      "direction_error": 6.894732191246113e-11,
+      "ode_max_null_error": 8.035622418723523e-10
+    }
+  ],
+  "diagnostic_scope": "Null residuals apply only to the eight ODE cross-check rays; the image uses orbital quadrature.",
+  "elapsed_seconds": 3.2800433000011253
+}

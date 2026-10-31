@@ -20,6 +20,14 @@ def render(metric, camera, integration, output, progress=None, background=None,
            use_symmetry=True, domain=None, method="ode", samples=1, disk=None, workers=1):
     from .parallel import resolve_workers
     from .output import staged_render
+    from .kerr_carter import validate_backend
+    validate_backend(metric,integration,domain,None if disk is None else disk.surface)
+    from .binary_ks_approx import BinaryKSApprox
+    if type(metric) is BinaryKSApprox:
+        if method!='ode' or disk is not None or domain is not None:
+            raise ValueError('binary_ks_approx supports only generic Hamiltonian ODE, its built-in domain, and no disk')
+        from .binary_support import default_domain
+        default_domain(metric,camera.event,integration)
     selected = resolve_workers(workers)
     return staged_render(output, lambda stage: _render(metric, camera, integration, stage, progress,
                          background, use_symmetry, domain, method, samples, disk, selected))
@@ -75,6 +83,16 @@ def _render(metric, camera, integration, output, progress=None, background=None,
     statuses = np.zeros((camera.height, camera.width), dtype=np.uint8)
     from .kerr import Kerr
     is_kerr = type(metric) is Kerr
+    from .binary_ks_approx import BinaryKSApprox
+    is_binary = type(metric) is BinaryKSApprox
+    binary_arrays = ({'capture_index':np.zeros(statuses.shape,dtype=np.uint8),
+                      'signature_margin':np.full(statuses.shape,np.nan),
+                      'null_error':np.full(statuses.shape,np.nan),
+                      'energy_drift':np.full(statuses.shape,np.nan),
+                      'constraint_diagnostics_complete':np.zeros(statuses.shape,dtype=bool)} if is_binary else {})
+    binary_reasons=np.empty(statuses.shape,dtype=object) if is_binary else None
+    from .backend_records import BackendRecords
+    backend_records=BackendRecords((camera.height,camera.width),integration) if is_kerr else None
     conservation = ({key: np.full((camera.height, camera.width), np.nan)
                      for key in ("null_error", "energy_drift", "axial_momentum_drift", "carter_drift")}
                     if is_kerr else {})
@@ -92,7 +110,16 @@ def _render(metric, camera, integration, output, progress=None, background=None,
         for row, col, momentum, result in results:
             counts[result.status] += 1
             reasons[result.reason] += 1
+            if is_binary:
+                info=result.binary_diagnostics
+                binary_arrays['capture_index'][row,col]=info['capture_index']
+                binary_arrays['signature_margin'][row,col]=info['minimum_signature_margin']
+                binary_arrays['constraint_diagnostics_complete'][row,col]=info['complete']
+                binary_arrays['null_error'][row,col]=result.max_null_error
+                binary_arrays['energy_drift'][row,col]=result.energy_drift
+                binary_reasons[row,col]=result.reason
             if is_kerr:
+                backend_records.record(row,col,result)
                 for key, value in (("null_error", result.max_null_error), ("energy_drift", result.energy_drift),
                                    ("axial_momentum_drift", result.angular_momentum_drift),
                                    ("carter_drift", result.carter_drift)):
@@ -133,6 +160,7 @@ def _render(metric, camera, integration, output, progress=None, background=None,
     if workers > 1:
         diagnostics["execution"] = tracer.statistics
     if is_kerr:
+        diagnostics.update(backend_records.metadata())
         diagnostics.update(spacetime={"type": "kerr", "spin": metric.spin, "a": metric.a,
                                       "axis": "+Z", "coordinates": "outgoing Cartesian Kerr-Schild"},
                            horizon_radius=metric.horizon_radius,
@@ -142,12 +170,30 @@ def _render(metric, camera, integration, output, progress=None, background=None,
                            optimization_note="Kerr uses general ODEs; Schwarzschild quadrature and spherical rotational reuse disabled")
         diagnostics["maxima"].update(axial_momentum_drift=float(np.max(conservation["axial_momentum_drift"])),
                                       carter_drift=float(np.max(conservation["carter_drift"])))
+        if integration.integrator == "carter":
+            diagnostics.update(background_direction="Exact separated angular continuation in inverse radius to the same kerr_source_radius; final Cartesian tangent; residual finite-source bending O(M*b/R^2)",
+                               optimization_note="Carter compact-radius exact-Kerr specialization; no Schwarzschild quadrature or spherical reuse; fallback provenance recorded separately")
+    if is_binary:
+        reason_names=sorted(reasons)
+        binary_arrays['termination_code']=np.array([[reason_names.index(v) for v in row] for row in binary_reasons],dtype=np.uint16)
+        diagnostics.update(spacetime=metric.description(),integrator='hamiltonian',
+            provisional_capture_counts={str(i):int(np.count_nonzero(binary_arrays['capture_index']==i)) for i in (1,2)},
+            capture_radii=[2*m*integration.binary_capture_fraction for m in metric.masses],
+            escape_center=metric.barycenter.tolist(),
+            background_direction='Normalized outgoing Cartesian tangent at finite escape_radius; residual bending requires radius convergence; no analytic tail',
+            signature_guard=integration.binary_signature_margin,
+            minimum_sampled_signature_margin=float(np.nanmin(binary_arrays['signature_margin'])),
+            incomplete_diagnostics=int(np.count_nonzero(~binary_arrays['constraint_diagnostics_complete'])),
+            termination_codes={str(i):v for i,v in enumerate(reason_names)},
+            capture_index_codes={'0':'no provisional capture','1':'provisional sphere at center 1','2':'provisional sphere at center 2'},
+            optimization_note='Generic Hamiltonian only; no Schwarzschild quadrature, rotational reuse or Carter integration')
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     Image.fromarray(np.uint8(np.round(np.clip(image, 0, 1) * 255))).save(output / "shadow.png")
     # Save computed directions for later background/exposure changes without ODEs.
     # Codes: 0=captured, 1=escaped, 2=unresolved. Non-escaping directions are NaN.
     np.savez_compressed(output / "rays.npz", directions=directions, status=statuses,
-                        **conservation, **({"kerr_constants": constants} if is_kerr else {}))
+                        **conservation, **({"kerr_constants": constants} if is_kerr else {}),
+                        **(backend_records.arrays() if is_kerr else {}), **binary_arrays)
     (output / "diagnostics.json").write_text(json.dumps(diagnostics, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     return diagnostics

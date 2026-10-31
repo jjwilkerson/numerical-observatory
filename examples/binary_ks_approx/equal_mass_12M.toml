@@ -1,0 +1,29 @@
+# EXPERIMENTAL approximate stationary metric, NOT an exact binary solution.
+# M_ref=M_total=1; two masses 0.5 each, separation 12M_total.
+mass = 1.0
+[spacetime]
+type = "binary_ks_approx"
+masses = [0.5, 0.5]
+centers = [[-6.0, 0.0, 0.0], [6.0, 0.0, 0.0]]
+[camera]
+position = [0.0, 0.0, 45.0]
+target = [0.0, 0.0, 0.0]
+up = [0.0, 1.0, 0.0]
+observer = "static"
+fov_degrees = 40.0
+width = 96
+height = 72
+[geodesics]
+integrator = "hamiltonian"
+[integration]
+rtol = 1e-9
+atol = 1e-11
+escape_radius = 1000.0
+max_affine = 2500.0
+max_step = 20.0
+binary_capture_fraction = 0.995
+binary_signature_margin = 0.05
+[background]
+mode = "starfield"
+[disk]
+enabled = false

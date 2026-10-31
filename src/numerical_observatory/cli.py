@@ -1,6 +1,6 @@
 """Small TOML configuration and command-line interface."""
 import argparse
-from dataclasses import asdict
+from dataclasses import asdict, replace
 from pathlib import Path
 import tomllib
 import time
@@ -15,7 +15,7 @@ from .disk import make_disk
 
 def load_configuration(path=None):
     data = {} if path is None else tomllib.loads(Path(path).read_text(encoding="utf-8"))
-    unknown = set(data) - {"mass", "camera", "integration", "background", "disk", "spacetime"}
+    unknown = set(data) - {"mass", "camera", "integration", "background", "disk", "spacetime", "geodesics"}
     if unknown:
         raise ValueError(f"unknown configuration keys: {sorted(unknown)}")
     spacetime = dict(data.get("spacetime", {}))
@@ -25,31 +25,51 @@ def load_configuration(path=None):
         metric = Kerr(data.get("mass", 1.0), **spacetime)
     elif kind == "schwarzschild" and not spacetime:
         metric = Schwarzschild(data.get("mass", 1.0))
+    elif kind == "binary_ks_approx":
+        from .binary_ks_approx import BinaryKSApprox
+        scale=data.get('mass',1.)
+        if not isinstance(scale,(int,float)) or not 0 < scale < float('inf'):
+            raise ValueError('binary reference mass must be finite and positive')
+        masses=spacetime.pop('masses',[.5,.5])
+        centers=spacetime.pop('centers',[[-6,0,0],[6,0,0]])
+        if spacetime: raise ValueError('binary spacetime accepts only masses and centers')
+        metric=BinaryKSApprox(tuple(scale*v for v in masses),tuple(tuple(scale*v for v in c) for c in centers))
     else:
-        raise ValueError("spacetime must select schwarzschild or kerr (with spin)")
+        raise ValueError("spacetime must select schwarzschild, kerr, or binary_ks_approx")
     # Configuration lengths/times are in M, so mass changes preserve the scene.
     camera_options = dict(data.get("camera", {}))
     if kind == "kerr":
         from .kerr_support import inclined_camera_options
         camera_options = inclined_camera_options(metric, camera_options)
     camera_data = asdict(Camera()) | camera_options
+    length_unit = data.get('mass',1.) if kind=='binary_ks_approx' else metric.mass
     for key in ("position", "target"):
-        camera_data[key] = tuple(metric.mass * v for v in camera_data[key])
-    camera_data["time"] *= metric.mass
+        camera_data[key] = tuple(length_unit * v for v in camera_data[key])
+    camera_data["time"] *= length_unit
     integration_data = asdict(Integration()) | data.get("integration", {})
+    geodesics=dict(data.get("geodesics",{}))
+    if set(geodesics)-{"integrator","fallback"}:
+        raise ValueError("geodesics accepts only integrator and fallback")
+    if "integrator" in geodesics: integration_data["integrator"]=geodesics["integrator"]
+    if "fallback" in geodesics: integration_data["carter_fallback"]=geodesics["fallback"]
     for key in ("capture_radius", "escape_radius", "max_affine", "max_step", "kerr_source_radius"):
-        integration_data[key] *= metric.mass
-    return metric, Camera(**camera_data), Integration(**integration_data)
+        integration_data[key] *= length_unit
+    settings=Integration(**integration_data)
+    from .kerr_carter import validate_backend
+    validate_backend(metric,settings)
+    return metric, Camera(**camera_data), settings
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CPU Schwarzschild/Kerr observatory with optional opaque luminous disk")
+    parser = argparse.ArgumentParser(description="CPU observatory: Schwarzschild, Kerr, or experimental binary KS approximation")
     parser.add_argument("--config", type=Path, help="TOML configuration (lengths in M)")
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument("--width", type=int, help="override pixel width")
     parser.add_argument("--height", type=int, help="override pixel height")
     parser.add_argument("--background", choices=("starfield", "grid"), help="override background mode")
     parser.add_argument("--method", choices=("ode", "quadrature"), default="ode")
+    parser.add_argument("--integrator", choices=("hamiltonian", "carter"), help="override Kerr geodesic backend; default Hamiltonian")
+    parser.add_argument("--carter-fallback", choices=("none", "hamiltonian"), help="explicit policy for failed Carter rays")
     parser.add_argument("--samples", type=int, default=1, help="subpixel samples per image axis")
     parser.add_argument("--workers", type=int, default=1,
                         help="CPU processes: 1 serial (default), 0 automatic physical-core selection")
@@ -58,6 +78,10 @@ def main():
     args = parser.parse_args()
     try:
         metric, camera, integration = load_configuration(args.config)
+        if args.integrator is not None: integration=replace(integration,integrator=args.integrator)
+        if args.carter_fallback is not None: integration=replace(integration,carter_fallback=args.carter_fallback)
+        from .kerr_carter import validate_backend
+        validate_backend(metric,integration)
         camera_data = asdict(camera)
         for key in ("width", "height"):
             if getattr(args, key) is not None:

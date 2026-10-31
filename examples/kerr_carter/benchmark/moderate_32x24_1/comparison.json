@@ -1,0 +1,101 @@
+{
+  "scene": "moderate",
+  "repeat": 1,
+  "runs": [
+    {
+      "backend": "hamiltonian",
+      "spin": 0.9,
+      "inclination_degrees": 60,
+      "resolution": [
+        32,
+        24
+      ],
+      "rays": 768,
+      "workers": 10,
+      "wall_seconds": 21.173792100016726,
+      "worker_cpu_seconds": 118.546875,
+      "parent_cpu_seconds": 0.703125,
+      "startup_span_seconds": 2.792323600006057,
+      "rhs_evaluations": 790517,
+      "steps": 51525,
+      "unresolved": 0,
+      "fallbacks": 0,
+      "peak_worker_memory_bytes": {
+        "15644": 79810560,
+        "33232": 79286272,
+        "27556": 79294464,
+        "29208": 79458304,
+        "31728": 79814656,
+        "3532": 79364096,
+        "16820": 79228928,
+        "37244": 78446592,
+        "7696": 79159296,
+        "25468": 79282176
+      },
+      "output": "examples\\kerr_carter\\benchmark\\moderate_32x24_1\\hamiltonian",
+      "conservation": {
+        "null_error": 2.442546813019159e-08,
+        "energy_drift": 0.0,
+        "axial_momentum_drift": 8.968875499066165e-09,
+        "carter_drift": 3.6033978789792944e-07
+      }
+    },
+    {
+      "backend": "carter",
+      "spin": 0.9,
+      "inclination_degrees": 60,
+      "resolution": [
+        32,
+        24
+      ],
+      "rays": 768,
+      "workers": 10,
+      "wall_seconds": 8.153883899998618,
+      "worker_cpu_seconds": 31.546875,
+      "parent_cpu_seconds": 0.640625,
+      "startup_span_seconds": 2.8577727999945637,
+      "rhs_evaluations": 615884,
+      "steps": 38882,
+      "unresolved": 0,
+      "fallbacks": 0,
+      "peak_worker_memory_bytes": {
+        "24696": 79724544,
+        "15916": 80240640,
+        "25720": 80138240,
+        "6020": 79872000,
+        "4916": 79634432,
+        "24132": 79798272,
+        "20776": 79900672,
+        "34400": 79884288,
+        "26816": 80195584,
+        "4620": 79740928
+      },
+      "output": "examples\\kerr_carter\\benchmark\\moderate_32x24_1\\carter",
+      "conservation": {
+        "null_error": 2.4454160738597808e-09,
+        "energy_drift": 0.0,
+        "axial_momentum_drift": 9.479651882830136e-12,
+        "carter_drift": 6.380061825601824e-06
+      }
+    }
+  ],
+  "numerical_comparison": {
+    "status_differences": 0,
+    "initial_constant_differences": 0,
+    "carter_unresolved": 0,
+    "max_source_angle_radians": 4.0753586228322415e-09,
+    "crossing_differences": 0,
+    "max_hit_position_difference_M": 2.185384773145671e-08,
+    "max_hit_event_component_difference_M": 2.185384773145671e-08,
+    "max_emission_radius_difference_M": 1.249854264528949e-08,
+    "max_emission_azimuth_difference_degrees": 1.1098549634880328e-07,
+    "max_g_difference": 1.263853133259829e-09,
+    "max_relative_bolometric_difference": 2.7125262036520326e-09,
+    "max_png_difference": 0,
+    "different_png_pixels": 0,
+    "passed": true
+  },
+  "wall_speedup": 2.596773802484521,
+  "worker_cpu_speedup": 3.7578008915304606,
+  "startup_adjusted_wall_speedup": 3.4707482816960913
+}

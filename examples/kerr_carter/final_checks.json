@@ -1,0 +1,30 @@
+{
+  "protected_sources_unchanged": {
+    "kerr.py": true,
+    "camera.py": true,
+    "emitter_motion.py": true,
+    "emission.py": true,
+    "display.py": true,
+    "blackbody_color.py": true,
+    "metric.py": true
+  },
+  "cli_override_smoke": {
+    "status_differences": 0,
+    "initial_constant_differences": 0,
+    "carter_unresolved": 0,
+    "max_source_angle_radians": 7.783320929585565e-10,
+    "crossing_differences": 0,
+    "max_hit_position_difference_M": 8.419380748136973e-10,
+    "max_hit_event_component_difference_M": 4.519520757639839e-09,
+    "max_emission_radius_difference_M": 8.470042445196668e-10,
+    "max_emission_azimuth_difference_degrees": 2.3750885702611413e-09,
+    "max_g_difference": 5.744427156173515e-11,
+    "max_relative_bolometric_difference": 2.5304180972796075e-10,
+    "max_png_difference": 0,
+    "different_png_pixels": 0,
+    "passed": true
+  },
+  "full_suite": "211 passed in 289.84s",
+  "benchmark_pairs": 9,
+  "all_benchmarks_passed": true
+}

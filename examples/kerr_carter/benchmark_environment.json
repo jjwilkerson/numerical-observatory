@@ -1,0 +1,11 @@
+{
+  "python": "3.13.7",
+  "system": "Windows",
+  "release": "11",
+  "processor": "Intel64 Family 6 Model 165 Stepping 5, GenuineIntel",
+  "logical_cpus": 20,
+  "workers": 10,
+  "large_pairs_per_scene": 1,
+  "small_repeats_per_scene": 2,
+  "note": "No concurrent test, audit or rendering jobs during controlled benchmarks."
+}

@@ -171,3 +171,11 @@ Sources: [Bardeen, Press & Teukolsky (1972)](https://doi.org/10.1086/151796),
 [SageManifolds' circular Kerr reference](https://sagemanifolds.obspm.fr/kerrgeodesic_gw/reference/kerr_spacetime.html)
 and the project's independently validated Kerr metric/Carter reference.
 No new dependency, GPU backend or approximate production trajectory solver is used.
+
+## Optional Carter backend
+
+The existing disk pipeline also accepts --integrator carter for exact Kerr.
+Hamiltonian remains the default. Both paths use the same emitter and display
+physics. See [backend selection and failure policy](../kerr_carter/README.md)
+and [accuracy, seventh-crossing investigation and benchmarks](../kerr_carter/REPORT.md).
+

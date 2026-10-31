@@ -1,0 +1,124 @@
+{
+  "method": "ode",
+  "requested_method": "ode",
+  "version": "0.1.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "mass": 1.0,
+  "camera": {
+    "position": [
+      10.265220533286008,
+      0.0,
+      28.190778623577252
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      -0.9396926207859084,
+      0.0,
+      0.3420201433256687
+    ],
+    "fov_degrees": 35.0,
+    "width": 32,
+    "height": 24,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "zamo"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 80.0,
+    "capture_radius": 1.99,
+    "max_affine": 350.0,
+    "max_step": 5.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "carter",
+    "carter_fallback": "none"
+  },
+  "counts": {
+    "captured": 211,
+    "escaped": 557,
+    "unresolved": 0
+  },
+  "termination_reasons": {
+    "outward_escape": 557,
+    "capture_boundary": 211
+  },
+  "maxima": {
+    "null_error": 4.573250898520174e-08,
+    "energy_drift": 0.0,
+    "angular_momentum_drift": 1.3246439513264436e-11,
+    "axial_momentum_drift": 1.3246439513264436e-11,
+    "carter_drift": 2.579235047985505e-07
+  },
+  "diagnostic_sampling": "accepted steps and dense-output midpoints; null error = |g^ab p_a p_b| / p_t(initial)^2",
+  "total_steps": 39919,
+  "rhs_evaluations": 726907,
+  "integrated_rays": 768,
+  "rotational_symmetry_reuse": false,
+  "elapsed_seconds": 9.058590200002072,
+  "analytic_critical_impact_parameter": null,
+  "analytic_shadow_radius_degrees": null,
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "execution": {
+    "workers": 5,
+    "requested_workers": 5,
+    "start_method": "spawn",
+    "task_count": 12,
+    "worker_cpu_seconds": 27.890625,
+    "worker_task_seconds": 27.973502600041684,
+    "worker_peak_memory_bytes": {
+      "36976": 79126528,
+      "37232": 79040512,
+      "8444": 79024128,
+      "18728": 78880768,
+      "34956": 79298560
+    },
+    "startup_span_seconds": 2.108596900012344,
+    "pool_wall_seconds": 9.054116400016937
+  },
+  "integrator": "carter",
+  "carter_fallback": "none",
+  "final_backend_counts": {
+    "carter": 768
+  },
+  "carter_accepted_rays": 768,
+  "carter_failure_reasons": {},
+  "fallback_count": 0,
+  "backend_codes": {
+    "0": "hamiltonian",
+    "1": "carter"
+  },
+  "backend_failure_codes": {
+    "0": ""
+  },
+  "carter_failure_sampling": "Incomplete constraint diagnostics are explicitly marked; early failures may contain only the initial-state constraint measurement.",
+  "spacetime": {
+    "type": "kerr",
+    "spin": 0.9,
+    "a": 0.9,
+    "axis": "+Z",
+    "coordinates": "outgoing Cartesian Kerr-Schild"
+  },
+  "horizon_radius": 1.4358898943540672,
+  "capture_radial_coordinate": 1.428710444882297,
+  "background_direction": "Exact separated angular continuation in inverse radius to the same kerr_source_radius; final Cartesian tangent; residual finite-source bending O(M*b/R^2)",
+  "conservation_normalization": "|delta E|/|E0|, |delta Lz|/(M|E0|), |delta Q|/(M E0)^2; signed past-ray E,Lz,Q saved",
+  "optimization_note": "Carter compact-radius exact-Kerr specialization; no Schwarzschild quadrature or spherical reuse; fallback provenance recorded separately"
+}

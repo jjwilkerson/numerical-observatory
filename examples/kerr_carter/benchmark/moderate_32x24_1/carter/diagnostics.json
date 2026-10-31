@@ -1,0 +1,173 @@
+{
+  "method": "ode_surface",
+  "requested_method": "ode",
+  "quadrature_used": false,
+  "exact_rotational_path_reuse": false,
+  "camera": {
+    "position": [
+      51.967369569759825,
+      0.0,
+      30.000000000000007
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      -0.5000000000000001,
+      0.0,
+      0.8660254037844386
+    ],
+    "fov_degrees": 60,
+    "width": 32,
+    "height": 24,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "zamo"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110,
+    "capture_radius": 1.99,
+    "max_affine": 400,
+    "max_step": 4,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "carter",
+    "carter_fallback": "none"
+  },
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "geometry": {
+    "inner_radius": 2.3208830417618866,
+    "outer_radius": 20.0,
+    "metric": {
+      "mass": 1.0,
+      "spin": 0.9
+    },
+    "normal": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "emission": {
+    "inner_radius": 2.3208830417618866,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0,
+    "metric": {
+      "mass": 1.0,
+      "spin": 0.9
+    }
+  },
+  "display": {
+    "exposure": 5,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "blackbody"
+  },
+  "rotation": 1,
+  "mass": 1.0,
+  "counts": {
+    "captured": 8,
+    "escaped": 577,
+    "unresolved": 0,
+    "emitted": 183
+  },
+  "termination_reasons": {
+    "outward_escape": 577,
+    "first_opaque_surface": 183,
+    "capture_boundary": 8
+  },
+  "max_sampled_null_error": 2.4454160738597808e-09,
+  "samples_per_axis": 1,
+  "elapsed_seconds": 7.652841400005855,
+  "count_units": "subpixel rays",
+  "g_range": [
+    0.3677288419726996,
+    1.2321396491454062
+  ],
+  "crossing_counts": {
+    "1": 183
+  },
+  "intensity_units": "bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
+  "solver_note": "dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit",
+  "integrated_rays": 768,
+  "total_steps": 38882,
+  "rhs_evaluations": 615884,
+  "execution": {
+    "workers": 10,
+    "requested_workers": 10,
+    "start_method": "spawn",
+    "task_count": 12,
+    "worker_cpu_seconds": 31.546875,
+    "worker_task_seconds": 31.639195199939422,
+    "worker_peak_memory_bytes": {
+      "24696": 79724544,
+      "15916": 80240640,
+      "25720": 80138240,
+      "6020": 79872000,
+      "4916": 79634432,
+      "24132": 79798272,
+      "20776": 79900672,
+      "34400": 79884288,
+      "26816": 80195584,
+      "4620": 79740928
+    },
+    "startup_span_seconds": 2.8577727999945637,
+    "pool_wall_seconds": 7.64405619999161
+  },
+  "integrator": "carter",
+  "carter_fallback": "none",
+  "final_backend_counts": {
+    "carter": 768
+  },
+  "carter_accepted_rays": 768,
+  "carter_failure_reasons": {},
+  "fallback_count": 0,
+  "backend_codes": {
+    "0": "hamiltonian",
+    "1": "carter"
+  },
+  "backend_failure_codes": {
+    "0": ""
+  },
+  "carter_failure_sampling": "Incomplete constraint diagnostics are explicitly marked; early failures may contain only the initial-state constraint measurement.",
+  "spacetime": {
+    "type": "kerr",
+    "spin": 0.9,
+    "a": 0.9,
+    "axis": "+Z",
+    "coordinates": "outgoing Cartesian Kerr-Schild"
+  },
+  "orbit": "prograde",
+  "isco_radius": 2.3208830417618866,
+  "resolved_inner_radius": 2.3208830417618866,
+  "radius_convention": "Kerr oblate r, not Euclidean or cylindrical radius",
+  "azimuth_convention": "outgoing Cartesian KS azimuth atan2(y,x), [0,360) degrees; zero +X, positive toward +Y about +Z; not BL azimuth",
+  "horizon_radius": 1.4358898943540672,
+  "capture_radial_coordinate": 1.428710444882297,
+  "background_direction": "Exact separated angular tail to the same finite Kerr source radius, final Cartesian tangent; fallback uses the unchanged Hamiltonian mapping",
+  "emission_model": "phenomenological power-law temperature vs Kerr r; not Novikov-Thorne or an equal-accretion-rate comparison",
+  "conservation_normalization": "null: E0^2; delta E: |E0|; delta Lz: M|E0|; delta Q: (M E0)^2; samples stop at first opaque hit; escaping rays include tail",
+  "conservation_maxima": {
+    "null_error": 2.4454160738597808e-09,
+    "energy_drift": 0.0,
+    "axial_momentum_drift": 9.479651882830136e-12,
+    "carter_drift": 6.380061825601824e-06
+  },
+  "kerr_multilayer_supported": false
+}

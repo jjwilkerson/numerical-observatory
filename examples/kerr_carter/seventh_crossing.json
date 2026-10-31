@@ -1,0 +1,338 @@
+{
+  "original_criterion_M": 0.0003,
+  "quadrature": [
+    {
+      "event": [
+        -159.6647002161384,
+        8.448431441203361,
+        -9.03978657859377,
+        0.0
+      ],
+      "momentum": [
+        0.9831968331309351,
+        0.8489671034888387,
+        -0.973712423741851,
+        -0.3621966446647451
+      ],
+      "affine": 96.00271667335424,
+      "mino_phase": 4.097131305423042,
+      "radial_turn_u": 0.4164732752298823,
+      "radial_turn_r_M": 2.401114451936985,
+      "radial_phase_to_turn": 2.081570445858259,
+      "polar_phase": 18.937462128820954,
+      "azimuth_unwrapped": -25.95194100084496,
+      "decimal_precision": 30,
+      "quad_tolerance": 1e-10
+    },
+    {
+      "event": [
+        -159.6647002170185,
+        8.448431441649229,
+        -9.039786579099559,
+        0.0
+      ],
+      "momentum": [
+        0.9831968331309351,
+        0.8489671034778019,
+        -0.9737124237294795,
+        -0.362196644644911
+      ],
+      "affine": 96.00271667408323,
+      "mino_phase": 4.097131305423042,
+      "radial_turn_u": 0.4164732752298823,
+      "radial_turn_r_M": 2.401114451936985,
+      "radial_phase_to_turn": 2.081570445853551,
+      "polar_phase": 18.937462128820954,
+      "azimuth_unwrapped": -25.951941000846546,
+      "decimal_precision": 50,
+      "quad_tolerance": 2e-12
+    },
+    {
+      "event": [
+        -159.6647002170185,
+        8.448431441649035,
+        -9.039786579099738,
+        0.0
+      ],
+      "momentum": [
+        0.9831968331309351,
+        0.8489671034777814,
+        -0.9737124237294978,
+        -0.3621966446449111
+      ],
+      "affine": 96.00271667405573,
+      "mino_phase": 4.097131305423042,
+      "radial_turn_u": 0.4164732752298823,
+      "radial_turn_r_M": 2.401114451936985,
+      "radial_phase_to_turn": 2.081570445853551,
+      "polar_phase": 18.937462128820954,
+      "azimuth_unwrapped": -25.951941000846567,
+      "decimal_precision": 70,
+      "quad_tolerance": 5e-13
+    }
+  ],
+  "production_comparisons": [
+    {
+      "backend": "hamiltonian",
+      "rtol": 1e-09,
+      "event": [
+        -159.65871431446706,
+        8.444764891214687,
+        -9.036939371320074,
+        -7.988054662178001e-14
+      ],
+      "affine": 95.99794617462442,
+      "max_event_difference_from_quadrature": 0.005985902551429945,
+      "null_error": 1.5275953955683725e-08,
+      "Q_error": 8.47936817254932e-08,
+      "separated_diagnostics": null
+    },
+    {
+      "backend": "carter",
+      "rtol": 1e-09,
+      "event": [
+        -159.66469798047524,
+        8.44843731910034,
+        -9.039778741963755,
+        -6.473493891814548e-14
+      ],
+      "affine": 96.00271489159448,
+      "max_event_difference_from_quadrature": 7.837135983734811e-06,
+      "null_error": 7.018942798885773e-10,
+      "Q_error": 4.654909118308084e-09,
+      "separated_diagnostics": {
+        "radial_first_integral_error": 2.8647084704402914e-12,
+        "polar_first_integral_error": 1.4543140025580215e-09,
+        "separatrix_margins": [
+          2.4141672133604075e-06
+        ],
+        "tail": null,
+        "parameter": "affine/M with normalized Mino velocities",
+        "max_mino_phase": 4.097131305420616,
+        "polar_tolerance_scale": 0.014465368887240815
+      }
+    },
+    {
+      "backend": "hamiltonian",
+      "rtol": 1e-11,
+      "event": [
+        -159.66460135549954,
+        8.448370883461177,
+        -9.039739554829119,
+        -6.267208974009009e-14
+      ],
+      "affine": 96.00263788308851,
+      "max_event_difference_from_quadrature": 9.88615189498887e-05,
+      "null_error": 1.8239394429553706e-10,
+      "Q_error": 1.4646422815226336e-09,
+      "separated_diagnostics": null
+    },
+    {
+      "backend": "carter",
+      "rtol": 1e-11,
+      "event": [
+        -159.66470012376868,
+        8.448431396526262,
+        -9.039786523532124,
+        -1.412865918763632e-15
+      ],
+      "affine": 96.00271659973725,
+      "max_event_difference_from_quadrature": 9.3249809651752e-08,
+      "null_error": 8.843415143740715e-12,
+      "Q_error": 1.0117050683715092e-10,
+      "separated_diagnostics": {
+        "radial_first_integral_error": 2.4868995751603507e-14,
+        "polar_first_integral_error": 1.4736656339664478e-11,
+        "separatrix_margins": [
+          2.4141672133604075e-06
+        ],
+        "tail": null,
+        "parameter": "affine/M with normalized Mino velocities",
+        "max_mino_phase": 4.0971313054230185,
+        "polar_tolerance_scale": 0.014465368887240815
+      }
+    },
+    {
+      "backend": "hamiltonian",
+      "rtol": 1e-12,
+      "event": [
+        -159.6646913414035,
+        8.44842600483156,
+        -9.03978235738519,
+        3.272382365082649e-14
+      ],
+      "affine": 96.00270960033409,
+      "max_event_difference_from_quadrature": 8.875614980752289e-06,
+      "null_error": 2.8050853437756263e-11,
+      "Q_error": 2.0445792053052818e-10,
+      "separated_diagnostics": null
+    },
+    {
+      "backend": "carter",
+      "rtol": 1e-12,
+      "event": [
+        -159.6647001888195,
+        8.44843142755322,
+        -9.0397865627167,
+        -2.3012588921487613e-15
+      ],
+      "affine": 96.00271665158144,
+      "max_event_difference_from_quadrature": 2.819899691530736e-08,
+      "null_error": 1.3970298936163902e-12,
+      "Q_error": 1.5917228462354717e-11,
+      "separated_diagnostics": {
+        "radial_first_integral_error": 4.3298697960381105e-15,
+        "polar_first_integral_error": 2.142286348316702e-12,
+        "separatrix_margins": [
+          2.4141672133604075e-06
+        ],
+        "tail": null,
+        "parameter": "affine/M with normalized Mino velocities",
+        "max_mino_phase": 4.097131305423039,
+        "polar_tolerance_scale": 0.014465368887240815
+      }
+    },
+    {
+      "backend": "hamiltonian",
+      "rtol": 1e-13,
+      "event": [
+        -159.66469928034547,
+        8.448430867883843,
+        -9.039786133571146,
+        1.3548190347378863e-15
+      ],
+      "affine": 96.00271592754225,
+      "max_event_difference_from_quadrature": 9.366730182591709e-07,
+      "null_error": 2.822542474968465e-12,
+      "Q_error": 2.4572290348488487e-11,
+      "separated_diagnostics": null
+    },
+    {
+      "backend": "carter",
+      "rtol": 1e-13,
+      "event": [
+        -159.6647002025148,
+        8.448431432889143,
+        -9.03978657208462,
+        -4.4687236664688595e-16
+      ],
+      "affine": 96.00271666249647,
+      "max_event_difference_from_quadrature": 1.4503683587463456e-08,
+      "null_error": 1.417013714850298e-12,
+      "Q_error": 1.4112712374842325e-11,
+      "separated_diagnostics": {
+        "radial_first_integral_error": 2.1094237467877974e-15,
+        "polar_first_integral_error": 2.1884716261411086e-12,
+        "separatrix_margins": [
+          2.4141672133604075e-06
+        ],
+        "tail": null,
+        "parameter": "affine/M with normalized Mino velocities",
+        "max_mino_phase": 4.097131305423042,
+        "polar_tolerance_scale": 0.014465368887240815
+      }
+    }
+  ],
+  "old_reference": [
+    {
+      "rtol": 1e-12,
+      "event": [
+        -159.7253610844172,
+        8.485604156517844,
+        -9.068650673236466,
+        7.584803828005035e-16
+      ],
+      "affine": 96.05107903041161,
+      "max_event_difference_from_quadrature": 0.06066086739869547,
+      "radial_constraint_initial": 9.597511490437732e-09,
+      "radial_constraint_near_turn": -9.79440300050994e-08,
+      "max_radial_constraint": 1.4945758560792608e-06,
+      "max_polar_constraint": 4.1685791695741943e-10,
+      "mino_phase_to_crossing": 4.097131305426502,
+      "phase_difference_from_quadrature": 3.460343123151688e-12
+    },
+    {
+      "rtol": 1e-13,
+      "event": [
+        -159.6839786627456,
+        8.460241967623453,
+        -9.048957646155058,
+        7.565337466590213e-16
+      ],
+      "affine": 96.01808293483938,
+      "max_event_difference_from_quadrature": 0.01927844572711024,
+      "radial_constraint_initial": 9.597511490437732e-09,
+      "radial_constraint_near_turn": -3.119013570767523e-08,
+      "max_radial_constraint": 5.25651022736161e-07,
+      "max_polar_constraint": 3.408367045944993e-11,
+      "mino_phase_to_crossing": 4.097131305423116,
+      "phase_difference_from_quadrature": 7.460698725481052e-14
+    },
+    {
+      "rtol": 2.5e-14,
+      "event": [
+        -159.6769004355235,
+        8.455905294513121,
+        -9.045590187281922,
+        7.562008951380245e-16
+      ],
+      "affine": 96.01244070227814,
+      "max_event_difference_from_quadrature": 0.012200218505000748,
+      "radial_constraint_initial": 9.597511490437732e-09,
+      "radial_constraint_near_turn": -1.9745262038244646e-08,
+      "max_radial_constraint": 2.7792682819543494e-07,
+      "max_polar_constraint": 9.660225124289858e-12,
+      "mino_phase_to_crossing": 4.097131305423093,
+      "phase_difference_from_quadrature": 5.1514348342607263e-14
+    }
+  ],
+  "original_record": "examples/kerr_disks/nearcritical_reference_limit.json (preserved)",
+  "verdict": "Both production backends pass the unchanged criterion at rtol<=1e-11 against independent regularized separated quadrature. The original r-variable reference retains its documented failure.",
+  "camera": {
+    "position": [
+      59.77840582151672,
+      0.0,
+      5.229344564859488
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      -0.08715574274765814,
+      0.0,
+      0.9961946980917455
+    ],
+    "fov_degrees": 60,
+    "width": 640,
+    "height": 480,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "zamo"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110,
+    "capture_radius": 1.99,
+    "max_affine": 400,
+    "max_step": 4,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "hamiltonian",
+    "carter_fallback": "none"
+  },
+  "pixel": [
+    314.5056064910384,
+    280.9199781195458
+  ],
+  "initial_momentum": [
+    0.9831968331309351,
+    -0.9701017126993337,
+    -0.0092317822809238,
+    -0.15966753904542058
+  ],
+  "spin": 0.9
+}

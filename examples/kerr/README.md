@@ -111,3 +111,10 @@ orbit parameterization loses precision; the renderer supports these small spins
 and tests smooth convergence to a=0. Exactly zero uses the exact Schwarzschild
 critical curve. `max_affine` bounds the encounter before escape; the auxiliary
 background continuation has its own finite far-field integration interval.
+
+An optional production Carter backend is now selectable; Hamiltonian remains
+the default. See [the backend guide](../kerr_carter/README.md) and
+[quantitative comparisons](../kerr_carter/REPORT.md). The older independent
+reference discussed above is retained for reproducibility; it is distinct from
+the compact-variable production backend and the new radial/polar quadrature audit.
+

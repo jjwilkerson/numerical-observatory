@@ -1,0 +1,101 @@
+{
+  "scene": "retrograde",
+  "repeat": 0,
+  "runs": [
+    {
+      "backend": "hamiltonian",
+      "spin": 0.9,
+      "inclination_degrees": 85,
+      "resolution": [
+        32,
+        24
+      ],
+      "rays": 768,
+      "workers": 10,
+      "wall_seconds": 24.426615300006233,
+      "worker_cpu_seconds": 144.875,
+      "parent_cpu_seconds": 0.765625,
+      "startup_span_seconds": 3.044409399997676,
+      "rhs_evaluations": 852968,
+      "steps": 55522,
+      "unresolved": 0,
+      "fallbacks": 0,
+      "peak_worker_memory_bytes": {
+        "34472": 79335424,
+        "16396": 79355904,
+        "37480": 79745024,
+        "23388": 79093760,
+        "37120": 79421440,
+        "35204": 79732736,
+        "2668": 79433728,
+        "37824": 79810560,
+        "5684": 78508032,
+        "31628": 78995456
+      },
+      "output": "examples\\kerr_carter\\images\\retrograde_32x24_0\\hamiltonian",
+      "conservation": {
+        "null_error": 1.4077196068537572e-08,
+        "energy_drift": 0.0,
+        "axial_momentum_drift": 1.7391914808605045e-08,
+        "carter_drift": 3.1140560552806654e-07
+      }
+    },
+    {
+      "backend": "carter",
+      "spin": 0.9,
+      "inclination_degrees": 85,
+      "resolution": [
+        32,
+        24
+      ],
+      "rays": 768,
+      "workers": 10,
+      "wall_seconds": 8.776687900011893,
+      "worker_cpu_seconds": 35.53125,
+      "parent_cpu_seconds": 0.703125,
+      "startup_span_seconds": 3.168785299989395,
+      "rhs_evaluations": 607874,
+      "steps": 38464,
+      "unresolved": 0,
+      "fallbacks": 0,
+      "peak_worker_memory_bytes": {
+        "29072": 79450112,
+        "19492": 80240640,
+        "25768": 79446016,
+        "32052": 79331328,
+        "15404": 80068608,
+        "20396": 79142912,
+        "34108": 79740928,
+        "16360": 79659008,
+        "23720": 80293888,
+        "25892": 79917056
+      },
+      "output": "examples\\kerr_carter\\images\\retrograde_32x24_0\\carter",
+      "conservation": {
+        "null_error": 2.0536895336459155e-09,
+        "energy_drift": 0.0,
+        "axial_momentum_drift": 1.5584661107159683e-11,
+        "carter_drift": 3.732830031612758e-06
+      }
+    }
+  ],
+  "numerical_comparison": {
+    "status_differences": 0,
+    "initial_constant_differences": 0,
+    "carter_unresolved": 0,
+    "max_source_angle_radians": 4.409111576875278e-09,
+    "crossing_differences": 0,
+    "max_hit_position_difference_M": 4.0647278209959836e-08,
+    "max_hit_event_component_difference_M": 4.0647278209959836e-08,
+    "max_emission_radius_difference_M": 1.6017480675145634e-08,
+    "max_emission_azimuth_difference_degrees": 1.228336543590558e-07,
+    "max_g_difference": 2.938372878347195e-10,
+    "max_relative_bolometric_difference": 1.2835562612778517e-09,
+    "max_png_difference": 0,
+    "different_png_pixels": 0,
+    "passed": true
+  },
+  "wall_speedup": 2.7831245201248564,
+  "worker_cpu_speedup": 4.077396657871592,
+  "startup_adjusted_wall_speedup": 3.8128704125358337
+}

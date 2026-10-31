@@ -1,0 +1,9 @@
+{
+  "kerr.py": true,
+  "camera.py": true,
+  "emitter_motion.py": true,
+  "emission.py": true,
+  "display.py": true,
+  "blackbody_color.py": true,
+  "metric.py": true
+}

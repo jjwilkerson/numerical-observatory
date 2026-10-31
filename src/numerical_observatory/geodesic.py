@@ -20,12 +20,23 @@ class Integration:
     null_tolerance: float = 1e-5
     kerr_capture_fraction: float = 0.995  # Kerr r/r_plus, strictly inside horizon
     kerr_source_radius: float = 100000.0  # Kerr background tail endpoint
+    integrator: str = "hamiltonian"
+    carter_fallback: str = "none"
+    binary_capture_fraction: float = 0.995
+    binary_signature_margin: float = 0.05
 
     def __post_init__(self):
-        if any(not np.isfinite(v) or v <= 0 for v in vars(self).values()):
+        if any(not np.isfinite(v) or v <= 0 for k,v in vars(self).items()
+               if k not in ("integrator", "carter_fallback")):
             raise ValueError("integration parameters must be finite and positive")
         if self.kerr_capture_fraction >= 1:
             raise ValueError("kerr_capture_fraction must be strictly between 0 and 1")
+        if self.binary_capture_fraction >= 1 or self.binary_signature_margin >= 1:
+            raise ValueError("binary capture fraction and signature margin must lie strictly between zero and one")
+        if self.integrator not in ("hamiltonian", "carter"):
+            raise ValueError("integrator must be hamiltonian or carter")
+        if self.carter_fallback not in ("none", "hamiltonian"):
+            raise ValueError("carter_fallback must be none or hamiltonian")
 
 
 @dataclass
@@ -43,6 +54,10 @@ class RayResult:
     hit: SurfaceHit | None = None
     carter_drift: float | None = None
     kerr_constants: np.ndarray | None = None
+    backend: str = "hamiltonian"
+    fallback_reason: str | None = None
+    carter_diagnostics: dict | None = None
+    binary_diagnostics: dict | None = None
 
 
 def hamilton_rhs(metric: Metric, state):
@@ -92,11 +107,24 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
     """Integrate toward the past with increasing affine parameter.
 
     The ODE uses only Metric. Other geometries require TraceDomain;
-    the exact Schwarzschild and Kerr classes have built-in domain policies.
+    the exact Schwarzschild/Kerr and experimental BinaryKSApprox providers
+    have built-in domain policies.
     return_solution exposes dense output for audits. critical_guard=False is
     intended for measuring raw solver error, not ordinary production rendering.
     """
+    if settings.integrator == "carter":
+        from .kerr_carter import trace_carter
+        return trace_carter(metric,event,momentum,settings,domain,return_solution,surface)
     schwarzschild = type(metric) is Schwarzschild
+    from .binary_ks_approx import BinaryKSApprox
+    binary = type(metric) is BinaryKSApprox
+    if binary:
+        if surface is not None:
+            raise ValueError('binary_ks_approx does not support emitting disks')
+        if domain is not None:
+            raise ValueError('binary_ks_approx currently requires its built-in provisional domain')
+        from .binary_support import default_domain as binary_domain
+        domain = binary_domain(metric,event,settings)
     from .kerr import Kerr
     kerr_domain = domain is None and type(metric) is Kerr
     builtin_domain = domain is None and schwarzschild
@@ -131,15 +159,30 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
             return domain.valid_region(state[:4])
         data_boundary.terminal, data_boundary.direction = True, -1
         events.append(data_boundary)
-    sol = solve_ivp(lambda _, y: hamilton_rhs(metric, y), (0, settings.max_affine),
-                    np.r_[event, momentum], method="DOP853", rtol=settings.rtol,
-                    atol=settings.atol, max_step=settings.max_step,
-                    events=events, dense_output=True)
+    attempted = [0]
+    def binary_rhs(_,y):
+        attempted[0] += 1
+        return hamilton_rhs(metric,y)
+    try:
+        sol = solve_ivp(binary_rhs if binary else lambda _, y: hamilton_rhs(metric, y), (0, settings.max_affine),
+                        np.r_[event, momentum], method="DOP853", rtol=settings.rtol,
+                        atol=settings.atol, max_step=settings.max_step,
+                        events=events, dense_output=True)
+    except (ValueError, np.linalg.LinAlgError, FloatingPointError) as exc:
+        if not binary: raise
+        result=RayResult('unresolved',None,float(abs(momentum@metric.inverse(event)@momentum)/max(momentum[0]**2,1e-28)),
+                         0.,None,0,attempted[0],'binary_integration_failure: '+str(exc),
+                         binary_diagnostics=dict(capture_index=0,provisional_capture=False,complete=False,
+                                                 minimum_signature_margin=metric.signature_margin(event)))
+        return (result,None) if return_solution else result
     result = summarize_solution(metric, event, momentum, settings, sol, domain,
                                 builtin_domain, critical_guard, surface)
     if type(metric) is Kerr:
         from .kerr_support import finish_kerr
         result = finish_kerr(metric, event, momentum, settings, sol, result, kerr_domain)
+    if binary:
+        from .binary_support import finish_binary
+        result = finish_binary(metric,settings,sol,result)
     if return_solution and result.hit is not None:
         # The public opaque-ray solution terminates at the emitting surface.
         # Only geometry caches (which call without a surface) retain later data.

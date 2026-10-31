@@ -1,0 +1,24 @@
+{
+  "validation_passed": true,
+  "full_suite": "222 passed in 412.40s",
+  "resolution": [
+    96,
+    72
+  ],
+  "rays": 6912,
+  "counts": {
+    "captured": 432,
+    "escaped": 6480,
+    "unresolved": 0
+  },
+  "provisional_capture_counts": {
+    "1": 216,
+    "2": 216
+  },
+  "reflected_status_mismatches": 0,
+  "reflected_capture_label_mismatches": 0,
+  "max_reflected_source_component_difference": 1.905576807459397e-10,
+  "single_shared_ray_map": true,
+  "cli_smoke_passed": true,
+  "local_document_links_valid": true
+}

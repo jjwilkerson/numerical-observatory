@@ -1,0 +1,37 @@
+# Exact equatorial Kerr disk; radii/times in M. Small native preview.
+mass = 1.0
+[spacetime]
+type = "kerr"
+spin = 0.9
+[camera]
+radius = 60.0
+inclination_degrees = 85.0
+observer = "zamo"
+fov_degrees = 60.0
+width = 96
+height = 72
+[integration]
+rtol = 1e-9
+atol = 1e-11
+escape_radius = 110.0
+max_affine = 400.0
+max_step = 4.0
+kerr_capture_fraction = 0.995
+kerr_source_radius = 100000.0
+[background]
+mode = "starfield"
+[disk]
+enabled = true
+orbit = "prograde"
+inner_radius = "isco"
+outer_radius = 20.0
+temperature_inner = 10000.0
+temperature_index = 0.75
+[disk.display]
+palette = "blackbody"
+exposure = 5.0
+tone_mapping = "reinhard"
+
+[geodesics]
+integrator = "hamiltonian"
+fallback = "none"

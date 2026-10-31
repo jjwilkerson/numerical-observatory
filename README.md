@@ -11,12 +11,29 @@ redshift, Doppler beaming, and higher-order surface images. It is **disabled by
 default**; existing starfield/grid configurations retain their original results.
 See the [disk validation report](examples/disks/REPORT.md).
 
+## Experimental binary KS approximation
+
+An optional `spacetime.type = "binary_ks_approx"` superposes two fixed,
+nonspinning outgoing Cartesian Kerr–Schild covariant metric terms. It uses only
+the generic Hamiltonian integrator, existing static camera, celestial backgrounds
+and CPU workers. **It is not an exact binary vacuum solution**: capture spheres
+are provisional cutoffs, and a signature guard marks invalid-domain rays
+unresolved. There is no orbital motion or binary disk support.
+
+See the [binary guide and 96×72 configuration](examples/binary_ks_approx/README.md),
+[matched starfield/grid previews](examples/binary_ks_approx/preview/comparison.png)
+and [numerical validation and limitations](examples/binary_ks_approx/REPORT.md).
+Schwarzschild and Kerr remain independently selectable with their previous
+defaults. No specialized Schwarzschild or Carter solver activates for binary
+scenes.
+
 ## Exact Kerr spacetime (shadow and celestial background)
 
 Kerr describes an isolated stationary rotating vacuum black hole. Select it
 explicitly; configurations without `[spacetime]` still use Schwarzschild.
 Kerr supports an optional equatorial circular-geodesic disk (see below).
-Kerr uses the existing general Hamiltonian ODE, multiprocessing,
+Kerr defaults to the general Hamiltonian ODE and also offers an optional
+Carter-separated backend (see below), using the same multiprocessing,
 starfield/grid and camera projection. Schwarzschild planar quadrature and
 spherical rotational reuse never activate for Kerr; a requested quadrature
 render falls back to ODE and records this choice.
@@ -89,6 +106,47 @@ Source directions use Hamiltonian continuation to 100000M and the outgoing
 Cartesian tangent: the remaining O(M b/R²) bending is checked separately from
 integration error. Coarse raster sampling, sampled conservation bounds, finite
 source truncation, CPU cost and the simplified disk model remain limits.
+
+## Optional Carter-separated Kerr integration
+
+Hamiltonian remains the default. Select `--integrator carter` or add:
+
+```toml
+[geodesics]
+integrator = "carter"
+fallback = "none"
+```
+
+This exact-Kerr specialization evolves compact radial and polar second-order
+separated equations, preserving turning points without artificial sign flips.
+It uses the same finite-camera initial covector, disk physics, background source
+radius, spawn workers and supersampling. It cannot run with Schwarzschild or
+custom metric/domain providers. The existing Schwarzschild optimizations remain
+separate. Failed or uncertain trajectories are explicit unresolved rays;
+optional `--carter-fallback hamiltonian` records genuine retraces and the original
+failure reason. Exact-axis initialization needs that fallback. An uncertifiable
+radial separatrix remains unresolved even when fallback is selected.
+
+PowerShell:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory --config examples/kerr_disks/configs/spin09_prograde_i85.toml --integrator carter --workers 10 --output output/kerr-carter
+```
+
+Ubuntu:
+
+```bash
+.venv/bin/python -m numerical_observatory --config examples/kerr_disks/configs/spin09_prograde_i85.toml --integrator carter --workers 10 --output output/kerr-carter
+```
+
+Use `--integrator hamiltonian` for a matched reference, a separate output
+directory, and `--width 96 --height 72` for a preview. Backend provenance and
+constraint-completeness flags accompany saved Carter ray data. See the
+[backend guide](examples/kerr_carter/README.md),
+[measurements and limitations](examples/kerr_carter/REPORT.md), and
+[matched images](examples/kerr_carter/comparison.png). The specific former
+seventh-crossing disagreement is resolved against independent radial/polar
+quadrature; arbitrary higher-order rays still require convergence checks.
 
 ## Kerr accretion disk
 
@@ -183,7 +241,7 @@ The targeted `diagnostic_zoom` also reconstructs Kerr disks correctly.
 
 For deliberate full-resolution rendering, add `--width 640 --height 480` to
 the ordinary render command and choose a separate output directory. This can
-be expensive: Kerr uses independent Hamiltonian trajectories, with no spherical
+be expensive: Kerr uses independent trajectories in either backend, with no spherical
 reuse, and internal geometry can extend beyond the first hit while physical
 radiance/constraint checks stop there. No full-resolution or supersampled
 Kerr disk batch is launched automatically. The disk remains a thin, stationary,
@@ -1011,6 +1069,8 @@ temporary test directory).
 | `geodesic.py` | Generic Hamiltonian RHS, SciPy integration, domain events and constraint diagnostics |
 | `kerr.py` | Exact outgoing Kerr–Schild metric, analytic derivatives, ZAMOs and Kerr invariants |
 | `kerr_support.py` | Kerr horizon/escape policy and numerical asymptotic background continuation |
+| `kerr_carter.py` | Optional exact-Kerr compact separated backend and audited momentum reconstruction |
+| `kerr_carter_quadrature.py` / `carter_validation.py` | Independent phase quadrature, seventh-crossing audit, shadow shooting and paired benchmarks |
 | `kerr_reference.py` / `kerr_validation.py` | Independent Carter equations, finite-camera analytical shadows, convergence and example comparisons |
 | `camera.py` | Camera geometry, metric-based rest-space tetrad or supplied observer frame |
 | `background.py` | Direction-to-RGB emission model |

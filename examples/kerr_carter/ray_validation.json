@@ -1,0 +1,742 @@
+[
+  {
+    "spin": 0,
+    "inclination": 90,
+    "pixel": [
+      0,
+      0
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 3.5220182326156646e-10,
+    "max_covector_difference": 7.440603688735337e-12,
+    "max_velocity_equation_residual": 4.02400335275388e-12,
+    "max_momentum_equation_residual": 3.0388627812044655e-12,
+    "carter_null": 7.37318252429853e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8428585955729202e-13,
+    "carter_Q_error": 2.3867885139570088e-08,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.890643445776277e-12,
+      "polar_first_integral_error": 1.9731260181288235e-08,
+      "separatrix_margins": [
+        46.12791346539416
+      ],
+      "tail": {
+        "steps": 3,
+        "evaluations": 59,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.06443604626799032,
+      "polar_tolerance_scale": 0.6402404031597995
+    },
+    "source_direction_difference": 1.571119551994214e-13
+  },
+  {
+    "spin": 0,
+    "inclination": 90,
+    "pixel": [
+      270,
+      247.5
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 2.640419438648678e-09,
+    "max_covector_difference": 3.674294202227202e-11,
+    "max_velocity_equation_residual": 1.9895196601282805e-13,
+    "max_momentum_equation_residual": 6.718042788733669e-12,
+    "carter_null": 2.136222233589094e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 2.881724960724321e-12,
+    "carter_Q_error": 2.3164803408803888e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 3.631317468943962e-12,
+      "polar_first_integral_error": 2.2592948345501185e-11,
+      "separatrix_margins": [
+        0.1197195590718727
+      ],
+      "tail": {
+        "steps": 1,
+        "evaluations": 17,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 1.0107678139673535,
+      "polar_tolerance_scale": 0.9745450929700704
+    },
+    "source_direction_difference": 3.163081900131218e-11
+  },
+  {
+    "spin": 0,
+    "inclination": 90,
+    "pixel": [
+      319,
+      200
+    ],
+    "status": "captured",
+    "max_event_component_difference_M": 9.678322032691256e-11,
+    "max_covector_difference": 9.189304178702784e-11,
+    "max_velocity_equation_residual": 1.0824674490095276e-14,
+    "max_momentum_equation_residual": 4.064151792881887e-12,
+    "carter_null": 8.23862817048064e-11,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 2.117254820281388e-17,
+    "carter_Q_error": 9.159679911104391e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 2.2076784844671238e-13,
+      "polar_first_integral_error": 9.201528428093297e-13,
+      "separatrix_margins": [
+        0.3028856368922035
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.6681482145846713,
+      "polar_tolerance_scale": 0.0001602050624800455
+    }
+  },
+  {
+    "spin": 0,
+    "inclination": 90,
+    "pixel": [
+      370,
+      247.5
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 1.7769679061530042e-09,
+    "max_covector_difference": 2.6966429089725352e-11,
+    "max_velocity_equation_residual": 6.048495038157853e-13,
+    "max_momentum_equation_residual": 6.328951035125541e-12,
+    "carter_null": 3.362999534023606e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 4.554751489646404e-12,
+    "carter_Q_error": 2.944403341832091e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 3.722466779265687e-12,
+      "polar_first_integral_error": 2.8739670365762748e-11,
+      "separatrix_margins": [
+        0.16387870117837178
+      ],
+      "tail": {
+        "steps": 1,
+        "evaluations": 17,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.942547680406346,
+      "polar_tolerance_scale": 0.9755187912403174
+    },
+    "source_direction_difference": 2.2849665020101185e-11
+  },
+  {
+    "spin": 0.5,
+    "inclination": 20,
+    "pixel": [
+      0,
+      0
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 3.792912650624203e-10,
+    "max_covector_difference": 2.0436763392694957e-11,
+    "max_velocity_equation_residual": 9.736655925962623e-14,
+    "max_momentum_equation_residual": 5.311100084032239e-12,
+    "carter_null": 5.075470113667714e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 2.7352537850632906e-12,
+    "carter_Q_error": 7.218524781345734e-09,
+    "separated_constraints": {
+      "radial_first_integral_error": 1.3310463842231002e-12,
+      "polar_first_integral_error": 3.1022864277474582e-09,
+      "separatrix_margins": [
+        50.99551333618695
+      ],
+      "tail": {
+        "steps": 4,
+        "evaluations": 86,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.06440615270006156,
+      "polar_tolerance_scale": 0.07489512613796989
+    },
+    "source_direction_difference": 9.479582799498893e-13
+  },
+  {
+    "spin": 0.5,
+    "inclination": 20,
+    "pixel": [
+      270,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 9.356782015856879e-11,
+    "max_covector_difference": 6.725855983269469e-12,
+    "max_velocity_equation_residual": 1.4099832412739488e-13,
+    "max_momentum_equation_residual": 2.3904445408777915e-12,
+    "carter_null": 4.2117219460171016e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 4.516766649679635e-16,
+    "carter_Q_error": 3.1434293323449803e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.600764214046649e-13,
+      "polar_first_integral_error": 9.395506594955805e-11,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.2756633955489051,
+      "polar_tolerance_scale": 0.11400936545767493
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.9062529332813938e-13,
+    "relative_intensity_difference": 4.793943020331426e-13
+  },
+  {
+    "spin": 0.5,
+    "inclination": 20,
+    "pixel": [
+      319,
+      200
+    ],
+    "status": "captured",
+    "max_event_component_difference_M": 2.8453704496722576e-10,
+    "max_covector_difference": 1.262397963941453e-10,
+    "max_velocity_equation_residual": 3.68594044175552e-14,
+    "max_momentum_equation_residual": 7.371908639086655e-12,
+    "carter_null": 1.2583698137116894e-11,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 8.116134117072249e-17,
+    "carter_Q_error": 1.4053829105066358e-09,
+    "separated_constraints": {
+      "radial_first_integral_error": 6.840639166227902e-13,
+      "polar_first_integral_error": 4.0678571622265736e-12,
+      "separatrix_margins": [
+        0.2958962665329459
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.7161350635171078,
+      "polar_tolerance_scale": 2.070292260936135e-05
+    }
+  },
+  {
+    "spin": 0.5,
+    "inclination": 20,
+    "pixel": [
+      370,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 1.1533529686857946e-10,
+    "max_covector_difference": 2.977895707800826e-12,
+    "max_velocity_equation_residual": 1.7985612998927536e-14,
+    "max_momentum_equation_residual": 4.0218985550775335e-12,
+    "carter_null": 3.8321660588845026e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 6.775267592935198e-16,
+    "carter_Q_error": 3.250305290411257e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 3.6481928589182644e-13,
+      "polar_first_integral_error": 8.560974151805567e-11,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.27081983227771167,
+      "polar_tolerance_scale": 0.11411719646932861
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 8.310019339319297e-13,
+    "relative_intensity_difference": 8.537615059367454e-13
+  },
+  {
+    "spin": 0.9,
+    "inclination": 60,
+    "pixel": [
+      0,
+      0
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 2.3103652324607538e-10,
+    "max_covector_difference": 9.218625862672525e-12,
+    "max_velocity_equation_residual": 1.77699521763941e-12,
+    "max_momentum_equation_residual": 3.134697471214587e-12,
+    "carter_null": 9.397896753867417e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 3.1502744441997536e-12,
+    "carter_Q_error": 1.483469155719356e-08,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.838462963618895e-12,
+      "polar_first_integral_error": 1.4738020581717137e-08,
+      "separatrix_margins": [
+        59.044780026570336
+      ],
+      "tail": {
+        "steps": 3,
+        "evaluations": 47,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.06430154704035508,
+      "polar_tolerance_scale": 0.4801786878230323
+    },
+    "source_direction_difference": 9.34399144904006e-13
+  },
+  {
+    "spin": 0.9,
+    "inclination": 60,
+    "pixel": [
+      270,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 3.9965186715562595e-10,
+    "max_covector_difference": 6.8762773253183695e-12,
+    "max_velocity_equation_residual": 3.5482727867020003e-13,
+    "max_momentum_equation_residual": 3.603258316720037e-12,
+    "carter_null": 5.2689232065693525e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8066512562559447e-15,
+    "carter_Q_error": 2.2854907592073783e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 9.349743201880756e-12,
+      "polar_first_integral_error": 1.9714851973162695e-10,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.23887715818848557,
+      "polar_tolerance_scale": 0.730877577811921
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.4721557306529576e-13,
+    "relative_intensity_difference": 6.4251937104131684e-12
+  },
+  {
+    "spin": 0.9,
+    "inclination": 60,
+    "pixel": [
+      319,
+      200
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 2.5277793747058297e-11,
+    "max_covector_difference": 3.9067145352067456e-11,
+    "max_velocity_equation_residual": 1.2212453270876722e-15,
+    "max_momentum_equation_residual": 4.172242412670002e-12,
+    "carter_null": 4.347014945808862e-11,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8349513201617323e-16,
+    "carter_Q_error": 8.933368728848168e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 1.2589929099249275e-13,
+      "polar_first_integral_error": 6.52633502795652e-12,
+      "separatrix_margins": [
+        0.2315238075061437
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.598355003603595,
+      "polar_tolerance_scale": 0.00017791390360089032
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 2.0555779300934773e-13,
+    "relative_intensity_difference": 4.219735671995295e-12
+  },
+  {
+    "spin": 0.9,
+    "inclination": 60,
+    "pixel": [
+      370,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 3.5486635852066684e-10,
+    "max_covector_difference": 1.0010769990742574e-11,
+    "max_velocity_equation_residual": 1.7761903059465567e-12,
+    "max_momentum_equation_residual": 2.9735753518788516e-12,
+    "carter_null": 2.7297525027999615e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8067941992967115e-15,
+    "carter_Q_error": 2.120096291217796e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.3720582709738665e-12,
+      "polar_first_integral_error": 1.9201529255497007e-10,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.23599026282843813,
+      "polar_tolerance_scale": 0.7314482515429921
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.2473910793175946e-12,
+    "relative_intensity_difference": 1.8252066524837574e-12
+  },
+  {
+    "spin": -0.9,
+    "inclination": 85,
+    "pixel": [
+      0,
+      0
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 2.1029933350291685e-10,
+    "max_covector_difference": 4.506450768104742e-12,
+    "max_velocity_equation_residual": 2.520095243596643e-12,
+    "max_momentum_equation_residual": 3.655788887758915e-12,
+    "carter_null": 7.003806819858563e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 7.637023497331261e-12,
+    "carter_Q_error": 1.7337784115485412e-08,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.945349685314682e-12,
+      "polar_first_integral_error": 1.5206353509711334e-08,
+      "separatrix_margins": [
+        46.925758454212456
+      ],
+      "tail": {
+        "steps": 3,
+        "evaluations": 59,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.06460152100832708,
+      "polar_tolerance_scale": 0.6350688207485718
+    },
+    "source_direction_difference": 3.1578796225870706e-13
+  },
+  {
+    "spin": -0.9,
+    "inclination": 85,
+    "pixel": [
+      270,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 4.5640646817446395e-10,
+    "max_covector_difference": 4.104161455131816e-12,
+    "max_velocity_equation_residual": 2.7200464103316335e-13,
+    "max_momentum_equation_residual": 2.5505968208429245e-12,
+    "carter_null": 3.522785118865982e-13,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 9.034025049943121e-16,
+    "carter_Q_error": 1.1454852113931094e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.494737915194946e-12,
+      "polar_first_integral_error": 1.1454059922755278e-11,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.09155758701446855,
+      "polar_tolerance_scale": 0.9664015751146441
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 2.7688962234151404e-13,
+    "relative_intensity_difference": 7.771561172376096e-16
+  },
+  {
+    "spin": -0.9,
+    "inclination": 85,
+    "pixel": [
+      319,
+      200
+    ],
+    "status": "captured",
+    "max_event_component_difference_M": 1.2165179974488183e-10,
+    "max_covector_difference": 1.472039434791128e-10,
+    "max_velocity_equation_residual": 2.120525977034049e-14,
+    "max_momentum_equation_residual": 2.1985781251121495e-12,
+    "carter_null": 1.273087823899259e-10,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 5.151987622204492e-16,
+    "carter_Q_error": 1.6311481961227802e-09,
+    "separated_constraints": {
+      "radial_first_integral_error": 2.4197310821705287e-13,
+      "polar_first_integral_error": 7.066347507134196e-12,
+      "separatrix_margins": [
+        0.2433704932445549
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.9308285380410016,
+      "polar_tolerance_scale": 8.042188469914446e-05
+    }
+  },
+  {
+    "spin": -0.9,
+    "inclination": 85,
+    "pixel": [
+      370,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 4.409699272400758e-10,
+    "max_covector_difference": 5.9810489894118746e-12,
+    "max_velocity_equation_residual": 8.915090887740007e-14,
+    "max_momentum_equation_residual": 2.4343407738632995e-12,
+    "carter_null": 6.53439809948874e-13,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 9.033202864554886e-16,
+    "carter_Q_error": 2.2545625723863418e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 8.570033571686508e-12,
+      "polar_first_integral_error": 2.2541857269686716e-11,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.09121021498898323,
+      "polar_tolerance_scale": 0.9676926813104048
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.6187051699034782e-13,
+    "relative_intensity_difference": 4.429789868254375e-12
+  },
+  {
+    "spin": 0.99,
+    "inclination": 85,
+    "pixel": [
+      0,
+      0
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 2.2253843212638458e-10,
+    "max_covector_difference": 4.435896094889813e-12,
+    "max_velocity_equation_residual": 2.5226487565532807e-12,
+    "max_momentum_equation_residual": 3.643961163628945e-12,
+    "carter_null": 6.778164048469955e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 2.796079372308698e-12,
+    "carter_Q_error": 1.7667592690702775e-08,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.9568127380439364e-12,
+      "polar_first_integral_error": 1.5427985999849625e-08,
+      "separatrix_margins": [
+        58.55041078321274
+      ],
+      "tail": {
+        "steps": 3,
+        "evaluations": 59,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.06427512985836469,
+      "polar_tolerance_scale": 0.6354564595652623
+    },
+    "source_direction_difference": 1.3823685821156378e-13
+  },
+  {
+    "spin": 0.99,
+    "inclination": 85,
+    "pixel": [
+      270,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 4.275051423974219e-10,
+    "max_covector_difference": 9.552358903874847e-13,
+    "max_velocity_equation_residual": 7.647216193618078e-13,
+    "max_momentum_equation_residual": 2.766999728156146e-12,
+    "carter_null": 4.3282893018357034e-13,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8066339594391542e-15,
+    "carter_Q_error": 1.606186932639822e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 6.273981334459222e-12,
+      "polar_first_integral_error": 1.6058598895085652e-11,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.09154605102107716,
+      "polar_tolerance_scale": 0.9665737506494007
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.978417429882029e-13,
+    "relative_intensity_difference": 5.941247493979063e-12
+  },
+  {
+    "spin": 0.99,
+    "inclination": 85,
+    "pixel": [
+      319,
+      200
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 2.2049695402870384e-11,
+    "max_covector_difference": 1.5359713501084116e-11,
+    "max_velocity_equation_residual": 1.6653345369377348e-15,
+    "max_momentum_equation_residual": 4.363925887318487e-12,
+    "carter_null": 4.6120041441652844e-11,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 3.9522056653843426e-16,
+    "carter_Q_error": 6.011585680981038e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 6.752931547282515e-14,
+      "polar_first_integral_error": 3.82982534574694e-12,
+      "separatrix_margins": [
+        0.18907329665803307
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.6947314055122539,
+      "polar_tolerance_scale": 0.00025577594117409674
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.3817835764484698e-12,
+    "relative_intensity_difference": 1.3427481349026493e-11
+  },
+  {
+    "spin": 0.99,
+    "inclination": 85,
+    "pixel": [
+      370,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 3.9114667060857755e-10,
+    "max_covector_difference": 6.301958954679776e-12,
+    "max_velocity_equation_residual": 1.7068568780587157e-12,
+    "max_momentum_equation_residual": 3.2037223351641386e-12,
+    "carter_null": 4.856373487533675e-13,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 9.03407418075227e-16,
+    "carter_Q_error": 1.1822535721969395e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.849010082352834e-12,
+      "polar_first_integral_error": 1.1821876810813592e-11,
+      "separatrix_margins": [],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.09134786138276567,
+      "polar_tolerance_scale": 0.9672895063277098
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 2.3708812690870218e-12,
+    "relative_intensity_difference": 1.0341061340568558e-11
+  },
+  {
+    "spin": 0.9,
+    "inclination": 90,
+    "pixel": [
+      0,
+      0
+    ],
+    "status": "escaped",
+    "max_event_component_difference_M": 2.434177304166951e-10,
+    "max_covector_difference": 5.188183216375819e-12,
+    "max_velocity_equation_residual": 3.4464653353438734e-12,
+    "max_momentum_equation_residual": 2.9207513686270448e-12,
+    "carter_null": 6.940336261485322e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8279696392800447e-12,
+    "carter_Q_error": 2.4059065842025637e-08,
+    "separated_constraints": {
+      "radial_first_integral_error": 4.9346637887026645e-12,
+      "polar_first_integral_error": 1.9844605958496686e-08,
+      "separatrix_margins": [
+        56.2950473054681
+      ],
+      "tail": {
+        "steps": 3,
+        "evaluations": 59,
+        "source_radius": 100000.0
+      },
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.06428988721906967,
+      "polar_tolerance_scale": 0.640345331270481
+    },
+    "source_direction_difference": 2.2656911566754718e-13
+  },
+  {
+    "spin": 0.9,
+    "inclination": 90,
+    "pixel": [
+      270,
+      247.5
+    ],
+    "status": "emitted",
+    "max_event_component_difference_M": 3.532889536472794e-10,
+    "max_covector_difference": 1.1104339669998353e-11,
+    "max_velocity_equation_residual": 5.305755834683623e-13,
+    "max_momentum_equation_residual": 5.621822452006597e-12,
+    "carter_null": 5.8201018943189814e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.806641942510688e-15,
+    "carter_Q_error": 3.053670115056794e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 6.988742917712898e-12,
+      "polar_first_integral_error": 2.979155117044385e-11,
+      "separatrix_margins": [
+        1.121551227960975
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.577223090857639,
+      "polar_tolerance_scale": 0.9740135475706457
+    },
+    "carter_crossing": 1,
+    "hamiltonian_crossing": 1,
+    "g_difference": 1.9033663534173684e-12,
+    "relative_intensity_difference": 1.4314660568004456e-11
+  },
+  {
+    "spin": 0.9,
+    "inclination": 90,
+    "pixel": [
+      319,
+      200
+    ],
+    "status": "captured",
+    "max_event_component_difference_M": 2.938466137081264e-11,
+    "max_covector_difference": 5.683749304541408e-11,
+    "max_velocity_equation_residual": 3.1086244689504383e-15,
+    "max_momentum_equation_residual": 6.8753891468986694e-12,
+    "carter_null": 4.290423966070534e-11,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 4.94025772724553e-16,
+    "carter_Q_error": 5.133284177793222e-10,
+    "separated_constraints": {
+      "radial_first_integral_error": 1.946776073680212e-13,
+      "polar_first_integral_error": 1.0313527809557854e-11,
+      "separatrix_margins": [
+        0.2214788428065404
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.9588762282233192,
+      "polar_tolerance_scale": 0.00024961374814580495
+    }
+  },
+  {
+    "spin": 0.9,
+    "inclination": 90,
+    "pixel": [
+      370,
+      247.5
+    ],
+    "status": "captured",
+    "max_event_component_difference_M": 3.53082896253909e-10,
+    "max_covector_difference": 3.24237525717308e-10,
+    "max_velocity_equation_residual": 1.6260326418660043e-12,
+    "max_momentum_equation_residual": 3.040854951345035e-12,
+    "carter_null": 8.018230439022504e-12,
+    "carter_E_error": 0.0,
+    "carter_Lz_error": 1.8068070083693934e-15,
+    "carter_Q_error": 1.6176821260758816e-11,
+    "separated_constraints": {
+      "radial_first_integral_error": 2.573585788923083e-11,
+      "polar_first_integral_error": 1.6040280215179337e-11,
+      "separatrix_margins": [
+        0.4051314984666565
+      ],
+      "tail": null,
+      "parameter": "affine/M with normalized Mino velocities",
+      "max_mino_phase": 0.6154161768888677,
+      "polar_tolerance_scale": 0.9747565155949822
+    }
+  }
+]

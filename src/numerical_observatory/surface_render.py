@@ -115,6 +115,8 @@ def render_surface(metric, camera, integration, output, scene, background=None,
     rgb = np.zeros((h, w, 3))
     from .kerr import Kerr
     is_kerr = type(metric) is Kerr
+    from .backend_records import BackendRecords
+    backend_records=BackendRecords((h,w),integration) if is_kerr else None
     extra = ({key: np.full((h,w)+tail, np.nan) for key,tail in (
                 ("hit_event",(4,)), ("hit_momentum",(4,)), ("hit_affine",()),
                 ("emission_azimuth_degrees",()), ("emitted_bolometric_intensity",()),
@@ -137,6 +139,7 @@ def render_surface(metric, camera, integration, output, scene, background=None,
             reasons[result.reason] += 1
             null_max = max(null_max, result.max_null_error)
             if is_kerr:
+                backend_records.record(row,col,result)
                 for key,value in (("null_error",result.max_null_error), ("energy_drift",result.energy_drift),
                                   ("axial_momentum_drift",result.angular_momentum_drift),
                                   ("carter_drift",result.carter_drift), ("kerr_constants",result.kerr_constants)):
@@ -179,7 +182,8 @@ def render_surface(metric, camera, integration, output, scene, background=None,
     save_image(output/"shadow.png", image)
     np.savez_compressed(output/"disk_rays.npz", status=codes, g=shift, bolometric_intensity=intensity,
                         observed_temperature=temperature, hit_radius=hit_radius, hit_position=hit_position,
-                        crossing_index=crossing, directions=directions, samples=samples, **extra)
+                        crossing_index=crossing, directions=directions, samples=samples, **extra,
+                        **(backend_records.arrays() if is_kerr else {}))
     emitted = codes == 3
     report = dict(method="ode_surface", requested_method=requested_method,
                   quadrature_used=False, exact_rotational_path_reuse=cache.enabled,
@@ -198,6 +202,7 @@ def render_surface(metric, camera, integration, output, scene, background=None,
     if workers > 1:
         report["execution"] = cache.statistics
     if is_kerr:
+        report.update(backend_records.metadata())
         from .emitter_motion import kerr_isco
         report.update(spacetime={"type":"kerr", "spin":metric.spin, "a":metric.a,
                                  "axis":"+Z", "coordinates":"outgoing Cartesian Kerr-Schild"},
@@ -212,6 +217,8 @@ def render_surface(metric, camera, integration, output, scene, background=None,
                       conservation_normalization="null: E0^2; delta E: |E0|; delta Lz: M|E0|; delta Q: (M E0)^2; samples stop at first opaque hit; escaping rays include tail",
                       conservation_maxima={key:float(np.max(extra[key])) for key in ("null_error","energy_drift","axial_momentum_drift","carter_drift")},
                       kerr_multilayer_supported=False)
+        if integration.integrator == "carter":
+            report["background_direction"]="Exact separated angular tail to the same finite Kerr source radius, final Cartesian tangent; fallback uses the unchanged Hamiltonian mapping"
     (output/"diagnostics.json").write_text(json.dumps(report, indent=2, allow_nan=False)+"\n", encoding="utf-8")
     return report
 

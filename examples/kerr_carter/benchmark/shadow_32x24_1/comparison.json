@@ -1,0 +1,96 @@
+{
+  "scene": "shadow",
+  "repeat": 1,
+  "runs": [
+    {
+      "backend": "hamiltonian",
+      "spin": 0.9,
+      "inclination_degrees": 60,
+      "resolution": [
+        32,
+        24
+      ],
+      "rays": 768,
+      "workers": 10,
+      "wall_seconds": 22.832572700019227,
+      "worker_cpu_seconds": 134.421875,
+      "parent_cpu_seconds": 0.65625,
+      "startup_span_seconds": 3.0286425999947824,
+      "rhs_evaluations": 864236,
+      "steps": 56416,
+      "unresolved": 0,
+      "fallbacks": 0,
+      "peak_worker_memory_bytes": {
+        "11952": 78807040,
+        "37244": 79261696,
+        "26712": 79380480,
+        "34896": 79044608,
+        "1028": 79499264,
+        "27556": 78630912,
+        "27588": 79282176,
+        "34472": 78856192,
+        "29208": 78901248,
+        "31184": 78925824
+      },
+      "output": "examples\\kerr_carter\\benchmark\\shadow_32x24_1\\hamiltonian",
+      "conservation": {
+        "null_error": 2.442546813019159e-08,
+        "energy_drift": 0.0,
+        "angular_momentum_drift": 1.9014554781459983e-08,
+        "axial_momentum_drift": 1.9014554781459983e-08,
+        "carter_drift": 3.6033978789792944e-07
+      }
+    },
+    {
+      "backend": "carter",
+      "spin": 0.9,
+      "inclination_degrees": 60,
+      "resolution": [
+        32,
+        24
+      ],
+      "rays": 768,
+      "workers": 10,
+      "wall_seconds": 7.819910399994114,
+      "worker_cpu_seconds": 30.234375,
+      "parent_cpu_seconds": 0.671875,
+      "startup_span_seconds": 2.9129246000084095,
+      "rhs_evaluations": 619088,
+      "steps": 39072,
+      "unresolved": 0,
+      "fallbacks": 0,
+      "peak_worker_memory_bytes": {
+        "25632": 79331328,
+        "14828": 79097856,
+        "27208": 79269888,
+        "20780": 79065088,
+        "11600": 79007744,
+        "18340": 79081472,
+        "19784": 79167488,
+        "31628": 79007744,
+        "32304": 79273984,
+        "11700": 79118336
+      },
+      "output": "examples\\kerr_carter\\benchmark\\shadow_32x24_1\\carter",
+      "conservation": {
+        "null_error": 2.4454160738597808e-09,
+        "energy_drift": 0.0,
+        "angular_momentum_drift": 9.479651882830136e-12,
+        "axial_momentum_drift": 9.479651882830136e-12,
+        "carter_drift": 6.380061825601824e-06
+      }
+    }
+  ],
+  "numerical_comparison": {
+    "status_differences": 0,
+    "initial_constant_differences": 0,
+    "carter_unresolved": 0,
+    "max_source_angle_radians": 1.3700783415397843e-08,
+    "max_png_difference": 0,
+    "different_png_pixels": 0,
+    "passed": true
+  },
+  "wall_speedup": 2.9197997844113934,
+  "worker_cpu_speedup": 4.445994832041344,
+  "startup_adjusted_wall_speedup": 4.035864562738726
+}

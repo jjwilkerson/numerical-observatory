@@ -1,0 +1,774 @@
+{
+  "metric": {
+    "type": "binary_ks_approx",
+    "experimental": true,
+    "exact_vacuum_solution": false,
+    "masses": [
+      0.5,
+      0.5
+    ],
+    "centers": [
+      [
+        -6.0,
+        0.0,
+        0.0
+      ],
+      [
+        6.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "total_mass_parameter": 1.0,
+    "coordinates": "stationary outgoing Cartesian Kerr-Schild superposition",
+    "warning": "Provisional absorbing spheres are not computed binary event horizons; no Einstein constraint solve."
+  },
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      45.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 40.0,
+    "width": 96,
+    "height": 72,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "static"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 1000.0,
+    "capture_radius": 1.99,
+    "max_affine": 2500.0,
+    "max_step": 20.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "hamiltonian",
+    "carter_fallback": "none",
+    "binary_capture_fraction": 0.995,
+    "binary_signature_margin": 0.05
+  },
+  "exterior_grid_samples": 889,
+  "exterior_grid_signature_failures": 0,
+  "exterior_grid_minimum_signature_margin": 0.8518518518518519,
+  "max_inverse_identity_error": 2.220446049250313e-16,
+  "max_determinant_identity_error": 6.661338147750939e-16,
+  "max_inverse_derivative_finite_difference_error": 4.364264505340998e-11,
+  "tetrad_error": 2.220446049250313e-16,
+  "ray_convergence": [
+    {
+      "camera_direction": [
+        0.14,
+        0.07,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 5.060349577864895e-07,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1076.762492538796,
+            3.0720331707092154,
+            -784.1700847622839,
+            620.5383475467978
+          ],
+          "source_direction": [
+            -0.003288070350218013,
+            -0.7821903751895724,
+            0.6230308223147296
+          ],
+          "minimum_signature_margin": 0.9703251488396458,
+          "endpoint_component_difference_from_tight": 0.0001890389685286209,
+          "source_angle_from_tight": 2.411053145784318e-07
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 8.39379727945803e-09,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1076.7624813100595,
+            3.0720288813518613,
+            -784.1702327149592,
+            620.5381606011983
+          ],
+          "source_direction": [
+            -0.003288074606481998,
+            -0.7821905237076643,
+            0.6230306358336741
+          ],
+          "minimum_signature_margin": 0.970289158646293,
+          "endpoint_component_difference_from_tight": 2.0933690620950074e-06,
+          "source_angle_from_tight": 2.6713775284111993e-09
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 2.0117477977512765e-10,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1076.7624800085603,
+            3.0720288774631053,
+            -784.1702343715224,
+            620.5381585078293
+          ],
+          "source_direction": [
+            -0.0032880746088698133,
+            -0.7821905253720165,
+            0.6230306337441326
+          ],
+          "minimum_signature_margin": 0.9702633027147272
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        -0.14,
+        0.07,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 5.060349546507434e-07,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1076.762492538792,
+            -3.0720331707131168,
+            -784.1700847623027,
+            620.5383475467738
+          ],
+          "source_direction": [
+            0.0032880703502141005,
+            -0.7821903751895912,
+            0.623030822314706
+          ],
+          "minimum_signature_margin": 0.9703251488401714,
+          "endpoint_component_difference_from_tight": 0.00018903893885635625,
+          "source_angle_from_tight": 2.411052771698149e-07
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 8.39379402757316e-09,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1076.762481310057,
+            -3.072028881351268,
+            -784.1702327149617,
+            620.5381606011952
+          ],
+          "source_direction": [
+            0.0032880746064825827,
+            -0.7821905237076667,
+            0.623030635833671
+          ],
+          "minimum_signature_margin": 0.9702891586462293,
+          "endpoint_component_difference_from_tight": 2.093360194521665e-06,
+          "source_angle_from_tight": 2.6713663694181055e-09
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 2.0117795907328131e-10,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1076.7624800085637,
+            -3.072028877463867,
+            -784.1702343715177,
+            620.538158507835
+          ],
+          "source_direction": [
+            0.0032880746088690582,
+            -0.7821905253720121,
+            0.6230306337441383
+          ],
+          "minimum_signature_margin": 0.9702633027138825
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0.25,
+        0.15,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 4.3436688630129826e-08,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1068.31324298143,
+            -68.77568461147224,
+            -166.5917690909863,
+            -983.6244647615059
+          ],
+          "source_direction": [
+            -0.0798540969699869,
+            -0.1730005024811053,
+            -0.9816792497238561
+          ],
+          "minimum_signature_margin": 0.9996820763795128,
+          "endpoint_component_difference_from_tight": 6.5253307184320875e-06,
+          "source_angle_from_tight": 6.423651188293331e-09
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 8.567534338716089e-10,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1068.3132493471378,
+            -68.77567999684999,
+            -166.59176469576843,
+            -983.6244658285602
+          ],
+          "source_direction": [
+            -0.07985409241672764,
+            -0.17300049814448157,
+            -0.9816792508584777
+          ],
+          "minimum_signature_margin": 0.9996795830200786,
+          "endpoint_component_difference_from_tight": 1.5962291399773676e-07,
+          "source_angle_from_tight": 3.500930584778535e-11
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.613329767008252e-11,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1068.3132495067607,
+            -68.77567996639206,
+            -166.59176467708608,
+            -983.6244658338542
+          ],
+          "source_direction": [
+            -0.07985409238698617,
+            -0.17300049812685855,
+            -0.9816792508640028
+          ],
+          "minimum_signature_margin": 0.9996800138950679
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0,
+        0.2,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 2.057738202021915e-07,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1067.642919067222,
+            0.0,
+            -181.79029528810923,
+            -983.3373218479315
+          ],
+          "source_direction": [
+            0.0,
+            -0.1906587765462379,
+            -0.981656371102379
+          ],
+          "minimum_signature_margin": 0.9950400108885732,
+          "endpoint_component_difference_from_tight": 4.315412752475822e-06,
+          "source_angle_from_tight": 3.4754969457928553e-09
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.2781807567025374e-09,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1067.6429144912886,
+            0.0,
+            -181.7902987584223,
+            -983.337321206372
+          ],
+          "source_direction": [
+            0.0,
+            -0.1906587799589844,
+            -0.9816563704395503
+          ],
+          "minimum_signature_margin": 0.9950109915244387,
+          "endpoint_component_difference_from_tight": 2.605206645966973e-07,
+          "source_angle_from_tight": 1.021488449381991e-12
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 2.116837683552846e-11,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1067.6429147518093,
+            0.0,
+            -181.79029875514823,
+            -983.3373212069772
+          ],
+          "source_direction": [
+            0.0,
+            -0.1906587799579816,
+            -0.9816563704397451
+          ],
+          "minimum_signature_margin": 0.9950115054860573
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        -0.133,
+        0,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "captured",
+          "reason": "provisional_capture_1",
+          "null_error": 2.5318496588785302e-08,
+          "energy_drift": 0.0,
+          "end_event": [
+            -44.72110146224017,
+            -5.470798493247789,
+            0.0,
+            0.8425976295072204
+          ],
+          "source_direction": null,
+          "minimum_signature_margin": 0.8115917214386007,
+          "endpoint_component_difference_from_tight": 5.0392812589450386e-08
+        },
+        {
+          "rtol": 1e-09,
+          "status": "captured",
+          "reason": "provisional_capture_1",
+          "null_error": 1.117104330490167e-09,
+          "energy_drift": 0.0,
+          "end_event": [
+            -44.72110142547111,
+            -5.47079854313589,
+            0.0,
+            0.8425976608399213
+          ],
+          "source_direction": null,
+          "minimum_signature_margin": 0.8115917362591099,
+          "endpoint_component_difference_from_tight": 7.606999474774057e-10
+        },
+        {
+          "rtol": 1e-11,
+          "status": "captured",
+          "reason": "provisional_capture_1",
+          "null_error": 1.3971142648098223e-11,
+          "energy_drift": 0.0,
+          "end_event": [
+            -44.72110142471041,
+            -5.470798543640601,
+            0.0,
+            0.8425976611569084
+          ],
+          "source_direction": null,
+          "minimum_signature_margin": 0.8115917364090465
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0.133,
+        0,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "captured",
+          "reason": "provisional_capture_2",
+          "null_error": 2.5318495398363163e-08,
+          "energy_drift": 0.0,
+          "end_event": [
+            -44.72110146224018,
+            5.47079849324779,
+            0.0,
+            0.8425976295072235
+          ],
+          "source_direction": null,
+          "minimum_signature_margin": 0.8115917214386019,
+          "endpoint_component_difference_from_tight": 5.0392817918520905e-08
+        },
+        {
+          "rtol": 1e-09,
+          "status": "captured",
+          "reason": "provisional_capture_2",
+          "null_error": 1.1171040982126764e-09,
+          "energy_drift": 0.0,
+          "end_event": [
+            -44.721101425471126,
+            5.470798543135894,
+            0.0,
+            0.8425976608399196
+          ],
+          "source_direction": null,
+          "minimum_signature_margin": 0.8115917362591099,
+          "endpoint_component_difference_from_tight": 7.606999474774057e-10
+        },
+        {
+          "rtol": 1e-11,
+          "status": "captured",
+          "reason": "provisional_capture_2",
+          "null_error": 1.397160720307958e-11,
+          "energy_drift": 0.0,
+          "end_event": [
+            -44.721101424710426,
+            5.470798543640608,
+            0.0,
+            0.8425976611569145
+          ],
+          "source_direction": null,
+          "minimum_signature_margin": 0.8115917364090491
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0,
+        0,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.9958543567863942e-07,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1068.0325321673558,
+            0.0,
+            0.0,
+            -1000.0
+          ],
+          "source_direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "minimum_signature_margin": 0.8902515774689718,
+          "endpoint_component_difference_from_tight": 1.9791101749433437e-05,
+          "source_angle_from_tight": 0.0
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 6.74938820350322e-09,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1068.0325521741004,
+            0.0,
+            0.0,
+            -1000.0
+          ],
+          "source_direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "minimum_signature_margin": 0.889085386728018,
+          "endpoint_component_difference_from_tight": 2.156427854060894e-07,
+          "source_angle_from_tight": 0.0
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.2726367575550142e-10,
+          "energy_drift": 0.0,
+          "end_event": [
+            -1068.0325519584576,
+            0.0,
+            0.0,
+            -1000.0
+          ],
+          "source_direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "minimum_signature_margin": 0.8890404625563826
+        }
+      ]
+    }
+  ],
+  "escape_convergence": [
+    {
+      "camera_direction": [
+        0.14,
+        0.07,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            -0.003287882502833519,
+            -0.782190558631473,
+            0.6230305930020065
+          ]
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            -0.0032880632765049165,
+            -0.7821905273318334,
+            0.6230306313434663
+          ]
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            -0.0032880746088807616,
+            -0.782190525372013,
+            0.6230306337441368
+          ]
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            -0.0032880753178342955,
+            -0.782190525249472,
+            0.6230306338942408
+          ]
+        }
+      ],
+      "successive_direction_changes_radians": [
+        1.8742693311047406e-07,
+        1.1748483202021618e-08,
+        7.349575664351278e-10
+      ]
+    },
+    {
+      "camera_direction": [
+        -0.14,
+        0.07,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            0.003287882502832763,
+            -0.7821905586314685,
+            0.6230305930020121
+          ]
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            0.0032880632765041606,
+            -0.7821905273318289,
+            0.623030631343472
+          ]
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            0.003288074608880007,
+            -0.7821905253720085,
+            0.6230306337441425
+          ]
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            0.0032880753178335404,
+            -0.7821905252494674,
+            0.6230306338942466
+          ]
+        }
+      ],
+      "successive_direction_changes_radians": [
+        1.874269331098863e-07,
+        1.1748483174173987e-08,
+        7.349576098176395e-10
+      ]
+    },
+    {
+      "camera_direction": [
+        0.25,
+        0.15,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            -0.07985350742210653,
+            -0.17300025092780943,
+            -0.9816793420110778
+          ]
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            -0.07985405798991023,
+            -0.17300048359542003,
+            -0.9816792562228739
+          ]
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            -0.07985409238704747,
+            -0.17300049812689453,
+            -0.9816792508639914
+          ]
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            -0.07985409453507554,
+            -0.17300049903436118,
+            -0.9816792505293392
+          ]
+        }
+      ],
+      "successive_direction_changes_radians": [
+        6.03836682735099e-07,
+        3.7723261020460955e-08,
+        2.3557403251828827e-09
+      ]
+    },
+    {
+      "camera_direction": [
+        0,
+        0.2,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            0.0,
+            -0.19065858099187308,
+            -0.9816564090832217
+          ]
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            0.0,
+            -0.19065876824963682,
+            -0.9816563727137574
+          ]
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            0.0,
+            -0.19065877995816707,
+            -0.9816563704397091
+          ]
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            0.0,
+            -0.19065878069002654,
+            -0.9816563702975661
+          ]
+        }
+      ],
+      "successive_direction_changes_radians": [
+        1.9075693435954944e-07,
+        1.1927320603399849e-08,
+        7.455353001617482e-10
+      ]
+    }
+  ],
+  "single_mass_zero": [
+    {
+      "camera_direction": [
+        0,
+        0,
+        -1
+      ],
+      "binary_status": "captured",
+      "schwarzschild_status": "captured",
+      "max_state_component_difference": 2.6645352591003757e-14
+    },
+    {
+      "camera_direction": [
+        0.4,
+        0,
+        -1
+      ],
+      "binary_status": "escaped",
+      "schwarzschild_status": "escaped",
+      "max_state_component_difference": 6.408527042367496e-10,
+      "matched_finite_source_direction_error": 4.4525494402591893e-13,
+      "finite_1000M_vs_infinity_direction_error": 3.5955655119934704e-10
+    },
+    {
+      "camera_direction": [
+        0,
+        0.7,
+        -1
+      ],
+      "binary_status": "escaped",
+      "schwarzschild_status": "escaped",
+      "max_state_component_difference": 1.560920281917788e-10,
+      "matched_finite_source_direction_error": 5.329070518200752e-15,
+      "finite_1000M_vs_infinity_direction_error": 1.3253397546098e-09
+    }
+  ],
+  "passed": true
+}

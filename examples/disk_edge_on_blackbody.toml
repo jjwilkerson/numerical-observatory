@@ -1,0 +1,38 @@
+mass = 1.0
+[camera]
+position = [0.0, 0.0, 60.0]
+target = [0.0, 0.0, 0.0]
+up = [0.0, 1.0, 0.0]
+fov_degrees = 60.0
+width = 192
+height = 144
+[integration]
+rtol = 1e-9
+atol = 1e-11
+capture_radius = 1.99
+escape_radius = 110.0
+max_affine = 400.0
+max_step = 4.0
+null_tolerance = 1e-5
+[background]
+mode = "starfield"
+longitude_degrees = 15.0
+latitude_degrees = 18.0
+roll_degrees = 25.0
+resolution = 4
+exposure = 3.0
+[disk]
+enabled = true
+inner_radius = 6.0
+outer_radius = 20.0
+inclination_degrees = 85.0
+position_angle_degrees = 0.0
+rotation = 1
+temperature_inner = 10000.0
+temperature_index = 0.75
+emissivity_scale = 1.0
+[disk.display]
+exposure = 2.0
+reference_temperature = 10000.0
+tone_mapping = "reinhard"
+palette = "blackbody"

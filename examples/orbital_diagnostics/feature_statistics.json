@@ -1,0 +1,972 @@
+{
+  "upper_halo": {
+    "recorded_crossing": 2,
+    "selected_samples": 82,
+    "phi_emit_over_pi": {
+      "count": 82,
+      "minimum": 1.8532645960131746,
+      "maximum": 1.9719646764381964,
+      "median": 1.9589869486796403
+    },
+    "phi_background_over_pi": {
+      "count": 82,
+      "minimum": 2.0002090203884886,
+      "maximum": 2.28244584564457,
+      "median": 2.1480980982105176
+    },
+    "signed_distance_from_shadow_pixels": {
+      "count": 82,
+      "minimum": 0.5357082954295009,
+      "maximum": 1.3430843592697599,
+      "median": 0.8270918875255049
+    },
+    "signed_distance_from_second_ring_pixels": {
+      "count": 82,
+      "minimum": -0.8083054034340975,
+      "maximum": -0.0009293395938385629,
+      "median": -0.5169218113380936
+    },
+    "absolute_distance_from_second_ring_pixels": {
+      "count": 82,
+      "minimum": 0.0009293395938385629,
+      "maximum": 0.8083054034340975,
+      "median": 0.5169218113380936
+    },
+    "representatives": [
+      {
+        "x": 272,
+        "y": 231,
+        "phi_emit_over_pi": 1.8532645960131746,
+        "phi_background_over_pi": 2.125817484211983,
+        "distance_shadow_pixels": 0.8893023132186926,
+        "distance_second_ring_pixels": -0.4547113856449059
+      },
+      {
+        "x": 313,
+        "y": 192,
+        "phi_emit_over_pi": 1.9719646764381964,
+        "phi_background_over_pi": 2.2591413080786817,
+        "distance_shadow_pixels": 0.5774429489120223,
+        "distance_second_ring_pixels": -0.7665707499515761
+      },
+      {
+        "x": 284,
+        "y": 207,
+        "phi_emit_over_pi": 1.9589869486796403,
+        "phi_background_over_pi": 2.172207661700387,
+        "distance_shadow_pixels": 0.764801051875061,
+        "distance_second_ring_pixels": -0.5792126469885375
+      }
+    ]
+  },
+  "left_branch": {
+    "recorded_crossing": 2,
+    "selected_samples": 33,
+    "phi_emit_over_pi": {
+      "count": 33,
+      "minimum": 1.3389143949274305,
+      "maximum": 1.9316830712281563,
+      "median": 1.666473286476627
+    },
+    "phi_background_over_pi": {
+      "count": 33,
+      "minimum": 1.5239071397638964,
+      "maximum": 2.19846118114285,
+      "median": 1.8586769480910026
+    },
+    "signed_distance_from_shadow_pixels": {
+      "count": 33,
+      "minimum": 0.7024294936578102,
+      "maximum": 7.155407141575466,
+      "median": 2.1574909050970774
+    },
+    "signed_distance_from_second_ring_pixels": {
+      "count": 33,
+      "minimum": -0.6415842052057883,
+      "maximum": 5.811393442711868,
+      "median": 0.813477206233479
+    },
+    "absolute_distance_from_second_ring_pixels": {
+      "count": 33,
+      "minimum": 0.0009293395938385629,
+      "maximum": 5.811393442711868,
+      "median": 0.813477206233479
+    },
+    "representatives": [
+      {
+        "x": 268,
+        "y": 242,
+        "phi_emit_over_pi": 1.3389143949274305,
+        "phi_background_over_pi": 1.6677408620444016,
+        "distance_shadow_pixels": 4.195412753426602,
+        "distance_second_ring_pixels": 2.8513990545630037
+      },
+      {
+        "x": 275,
+        "y": 220,
+        "phi_emit_over_pi": 1.9316830712281563,
+        "phi_background_over_pi": 2.0293778059294882,
+        "distance_shadow_pixels": 1.219745949420357,
+        "distance_second_ring_pixels": -0.12426774944324137
+      },
+      {
+        "x": 270,
+        "y": 237,
+        "phi_emit_over_pi": 1.666473286476627,
+        "phi_background_over_pi": 1.8532194028337596,
+        "distance_shadow_pixels": 2.197859953624601,
+        "distance_second_ring_pixels": 0.8538462547610024
+      }
+    ],
+    "rows": [
+      {
+        "y": 220,
+        "x": [
+          275
+        ],
+        "phi_emit_over_pi": [
+          1.9316830712281563
+        ],
+        "phi_background_over_pi": [
+          2.0293778059294882
+        ],
+        "radius_pixels": [
+          48.58497710198081
+        ]
+      },
+      {
+        "y": 221,
+        "x": [
+          275
+        ],
+        "phi_emit_over_pi": [
+          1.9286731932453074
+        ],
+        "phi_background_over_pi": [
+          2.1480980982105176
+        ],
+        "radius_pixels": [
+          48.19232304008596
+        ]
+      },
+      {
+        "y": 223,
+        "x": [
+          274
+        ],
+        "phi_emit_over_pi": [
+          1.920037695288398
+        ],
+        "phi_background_over_pi": [
+          2.079623680127105
+        ],
+        "radius_pixels": [
+          48.399380161320245
+        ]
+      },
+      {
+        "y": 224,
+        "x": [
+          274
+        ],
+        "phi_emit_over_pi": [
+          1.915668042306122
+        ],
+        "phi_background_over_pi": [
+          2.19846118114285
+        ],
+        "radius_pixels": [
+          48.067660646218265
+        ]
+      },
+      {
+        "y": 225,
+        "x": [
+          273
+        ],
+        "phi_emit_over_pi": [
+          1.9090132803694415
+        ],
+        "phi_background_over_pi": [
+          2.0002090203884886
+        ],
+        "radius_pixels": [
+          48.708315511830214
+        ]
+      },
+      {
+        "y": 226,
+        "x": [
+          273
+        ],
+        "phi_emit_over_pi": [
+          1.903213955079446
+        ],
+        "phi_background_over_pi": [
+          2.0735867966219934
+        ],
+        "radius_pixels": [
+          48.42003717470692
+        ]
+      },
+      {
+        "y": 227,
+        "x": [
+          273
+        ],
+        "phi_emit_over_pi": [
+          1.8965309304474176
+        ],
+        "phi_background_over_pi": [
+          2.163950032778406
+        ],
+        "radius_pixels": [
+          48.15080477001397
+        ]
+      },
+      {
+        "y": 229,
+        "x": [
+          272
+        ],
+        "phi_emit_over_pi": [
+          1.8774193873133498
+        ],
+        "phi_background_over_pi": [
+          2.0144181953754057
+        ],
+        "radius_pixels": [
+          48.646685395821166
+        ]
+      },
+      {
+        "y": 230,
+        "x": [
+          272
+        ],
+        "phi_emit_over_pi": [
+          1.8664335747629361
+        ],
+        "phi_background_over_pi": [
+          2.067673689227914
+        ],
+        "radius_pixels": [
+          48.44068537913146
+        ]
+      },
+      {
+        "y": 231,
+        "x": [
+          272
+        ],
+        "phi_emit_over_pi": [
+          1.8532645960131746
+        ],
+        "phi_background_over_pi": [
+          2.125817484211983
+        ],
+        "radius_pixels": [
+          48.25453346577915
+        ]
+      },
+      {
+        "y": 232,
+        "x": [
+          271
+        ],
+        "phi_emit_over_pi": [
+          1.834497360180188
+        ],
+        "phi_background_over_pi": [
+          1.927421601842832
+        ],
+        "radius_pixels": [
+          49.076470940767535
+        ]
+      },
+      {
+        "y": 233,
+        "x": [
+          271
+        ],
+        "phi_emit_over_pi": [
+          1.8146090977728604
+        ],
+        "phi_background_over_pi": [
+          1.9535113560363822
+        ],
+        "radius_pixels": [
+          48.93362851863736
+        ]
+      },
+      {
+        "y": 234,
+        "x": [
+          271
+        ],
+        "phi_emit_over_pi": [
+          1.7898497533707776
+        ],
+        "phi_background_over_pi": [
+          1.9780123968261323
+        ],
+        "radius_pixels": [
+          48.81085944746312
+        ]
+      },
+      {
+        "y": 235,
+        "x": [
+          271
+        ],
+        "phi_emit_over_pi": [
+          1.7586654695539794
+        ],
+        "phi_background_over_pi": [
+          2.0002090203884886
+        ],
+        "radius_pixels": [
+          48.708315511830214
+        ]
+      },
+      {
+        "y": 236,
+        "x": [
+          270,
+          271
+        ],
+        "phi_emit_over_pi": [
+          1.7159711968087654,
+          1.7191358960493048
+        ],
+        "phi_background_over_pi": [
+          1.8452382630841782,
+          2.019317669087946
+        ],
+        "radius_pixels": [
+          49.62358310319802,
+          48.62612466565683
+        ]
+      },
+      {
+        "y": 237,
+        "x": [
+          270
+        ],
+        "phi_emit_over_pi": [
+          1.666473286476627
+        ],
+        "phi_background_over_pi": [
+          1.8532194028337596
+        ],
+        "radius_pixels": [
+          49.563091106185055
+        ]
+      },
+      {
+        "y": 238,
+        "x": [
+          269,
+          270
+        ],
+        "phi_emit_over_pi": [
+          1.604138858067439,
+          1.6060898647029678
+        ],
+        "phi_background_over_pi": [
+          1.7480539313314536,
+          1.8586769480910026
+        ],
+        "radius_pixels": [
+          50.52227231627651,
+          49.52272205765753
+        ]
+      },
+      {
+        "y": 239,
+        "x": [
+          268,
+          269,
+          270
+        ],
+        "phi_emit_over_pi": [
+          1.5351777069956305,
+          1.5358684023999016,
+          1.5365866407273363
+        ],
+        "phi_background_over_pi": [
+          1.6716340863878418,
+          1.7498549368147,
+          1.8614483479943051
+        ],
+        "radius_pixels": [
+          51.50242712727236,
+          50.502475186865844,
+          49.502525188115406
+        ]
+      },
+      {
+        "y": 240,
+        "x": [
+          266,
+          267,
+          268,
+          269
+        ],
+        "phi_emit_over_pi": [
+          1.4661271351179794,
+          1.4654869928167342,
+          1.4648222919699476,
+          1.4641315956398104
+        ],
+        "phi_background_over_pi": [
+          1.5642070943873505,
+          1.612006724260043,
+          1.6716340863878418,
+          1.7498549368147
+        ],
+        "radius_pixels": [
+          53.50233639758174,
+          52.502380898393554,
+          51.50242712727236,
+          50.502475186865844
+        ]
+      },
+      {
+        "y": 241,
+        "x": [
+          265,
+          266,
+          267,
+          268
+        ],
+        "phi_emit_over_pi": [
+          1.4030179330574142,
+          1.4013194986892568,
+          1.399562561437034,
+          1.3977441612165522
+        ],
+        "phi_background_over_pi": [
+          1.5239071397638964,
+          1.5634000430101926,
+          1.61100088897183,
+          1.6703291488806369
+        ],
+        "radius_pixels": [
+          54.52063829413592,
+          53.52102390649865,
+          52.52142420003479,
+          51.52184002925361
+        ]
+      },
+      {
+        "y": 242,
+        "x": [
+          266,
+          267,
+          268
+        ],
+        "phi_emit_over_pi": [
+          1.3439924097608829,
+          1.341490589668837,
+          1.3389143949274305
+        ],
+        "phi_background_over_pi": [
+          1.561795145640325,
+          1.6090027908072249,
+          1.6677408620444016
+        ],
+        "radius_pixels": [
+          53.558379363083795,
+          52.55949010407159,
+          51.56064390598706
+        ]
+      }
+    ]
+  },
+  "right_branch": {
+    "recorded_crossing": 2,
+    "selected_samples": 33,
+    "phi_emit_over_pi": {
+      "count": 33,
+      "minimum": 1.3389143949274305,
+      "maximum": 1.9316830712281563,
+      "median": 1.666473286476627
+    },
+    "phi_background_over_pi": {
+      "count": 33,
+      "minimum": 1.5239071397638964,
+      "maximum": 2.19846118114285,
+      "median": 1.8586769480910026
+    },
+    "signed_distance_from_shadow_pixels": {
+      "count": 33,
+      "minimum": 0.7024294936578102,
+      "maximum": 7.155407141575466,
+      "median": 2.1574909050970774
+    },
+    "signed_distance_from_second_ring_pixels": {
+      "count": 33,
+      "minimum": -0.6415842052057883,
+      "maximum": 5.811393442711868,
+      "median": 0.813477206233479
+    },
+    "absolute_distance_from_second_ring_pixels": {
+      "count": 33,
+      "minimum": 0.0009293395938385629,
+      "maximum": 5.811393442711868,
+      "median": 0.813477206233479
+    },
+    "representatives": [
+      {
+        "x": 371,
+        "y": 242,
+        "phi_emit_over_pi": 1.3389143949274305,
+        "phi_background_over_pi": 1.6677408620444016,
+        "distance_shadow_pixels": 4.195412753426602,
+        "distance_second_ring_pixels": 2.8513990545630037
+      },
+      {
+        "x": 364,
+        "y": 220,
+        "phi_emit_over_pi": 1.9316830712281563,
+        "phi_background_over_pi": 2.0293778059294882,
+        "distance_shadow_pixels": 1.219745949420357,
+        "distance_second_ring_pixels": -0.12426774944324137
+      },
+      {
+        "x": 369,
+        "y": 237,
+        "phi_emit_over_pi": 1.666473286476627,
+        "phi_background_over_pi": 1.8532194028337596,
+        "distance_shadow_pixels": 2.197859953624601,
+        "distance_second_ring_pixels": 0.8538462547610024
+      }
+    ],
+    "rows": [
+      {
+        "y": 220,
+        "x": [
+          364
+        ],
+        "phi_emit_over_pi": [
+          1.9316830712281563
+        ],
+        "phi_background_over_pi": [
+          2.0293778059294882
+        ],
+        "radius_pixels": [
+          48.58497710198081
+        ]
+      },
+      {
+        "y": 221,
+        "x": [
+          364
+        ],
+        "phi_emit_over_pi": [
+          1.9286731932453074
+        ],
+        "phi_background_over_pi": [
+          2.1480980982105176
+        ],
+        "radius_pixels": [
+          48.19232304008596
+        ]
+      },
+      {
+        "y": 223,
+        "x": [
+          365
+        ],
+        "phi_emit_over_pi": [
+          1.920037695288398
+        ],
+        "phi_background_over_pi": [
+          2.079623680127105
+        ],
+        "radius_pixels": [
+          48.399380161320245
+        ]
+      },
+      {
+        "y": 224,
+        "x": [
+          365
+        ],
+        "phi_emit_over_pi": [
+          1.915668042306122
+        ],
+        "phi_background_over_pi": [
+          2.19846118114285
+        ],
+        "radius_pixels": [
+          48.067660646218265
+        ]
+      },
+      {
+        "y": 225,
+        "x": [
+          366
+        ],
+        "phi_emit_over_pi": [
+          1.9090132803694415
+        ],
+        "phi_background_over_pi": [
+          2.0002090203884886
+        ],
+        "radius_pixels": [
+          48.708315511830214
+        ]
+      },
+      {
+        "y": 226,
+        "x": [
+          366
+        ],
+        "phi_emit_over_pi": [
+          1.903213955079446
+        ],
+        "phi_background_over_pi": [
+          2.0735867966219934
+        ],
+        "radius_pixels": [
+          48.42003717470692
+        ]
+      },
+      {
+        "y": 227,
+        "x": [
+          366
+        ],
+        "phi_emit_over_pi": [
+          1.8965309304474176
+        ],
+        "phi_background_over_pi": [
+          2.163950032778406
+        ],
+        "radius_pixels": [
+          48.15080477001397
+        ]
+      },
+      {
+        "y": 229,
+        "x": [
+          367
+        ],
+        "phi_emit_over_pi": [
+          1.8774193873133498
+        ],
+        "phi_background_over_pi": [
+          2.0144181953754057
+        ],
+        "radius_pixels": [
+          48.646685395821166
+        ]
+      },
+      {
+        "y": 230,
+        "x": [
+          367
+        ],
+        "phi_emit_over_pi": [
+          1.8664335747629361
+        ],
+        "phi_background_over_pi": [
+          2.067673689227914
+        ],
+        "radius_pixels": [
+          48.44068537913146
+        ]
+      },
+      {
+        "y": 231,
+        "x": [
+          367
+        ],
+        "phi_emit_over_pi": [
+          1.8532645960131746
+        ],
+        "phi_background_over_pi": [
+          2.125817484211983
+        ],
+        "radius_pixels": [
+          48.25453346577915
+        ]
+      },
+      {
+        "y": 232,
+        "x": [
+          368
+        ],
+        "phi_emit_over_pi": [
+          1.834497360180188
+        ],
+        "phi_background_over_pi": [
+          1.927421601842832
+        ],
+        "radius_pixels": [
+          49.076470940767535
+        ]
+      },
+      {
+        "y": 233,
+        "x": [
+          368
+        ],
+        "phi_emit_over_pi": [
+          1.8146090977728604
+        ],
+        "phi_background_over_pi": [
+          1.9535113560363822
+        ],
+        "radius_pixels": [
+          48.93362851863736
+        ]
+      },
+      {
+        "y": 234,
+        "x": [
+          368
+        ],
+        "phi_emit_over_pi": [
+          1.7898497533707776
+        ],
+        "phi_background_over_pi": [
+          1.9780123968261323
+        ],
+        "radius_pixels": [
+          48.81085944746312
+        ]
+      },
+      {
+        "y": 235,
+        "x": [
+          368
+        ],
+        "phi_emit_over_pi": [
+          1.7586654695539794
+        ],
+        "phi_background_over_pi": [
+          2.0002090203884886
+        ],
+        "radius_pixels": [
+          48.708315511830214
+        ]
+      },
+      {
+        "y": 236,
+        "x": [
+          368,
+          369
+        ],
+        "phi_emit_over_pi": [
+          1.7191358960493048,
+          1.7159711968087654
+        ],
+        "phi_background_over_pi": [
+          2.019317669087946,
+          1.8452382630841782
+        ],
+        "radius_pixels": [
+          48.62612466565683,
+          49.62358310319802
+        ]
+      },
+      {
+        "y": 237,
+        "x": [
+          369
+        ],
+        "phi_emit_over_pi": [
+          1.666473286476627
+        ],
+        "phi_background_over_pi": [
+          1.8532194028337596
+        ],
+        "radius_pixels": [
+          49.563091106185055
+        ]
+      },
+      {
+        "y": 238,
+        "x": [
+          369,
+          370
+        ],
+        "phi_emit_over_pi": [
+          1.6060898647029678,
+          1.604138858067439
+        ],
+        "phi_background_over_pi": [
+          1.8586769480910026,
+          1.7480539313314536
+        ],
+        "radius_pixels": [
+          49.52272205765753,
+          50.52227231627651
+        ]
+      },
+      {
+        "y": 239,
+        "x": [
+          369,
+          370,
+          371
+        ],
+        "phi_emit_over_pi": [
+          1.5365866407273363,
+          1.5358684023999016,
+          1.5351777069956305
+        ],
+        "phi_background_over_pi": [
+          1.8614483479943051,
+          1.7498549368147,
+          1.6716340863878418
+        ],
+        "radius_pixels": [
+          49.502525188115406,
+          50.502475186865844,
+          51.50242712727236
+        ]
+      },
+      {
+        "y": 240,
+        "x": [
+          370,
+          371,
+          372,
+          373
+        ],
+        "phi_emit_over_pi": [
+          1.4641315956398104,
+          1.4648222919699476,
+          1.4654869928167342,
+          1.4661271351179794
+        ],
+        "phi_background_over_pi": [
+          1.7498549368147,
+          1.6716340863878418,
+          1.612006724260043,
+          1.5642070943873505
+        ],
+        "radius_pixels": [
+          50.502475186865844,
+          51.50242712727236,
+          52.502380898393554,
+          53.50233639758174
+        ]
+      },
+      {
+        "y": 241,
+        "x": [
+          371,
+          372,
+          373,
+          374
+        ],
+        "phi_emit_over_pi": [
+          1.3977441612165522,
+          1.399562561437034,
+          1.4013194986892568,
+          1.4030179330574142
+        ],
+        "phi_background_over_pi": [
+          1.6703291488806369,
+          1.61100088897183,
+          1.5634000430101926,
+          1.5239071397638964
+        ],
+        "radius_pixels": [
+          51.52184002925361,
+          52.52142420003479,
+          53.52102390649865,
+          54.52063829413592
+        ]
+      },
+      {
+        "y": 242,
+        "x": [
+          371,
+          372,
+          373
+        ],
+        "phi_emit_over_pi": [
+          1.3389143949274305,
+          1.341490589668837,
+          1.3439924097608829
+        ],
+        "phi_background_over_pi": [
+          1.6677408620444016,
+          1.6090027908072249,
+          1.561795145640325
+        ],
+        "radius_pixels": [
+          51.56064390598706,
+          52.55949010407159,
+          53.558379363083795
+        ]
+      }
+    ]
+  },
+  "lower_halo": {
+    "recorded_crossing": 3,
+    "selected_samples": 50,
+    "phi_emit_over_pi": {
+      "count": 50,
+      "minimum": 2.027962415710859,
+      "maximum": 2.0542475772128115,
+      "median": 2.0327922919499404
+    },
+    "phi_background_over_pi": {
+      "count": 50,
+      "minimum": 2.125817484211983,
+      "maximum": 2.3352665324753694,
+      "median": 2.1894490255701737
+    },
+    "signed_distance_from_shadow_pixels": {
+      "count": 50,
+      "minimum": 0.4521297114604721,
+      "maximum": 0.8893023132186926,
+      "median": 0.7232290016179093
+    },
+    "signed_distance_from_second_ring_pixels": {
+      "count": 50,
+      "minimum": -0.8918839874031264,
+      "maximum": -0.4547113856449059,
+      "median": -0.6207846972456892
+    },
+    "absolute_distance_from_second_ring_pixels": {
+      "count": 50,
+      "minimum": 0.4547113856449059,
+      "maximum": 0.8918839874031264,
+      "median": 0.6207846972456892
+    },
+    "representatives": [
+      {
+        "x": 314,
+        "y": 287,
+        "phi_emit_over_pi": 2.027962415710859,
+        "phi_background_over_pi": 2.3352665324753694,
+        "distance_shadow_pixels": 0.4521297114604721,
+        "distance_second_ring_pixels": -0.8918839874031264
+      },
+      {
+        "x": 278,
+        "y": 264,
+        "phi_emit_over_pi": 2.0542475772128115,
+        "phi_background_over_pi": 2.1480980982105176,
+        "distance_shadow_pixels": 0.8270918875255049,
+        "distance_second_ring_pixels": -0.5169218113380936
+      },
+      {
+        "x": 294,
+        "y": 280,
+        "phi_emit_over_pi": 2.0327922919499404,
+        "phi_background_over_pi": 2.307704744651842,
+        "distance_shadow_pixels": 0.49393724807099915,
+        "distance_second_ring_pixels": -0.8500764507925993
+      }
+    ]
+  }
+}

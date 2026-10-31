@@ -1,0 +1,979 @@
+{
+  "roi_definitions": {
+    "upper_halo": "46<=image distance from (319.5,239.5)<=50 pixels, y<232",
+    "lower_halo": "46<=image distance from (319.5,239.5)<=50 pixels, y>=264",
+    "left_branch": "260<=x<278, 220<=y<244",
+    "right_branch": "362<=x<380, 220<=y<244",
+    "upper_thin_crossing_2": "all recorded crossing-2 emitting rays with y<244; categorically selected"
+  },
+  "regions": {
+    "upper_halo": {
+      "emitting_samples": 86,
+      "by_crossing": {
+        "2": {
+          "count": 82,
+          "radius_m_range": [
+            6.0618157812265405,
+            18.883828437779588
+          ],
+          "azimuth": {
+            "start_degrees": 244.0317506059607,
+            "span_degrees": 51.93649878807855,
+            "end_degrees": 295.9682493940393,
+            "occupied_10_degree_bins": 6,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        },
+        "3": {
+          "count": 4,
+          "radius_m_range": [
+            8.305008548000627,
+            8.38693706366977
+          ],
+          "azimuth": {
+            "start_degrees": 84.71408969298872,
+            "span_degrees": 10.5718206140225,
+            "end_degrees": 95.28591030701122,
+            "occupied_10_degree_bins": 2,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        }
+      }
+    },
+    "lower_halo": {
+      "emitting_samples": 54,
+      "by_crossing": {
+        "3": {
+          "count": 50,
+          "radius_m_range": [
+            6.109620351147782,
+            18.16946606751662
+          ],
+          "azimuth": {
+            "start_degrees": 261.6020184462852,
+            "span_degrees": 16.7959631074296,
+            "end_degrees": 278.39798155371477,
+            "occupied_10_degree_bins": 2,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        },
+        "4": {
+          "count": 4,
+          "radius_m_range": [
+            12.742708102473463,
+            12.957445952364724
+          ],
+          "azimuth": {
+            "start_degrees": 84.7140896929882,
+            "span_degrees": 10.571820614023636,
+            "end_degrees": 95.28591030701183,
+            "occupied_10_degree_bins": 2,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        }
+      }
+    },
+    "left_branch": {
+      "emitting_samples": 65,
+      "by_crossing": {
+        "1": {
+          "count": 28,
+          "radius_m_range": [
+            6.002625547883737,
+            7.006341966221559
+          ],
+          "azimuth": {
+            "start_degrees": 104.65293098349309,
+            "span_degrees": 116.16138039101969,
+            "end_degrees": 220.81431137451278,
+            "occupied_10_degree_bins": 4,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        },
+        "2": {
+          "count": 33,
+          "radius_m_range": [
+            6.062333072015299,
+            19.31003833979469
+          ],
+          "azimuth": {
+            "start_degrees": 281.24898075833545,
+            "span_degrees": 107.86779285200038,
+            "end_degrees": 29.116773610335827,
+            "occupied_10_degree_bins": 10,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        },
+        "3": {
+          "count": 4,
+          "radius_m_range": [
+            6.649912137542346,
+            10.078763721438763
+          ],
+          "azimuth": {
+            "start_degrees": 173.1134042665439,
+            "span_degrees": 38.0135190581542,
+            "end_degrees": 211.1269233246981,
+            "occupied_10_degree_bins": 4,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        }
+      }
+    },
+    "right_branch": {
+      "emitting_samples": 65,
+      "by_crossing": {
+        "1": {
+          "count": 28,
+          "radius_m_range": [
+            6.002625547883737,
+            7.006341966221559
+          ],
+          "azimuth": {
+            "start_degrees": 319.1856886254872,
+            "span_degrees": 116.16138039101969,
+            "end_degrees": 75.34706901650691,
+            "occupied_10_degree_bins": 4,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        },
+        "2": {
+          "count": 33,
+          "radius_m_range": [
+            6.062333072015299,
+            19.31003833979469
+          ],
+          "azimuth": {
+            "start_degrees": 150.88322638966417,
+            "span_degrees": 107.86779285200032,
+            "end_degrees": 258.7510192416645,
+            "occupied_10_degree_bins": 10,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        },
+        "3": {
+          "count": 4,
+          "radius_m_range": [
+            6.649912137542346,
+            10.078763721438763
+          ],
+          "azimuth": {
+            "start_degrees": 328.87307667530183,
+            "span_degrees": 38.01351905815426,
+            "end_degrees": 6.88659573345609,
+            "occupied_10_degree_bins": 4,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        }
+      }
+    },
+    "upper_thin_crossing_2": {
+      "emitting_samples": 128,
+      "by_crossing": {
+        "2": {
+          "count": 128,
+          "radius_m_range": [
+            6.0618157812265405,
+            19.31003833979469
+          ],
+          "azimuth": {
+            "start_degrees": 150.88322638966417,
+            "span_degrees": 238.23354722067165,
+            "end_degrees": 29.116773610335827,
+            "occupied_10_degree_bins": 22,
+            "note": "Shortest circular interval covering samples; not proof of continuous coverage between samples"
+          }
+        }
+      }
+    }
+  },
+  "warning": "Image-space ROIs select visible features only. Physical values always come from recorded hits. Branch boxes also overlap foreground crossing-1 disk.",
+  "upper_thin_crossing_2_8_connected_components": 26,
+  "branch_row_samples": {
+    "left": {
+      "rows": [
+        {
+          "y": 220,
+          "x": [
+            275
+          ],
+          "radius_m": [
+            17.614559438405195
+          ],
+          "azimuth_degrees": [
+            281.24898075833545
+          ],
+          "circular_mean_degrees": 281.24898075833545
+        },
+        {
+          "y": 221,
+          "x": [
+            275
+          ],
+          "radius_m": [
+            8.183244642929356
+          ],
+          "azimuth_degrees": [
+            281.84029105806616
+          ],
+          "circular_mean_degrees": 281.84029105806616
+        },
+        {
+          "y": 223,
+          "x": [
+            274
+          ],
+          "radius_m": [
+            10.980385417094608
+          ],
+          "azimuth_degrees": [
+            283.5140736356088
+          ],
+          "circular_mean_degrees": 283.5140736356088
+        },
+        {
+          "y": 224,
+          "x": [
+            274
+          ],
+          "radius_m": [
+            6.570800528736516
+          ],
+          "azimuth_degrees": [
+            284.3509627316102
+          ],
+          "circular_mean_degrees": 284.35096273161014
+        },
+        {
+          "y": 225,
+          "x": [
+            273
+          ],
+          "radius_m": [
+            18.883828437779588
+          ],
+          "azimuth_degrees": [
+            285.61564864775625
+          ],
+          "circular_mean_degrees": 285.6156486477562
+        },
+        {
+          "y": 226,
+          "x": [
+            273
+          ],
+          "radius_m": [
+            10.33777415559573
+          ],
+          "azimuth_degrees": [
+            286.70992030651735
+          ],
+          "circular_mean_degrees": 286.70992030651735
+        },
+        {
+          "y": 227,
+          "x": [
+            273
+          ],
+          "radius_m": [
+            6.895130247386396
+          ],
+          "azimuth_degrees": [
+            287.96369810097235
+          ],
+          "circular_mean_degrees": 287.96369810097235
+        },
+        {
+          "y": 229,
+          "x": [
+            272
+          ],
+          "radius_m": [
+            12.740644187624866
+          ],
+          "azimuth_degrees": [
+            291.5181265776057
+          ],
+          "circular_mean_degrees": 291.5181265776057
+        },
+        {
+          "y": 230,
+          "x": [
+            272
+          ],
+          "radius_m": [
+            8.88487217138551
+          ],
+          "azimuth_degrees": [
+            293.54654725535147
+          ],
+          "circular_mean_degrees": 293.54654725535147
+        },
+        {
+          "y": 231,
+          "x": [
+            272
+          ],
+          "radius_m": [
+            6.801429429475202
+          ],
+          "azimuth_degrees": [
+            295.9682493940393
+          ],
+          "circular_mean_degrees": 295.9682493940393
+        },
+        {
+          "y": 232,
+          "x": [
+            271
+          ],
+          "radius_m": [
+            18.680359663638928
+          ],
+          "azimuth_degrees": [
+            299.4059181841426
+          ],
+          "circular_mean_degrees": 299.4059181841426
+        },
+        {
+          "y": 233,
+          "x": [
+            271
+          ],
+          "radius_m": [
+            12.648952789075475
+          ],
+          "azimuth_degrees": [
+            303.0365906847809
+          ],
+          "circular_mean_degrees": 303.0365906847809
+        },
+        {
+          "y": 234,
+          "x": [
+            271
+          ],
+          "radius_m": [
+            9.513890713040453
+          ],
+          "azimuth_degrees": [
+            307.54426563813786
+          ],
+          "circular_mean_degrees": 307.54426563813786
+        },
+        {
+          "y": 235,
+          "x": [
+            271
+          ],
+          "radius_m": [
+            7.606694584168208
+          ],
+          "azimuth_degrees": [
+            313.20860672622143
+          ],
+          "circular_mean_degrees": 313.20860672622143
+        },
+        {
+          "y": 236,
+          "x": [
+            270,
+            271
+          ],
+          "radius_m": [
+            13.733649289317585,
+            6.3343339540665395
+          ],
+          "azimuth_degrees": [
+            320.94852508473525,
+            320.37524594199203
+          ],
+          "circular_mean_degrees": 320.66188551336364
+        },
+        {
+          "y": 237,
+          "x": [
+            270
+          ],
+          "radius_m": [
+            9.727415327024135
+          ],
+          "azimuth_degrees": [
+            329.9085459291925
+          ],
+          "circular_mean_degrees": 329.9085459291925
+        },
+        {
+          "y": 238,
+          "x": [
+            269,
+            270
+          ],
+          "radius_m": [
+            12.627523555679126,
+            7.445163954118949
+          ],
+          "azimuth_degrees": [
+            341.18071715737136,
+            340.82803586766397
+          ],
+          "circular_mean_degrees": 341.00437651251764
+        },
+        {
+          "y": 239,
+          "x": [
+            268,
+            269,
+            270
+          ],
+          "radius_m": [
+            13.535939824148139,
+            8.770724608782599,
+            6.062333072015299
+          ],
+          "azimuth_degrees": [
+            353.64372596171404,
+            353.518919812818,
+            353.38913653666407
+          ],
+          "circular_mean_degrees": 353.51726077176346
+        },
+        {
+          "y": 240,
+          "x": [
+            266,
+            267,
+            268,
+            269
+          ],
+          "radius_m": [
+            19.31003833979469,
+            12.900332061179103,
+            9.220465699998211,
+            6.854100956682984
+          ],
+          "azimuth_degrees": [
+            6.1204944294470325,
+            6.236165216708292,
+            6.356274038280213,
+            6.481080187171025
+          ],
+          "circular_mean_degrees": 6.2985034628753915
+        },
+        {
+          "y": 241,
+          "x": [
+            265,
+            266,
+            267,
+            268
+          ],
+          "radius_m": [
+            16.077917877190966,
+            11.965120440789512,
+            9.220370137557397,
+            7.271053687811113
+          ],
+          "azimuth_degrees": [
+            17.525610008664703,
+            17.832614301614605,
+            18.150198075207534,
+            18.478897212605236
+          ],
+          "circular_mean_degrees": 17.996829816098657
+        },
+        {
+          "y": 242,
+          "x": [
+            266,
+            267,
+            268
+          ],
+          "radius_m": [
+            9.160013573110964,
+            7.53655627964029,
+            6.266053081942126
+          ],
+          "azimuth_degrees": [
+            28.19819895856795,
+            28.650749403989185,
+            29.11677361033583
+          ],
+          "circular_mean_degrees": 28.65524060953193
+        }
+      ],
+      "max_neighbor_row_azimuth_mean_change_degrees": 12.78124269111197
+    },
+    "right": {
+      "rows": [
+        {
+          "y": 220,
+          "x": [
+            364
+          ],
+          "radius_m": [
+            17.614559438405195
+          ],
+          "azimuth_degrees": [
+            258.7510192416645
+          ],
+          "circular_mean_degrees": 258.7510192416645
+        },
+        {
+          "y": 221,
+          "x": [
+            364
+          ],
+          "radius_m": [
+            8.183244642929356
+          ],
+          "azimuth_degrees": [
+            258.15970894193384
+          ],
+          "circular_mean_degrees": 258.1597089419338
+        },
+        {
+          "y": 223,
+          "x": [
+            365
+          ],
+          "radius_m": [
+            10.980385417094608
+          ],
+          "azimuth_degrees": [
+            256.4859263643912
+          ],
+          "circular_mean_degrees": 256.4859263643912
+        },
+        {
+          "y": 224,
+          "x": [
+            365
+          ],
+          "radius_m": [
+            6.570800528736516
+          ],
+          "azimuth_degrees": [
+            255.6490372683898
+          ],
+          "circular_mean_degrees": 255.6490372683898
+        },
+        {
+          "y": 225,
+          "x": [
+            366
+          ],
+          "radius_m": [
+            18.883828437779588
+          ],
+          "azimuth_degrees": [
+            254.38435135224375
+          ],
+          "circular_mean_degrees": 254.38435135224375
+        },
+        {
+          "y": 226,
+          "x": [
+            366
+          ],
+          "radius_m": [
+            10.33777415559573
+          ],
+          "azimuth_degrees": [
+            253.29007969348265
+          ],
+          "circular_mean_degrees": 253.29007969348265
+        },
+        {
+          "y": 227,
+          "x": [
+            366
+          ],
+          "radius_m": [
+            6.895130247386396
+          ],
+          "azimuth_degrees": [
+            252.03630189902762
+          ],
+          "circular_mean_degrees": 252.03630189902765
+        },
+        {
+          "y": 229,
+          "x": [
+            367
+          ],
+          "radius_m": [
+            12.740644187624866
+          ],
+          "azimuth_degrees": [
+            248.48187342239424
+          ],
+          "circular_mean_degrees": 248.48187342239424
+        },
+        {
+          "y": 230,
+          "x": [
+            367
+          ],
+          "radius_m": [
+            8.88487217138551
+          ],
+          "azimuth_degrees": [
+            246.45345274464853
+          ],
+          "circular_mean_degrees": 246.45345274464853
+        },
+        {
+          "y": 231,
+          "x": [
+            367
+          ],
+          "radius_m": [
+            6.801429429475202
+          ],
+          "azimuth_degrees": [
+            244.0317506059607
+          ],
+          "circular_mean_degrees": 244.03175060596067
+        },
+        {
+          "y": 232,
+          "x": [
+            368
+          ],
+          "radius_m": [
+            18.680359663638928
+          ],
+          "azimuth_degrees": [
+            240.59408181585735
+          ],
+          "circular_mean_degrees": 240.5940818158573
+        },
+        {
+          "y": 233,
+          "x": [
+            368
+          ],
+          "radius_m": [
+            12.648952789075475
+          ],
+          "azimuth_degrees": [
+            236.96340931521908
+          ],
+          "circular_mean_degrees": 236.96340931521905
+        },
+        {
+          "y": 234,
+          "x": [
+            368
+          ],
+          "radius_m": [
+            9.513890713040453
+          ],
+          "azimuth_degrees": [
+            232.4557343618621
+          ],
+          "circular_mean_degrees": 232.45573436186208
+        },
+        {
+          "y": 235,
+          "x": [
+            368
+          ],
+          "radius_m": [
+            7.606694584168208
+          ],
+          "azimuth_degrees": [
+            226.79139327377854
+          ],
+          "circular_mean_degrees": 226.79139327377854
+        },
+        {
+          "y": 236,
+          "x": [
+            368,
+            369
+          ],
+          "radius_m": [
+            6.3343339540665395,
+            13.733649289317585
+          ],
+          "azimuth_degrees": [
+            219.624754058008,
+            219.05147491526475
+          ],
+          "circular_mean_degrees": 219.33811448663636
+        },
+        {
+          "y": 237,
+          "x": [
+            369
+          ],
+          "radius_m": [
+            9.727415327024135
+          ],
+          "azimuth_degrees": [
+            210.09145407080752
+          ],
+          "circular_mean_degrees": 210.09145407080752
+        },
+        {
+          "y": 238,
+          "x": [
+            369,
+            370
+          ],
+          "radius_m": [
+            7.445163954118949,
+            12.627523555679126
+          ],
+          "azimuth_degrees": [
+            199.17196413233603,
+            198.81928284262867
+          ],
+          "circular_mean_degrees": 198.99562348748233
+        },
+        {
+          "y": 239,
+          "x": [
+            369,
+            370,
+            371
+          ],
+          "radius_m": [
+            6.062333072015299,
+            8.770724608782599,
+            13.535939824148139
+          ],
+          "azimuth_degrees": [
+            186.61086346333593,
+            186.481080187182,
+            186.35627403828593
+          ],
+          "circular_mean_degrees": 186.4827392282365
+        },
+        {
+          "y": 240,
+          "x": [
+            370,
+            371,
+            372,
+            373
+          ],
+          "radius_m": [
+            6.854100956682984,
+            9.220465699998211,
+            12.900332061179103,
+            19.31003833979469
+          ],
+          "azimuth_degrees": [
+            173.51891981282898,
+            173.6437259617198,
+            173.7638347832917,
+            173.87950557055296
+          ],
+          "circular_mean_degrees": 173.70149653712463
+        },
+        {
+          "y": 241,
+          "x": [
+            371,
+            372,
+            373,
+            374
+          ],
+          "radius_m": [
+            7.271053687811113,
+            9.220370137557397,
+            11.965120440789512,
+            16.077917877190966
+          ],
+          "azimuth_degrees": [
+            161.52110278739477,
+            161.84980192479247,
+            162.1673856983854,
+            162.4743899913353
+          ],
+          "circular_mean_degrees": 162.00317018390135
+        },
+        {
+          "y": 242,
+          "x": [
+            371,
+            372,
+            373
+          ],
+          "radius_m": [
+            6.266053081942126,
+            7.53655627964029,
+            9.160013573110964
+          ],
+          "azimuth_degrees": [
+            150.88322638966417,
+            151.34925059601082,
+            151.80180104143207
+          ],
+          "circular_mean_degrees": 151.34475939046808
+        }
+      ],
+      "max_neighbor_row_azimuth_mean_change_degrees": 12.781242691111856
+    }
+  },
+  "representative_saved_hits": [
+    {
+      "x": 310,
+      "y": 192,
+      "status": 3,
+      "radius_m": 17.864383049195293,
+      "crossing": 2,
+      "azimuth_degrees": 270.99863010924577,
+      "position": [
+        0.3113494172962727,
+        -1.5567470864813635,
+        17.793700620653848
+      ],
+      "plane_residual": 4.529709940470639e-14
+    },
+    {
+      "x": 313,
+      "y": 192,
+      "status": 3,
+      "radius_m": 6.471065018029419,
+      "crossing": 2,
+      "azimuth_degrees": 270.6833100325675,
+      "position": [
+        0.07717215594791119,
+        -0.5639503703885819,
+        6.4459822297031675
+      ],
+      "plane_residual": 3.6637359812630166e-15
+    },
+    {
+      "x": 286,
+      "y": 205,
+      "status": 3,
+      "radius_m": 7.892537833285381,
+      "crossing": 2,
+      "azimuth_degrees": 274.8373858407065,
+      "position": [
+        0.6655622702278869,
+        -0.6854298006824507,
+        7.8344984716717265
+      ],
+      "plane_residual": 2.4424906541753444e-15
+    },
+    {
+      "x": 287,
+      "y": 205,
+      "status": 3,
+      "radius_m": 8.38693706366977,
+      "crossing": 3,
+      "azimuth_degrees": 94.69364127411019,
+      "position": [
+        -0.6862854524500729,
+        0.7285184033700773,
+        -8.32700345404421
+      ],
+      "plane_residual": 3.1086244689504383e-15
+    },
+    {
+      "x": 266,
+      "y": 240,
+      "status": 3,
+      "radius_m": 19.31003833979469,
+      "crossing": 2,
+      "azimuth_degrees": 6.1204944294470325,
+      "position": [
+        19.199968618046654,
+        0.179438959047165,
+        -2.0509966870623373
+      ],
+      "plane_residual": 1.6514567491299204e-14
+    },
+    {
+      "x": 269,
+      "y": 240,
+      "status": 3,
+      "radius_m": 6.854100956682984,
+      "crossing": 2,
+      "azimuth_degrees": 6.481080187171025,
+      "position": [
+        6.810297649589818,
+        0.06742868959989919,
+        -0.7707134488335119
+      ],
+      "plane_residual": 3.608224830031759e-16
+    },
+    {
+      "x": 373,
+      "y": 240,
+      "status": 3,
+      "radius_m": 19.31003833979469,
+      "crossing": 2,
+      "azimuth_degrees": 173.87950557055296,
+      "position": [
+        -19.199968618046654,
+        0.179438959047165,
+        -2.0509966870623373
+      ],
+      "plane_residual": 1.6514567491299204e-14
+    },
+    {
+      "x": 370,
+      "y": 240,
+      "status": 3,
+      "radius_m": 6.854100956682984,
+      "crossing": 2,
+      "azimuth_degrees": 173.51891981282898,
+      "position": [
+        -6.810297649589818,
+        0.06742868959989919,
+        -0.7707134488335119
+      ],
+      "plane_residual": 3.608224830031759e-16
+    },
+    {
+      "x": 284,
+      "y": 272,
+      "status": 3,
+      "radius_m": 13.13551947521738,
+      "crossing": 3,
+      "azimuth_degrees": 264.5617806185342,
+      "position": [
+        -1.244884521584822,
+        -1.1396830127184994,
+        13.026636443927286
+      ],
+      "plane_residual": 1.2019274464591945e-12
+    },
+    {
+      "x": 285,
+      "y": 272,
+      "status": 3,
+      "radius_m": 12.957445952364724,
+      "crossing": 4,
+      "azimuth_degrees": 84.7140896929882,
+      "position": [
+        1.1937140956279002,
+        1.124513278490051,
+        -12.853245588288265
+      ],
+      "plane_residual": 2.313704783318826e-13
+    },
+    {
+      "x": 311,
+      "y": 287,
+      "status": 3,
+      "radius_m": 17.511883561310174,
+      "crossing": 3,
+      "azimuth_degrees": 269.1064708045978,
+      "position": [
+        -0.2730872171757489,
+        -1.526075625393891,
+        17.44312421621423
+      ],
+      "plane_residual": 6.254996520738132e-13
+    }
+  ],
+  "serial_parallel_640_comparison": "All extracted fields exactly equal between earlier serial thermal and parallel blackbody saved runs"
+}

@@ -1,0 +1,1167 @@
+{
+  "cases": [
+    {
+      "x": 310,
+      "y": 192,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 7.207226769413088e-09,
+          "impact_parameter_M": 5.313249489112851,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            0.31134941859815296,
+            -1.5567470929907612,
+            17.793700695051232
+          ],
+          "phi_emit_ode": 6.194199649088535,
+          "phi_emit_quadrature": 6.194199644023122,
+          "phi_emit_error_radians": 5.06541297795593e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.194199649088535,
+            "rate_integral": 6.194199648566097,
+            "max_sample_increment": 0.17340660758854076,
+            "unwrap_rate_difference": 5.224380927870698e-10
+          },
+          "hit_geometry_error_radians": 5.065413066496665e-09,
+          "phi_background_ode": 6.495788477123679,
+          "phi_background_quadrature": 6.495788472099326,
+          "phi_background_error_radians": 5.024353377791613e-09,
+          "finite_escape_angle": 6.447467663610625,
+          "infinity_tail_radians": 0.048320813513054776,
+          "background_dense_checks": {
+            "angle": 6.447467663610625,
+            "rate_integral": 6.447467663093779,
+            "max_sample_increment": 0.17340660758854076,
+            "unwrap_rate_difference": 5.168461214566378e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 7.469295772835079e-08,
+          "saved_map_vs_ode_emit_error_radians": 6.360895810075817e-09,
+          "saved_map_vs_ode_background_error_radians": 5.02436048321897e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.451170797656984e-11,
+          "impact_parameter_M": 5.313249489112851,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            0.31134942363982554,
+            -1.5567471181991595,
+            17.793700983188923
+          ],
+          "phi_emit_ode": 6.1941996490885565,
+          "phi_emit_quadrature": 6.1941996490404385,
+          "phi_emit_error_radians": 4.8117954065673985e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.1941996490885565,
+            "rate_integral": 6.194199649083078,
+            "max_sample_increment": 0.09621838713162179,
+            "unwrap_rate_difference": 5.4782844927103724e-12
+          },
+          "hit_geometry_error_radians": 4.811860169966102e-11,
+          "phi_background_ode": 6.495788472146782,
+          "phi_background_quadrature": 6.495788472099326,
+          "phi_background_error_radians": 4.745626114299739e-11,
+          "finite_escape_angle": 6.447467658624664,
+          "infinity_tail_radians": 0.04832081352211826,
+          "background_dense_checks": {
+            "angle": 6.447467658624664,
+            "rate_integral": 6.447467658619258,
+            "max_sample_increment": 0.09621838713162179,
+            "unwrap_rate_difference": 5.405453862294962e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 3.6397519198752123e-07,
+          "saved_map_vs_ode_emit_error_radians": 6.36091712635789e-09,
+          "saved_map_vs_ode_background_error_radians": 4.746336657035499e-11
+        }
+      ]
+    },
+    {
+      "x": 313,
+      "y": 192,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 7.58225229728674e-09,
+          "impact_parameter_M": 5.259032546956165,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            0.07717215611186927,
+            -0.5639503715867176,
+            6.4459822433978395
+          ],
+          "phi_emit_ode": 6.195109748865079,
+          "phi_emit_quadrature": 6.195109742978534,
+          "phi_emit_error_radians": 5.886544585109732e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.195109748865079,
+            "rate_integral": 6.195109748345691,
+            "max_sample_increment": 0.17042848649410658,
+            "unwrap_rate_difference": 5.193880880938195e-10
+          },
+          "hit_geometry_error_radians": 5.886544405716385e-09,
+          "phi_background_ode": 7.097301742467779,
+          "phi_background_quadrature": 7.097301736881242,
+          "phi_background_error_radians": 5.586536566681843e-09,
+          "finite_escape_angle": 7.049474372561643,
+          "infinity_tail_radians": 0.04782736990613535,
+          "background_dense_checks": {
+            "angle": 7.049474372561643,
+            "rate_integral": 7.049474372080684,
+            "max_sample_increment": 0.17042848649410658,
+            "unwrap_rate_difference": 4.809592724086542e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 1.3747961824455556e-08,
+          "saved_map_vs_ode_emit_error_radians": 8.228267844856418e-09,
+          "saved_map_vs_ode_background_error_radians": 5.586556106607077e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.37201973920018e-10,
+          "impact_parameter_M": 5.259032546956165,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            0.07717215651912503,
+            -0.5639503745628265,
+            6.445982277387977
+          ],
+          "phi_emit_ode": 6.195109748864712,
+          "phi_emit_quadrature": 6.19510974879067,
+          "phi_emit_error_radians": 7.404210577988124e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.195109748864712,
+            "rate_integral": 6.195109748858571,
+            "max_sample_increment": 0.09278246712398275,
+            "unwrap_rate_difference": 6.140865593806666e-12
+          },
+          "hit_geometry_error_radians": 7.404254873955519e-11,
+          "phi_background_ode": 7.097301736951322,
+          "phi_background_quadrature": 7.097301736881242,
+          "phi_background_error_radians": 7.007994184959898e-11,
+          "finite_escape_angle": 7.049474367044396,
+          "infinity_tail_radians": 0.04782736990692635,
+          "background_dense_checks": {
+            "angle": 7.049474367044396,
+            "rate_integral": 7.049474367038709,
+            "max_sample_increment": 0.09278246712398275,
+            "unwrap_rate_difference": 5.687006421339902e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 4.7870572343751204e-08,
+          "saved_map_vs_ode_emit_error_radians": 8.227901027169082e-09,
+          "saved_map_vs_ode_background_error_radians": 7.009948177483238e-11
+        }
+      ]
+    },
+    {
+      "x": 266,
+      "y": 240,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.188184842804823e-09,
+          "impact_parameter_M": 5.863555014842973,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            19.199968563487758,
+            0.17943895853727743,
+            -2.050996681234599
+          ],
+          "phi_emit_ode": 4.605974238020897,
+          "phi_emit_quadrature": 4.605974236014394,
+          "phi_emit_error_radians": 2.0065034078697863e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 4.605974238020897,
+            "rate_integral": 4.6059742378766355,
+            "max_sample_increment": 0.17118090516905893,
+            "unwrap_rate_difference": 1.4426149164137314e-10
+          },
+          "hit_geometry_error_radians": 2.0065037109808338e-09,
+          "phi_background_ode": 4.914101518398111,
+          "phi_background_quadrature": 4.9141015164203345,
+          "phi_background_error_radians": 1.9777761650630055e-09,
+          "finite_escape_angle": 4.860771541959697,
+          "infinity_tail_radians": 0.05332997643841315,
+          "background_dense_checks": {
+            "angle": 4.860771541959697,
+            "rate_integral": 4.860771541790205,
+            "max_sample_increment": 0.17118090516905893,
+            "unwrap_rate_difference": 1.694919760097946e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 5.487162890839334e-08,
+          "saved_map_vs_ode_emit_error_radians": 1.1056027204858765e-09,
+          "saved_map_vs_ode_background_error_radians": 1.977774388706166e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 7.098224307184338e-11,
+          "impact_parameter_M": 5.863555014842973,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            19.199968684276254,
+            0.17943895966614218,
+            -2.050996694137064
+          ],
+          "phi_emit_ode": 4.605974238020924,
+          "phi_emit_quadrature": 4.605974238008904,
+          "phi_emit_error_radians": 1.2019718553801795e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 4.605974238020924,
+            "rate_integral": 4.605974238018702,
+            "max_sample_increment": 0.09415550401239825,
+            "unwrap_rate_difference": 2.2213342276700132e-12
+          },
+          "hit_geometry_error_radians": 1.201988263102229e-11,
+          "phi_background_ode": 4.914101516430887,
+          "phi_background_quadrature": 4.9141015164203345,
+          "phi_background_error_radians": 1.0552447804457188e-11,
+          "finite_escape_angle": 4.860771539974447,
+          "infinity_tail_radians": 0.05332997645643979,
+          "background_dense_checks": {
+            "angle": 4.860771539974447,
+            "rate_integral": 4.86077153997278,
+            "max_sample_increment": 0.09415550401239825,
+            "unwrap_rate_difference": 1.667110893777135e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 6.660926924833769e-08,
+          "saved_map_vs_ode_emit_error_radians": 1.1056293658384675e-09,
+          "saved_map_vs_ode_background_error_radians": 1.0550671447617788e-11
+        }
+      ]
+    },
+    {
+      "x": 269,
+      "y": 240,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 7.272976014541913e-09,
+          "impact_parameter_M": 5.537573895787131,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            6.810297649745924,
+            0.06742868960144814,
+            -0.7707134488512137
+          ],
+          "phi_emit_ode": 4.599705067995798,
+          "phi_emit_quadrature": 4.599705064775983,
+          "phi_emit_error_radians": 3.2198146371342773e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 4.599705067995798,
+            "rate_integral": 4.599705067373536,
+            "max_sample_increment": 0.19229540350422747,
+            "unwrap_rate_difference": 6.222613535555865e-10
+          },
+          "hit_geometry_error_radians": 3.2198152920709203e-09,
+          "phi_background_ode": 5.4973314175997485,
+          "phi_background_quadrature": 5.49733141434489,
+          "phi_background_error_radians": 3.2548586048619654e-09,
+          "finite_escape_angle": 5.446968839923041,
+          "infinity_tail_radians": 0.05036257767670758,
+          "background_dense_checks": {
+            "angle": 5.446968839923041,
+            "rate_integral": 5.446968839304931,
+            "max_sample_increment": 0.19229540350422747,
+            "unwrap_rate_difference": 6.181100076219082e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 1.571143286631285e-10,
+          "saved_map_vs_ode_emit_error_radians": 3.2450673259631913e-09,
+          "saved_map_vs_ode_background_error_radians": 3.2548550521482866e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 9.71988007322501e-11,
+          "impact_parameter_M": 5.537573895787131,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            6.810297669354035,
+            0.06742868979558787,
+            -0.7707134510672324
+          ],
+          "phi_emit_ode": 4.599705067996235,
+          "phi_emit_quadrature": 4.5997050679481015,
+          "phi_emit_error_radians": 4.8133053098808887e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 4.599705067996235,
+            "rate_integral": 4.599705067987244,
+            "max_sample_increment": 0.1150604598738032,
+            "unwrap_rate_difference": 8.990141964204668e-12
+          },
+          "hit_geometry_error_radians": 4.813283088288009e-11,
+          "phi_background_ode": 5.497331414390948,
+          "phi_background_quadrature": 5.49733141434489,
+          "phi_background_error_radians": 4.6058268310389394e-11,
+          "finite_escape_angle": 5.446968836685703,
+          "infinity_tail_radians": 0.0503625777052453,
+          "background_dense_checks": {
+            "angle": 5.446968836685703,
+            "rate_integral": 5.446968836677437,
+            "max_sample_increment": 0.1150604598738032,
+            "unwrap_rate_difference": 8.266276552149066e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 1.9891004810390402e-08,
+          "saved_map_vs_ode_emit_error_radians": 3.2455043097456837e-09,
+          "saved_map_vs_ode_background_error_radians": 4.6054715596710594e-11
+        }
+      ]
+    },
+    {
+      "x": 373,
+      "y": 240,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.188184842804823e-09,
+          "impact_parameter_M": 5.863555014842973,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            -19.199968563487758,
+            0.17943895853727743,
+            -2.050996681234599
+          ],
+          "phi_emit_ode": 4.605974238020897,
+          "phi_emit_quadrature": 4.605974236014394,
+          "phi_emit_error_radians": 2.0065034078697863e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 4.605974238020897,
+            "rate_integral": 4.6059742378766355,
+            "max_sample_increment": 0.17118090516905893,
+            "unwrap_rate_difference": 1.4426149164137314e-10
+          },
+          "hit_geometry_error_radians": 2.0065037109808338e-09,
+          "phi_background_ode": 4.914101518398111,
+          "phi_background_quadrature": 4.9141015164203345,
+          "phi_background_error_radians": 1.9777761650630055e-09,
+          "finite_escape_angle": 4.860771541959697,
+          "infinity_tail_radians": 0.05332997643841315,
+          "background_dense_checks": {
+            "angle": 4.860771541959697,
+            "rate_integral": 4.860771541790205,
+            "max_sample_increment": 0.17118090516905893,
+            "unwrap_rate_difference": 1.694919760097946e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 5.487162890839334e-08,
+          "saved_map_vs_ode_emit_error_radians": 1.1056027204858765e-09,
+          "saved_map_vs_ode_background_error_radians": 1.977774388706166e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 7.098224307184338e-11,
+          "impact_parameter_M": 5.863555014842973,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            -19.199968684276254,
+            0.17943895966614218,
+            -2.050996694137064
+          ],
+          "phi_emit_ode": 4.605974238020924,
+          "phi_emit_quadrature": 4.605974238008904,
+          "phi_emit_error_radians": 1.2019718553801795e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 4.605974238020924,
+            "rate_integral": 4.605974238018702,
+            "max_sample_increment": 0.09415550401239825,
+            "unwrap_rate_difference": 2.2213342276700132e-12
+          },
+          "hit_geometry_error_radians": 1.201988263102229e-11,
+          "phi_background_ode": 4.914101516430887,
+          "phi_background_quadrature": 4.9141015164203345,
+          "phi_background_error_radians": 1.0552447804457188e-11,
+          "finite_escape_angle": 4.860771539974447,
+          "infinity_tail_radians": 0.05332997645643979,
+          "background_dense_checks": {
+            "angle": 4.860771539974447,
+            "rate_integral": 4.86077153997278,
+            "max_sample_increment": 0.09415550401239825,
+            "unwrap_rate_difference": 1.667110893777135e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 6.660926924833769e-08,
+          "saved_map_vs_ode_emit_error_radians": 1.1056293658384675e-09,
+          "saved_map_vs_ode_background_error_radians": 1.0550671447617788e-11
+        }
+      ]
+    },
+    {
+      "x": 286,
+      "y": 205,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 9.409721278026263e-09,
+          "impact_parameter_M": 5.274905126731008,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            0.6655622726532031,
+            -0.6854298031801593,
+            7.83449850022062
+          ],
+          "phi_emit_ode": 6.161836789972408,
+          "phi_emit_quadrature": 6.1618367845616895,
+          "phi_emit_error_radians": 5.410718095788525e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.161836789972408,
+            "rate_integral": 6.161836789364459,
+            "max_sample_increment": 0.17150802228103723,
+            "unwrap_rate_difference": 6.07948358322119e-10
+          },
+          "hit_geometry_error_radians": 5.410718037982354e-09,
+          "phi_background_ode": 6.878356979436632,
+          "phi_background_quadrature": 6.878356974140562,
+          "phi_background_error_radians": 5.296070249016793e-09,
+          "finite_escape_angle": 6.830385149924532,
+          "infinity_tail_radians": 0.047971829512100675,
+          "background_dense_checks": {
+            "angle": 6.830385149924532,
+            "rate_integral": 6.830385149340677,
+            "max_sample_increment": 0.17150802228103723,
+            "unwrap_rate_difference": 5.838547423309137e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 2.8760390306036514e-08,
+          "saved_map_vs_ode_emit_error_radians": 8.393823414110102e-09,
+          "saved_map_vs_ode_background_error_radians": 5.296043603664202e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.1724828005040321e-10,
+          "impact_parameter_M": 5.274905126731008,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            0.6655622770028045,
+            -0.6854298076596091,
+            7.83449855142101
+          ],
+          "phi_emit_ode": 6.1618367899724085,
+          "phi_emit_quadrature": 6.161836789911723,
+          "phi_emit_error_radians": 6.068567870443076e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.1618367899724085,
+            "rate_integral": 6.161836789966367,
+            "max_sample_increment": 0.09353370790691162,
+            "unwrap_rate_difference": 6.041389610800252e-12
+          },
+          "hit_geometry_error_radians": 6.068622248675044e-11,
+          "phi_background_ode": 6.878356974199592,
+          "phi_background_quadrature": 6.878356974140562,
+          "phi_background_error_radians": 5.903011413010972e-11,
+          "finite_escape_angle": 6.830385144682301,
+          "infinity_tail_radians": 0.04797182951729044,
+          "background_dense_checks": {
+            "angle": 6.830385144682301,
+            "rate_integral": 6.830385144676514,
+            "max_sample_increment": 0.09353370790691162,
+            "unwrap_rate_difference": 5.787370582766016e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 8.03400801897154e-08,
+          "saved_map_vs_ode_emit_error_radians": 8.393824302288522e-09,
+          "saved_map_vs_ode_background_error_radians": 5.900346877751872e-11
+        }
+      ]
+    },
+    {
+      "x": 287,
+      "y": 205,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 9.624910294057789e-09,
+          "impact_parameter_M": 5.199640319967065,
+          "quadrature_outcome": "escaped",
+          "crossing": 3,
+          "hit_position": [
+            -0.6862854740488208,
+            0.728518426297976,
+            -8.327003716111285
+          ],
+          "phi_emit_ode": 9.305156944579116,
+          "phi_emit_quadrature": 9.305156872200198,
+          "phi_emit_error_radians": 7.23789170820055e-08,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 9.305156944579116,
+            "rate_integral": 9.30515694390936,
+            "max_sample_increment": 0.16694769679559807,
+            "unwrap_rate_difference": 6.69755806370631e-10
+          },
+          "hit_geometry_error_radians": 7.237891701078279e-08,
+          "phi_background_ode": 9.963139142980117,
+          "phi_background_quadrature": 9.963139070856354,
+          "phi_background_error_radians": 7.212376296195089e-08,
+          "finite_escape_angle": 9.915852305219765,
+          "infinity_tail_radians": 0.047286837760350746,
+          "background_dense_checks": {
+            "angle": 9.915852305219765,
+            "rate_integral": 9.915852304535177,
+            "max_sample_increment": 0.16694769679559807,
+            "unwrap_rate_difference": 6.845883859796231e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 2.639533037502862e-07,
+          "saved_map_vs_ode_emit_error_radians": 9.557886215816325e-08,
+          "saved_map_vs_ode_background_error_radians": 7.212343255957876e-08
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.075884788491624e-11,
+          "impact_parameter_M": 5.199640319967065,
+          "quadrature_outcome": "escaped",
+          "crossing": 3,
+          "hit_position": [
+            -0.6862855406272707,
+            0.7285184969735549,
+            -8.327004523936832
+          ],
+          "phi_emit_ode": 9.305156944579114,
+          "phi_emit_quadrature": 9.305156943715366,
+          "phi_emit_error_radians": 8.637481840878536e-10,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 9.305156944579114,
+            "rate_integral": 9.305156944571387,
+            "max_sample_increment": 0.0903279236487351,
+            "unwrap_rate_difference": 7.72715225139109e-12
+          },
+          "hit_geometry_error_radians": 8.637491466321716e-10,
+          "phi_background_ode": 9.963139071718631,
+          "phi_background_quadrature": 9.963139070856354,
+          "phi_background_error_radians": 8.622773606248302e-10,
+          "finite_escape_angle": 9.91585223395885,
+          "infinity_tail_radians": 0.04728683775978046,
+          "background_dense_checks": {
+            "angle": 9.91585223395885,
+            "rate_integral": 9.915852233952341,
+            "max_sample_increment": 0.0903279236487351,
+            "unwrap_rate_difference": 6.508571459562518e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 1.0775931759630472e-06,
+          "saved_map_vs_ode_emit_error_radians": 9.557886038180641e-08,
+          "saved_map_vs_ode_background_error_radians": 8.619469582527017e-10
+        }
+      ]
+    },
+    {
+      "x": 284,
+      "y": 272,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.048572153579267e-09,
+          "impact_parameter_M": 5.279431121370052,
+          "quadrature_outcome": "escaped",
+          "crossing": 3,
+          "hit_position": [
+            -1.2448845334849508,
+            -1.139683023612966,
+            13.026636568454494
+          ],
+          "phi_emit_ode": 6.412031599662109,
+          "phi_emit_quadrature": 6.412031595428888,
+          "phi_emit_error_radians": 4.233220884941602e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.412031599662109,
+            "rate_integral": 6.412031599216094,
+            "max_sample_increment": 0.17183735397610533,
+            "unwrap_rate_difference": 4.460147806639725e-10
+          },
+          "hit_geometry_error_radians": 4.233221335742328e-09,
+          "phi_background_ode": 6.824191636294204,
+          "phi_background_quadrature": 6.824191632069372,
+          "phi_background_error_radians": 4.224832039767534e-09,
+          "finite_escape_angle": 6.7761786145926735,
+          "infinity_tail_radians": 0.0480130217015303,
+          "background_dense_checks": {
+            "angle": 6.7761786145926735,
+            "rate_integral": 6.776178614091481,
+            "max_sample_increment": 0.17183735397610533,
+            "unwrap_rate_difference": 5.011928649878428e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 1.255680214997002e-07,
+          "saved_map_vs_ode_emit_error_radians": 8.36892244393539e-09,
+          "saved_map_vs_ode_background_error_radians": 4.224804506236524e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.0378594535511402e-10,
+          "impact_parameter_M": 5.279431121370052,
+          "quadrature_outcome": "escaped",
+          "crossing": 3,
+          "hit_position": [
+            -1.2448845454764044,
+            -1.139683034591094,
+            13.026636693947259
+          ],
+          "phi_emit_ode": 6.412031599661988,
+          "phi_emit_quadrature": 6.412031599596681,
+          "phi_emit_error_radians": 6.530775920055021e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.412031599661988,
+            "rate_integral": 6.412031599656262,
+            "max_sample_increment": 0.0935081486453,
+            "unwrap_rate_difference": 5.726086271806707e-12
+          },
+          "hit_geometry_error_radians": 6.530757794452812e-11,
+          "phi_background_ode": 6.824191632133609,
+          "phi_background_quadrature": 6.824191632069372,
+          "phi_background_error_radians": 6.423750420481156e-11,
+          "finite_escape_angle": 6.776178610428077,
+          "infinity_tail_radians": 0.048013021705532996,
+          "background_dense_checks": {
+            "angle": 6.776178610428077,
+            "rate_integral": 6.776178610422522,
+            "max_sample_increment": 0.0935081486453,
+            "unwrap_rate_difference": 5.554667836804583e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 2.521095096586862e-07,
+          "saved_map_vs_ode_emit_error_radians": 8.36880165167031e-09,
+          "saved_map_vs_ode_background_error_radians": 6.420997067380085e-11
+        }
+      ]
+    },
+    {
+      "x": 285,
+      "y": 272,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 9.62903802669624e-09,
+          "impact_parameter_M": 5.199640319967065,
+          "quadrature_outcome": "escaped",
+          "crossing": 4,
+          "hit_position": [
+            1.1937141598985364,
+            1.1245133390348805,
+            -12.853246280321502
+          ],
+          "phi_emit_ode": 9.551683735060095,
+          "phi_emit_quadrature": 9.551683662845896,
+          "phi_emit_error_radians": 7.22141990650016e-08,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 9.551683735060095,
+            "rate_integral": 9.551683734376034,
+            "max_sample_increment": 0.16692952747298095,
+            "unwrap_rate_difference": 6.840608079983213e-10
+          },
+          "hit_geometry_error_radians": 7.221419916229655e-08,
+          "phi_background_ode": 9.963139142997846,
+          "phi_background_quadrature": 9.963139070856354,
+          "phi_background_error_radians": 7.214149277956494e-08,
+          "finite_escape_angle": 9.915852305237497,
+          "infinity_tail_radians": 0.04728683776034909,
+          "background_dense_checks": {
+            "angle": 9.915852305237497,
+            "rate_integral": 9.915852304552981,
+            "max_sample_increment": 0.16692952747298095,
+            "unwrap_rate_difference": 6.845155553492077e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 6.976434553969888e-07,
+          "saved_map_vs_ode_emit_error_radians": 9.546024060114178e-08,
+          "saved_map_vs_ode_background_error_radians": 7.214116237719281e-08
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.283328046465206e-11,
+          "impact_parameter_M": 5.199640319967065,
+          "quadrature_outcome": "escaped",
+          "crossing": 4,
+          "hit_position": [
+            1.193714357065826,
+            1.1245135247721707,
+            -12.853248403307568
+          ],
+          "phi_emit_ode": 9.551683735060104,
+          "phi_emit_quadrature": 9.55168373415997,
+          "phi_emit_error_radians": 9.001333012292889e-10,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 9.551683735060104,
+            "rate_integral": 9.551683735051878,
+            "max_sample_increment": 0.09117563921718741,
+            "unwrap_rate_difference": 8.22630852326256e-12
+          },
+          "hit_geometry_error_radians": 9.0013379112991e-10,
+          "phi_background_ode": 9.96313907175485,
+          "phi_background_quadrature": 9.963139070856354,
+          "phi_background_error_radians": 8.984955002233619e-10,
+          "finite_escape_angle": 9.915852233995071,
+          "infinity_tail_radians": 0.0472868377597769,
+          "background_dense_checks": {
+            "angle": 9.915852233995071,
+            "rate_integral": 9.915852233988044,
+            "max_sample_increment": 0.09117563921718741,
+            "unwrap_rate_difference": 7.027267656667391e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 2.8378404364555355e-06,
+          "saved_map_vs_ode_emit_error_radians": 9.546024948292597e-08,
+          "saved_map_vs_ode_background_error_radians": 8.981650978512334e-10
+        }
+      ]
+    },
+    {
+      "x": 311,
+      "y": 287,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 6.79745799877392e-09,
+          "impact_parameter_M": 5.29298518469364,
+          "quadrature_outcome": "escaped",
+          "crossing": 3,
+          "hit_position": [
+            -0.2730872198114055,
+            -1.5260756401225704,
+            17.443124384575576
+          ],
+          "phi_emit_ode": 6.371830795783583,
+          "phi_emit_quadrature": 6.371830791216649,
+          "phi_emit_error_radians": 4.566934386218691e-09,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.371830795783583,
+            "rate_integral": 6.371830795324521,
+            "max_sample_increment": 0.17241408331225294,
+            "unwrap_rate_difference": 4.5906212164936733e-10
+          },
+          "hit_geometry_error_radians": 4.56693462296698e-09,
+          "phi_background_ode": 6.678452595800756,
+          "phi_background_quadrature": 6.67845259127308,
+          "phi_background_error_radians": 4.527676011889525e-09,
+          "finite_escape_angle": 6.630316214761233,
+          "infinity_tail_radians": 0.04813638103952312,
+          "background_dense_checks": {
+            "angle": 6.630316214761233,
+            "rate_integral": 6.630316214291136,
+            "max_sample_increment": 0.17241408331225294,
+            "unwrap_rate_difference": 4.700977385141414e-10
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 1.690249199841384e-07,
+          "saved_map_vs_ode_emit_error_radians": 7.609965102517435e-09,
+          "saved_map_vs_ode_background_error_radians": 4.527654695607453e-09
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 8.643155157101475e-11,
+          "impact_parameter_M": 5.29298518469364,
+          "quadrature_outcome": "escaped",
+          "crossing": 3,
+          "hit_position": [
+            -0.27308722372404104,
+            -1.5260756619872937,
+            17.443124634485663
+          ],
+          "phi_emit_ode": 6.371830795783608,
+          "phi_emit_quadrature": 6.3718307957336595,
+          "phi_emit_error_radians": 4.994848978867594e-11,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 6.371830795783608,
+            "rate_integral": 6.371830795779451,
+            "max_sample_increment": 0.09493373032781927,
+            "unwrap_rate_difference": 4.156675004196586e-12
+          },
+          "hit_geometry_error_radians": 4.9948370197900876e-11,
+          "phi_background_ode": 6.678452591323347,
+          "phi_background_quadrature": 6.67845259127308,
+          "phi_background_error_radians": 5.026645766292859e-11,
+          "finite_escape_angle": 6.630316210278979,
+          "infinity_tail_radians": 0.0481363810443682,
+          "background_dense_checks": {
+            "angle": 6.630316210278979,
+            "rate_integral": 6.630316210273857,
+            "max_sample_increment": 0.09493373032781927,
+            "unwrap_rate_difference": 5.122124946410622e-12
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 4.1992017018431934e-07,
+          "saved_map_vs_ode_emit_error_radians": 7.609989971513187e-09,
+          "saved_map_vs_ode_background_error_radians": 5.0245141380855785e-11
+        }
+      ]
+    },
+    {
+      "x": 200,
+      "y": 245,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.197888569946266e-09,
+          "impact_parameter_M": 12.874865547243296,
+          "quadrature_outcome": "escaped",
+          "crossing": 1,
+          "hit_position": [
+            -11.301234841425906,
+            -0.520140515714164,
+            5.945233299398152
+          ],
+          "phi_emit_ode": 1.0869472171442949,
+          "phi_emit_quadrature": 1.0869472173272021,
+          "phi_emit_error_radians": 1.8290724490555021e-10,
+          "emission_leg": "inward",
+          "emission_dense_checks": {
+            "angle": 1.0869472171442949,
+            "rate_integral": 1.0869472171453742,
+            "max_sample_increment": 0.1180736837415306,
+            "unwrap_rate_difference": 1.0793588245405772e-12
+          },
+          "hit_geometry_error_radians": 1.829072636029086e-10,
+          "phi_background_ode": 3.3363963465468722,
+          "phi_background_quadrature": 3.3363963464959365,
+          "phi_background_error_radians": 5.093570010217263e-11,
+          "finite_escape_angle": 3.21908690926245,
+          "infinity_tail_radians": 0.11730943728442203,
+          "background_dense_checks": {
+            "angle": 3.21908690926245,
+            "rate_integral": 3.219086909264687,
+            "max_sample_increment": 0.1180736837415306,
+            "unwrap_rate_difference": 2.2368773500147654e-12
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 4.717591881375123e-10,
+          "saved_map_vs_ode_emit_error_radians": 8.489742242545617e-11,
+          "saved_map_vs_ode_background_error_radians": 5.093570010217263e-11
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.255857486969176e-11,
+          "impact_parameter_M": 12.874865547243296,
+          "quadrature_outcome": "escaped",
+          "crossing": 1,
+          "hit_position": [
+            -11.301234842203947,
+            -0.5201405157499727,
+            5.945233299807452
+          ],
+          "phi_emit_ode": 1.086947217144295,
+          "phi_emit_quadrature": 1.0869472171444057,
+          "phi_emit_error_radians": 1.1057821325266559e-13,
+          "emission_leg": "inward",
+          "emission_dense_checks": {
+            "angle": 1.086947217144295,
+            "rate_integral": 1.086947217144222,
+            "max_sample_increment": 0.061483096697307116,
+            "unwrap_rate_difference": 7.30526750203353e-14
+          },
+          "hit_geometry_error_radians": 1.1058486500303741e-13,
+          "phi_background_ode": 3.33639634649667,
+          "phi_background_quadrature": 3.3363963464959365,
+          "phi_background_error_radians": 7.336353746723034e-13,
+          "finite_escape_angle": 3.2190869092119287,
+          "infinity_tail_radians": 0.11730943728474143,
+          "background_dense_checks": {
+            "angle": 3.2190869092119287,
+            "rate_integral": 3.219086909212284,
+            "max_sample_increment": 0.061483096697307116,
+            "unwrap_rate_difference": 3.552713678800501e-13
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 4.0811084620766026e-10,
+          "saved_map_vs_ode_emit_error_radians": 8.489720038085125e-11,
+          "saved_map_vs_ode_background_error_radians": 7.336353746723034e-13
+        }
+      ]
+    },
+    {
+      "x": 319,
+      "y": 245,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "captured",
+          "ode_reason": "capture_boundary",
+          "null_error": 1.3558378557807426e-11,
+          "impact_parameter_M": 0.6080378779332745,
+          "quadrature_outcome": "captured",
+          "crossing": 1,
+          "hit_position": [
+            -0.049339003959612875,
+            -0.5427290435557346,
+            6.203421354069816
+          ],
+          "phi_emit_ode": 0.08762449036814102,
+          "phi_emit_quadrature": 0.08762449036877853,
+          "phi_emit_error_radians": 6.375178163153805e-13,
+          "emission_leg": "inward",
+          "emission_dense_checks": {
+            "angle": 0.08762449036814102,
+            "rate_integral": 0.08762449036619469,
+            "max_sample_increment": 0.009739223442780429,
+            "unwrap_rate_difference": 1.946331984470362e-12
+          },
+          "hit_geometry_error_radians": 6.375408475297864e-13,
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 2.98185065327327e-10,
+          "saved_map_vs_ode_emit_error_radians": 5.327988050751742e-12
+        },
+        {
+          "ode_status": "captured",
+          "ode_reason": "capture_boundary",
+          "null_error": 5.745404152435184e-13,
+          "impact_parameter_M": 0.6080378779332745,
+          "quadrature_outcome": "captured",
+          "crossing": 1,
+          "hit_position": [
+            -0.04933900395994337,
+            -0.54272904355937,
+            6.2034213541112395
+          ],
+          "phi_emit_ode": 0.08762449036814285,
+          "phi_emit_quadrature": 0.0876244903681244,
+          "phi_emit_error_radians": 1.8443579996585413e-14,
+          "emission_leg": "inward",
+          "emission_dense_checks": {
+            "angle": 0.08762449036814285,
+            "rate_integral": 0.08762449036808755,
+            "max_sample_increment": 0.005727688776044432,
+            "unwrap_rate_difference": 5.530298441414061e-14
+          },
+          "hit_geometry_error_radians": 1.8422019835285775e-14,
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 3.3976935090452904e-10,
+          "saved_map_vs_ode_emit_error_radians": 5.32615618276111e-12
+        }
+      ]
+    },
+    {
+      "x": 319,
+      "y": 220,
+      "saved_status": 0,
+      "runs": [
+        {
+          "ode_status": "captured",
+          "ode_reason": "capture_boundary",
+          "null_error": 2.6609255029282405e-09,
+          "impact_parameter_M": 2.1464007432739094,
+          "quadrature_outcome": "captured",
+          "rtol": 1e-09
+        },
+        {
+          "ode_status": "captured",
+          "ode_reason": "capture_boundary",
+          "null_error": 6.527089213942213e-11,
+          "impact_parameter_M": 2.1464007432739094,
+          "quadrature_outcome": "captured",
+          "rtol": 1e-11
+        }
+      ]
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "saved_status": 1,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.8604658044037493e-12,
+          "impact_parameter_M": 35.6714684806449,
+          "quadrature_outcome": "escaped",
+          "phi_background_ode": 2.6286988473526356,
+          "phi_background_quadrature": 2.6286988473526343,
+          "phi_background_error_radians": 1.3322676295501878e-15,
+          "finite_escape_angle": 2.2985283934660052,
+          "infinity_tail_radians": 0.33017045388663024,
+          "background_dense_checks": {
+            "angle": 2.2985283934660052,
+            "rate_integral": 2.298528393466005,
+            "max_sample_increment": 0.05847628088625079,
+            "unwrap_rate_difference": 4.440892098500626e-16
+          },
+          "rtol": 1e-09,
+          "saved_map_vs_ode_background_error_radians": 1.7763568394002505e-15
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.7930484683222009e-12,
+          "impact_parameter_M": 35.6714684806449,
+          "quadrature_outcome": "escaped",
+          "phi_background_ode": 2.628698847352636,
+          "phi_background_quadrature": 2.6286988473526343,
+          "phi_background_error_radians": 1.7763568394002505e-15,
+          "finite_escape_angle": 2.2985283934660057,
+          "infinity_tail_radians": 0.3301704538866303,
+          "background_dense_checks": {
+            "angle": 2.2985283934660057,
+            "rate_integral": 2.2985283934660043,
+            "max_sample_increment": 0.05846749804976881,
+            "unwrap_rate_difference": 1.3322676295501878e-15
+          },
+          "rtol": 1e-11,
+          "saved_map_vs_ode_background_error_radians": 2.220446049250313e-15
+        }
+      ]
+    },
+    {
+      "x": 320,
+      "y": 321,
+      "saved_status": 3,
+      "runs": [
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 9.375445247736352e-10,
+          "impact_parameter_M": 8.87815622858814,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            -0.01027341900190695,
+            1.6745672973109258,
+            -19.140391792757626
+          ],
+          "phi_emit_ode": 3.2288607501098574,
+          "phi_emit_quadrature": 3.2288607499456106,
+          "phi_emit_error_radians": 1.642468383522555e-10,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 3.2288607501098574,
+            "rate_integral": 3.228860750106092,
+            "max_sample_increment": 0.11533166152895191,
+            "unwrap_rate_difference": 3.765432410318681e-12
+          },
+          "hit_geometry_error_radians": 1.642473063246612e-10,
+          "phi_background_ode": 3.7075913799030444,
+          "phi_background_quadrature": 3.7075913797553843,
+          "phi_background_error_radians": 1.4766010636435567e-10,
+          "finite_escape_angle": 3.6267941863289512,
+          "infinity_tail_radians": 0.08079719357409317,
+          "background_dense_checks": {
+            "angle": 3.6267941863289512,
+            "rate_integral": 3.62679418636087,
+            "max_sample_increment": 0.11533166152895191,
+            "unwrap_rate_difference": 3.191891195797325e-11
+          },
+          "rtol": 1e-09,
+          "saved_vs_ode_hit_position_difference_M": 4.235478282970118e-09,
+          "saved_map_vs_ode_emit_error_radians": 5.097566813105914e-11,
+          "saved_map_vs_ode_background_error_radians": 1.4766010636435567e-10
+        },
+        {
+          "ode_status": "escaped",
+          "ode_reason": "outward_escape",
+          "null_error": 1.4817687307041084e-11,
+          "impact_parameter_M": 8.87815622858814,
+          "quadrature_outcome": "escaped",
+          "crossing": 2,
+          "hit_position": [
+            -0.010273419005170769,
+            1.6745672978429378,
+            -19.140391798832272
+          ],
+          "phi_emit_ode": 3.2288607501098863,
+          "phi_emit_quadrature": 3.228860750108689,
+          "phi_emit_error_radians": 1.1972645097557688e-12,
+          "emission_leg": "outward",
+          "emission_dense_checks": {
+            "angle": 3.2288607501098863,
+            "rate_integral": 3.2288607501099995,
+            "max_sample_increment": 0.05970405388558819,
+            "unwrap_rate_difference": 1.1324274851176597e-13
+          },
+          "hit_geometry_error_radians": 1.197314782967282e-12,
+          "phi_background_ode": 3.707591379756265,
+          "phi_background_quadrature": 3.7075913797553843,
+          "phi_background_error_radians": 8.806289031326742e-13,
+          "finite_escape_angle": 3.626794186182865,
+          "infinity_tail_radians": 0.08079719357340001,
+          "background_dense_checks": {
+            "angle": 3.626794186182865,
+            "rate_integral": 3.626794186183384,
+            "max_sample_increment": 0.05970405388558819,
+            "unwrap_rate_difference": 5.191402863147232e-13
+          },
+          "rtol": 1e-11,
+          "saved_vs_ode_hit_position_difference_M": 1.8624212463342745e-09,
+          "saved_map_vs_ode_emit_error_radians": 5.100453392969939e-11,
+          "saved_map_vs_ode_background_error_radians": 8.806289031326742e-13
+        }
+      ]
+    }
+  ],
+  "tight_run_maxima": {
+    "phi_emit_error_radians": 9.001333012292889e-10,
+    "phi_background_error_radians": 8.984955002233619e-10,
+    "saved_map_vs_ode_emit_error_radians": 9.557886038180641e-08,
+    "saved_map_vs_ode_background_error_radians": 8.981650978512334e-10,
+    "saved_vs_ode_hit_position_difference_M": 2.8378404364555355e-06
+  },
+  "ode_integrations": 30,
+  "elapsed_seconds": 9.762914599996293,
+  "scope": "explicit small transparent ODE audit; physical emission phase stops at first valid opaque hit",
+  "validation_tolerance_radians": 1e-06,
+  "image_rerendered": false
+}

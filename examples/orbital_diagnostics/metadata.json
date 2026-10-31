@@ -1,0 +1,157 @@
+{
+  "source_render": "D:\\numerical-observatory\\output\\disk-edge-on-blackbody-hires",
+  "source_rays": "D:\\numerical-observatory\\output\\disk-edge-on-blackbody-hires\\disk_rays.npz",
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      60.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 640,
+    "height": 480,
+    "time": 0.0,
+    "observer_frame": null
+  },
+  "mass": 1.0,
+  "source_sha256": {
+    "diagnostics.json": "a4be04099423afcb05186b57f5b8c8b1d8129a6e8b6c07e1462a2b4a0f02f133",
+    "shadow.png": "3775b399b5f0e15fdfd42775d7e9f22b0471a99d5239269e85a2347ad67f9184",
+    "disk_rays.npz": "a175a924fc70ce64c37e1c3f0b46925dce562839d4d06f10143e873eaac92bf1"
+  },
+  "source_image_size": [
+    640,
+    480
+  ],
+  "samples": 1,
+  "crop_bounds_xyxy_exclusive": [
+    179,
+    134,
+    461,
+    346
+  ],
+  "enlargement": 4,
+  "angle_convention": "nonnegative unwrapped Schwarzschild orbital angle; Phi=0 at camera; dPhi/dlambda=|L|/r^2 along past-directed ray",
+  "background_convention": "infinity, including analytic tail past finite escape sphere; disk-hit values are hypothetical transparent-disk continuations",
+  "array_units": "radians and radians/pi are both saved; signed image distances use native output pixels",
+  "emission_leg_codes": {
+    "0": "unavailable",
+    "1": "inward",
+    "2": "outward"
+  },
+  "calculation": {
+    "distinct_conserved_orbits": 28772,
+    "elapsed_seconds": 16.117673799977638,
+    "invalid_emission_reasons": {},
+    "classification_mismatch_count": 0,
+    "max_saved_hit_geometry_residual_radians": 1.2106139073408236e-07,
+    "emission_branch_counts": {
+      "inward": 7256,
+      "outward": 15438
+    },
+    "quadrature_tolerance": 1e-11,
+    "saved_hit_geometry_check_tolerance_radians": 5e-06,
+    "reconstruction": "camera tetrad -> canonical initial p_t and |x cross p|; exact rotational reuse; partial radial quadratures checked against saved orbital-plane position, never disk crossing number or disk azimuth"
+  },
+  "disk_extraction": {
+    "radius_source": "hit_radius",
+    "basis": {
+      "normal": [
+        0.0,
+        0.9961946980917455,
+        0.08715574274765814
+      ],
+      "zero_direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "positive_90_direction": [
+        0.0,
+        0.08715574274765814,
+        -0.9961946980917455
+      ]
+    },
+    "warnings": [],
+    "max_saved_radius_position_disagreement": 0.0,
+    "valid_counts": {
+      "radius": 22694,
+      "crossing": 22694,
+      "azimuth": 22694
+    },
+    "missing_emitted_counts": {
+      "radius": 0,
+      "crossing": 0,
+      "azimuth": 0
+    }
+  },
+  "ode_image_retracing": false,
+  "optional_ode_audit_cases": 15,
+  "optional_ode_integrations": 30,
+  "features_source": "D:\\numerical-observatory\\examples\\disk_diagnostics",
+  "map_scale_pi": [
+    0,
+    4
+  ],
+  "overlay_styles": [
+    {
+      "target": "shadow",
+      "rgb": [
+        255,
+        255,
+        255
+      ],
+      "style": "dash"
+    },
+    {
+      "target": "1",
+      "rgb": [
+        255,
+        160,
+        0
+      ],
+      "style": "dash"
+    },
+    {
+      "target": "2",
+      "rgb": [
+        255,
+        40,
+        220
+      ],
+      "style": "solid"
+    },
+    {
+      "target": "3",
+      "rgb": [
+        60,
+        255,
+        130
+      ],
+      "style": "dot"
+    }
+  ],
+  "overlay_rasterization": "8x antialiased geometry, native center/radii, no artificial ring separation",
+  "source_status_codes": {
+    "0": "captured",
+    "1": "escaped",
+    "2": "unresolved",
+    "3": "opaque disk emission"
+  },
+  "background_status_codes": {
+    "0": "no escaping continuation",
+    "1": "escaping geometry",
+    "2": "unresolved",
+    "99": "invalid reconstruction/source status"
+  }
+}

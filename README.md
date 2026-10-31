@@ -168,6 +168,198 @@ regenerate both backgrounds, unlensed references, a labelled grid atlas, a fresh
 traced near-shadow close-up, and quantitative diagnostics in `examples/validated/`.
 Historical renders remain in `examples/composition/` and `examples/rendered/`.
 
+## Scientific disk-hit diagnostic maps
+
+Generate maps directly from a completed render with no tracing:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory.disk_diagnostics --input output/disk-edge-on-blackbody-hires --output examples/disk_diagnostics
+```
+
+Ubuntu:
+
+```bash
+.venv/bin/python -m numerical_observatory.disk_diagnostics --input output/disk-edge-on-blackbody-hires --output examples/disk_diagnostics
+```
+
+Use `--input` for a different completed render, including the exposure-5 version.
+Use `--output` for a separate diagnostics directory. For a custom native-image
+crop and enlargement, append `--crop 220 170 420 315 --scale 4`. Bounds are
+`x0 y0 x1 y1`, with x1/y1 exclusive; x is column from the left and y is row from
+the top. Every map and visible-image crop uses the exact same bounds. The default
+central 44% crop for 640×480 is **[179,134,461,346)**: 282×212 original pixels,
+enlarged to 1128×848 with nearest neighbor. This adds no ray-tracing resolution.
+
+The new [diagnostic report](examples/disk_diagnostics/REPORT.md) examines the
+narrow halo and branches using the saved 640×480 blackbody render. The output
+contains:
+
+- `emission_radius.png`: annotated first-hit Schwarzschild radius r_emit/M,
+  with a continuous sequential color bar (6–20M for this disk).
+- `crossing_number.png`: categorical ordinal of the plane crossing that first
+  reaches the emitting annulus. Earlier crossings through the hole or beyond
+  the outer edge still count. This is not a winding number or assigned image
+  order.
+- `emission_azimuth.png`: cyclic first-hit azimuth, in degrees [0,360), with a
+  matching 0°/360° color boundary.
+- `crops/`: matching decorated and plain crops of all three maps and the exact
+  saved `shadow.png`; `crop_comparison.png` presents the four crops together.
+- `*_pixels.png`: plain scientific rasters without labels or margins; annotated
+  versions place that raster at offset (20,55), recorded in metadata.
+- `diagnostic_arrays.npz`: `radius_m`, `crossing_number`, `azimuth_degrees`,
+  `status`, `emitted`, per-field `*_valid` masks, `samples`, `mass`, and crop
+  bounds. Invalid continuous values are NaN. Zero is a missing sentinel for
+  crossing number and must be read with `crossing_valid`. A matching cropped
+  archive is also saved as `crops/diagnostic_arrays.npz`.
+- `metadata.json`: source checksums, coordinate conventions, crop bounds,
+  enlargement, validity counts and missing-field warnings.
+
+The scientific values do not use temperature, g, intensity, exposure, blackbody
+colors or tone mapping. Black is capture, blue-gray is escaping background,
+magenta hatch is unresolved, and gray hatch marks a missing/invalid diagnostic
+on an emitting ray. Unknown status codes are gray. The radius comes from the
+actual first opaque intersection, not the photon's closest approach or an
+image-plane distance. All three maps preserve the first-valid-hit semantics.
+
+Azimuth uses the saved Cartesian Kerr–Schild emitting position and disk normal n.
+Its zero vector e0 is global +X projected onto the disk plane and normalized;
+if that projection vanishes, global +Y is used. Define e90=n cross e0 and
+phi=atan2(position dot e90, position dot e0), wrapped into [0°,360°). Increasing
+phi follows the right-hand rule around n, matching positive disk rotation.
+For the 85° example, e0=(1,0,0), e90=(0,0.087156,-0.996195); the camera is on
++Z. Thus phi=90° lies on the far side and 270° on the near side. Other camera
+orientations do not redefine these disk coordinates. The projection fallback
+is a coordinate-chart convention near a normal parallel to +X/-X.
+
+Older files work when they contain `status`, positive metadata `mass`, and the
+relevant hit fields. Radius uses `hit_radius`, falling back to norm(hit_position)
+when the radius field is absent. Azimuth requires `hit_position` and
+`geometry.normal`; crossing number requires `crossing_index`. Missing fields
+produce explicit unavailable masks and warnings rather than inferred values or
+retracing. Radius color limits use the saved disk boundaries, otherwise the
+observed finite range. Grid companion renders can follow `ray_data_source`;
+`--rays path/to/disk_rays.npz` overrides a moved/older reference.
+
+Supersampled files retain every subray in the numerical arrays and scientific
+rasters (width*samples by height*samples). Categories and angles are never
+averaged. Crop coordinates still refer to the original output image and are
+multiplied by samples consistently. For comparison, the already averaged visible
+image is repeated onto the subray grid; this does not recover its individual
+subray display values. `--scale` enlarges that grid. The 640×480 diagnostic
+example uses one ray per pixel, so all four rasters align directly.
+
+Optional genuinely denser angular sampling is available separately:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory.diagnostic_zoom --input output/disk-edge-on-blackbody-hires --output output/disk-shadow-new-rays --crop 260 184 380 300 --density 2
+```
+
+On Ubuntu use `.venv/bin/python` for the same module and arguments. This explicit
+command **launches new geodesics** and can be expensive; it is never invoked by
+postprocessing. Density 2 samples a 240×232 window of the original virtual
+1280×960 camera. It preserves the original camera event, orientation, 60° full
+FOV, source-pixel region and all numerical settings. It does not recenter or
+change FOV. The helper deliberately uses the existing serial ODE path with
+symmetry disabled, since the ordinary symmetry/multiprocessing pixel generators
+assume full frames. New results have the same disk-ray fields and can be passed
+to `disk_diagnostics`; window-to-source coordinates are recorded in their JSON.
+No optional zoom tracing was run for the supplied diagnostics.
+
+## Accumulated orbital angle and celestial alignment rings
+
+The closely related postprocessor `orbital_diagnostics` measures the Schwarzschild
+orbital angle separately from the disk emission azimuth. It reads the same saved
+camera and first-hit positions, reconstructs the actual initial covectors and
+conserved E,L, and uses the existing validated orbital quadrature. The 640×480
+maps require no image-geodesic reintegration or new ray-data fields.
+
+PowerShell:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory.orbital_diagnostics --input output/disk-edge-on-blackbody-hires --features examples/disk_diagnostics --output examples/orbital_diagnostics
+```
+
+Ubuntu:
+
+```bash
+.venv/bin/python -m numerical_observatory.orbital_diagnostics --input output/disk-edge-on-blackbody-hires --features examples/disk_diagnostics --output examples/orbital_diagnostics
+```
+
+The default crop remains x=[179,461), y=[134,346). `--crop X0 Y0 X1 Y1` and
+`--scale 4` customize it using the same half-open native-image coordinates as
+the disk-hit diagnostics. `--features` reads existing feature masks without
+modifying them; their source fields must agree. Use `--no-features` for maps
+without the example-specific region statistics. Output must be separate from
+the source render and previous diagnostic products.
+
+Files include `phi_emit.png`, `phi_background.png`, visible-light and crossing-map
+ring overlays, matching `crops/`, `crop_comparison.png`, `orbital_angles.npz`,
+`alignment_rings.json`, `feature_statistics.json`, and provenance metadata.
+Each annotated PNG has a plain `*_pixels.png` counterpart. Numerical archives
+save radians and angle/pi, validity masks, source/continuation statuses, emission
+radial leg, endpoint geometry-check residuals, native image radii, and masks
+separating physically visible background from hypothetical transparent-disk
+continuations. A cropped archive is saved too. Missing continuous angles are NaN.
+
+Phi starts at zero at the camera and increases along the past-directed ray,
+with dPhi/dlambda=|L|/r². It is nonnegative and never reduced modulo 2pi. The
+orbital-plane basis is formed from the camera radial vector and the conserved
+angular-momentum direction; it is not the disk's azimuth basis. In this outgoing
+Kerr–Schild implementation r=norm(x), the angular part of the metric is r²dOmega²,
+and conversion to standard Schwarzschild coordinates changes time only. Hence
+the unwrapped position angle in that fixed plane is precisely the Schwarzschild
+orbital angle; this reasoning does not generalize automatically to Kerr or
+arbitrary numerical Cartesian coordinates.
+
+`Phi_emit` stops at the saved first opaque emitting intersection. The inbound
+and outbound radial quadratures are compared against the actual saved position
+in the conserved orbital plane; neither crossing number nor disk azimuth is
+used to select the angle. `Phi_background` runs to **infinity**, including the
+same analytic tail beyond the finite ODE escape sphere used by the celestial
+renderer. Its values on disk-emitting pixels are explicitly **hypothetical
+transparent-disk continuations**. They do not represent light transmitted
+through an opaque surface. Captured continuations have no background angle.
+
+For this 60M, 60°, 640×480 camera, the critical radius is 47.365231 pixels and
+the independently solved infinity-angle pi/2pi/3pi rings are at 160.842895,
+48.709245 and 47.420172 pixels. Thus the 2pi ring is **1.344014 pixels** outside
+the critical curve. These are finite-camera roots with the original pinhole
+projection, not rescaled radii from the 400M camera. Orders 4 and 5 are tabulated
+in JSON; no rings are artificially separated for display. The 3pi ring is only
+0.054941 pixels outside the critical curve and is visually unresolved here.
+
+The [orbital-angle report](examples/orbital_diagnostics/REPORT.md) provides all
+root convergence, feature statistics, validation and interpretation. The upper
+halo samples Phi_emit/pi=1.853–1.972, while the two branches span 1.339–1.932.
+Their transparent background angles vary across the 2pi ring: this is a related
+disk-image layer, not an isocontour of constant background angle.
+
+For an explicit small independent audit, append `--validate-ode`. This runs 15
+representative rays at two tolerances (30 ODE integrations, about 12 seconds
+on this computer), rather than rerendering the image. It compares radial
+quadrature against both unwrapped dense-ODE position geometry and integrated
+angular velocity, plus the existing infinity tail. Normal map reconstruction
+took about 17 seconds for 28,772 distinct conserved orbits; cost depends on
+resolution. Production rendering algorithms, physical parameters and numerical
+tolerances are untouched.
+
+Current saved-data maps require a centered coordinate-static Schwarzschild
+camera (including the documented diagnostic-window mapping). Positive photon
+energy, finite hit positions and the original camera parameters are required;
+hit momentum need not be stored. If a spatial self-intersection makes both
+radial legs consistent with the saved point, the emission angle is explicitly
+marked unavailable. Exactly critical continuations are unresolved. Pure radial
+motion has zero accumulated angle and no unique orbital plane; nearly radial
+angles use their small conserved L without forcing them to zero. Unsupported
+cameras or invalid data do not trigger an automatic expensive ODE rerun.
+
+For new angular information, use the separately documented `diagnostic_zoom`
+helper explicitly. Density 8–16 is a useful next step for thin halo/branch
+segments; it does not resolve a 0.055-native-pixel ring separation well. That
+separation would require roughly 64 samples per original pixel width to span
+three new pixels, so use a very small targeted region and account for the
+helper's serial cost. No expensive targeted render was launched here.
+
 ## Parallel CPU rendering
 
 `--workers 1` retains serial rendering and is the default. `--workers N` enables

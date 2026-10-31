@@ -1,0 +1,257 @@
+{
+  "camera_radius_M": 60.0,
+  "full_horizontal_fov_degrees": 60.0,
+  "center_xy": [
+    319.5,
+    239.5
+  ],
+  "pixels_per_tan_angle": 554.2562584220408,
+  "shadow": {
+    "impact_parameter_M": 5.196152422706632,
+    "angle_degrees": 4.8844740743954915,
+    "radius_pixels": 47.365231152560455
+  },
+  "rings": [
+    {
+      "phase_pi": 1,
+      "impact_parameter_M": 17.007744284258205,
+      "angle_degrees": 16.182512133075836,
+      "radius_pixels": 160.8428952868633,
+      "residual_radians": 0.0,
+      "bracket_impact_M": [
+        5.196152422758593,
+        61.025715325811916
+      ],
+      "separation_from_shadow_pixels": 113.47766413430284,
+      "convergence": [
+        {
+          "eps": 1e-08,
+          "impact_parameter_M": 17.007744284258212,
+          "angle_degrees": 16.18251213307584,
+          "radius_pixels": 160.84289528686335,
+          "residual_radians": 0.0,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-10,
+          "impact_parameter_M": 17.007744284258205,
+          "angle_degrees": 16.182512133075836,
+          "radius_pixels": 160.8428952868633,
+          "residual_radians": 0.0,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-12,
+          "impact_parameter_M": 17.007744284258205,
+          "angle_degrees": 16.182512133075836,
+          "radius_pixels": 160.8428952868633,
+          "residual_radians": 0.0,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        }
+      ],
+      "radius_convergence_span_pixels": 5.684341886080802e-14
+    },
+    {
+      "phase_pi": 2,
+      "impact_parameter_M": 5.342481473009798,
+      "angle_degrees": 5.0223744484357855,
+      "radius_pixels": 48.70924485142405,
+      "residual_radians": -8.881784197001252e-16,
+      "bracket_impact_M": [
+        5.196152422758593,
+        61.025715325811916
+      ],
+      "separation_from_shadow_pixels": 1.3440136988635984,
+      "convergence": [
+        {
+          "eps": 1e-08,
+          "impact_parameter_M": 5.342481473009798,
+          "angle_degrees": 5.0223744484357855,
+          "radius_pixels": 48.70924485142405,
+          "residual_radians": 0.0,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-10,
+          "impact_parameter_M": 5.342481473009798,
+          "angle_degrees": 5.0223744484357855,
+          "radius_pixels": 48.70924485142405,
+          "residual_radians": 0.0,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-12,
+          "impact_parameter_M": 5.342481473009798,
+          "angle_degrees": 5.0223744484357855,
+          "radius_pixels": 48.70924485142405,
+          "residual_radians": -8.881784197001252e-16,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        }
+      ],
+      "radius_convergence_span_pixels": 0.0
+    },
+    {
+      "phase_pi": 3,
+      "impact_parameter_M": 5.2021358694583375,
+      "angle_degrees": 4.890112307965437,
+      "radius_pixels": 47.420171929185486,
+      "residual_radians": -2.7355895326763857e-13,
+      "bracket_impact_M": [
+        5.196152422758593,
+        61.025715325811916
+      ],
+      "separation_from_shadow_pixels": 0.05494077662503116,
+      "convergence": [
+        {
+          "eps": 1e-08,
+          "impact_parameter_M": 5.2021358694583375,
+          "angle_degrees": 4.890112307965437,
+          "radius_pixels": 47.420171929185486,
+          "residual_radians": -2.7355895326763857e-13,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-10,
+          "impact_parameter_M": 5.2021358694583375,
+          "angle_degrees": 4.890112307965437,
+          "radius_pixels": 47.420171929185486,
+          "residual_radians": -2.7355895326763857e-13,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-12,
+          "impact_parameter_M": 5.2021358694583375,
+          "angle_degrees": 4.890112307965437,
+          "radius_pixels": 47.420171929185486,
+          "residual_radians": -2.7355895326763857e-13,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        }
+      ],
+      "radius_convergence_span_pixels": 0.0
+    },
+    {
+      "phase_pi": 4,
+      "impact_parameter_M": 5.196410150616536,
+      "angle_degrees": 4.884716931792679,
+      "radius_pixels": 47.36759761475633,
+      "residual_radians": -4.7126746949288645e-12,
+      "bracket_impact_M": [
+        5.196152422758593,
+        61.025715325811916
+      ],
+      "separation_from_shadow_pixels": 0.002366462195872998,
+      "convergence": [
+        {
+          "eps": 1e-08,
+          "impact_parameter_M": 5.196410150616536,
+          "angle_degrees": 4.884716931792679,
+          "radius_pixels": 47.36759761475633,
+          "residual_radians": -4.716227408607665e-12,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-10,
+          "impact_parameter_M": 5.196410150616536,
+          "angle_degrees": 4.884716931792679,
+          "radius_pixels": 47.36759761475633,
+          "residual_radians": -4.716227408607665e-12,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-12,
+          "impact_parameter_M": 5.196410150616536,
+          "angle_degrees": 4.884716931792679,
+          "radius_pixels": 47.36759761475633,
+          "residual_radians": -4.7126746949288645e-12,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        }
+      ],
+      "radius_convergence_span_pixels": 0.0
+    },
+    {
+      "phase_pi": 5,
+      "impact_parameter_M": 5.196163558115984,
+      "angle_degrees": 4.884484567306655,
+      "radius_pixels": 47.36533339803156,
+      "residual_radians": -4.444800083547307e-11,
+      "bracket_impact_M": [
+        5.196152422758593,
+        61.025715325811916
+      ],
+      "separation_from_shadow_pixels": 0.00010224547110482263,
+      "convergence": [
+        {
+          "eps": 1e-08,
+          "impact_parameter_M": 5.196163558115984,
+          "angle_degrees": 4.884484567306655,
+          "radius_pixels": 47.36533339803156,
+          "residual_radians": -4.4437342694436666e-11,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-10,
+          "impact_parameter_M": 5.196163558115984,
+          "angle_degrees": 4.884484567306655,
+          "radius_pixels": 47.36533339803156,
+          "residual_radians": -4.444800083547307e-11,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        },
+        {
+          "eps": 1e-12,
+          "impact_parameter_M": 5.196163558115984,
+          "angle_degrees": 4.884484567306655,
+          "radius_pixels": 47.36533339803156,
+          "residual_radians": -4.444800083547307e-11,
+          "bracket_impact_M": [
+            5.196152422758593,
+            61.025715325811916
+          ]
+        }
+      ],
+      "radius_convergence_span_pixels": 0.0
+    }
+  ],
+  "background": "null infinity; same outgoing analytic tail as existing celestial renderer"
+}

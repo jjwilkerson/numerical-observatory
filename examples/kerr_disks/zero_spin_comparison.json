@@ -1,0 +1,10 @@
+{
+  "status_differences": 0,
+  "crossing_differences": 0,
+  "max_position_difference_M": 1.5436958378245436e-08,
+  "max_radius_difference_M": 1.543878358489792e-08,
+  "max_g_difference": 9.818712509712668e-10,
+  "max_relative_bolometric_difference": 3.3881619732056834e-09,
+  "max_display_8bit_difference": 0,
+  "different_display_pixels": 0
+}

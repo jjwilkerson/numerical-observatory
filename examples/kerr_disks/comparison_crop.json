@@ -1,0 +1,20 @@
+{
+  "source_bounds_xyxy_exclusive": [
+    16,
+    12,
+    80,
+    60
+  ],
+  "original_size": [
+    96,
+    72
+  ],
+  "enlargement": 6,
+  "interpolation": "nearest neighbor; no extra angular sampling",
+  "cases": [
+    "schwarzschild_i85",
+    "spin05_prograde_i85",
+    "spin09_prograde_i85",
+    "spin09_retrograde_i85"
+  ]
+}

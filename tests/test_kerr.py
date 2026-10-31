@@ -156,7 +156,7 @@ def test_horizon_fraction_source_radius_convergence_and_unresolved():
     assert rejected.status=='unresolved' and rejected.reason=='null_constraint_exceeded'
 
 
-def test_config_disk_rejection_optimizations_and_spawn(tmp_path):
+def test_config_optimizations_and_spawn(tmp_path):
     from numerical_observatory.cli import load_configuration
     from numerical_observatory.disk import make_disk
     from numerical_observatory.render import render
@@ -165,8 +165,8 @@ def test_config_disk_rejection_optimizations_and_spawn(tmp_path):
     m,c,s=load_configuration(config)
     assert m.radius(c.event)==pytest.approx(60)
     assert s.kerr_source_radius==2e5
-    with pytest.raises(ValueError,match='Kerr disks'):
-        make_disk(m,dict(enabled=True))
+    scene=make_disk(m,dict(enabled=True))
+    assert scene.surface.metric == m and scene.motion.orbit == 'prograde'
     from numerical_observatory.background import CelestialGrid
     from numerical_observatory.symmetry import CenteredRayCache
     from numerical_observatory.schwarzschild_orbit import compatible

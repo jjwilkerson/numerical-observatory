@@ -1,0 +1,106 @@
+{
+  "rotation_old_Schwarzschild_to_equatorial_Kerr": [
+    [
+      0.0,
+      -0.08715574274765814,
+      0.9961946980917455
+    ],
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.9961946980917455,
+      0.08715574274765814
+    ]
+  ],
+  "inclination_degrees": 85,
+  "note": "Proper rotation maps the legacy tilted normal to +Z, camera and image axes together.",
+  "cases": [
+    {
+      "pixel": [
+        420,
+        232
+      ],
+      "kerr_status": "emitted",
+      "schwarzschild_status": "emitted",
+      "initial_momentum_rotation_error": 3.3306690738754696e-16,
+      "kerr_crossing": 1,
+      "schwarzschild_crossing": 1,
+      "max_position_rotation_error_M": 4.085620730620576e-12,
+      "max_velocity_rotation_error": 1.0169642905566434e-13,
+      "g_difference": 1.6486811915683575e-13,
+      "relative_bolometric_difference": 4.614086890342151e-13,
+      "max_linear_RGB_difference": 5.459521723594207e-14
+    },
+    {
+      "pixel": [
+        310,
+        192
+      ],
+      "kerr_status": "emitted",
+      "schwarzschild_status": "emitted",
+      "initial_momentum_rotation_error": 2.220446049250313e-16,
+      "kerr_crossing": 2,
+      "schwarzschild_crossing": 2,
+      "max_position_rotation_error_M": 1.2215721767461218e-09,
+      "max_velocity_rotation_error": 1.0657807969494115e-11,
+      "g_difference": 5.137557046452912e-12,
+      "relative_bolometric_difference": 1.833263540973462e-10,
+      "max_linear_RGB_difference": 2.0623031060651442e-11
+    },
+    {
+      "pixel": [
+        351,
+        276
+      ],
+      "kerr_status": "emitted",
+      "schwarzschild_status": "emitted",
+      "initial_momentum_rotation_error": 1.1102230246251565e-16,
+      "kerr_crossing": 3,
+      "schwarzschild_crossing": 3,
+      "max_position_rotation_error_M": 1.0078480272568413e-09,
+      "max_velocity_rotation_error": 1.019023754267323e-11,
+      "g_difference": 9.949596702085728e-12,
+      "relative_bolometric_difference": 1.385740411308234e-10,
+      "max_linear_RGB_difference": 1.5048406964979222e-11
+    },
+    {
+      "pixel": [
+        287,
+        274
+      ],
+      "kerr_status": "emitted",
+      "schwarzschild_status": "emitted",
+      "initial_momentum_rotation_error": 2.220446049250313e-16,
+      "kerr_crossing": 4,
+      "schwarzschild_crossing": 4,
+      "max_position_rotation_error_M": 1.3481479044230582e-08,
+      "max_velocity_rotation_error": 2.2166013469160362e-10,
+      "g_difference": 2.7470470342905173e-11,
+      "relative_bolometric_difference": 3.0706999165630577e-09,
+      "max_linear_RGB_difference": 8.182196031825129e-10
+    },
+    {
+      "pixel": [
+        319,
+        200
+      ],
+      "kerr_status": "captured",
+      "schwarzschild_status": "captured",
+      "initial_momentum_rotation_error": 1.1102230246251565e-16
+    },
+    {
+      "pixel": [
+        0,
+        0
+      ],
+      "kerr_status": "escaped",
+      "schwarzschild_status": "escaped",
+      "initial_momentum_rotation_error": 3.3306690738754696e-16,
+      "source_direction_rotation_error": 8.212396338933579e-13
+    }
+  ]
+}

@@ -5,7 +5,8 @@ It traces null geodesics toward the past from a local camera, lenses an astronom
 star map at infinity, and saves a PNG plus numerical diagnostics. No existing C++
 project, CarpetX installation, GPU, CUDA, or compiler is required.
 
-For Schwarzschild, an optional opaque luminous disk adds circular orbital motion, gravitational
+An optional opaque luminous disk supports Schwarzschild and equatorial Kerr
+circular orbital motion, gravitational
 redshift, Doppler beaming, and higher-order surface images. It is **disabled by
 default**; existing starfield/grid configurations retain their original results.
 See the [disk validation report](examples/disks/REPORT.md).
@@ -14,8 +15,8 @@ See the [disk validation report](examples/disks/REPORT.md).
 
 Kerr describes an isolated stationary rotating vacuum black hole. Select it
 explicitly; configurations without `[spacetime]` still use Schwarzschild.
-There is **no Kerr accretion disk yet**: enabling one is rejected, including at
-zero spin. Kerr uses the existing general Hamiltonian ODE, multiprocessing,
+Kerr supports an optional equatorial circular-geodesic disk (see below).
+Kerr uses the existing general Hamiltonian ODE, multiprocessing,
 starfield/grid and camera projection. Schwarzschild planar quadrature and
 spherical rotational reuse never activate for Kerr; a requested quadrature
 render falls back to ODE and records this choice.
@@ -87,9 +88,108 @@ Kerr `rays.npz` adds per-ray null/E/Lz/Q conservation errors and initial signed
 Source directions use Hamiltonian continuation to 100000M and the outgoing
 Cartesian tangent: the remaining O(M b/R²) bending is checked separately from
 integration error. Coarse raster sampling, sampled conservation bounds, finite
-source truncation, CPU cost and unsupported Kerr disk physics remain limits.
+source truncation, CPU cost and the simplified disk model remain limits.
 
-## Optional luminous disk
+## Kerr accretion disk
+
+Kerr disks reuse the existing opaque-surface renderer, invariant frequency-shift
+calculation, bolometric g^4 transformation and unchanged display palettes.
+Their geometry is fixed to the Kerr equatorial plane z=0, with no independent
+disk tilt. Set the camera inclination relative to global +Z instead.
+
+```toml
+[spacetime]
+type = "kerr"
+spin = 0.9
+[disk]
+enabled = true
+orbit = "prograde"
+inner_radius = "isco"
+outer_radius = 20.0
+temperature_inner = 10000.0
+temperature_index = 0.75
+[disk.display]
+palette = "blackbody"
+exposure = 5.0
+tone_mapping = "reinhard"
+```
+
+`inner_radius="isco"` is the Kerr default. A numerical inner radius in M is
+also supported, but must be at or above the selected orbit's ISCO; outer radius
+must exceed it. `orbit="prograde"` follows the sign of black-hole angular
+momentum, while `retrograde` opposes it. Negative spin changes coordinate
+rotation direction without changing the disk plane. At zero spin, prograde
+means positive coordinate azimuth and retrograde means negative azimuth;
+both ISCOs are 6M. The original Schwarzschild settings/defaults are unchanged.
+
+The disk uses **Kerr r**, not sqrt(x²+y²), for boundaries and temperature. At
+z=0 the Cartesian cylindrical radius is sqrt(r²+a²). Circular four-velocities
+are constructed from the actual KS stationary/axial Killing vectors and
+normalized using the metric. The frequency ratio contracts the actual camera
+(ZAMO or configured observer) and emitter velocities with compatible photon
+covectors. No extra Doppler, lensing or frame-dragging multiplier is used.
+Earlier plane crossings through the hole or beyond the outer edge still count
+but do not emit or terminate the physical ray. The first annulus hit is opaque.
+
+The temperature is the existing phenomenological power law, not a
+Novikov–Thorne model. Holding T_in fixed across spins does **not** hold mass
+accretion rate, total luminosity, or temperature at a fixed outer radius fixed.
+This matters when comparing the brightness of different ISCO configurations.
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory --config examples/kerr_disks/configs/spin09_prograde_i85.toml --workers 10 --output output/kerr-disk
+.\.venv\Scripts\python -m numerical_observatory --config examples/kerr_disks/configs/spin09_retrograde_i85.toml --workers 10 --output output/kerr-retrograde
+.\.venv\Scripts\python -m numerical_observatory.disk_diagnostics --input output/kerr-disk --output output/kerr-disk-maps
+```
+
+Ubuntu uses `.venv/bin/python` with the same arguments. The six configurations
+also cover spin 0, 0.5, -0.9 and a 60° camera; the principal comparison uses 85°.
+They are small 96×72 previews with r_camera=60M, FOV=60° and no supersampling.
+The [preview comparison](examples/kerr_disks/comparison.png),
+[physical validation report](examples/kerr_disks/REPORT.md), and
+[Kerr disk guide](examples/kerr_disks/README.md) describe measurements and limits.
+
+```text
+python -m numerical_observatory.kerr_disk_validation --render --workers 10
+python -m numerical_observatory.kerr_disk_validation
+python -m numerical_observatory.kerr_disk_validation --figures-only
+```
+
+The first command validates and renders the previews plus an equivalent
+Schwarzschild control. Without `--render` only selected numerical audits run;
+`--figures-only` repaints saved rays and maps without integration. The optional
+`--nearcritical-audit` records a seventh-crossing reference-precision experiment,
+including its failed independent coordinate check; it is not a certificate
+for arbitrarily narrow higher-order images. No validation threshold is relaxed.
+
+Recolor saved physical data without tracing (also works for Schwarzschild):
+
+```text
+python -m numerical_observatory.surface_render --input output/kerr-disk --output output/kerr-disk-gray --palette gray --exposure 3 --background grid
+```
+
+Kerr `disk_rays.npz` retains the old status/g/intensity/hit/crossing/direction
+fields and adds hit events/covectors/affine values, emitted temperature and
+bolometric intensity, equatorial KS azimuth, and per-ray E/Lz/Q/null diagnostics.
+Metadata records spin, relative orbit, coordinate rotation, ISCO and resolved
+inner radius. Emitted azimuth is outgoing Cartesian KS atan2(y,x), zero +X,
+positive toward +Y, [0,360); it is not the BL azimuth. Saved first-hit radius,
+crossing-number and azimuth maps support Kerr. Kerr multilayer analysis and
+Schwarzschild planar orbital-angle/alignment-ring diagnostics are explicitly
+unsupported for Kerr and fail clearly rather than substitute Schwarzschild.
+The targeted `diagnostic_zoom` also reconstructs Kerr disks correctly.
+
+For deliberate full-resolution rendering, add `--width 640 --height 480` to
+the ordinary render command and choose a separate output directory. This can
+be expensive: Kerr uses independent Hamiltonian trajectories, with no spherical
+reuse, and internal geometry can extend beyond the first hit while physical
+radiance/constraint checks stop there. No full-resolution or supersampled
+Kerr disk batch is launched automatically. The disk remains a thin, stationary,
+isotropic two-face test-emitter model without hydrodynamics or radiative transfer.
+
+## Optional luminous disk (Schwarzschild)
 
 ![Inclined disk](examples/disks/inclined_starfield/shadow.png)
 ![Nearly edge-on disk](examples/disks/edge_on_starfield/shadow.png)

@@ -43,7 +43,7 @@ def load_configuration(path=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CPU Schwarzschild/Kerr observatory (luminous disks: Schwarzschild only)")
+    parser = argparse.ArgumentParser(description="CPU Schwarzschild/Kerr observatory with optional opaque luminous disk")
     parser.add_argument("--config", type=Path, help="TOML configuration (lengths in M)")
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument("--width", type=int, help="override pixel width")

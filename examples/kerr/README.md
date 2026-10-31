@@ -99,8 +99,9 @@ Sources (equations independently implemented, no external runtime dependency):
 - [Grenzebach, Perlick and Lämmerzahl (2014)](https://arxiv.org/abs/1403.5234),
   finite-observer shadow geometry and the importance of observer projection.
 
-No Kerr disk, Kerr orbital-angle planar diagnostic, physical radiative transfer,
-GPU backend or Kerr-specific reuse is included. Schwarzschild-only optimized
+Equatorial Kerr disks are now implemented; see [the disk guide](../kerr_disks/README.md).
+There is no Kerr planar orbital-angle diagnostic, physical radiative transfer,
+GPU backend or Kerr-specific trajectory reuse. Schwarzschild-only optimized
 paths are guarded by exact metric type. Near-critical outcomes require
 convergence checks; small invariant drift alone cannot certify an arbitrarily
 near-separatrix classification.

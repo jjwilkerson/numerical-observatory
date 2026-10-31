@@ -1,0 +1,126 @@
+{
+  "method": "ode_surface",
+  "requested_method": "ode",
+  "quadrature_used": false,
+  "exact_rotational_path_reuse": true,
+  "camera": {
+    "position": [
+      59.771681885504734,
+      0.0,
+      5.229344564859488
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      -0.08715574274765814,
+      0.0,
+      0.9961946980917455
+    ],
+    "fov_degrees": 60.0,
+    "width": 96,
+    "height": 72,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "zamo"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110.0,
+    "capture_radius": 1.99,
+    "max_affine": 400.0,
+    "max_step": 4.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0
+  },
+  "background": {
+    "model": "celestial coordinate grid",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "spacing_degrees": 15.0,
+    "line_width_degrees": 0.25,
+    "legend": "cool cyan/blue meridians; warm red/gold parallels; gray minor lines at spacing/3",
+    "accretion_disk": false
+  },
+  "geometry": {
+    "inner_radius": 6.0,
+    "outer_radius": 20.0,
+    "normal": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "emission": {
+    "inner_radius": 6.0,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0
+  },
+  "display": {
+    "exposure": 5.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "blackbody"
+  },
+  "rotation": 1,
+  "mass": 1.0,
+  "counts": {
+    "captured": 116,
+    "escaped": 6296,
+    "unresolved": 0,
+    "emitted": 500
+  },
+  "termination_reasons": {
+    "capture_boundary": 116,
+    "first_opaque_surface": 500,
+    "outward_escape": 6296
+  },
+  "max_sampled_null_error": 1.0388471002971362e-08,
+  "samples_per_axis": 1,
+  "elapsed_seconds": 15.277548699988984,
+  "count_units": "subpixel rays",
+  "g_range": [
+    0.5022449561268865,
+    1.4051171919977392
+  ],
+  "crossing_counts": {
+    "1": 410,
+    "2": 90
+  },
+  "intensity_units": "bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
+  "solver_note": "dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit",
+  "integrated_rays": 780,
+  "total_steps": 35642,
+  "rhs_evaluations": 548610,
+  "execution": {
+    "workers": 10,
+    "requested_workers": 10,
+    "start_method": "spawn",
+    "task_count": 195,
+    "worker_cpu_seconds": 120.234375,
+    "worker_task_seconds": 120.65682640008163,
+    "worker_peak_memory_bytes": {
+      "7708": 79835136,
+      "13228": 79867904,
+      "17972": 79618048,
+      "12652": 79925248,
+      "1300": 79192064,
+      "36836": 79970304,
+      "30000": 79257600,
+      "22068": 79724544,
+      "22352": 79609856,
+      "7700": 79790080
+    },
+    "startup_span_seconds": 3.0201823000097647,
+    "pool_wall_seconds": 15.259871899994323
+  },
+  "ray_data_source": "D:\\numerical-observatory\\examples\\kerr_disks\\schwarzschild_i85\\disk_rays.npz",
+  "repaint_only": true,
+  "geodesics_retraced": false
+}

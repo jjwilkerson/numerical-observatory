@@ -56,11 +56,24 @@ def trace_window(source, output, bounds, density):
     if source == output or source in output.parents or output in source.parents:
         raise ValueError("new tracing output must be separate from the source")
     report = json.loads((source/"diagnostics.json").read_text(encoding="utf-8"))
-    metric = Schwarzschild(report["mass"])
+    is_kerr = report.get("spacetime",{}).get("type")=="kerr"
+    if is_kerr:
+        from .kerr import Kerr
+        metric = Kerr(report["mass"], report["spacetime"]["spin"])
+    else:
+        metric = Schwarzschild(report["mass"])
     camera = Camera(**report["camera"])
     bounds = crop_bounds(bounds, camera.width, camera.height)
     cropped = window_camera(camera, bounds, density)
-    scene = DiskScene(ThinAnnulus(**report["geometry"]),
+    if is_kerr:
+        from .disk import make_disk
+        scene = make_disk(metric,dict(enabled=True,orbit=report["orbit"],
+            inner_radius=report["geometry"]["inner_radius"]/metric.mass,
+            outer_radius=report["geometry"]["outer_radius"]/metric.mass,
+            **{key:report["emission"][key] for key in ("temperature_inner","temperature_index","emissivity_scale")},
+            display=report["display"]))
+    else:
+        scene = DiskScene(ThinAnnulus(**report["geometry"]),
                       SchwarzschildCircular(metric, report["geometry"]["normal"], report["rotation"]),
                       PowerLawBlackbody(**report["emission"]), DiskDisplay(**report["display"]))
     sky = report["background"]

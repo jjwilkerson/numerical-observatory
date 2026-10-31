@@ -30,6 +30,8 @@ from .surfaces import ThinAnnulus
 
 
 def scene_from_metadata(metadata):
+    if metadata.get("spacetime",{}).get("type","schwarzschild") != "schwarzschild":
+        raise ValueError("Kerr multilayer diagnostics are not supported; use first-hit disk_diagnostics")
     metric = Schwarzschild(metadata["mass"])
     scene = DiskScene(ThinAnnulus(**metadata["geometry"]),
                       SchwarzschildCircular(metric, metadata["geometry"]["normal"], metadata["rotation"]),
@@ -60,6 +62,8 @@ def tasks_for_camera(camera, symmetry):
 
 
 def collect(metric, camera, settings, scene, max_crossing=4, workers=1, method="auto", progress=None):
+    if type(metric) is not Schwarzschild:
+        raise ValueError("Kerr multilayer diagnostics are not supported")
     if isinstance(max_crossing, bool) or not isinstance(max_crossing, int) or not 1 <= max_crossing <= np.iinfo(np.uint32).max:
         raise ValueError("max-crossing must be a positive integer")
     workers = resolve_workers(workers)
@@ -359,6 +363,8 @@ def main():
             if args.config:
                 import tomllib
                 metric, camera, settings = load_configuration(args.config)
+                if type(metric) is not Schwarzschild:
+                    raise ValueError("Kerr multilayer diagnostics are not supported")
                 config = tomllib.loads(args.config.read_text(encoding="utf-8"))
                 scene = make_disk(metric, config.get("disk"))
                 if scene is None:

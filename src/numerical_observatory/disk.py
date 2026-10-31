@@ -5,14 +5,14 @@ import numpy as np
 
 from .display import DiskDisplay
 from .emission import PowerLawBlackbody
-from .emitter_motion import SchwarzschildCircular
-from .surfaces import ThinAnnulus
+from .emitter_motion import SchwarzschildCircular, KerrCircular, kerr_isco
+from .surfaces import ThinAnnulus, Surface, KerrEquatorialAnnulus
 
 
 @dataclass(frozen=True)
 class DiskScene:
-    surface: ThinAnnulus
-    motion: SchwarzschildCircular
+    surface: Surface
+    motion: SchwarzschildCircular | KerrCircular
     emission: PowerLawBlackbody
     display: DiskDisplay
 
@@ -32,6 +32,9 @@ class DiskConfig:
 
 
 def make_disk(metric, options=None):
+    from .kerr import Kerr
+    if type(metric) is Kerr:
+        return make_kerr_disk(metric, options)
     config = DiskConfig(**(options or {}))
     if not isinstance(config.enabled, bool):
         raise ValueError("disk enabled must be a boolean")
@@ -53,4 +56,43 @@ def make_disk(metric, options=None):
     return DiskScene(surface, motion,
                      PowerLawBlackbody(surface.inner_radius, config.temperature_inner,
                                        config.temperature_index, config.emissivity_scale),
+                     DiskDisplay(**config.display))
+
+
+@dataclass(frozen=True)
+class KerrDiskConfig:
+    enabled: bool = False
+    orbit: str = "prograde"
+    inner_radius: float | str = "isco"
+    outer_radius: float = 20.0
+    temperature_inner: float = 10000.0
+    temperature_index: float = 0.75
+    emissivity_scale: float = 1.0
+    display: dict = field(default_factory=dict)
+
+
+def make_kerr_disk(metric, options=None):
+    from .emission import KerrPowerLawBlackbody
+    options = dict(options or {})
+    enabled = options.get("enabled", False)
+    if not isinstance(enabled, bool):
+        raise ValueError("disk enabled must be a boolean")
+    if not enabled:
+        return None
+    if any(key in options for key in ("inclination_degrees", "position_angle_degrees", "normal", "rotation")):
+        raise ValueError("Kerr disk is equatorial: set camera inclination and disk orbit=prograde/retrograde, not disk tilt/rotation")
+    config = KerrDiskConfig(**options)
+    minimum = kerr_isco(metric, config.orbit)
+    if config.inner_radius == "isco":
+        inner = minimum
+    elif isinstance(config.inner_radius, (int, float)) and not isinstance(config.inner_radius, bool):
+        inner = config.inner_radius*metric.mass
+    else:
+        raise ValueError("Kerr disk inner_radius must be a number in M or 'isco'")
+    if not np.isfinite(inner) or inner < minimum:
+        raise ValueError(f"Kerr circular disk inner_radius must be >= ISCO ({minimum/metric.mass:.12g}M)")
+    surface = KerrEquatorialAnnulus(inner, config.outer_radius*metric.mass, metric)
+    return DiskScene(surface, KerrCircular(metric, config.orbit),
+                     KerrPowerLawBlackbody(inner, config.temperature_inner, config.temperature_index,
+                                           config.emissivity_scale, metric=metric),
                      DiskDisplay(**config.display))

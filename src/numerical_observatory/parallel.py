@@ -162,9 +162,7 @@ def _run(task):
             if surface is None:
                 result = cache.ray(row, col, momentum)
             else:
-                sol = cache.solution(row, col, momentum)
-                result = summarize_solution(metric, camera.event, momentum, integration, sol,
-                                            domain=domain, builtin_domain=domain is None, surface=surface)
+                result = cache.ray(row, col, momentum, surface)
             values.append((row, col, momentum, result))
         work = (cache.integrated_rays, cache.steps, cache.evaluations)
     return values, work, dict(pid=os.getpid(), cpu=time.process_time()-cpu,

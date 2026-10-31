@@ -56,8 +56,9 @@ def default_domain(metric,event,settings):
     return TraceDomain(policy.capture,policy.escape,policy.source_direction)
 
 
-def sampled_states(sol):
-    times = np.sort(np.r_[sol.t,(sol.t[1:]+sol.t[:-1])/2])
+def sampled_states(sol, stop=None):
+    accepted = sol.t if stop is None else np.r_[sol.t[sol.t < stop], stop]
+    times = np.sort(np.r_[accepted,(accepted[1:]+accepted[:-1])/2])
     return sol.sol(times).T
 
 
@@ -70,7 +71,7 @@ def finish_kerr(metric,event,momentum,settings,sol,result,continue_background=Tr
     in the weak field. Its constraints, steps and RHS counts are included.
     """
     from .geodesic import hamilton_rhs
-    states = sampled_states(sol)
+    states = sampled_states(sol, None if result.hit is None else result.hit.affine)
     if result.status == 'escaped' and continue_background:
         def far(_,y):
             return metric.radius(y[:4])-settings.kerr_source_radius
@@ -98,5 +99,5 @@ def finish_kerr(metric,event,momentum,settings,sol,result,continue_background=Tr
     null=max(abs(y[4:] @ metric.inverse(y[:4]) @ y[4:])/scale**2 for y in states)
     result.max_null_error=max(result.max_null_error,float(null))
     if not np.isfinite(errors).all() or not np.isfinite(null) or null>settings.null_tolerance:
-        result.status='unresolved'; result.reason='null_constraint_exceeded'; result.direction=None
+        result.status='unresolved'; result.reason='null_constraint_exceeded'; result.direction=None; result.hit=None
     return result

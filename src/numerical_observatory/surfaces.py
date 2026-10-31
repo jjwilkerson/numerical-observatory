@@ -45,6 +45,9 @@ class ThinAnnulus:
         radius = np.linalg.norm(np.asarray(event)[1:4])
         return self.inner_radius <= radius <= self.outer_radius
 
+    def radius(self, event):
+        return np.linalg.norm(np.asarray(event)[1:4])
+
     def crossings(self, solution):
         """All isolated plane crossings in affine order, including radial holes.
 
@@ -77,3 +80,37 @@ class ThinAnnulus:
 
     def first_hit(self, solution):
         return next((hit for hit in self.crossings(solution) if self.contains(hit.event)), None)
+
+
+@dataclass(frozen=True)
+class KerrEquatorialAnnulus:
+    """Thin z=0 annulus whose boundaries use oblate Kerr r, not sqrt(x²+y²).
+
+    The existing dense-output plane-root detector and ordinal counting are
+    shared verbatim. At z=0 the Cartesian cylindrical radius is sqrt(r²+a²).
+    """
+    inner_radius: float
+    outer_radius: float
+    metric: object
+    normal: tuple = (0.,0.,1.)
+
+    def __post_init__(self):
+        from .kerr import Kerr
+        if type(self.metric) is not Kerr or tuple(self.normal)!=(0.,0.,1.):
+            raise ValueError('Kerr disk must be equatorial about global +Z')
+        ThinAnnulus(self.inner_radius,self.outer_radius)
+        if self.inner_radius<=self.metric.horizon_radius:
+            raise ValueError('Kerr annulus must be outside the event horizon')
+
+    def level(self,event):
+        return event[3]
+
+    def radius(self,event):
+        return self.metric.radius(event)
+
+    def contains(self,event):
+        r=self.radius(event)
+        return self.inner_radius<=r<=self.outer_radius
+
+    crossings=ThinAnnulus.crossings
+    first_hit=ThinAnnulus.first_hit

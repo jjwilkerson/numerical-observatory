@@ -1,0 +1,156 @@
+{
+  "method": "ode_surface",
+  "requested_method": "ode",
+  "quadrature_used": false,
+  "exact_rotational_path_reuse": false,
+  "camera": {
+    "position": [
+      59.77840582151672,
+      0.0,
+      5.229344564859488
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      -0.08715574274765814,
+      0.0,
+      0.9961946980917455
+    ],
+    "fov_degrees": 60.0,
+    "width": 96,
+    "height": 72,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "zamo"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110.0,
+    "capture_radius": 1.99,
+    "max_affine": 400.0,
+    "max_step": 4.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0
+  },
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "geometry": {
+    "inner_radius": 2.3208830417618866,
+    "outer_radius": 20.0,
+    "metric": {
+      "mass": 1.0,
+      "spin": -0.9
+    },
+    "normal": [
+      0.0,
+      0.0,
+      1.0
+    ]
+  },
+  "emission": {
+    "inner_radius": 2.3208830417618866,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0,
+    "metric": {
+      "mass": 1.0,
+      "spin": -0.9
+    }
+  },
+  "display": {
+    "exposure": 5.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "blackbody"
+  },
+  "rotation": -1,
+  "mass": 1.0,
+  "counts": {
+    "captured": 75,
+    "escaped": 6211,
+    "unresolved": 0,
+    "emitted": 626
+  },
+  "termination_reasons": {
+    "outward_escape": 6211,
+    "first_opaque_surface": 626,
+    "capture_boundary": 75
+  },
+  "max_sampled_null_error": 6.924308567107616e-08,
+  "samples_per_axis": 1,
+  "elapsed_seconds": 128.86670819998835,
+  "count_units": "subpixel rays",
+  "g_range": [
+    0.17847633707522334,
+    1.4992608789391473
+  ],
+  "crossing_counts": {
+    "1": 499,
+    "2": 127
+  },
+  "intensity_units": "bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
+  "solver_note": "dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit",
+  "integrated_rays": 6912,
+  "total_steps": 496304,
+  "rhs_evaluations": 7629434,
+  "execution": {
+    "workers": 10,
+    "requested_workers": 10,
+    "start_method": "spawn",
+    "task_count": 108,
+    "worker_cpu_seconds": 1225.703125,
+    "worker_task_seconds": 1231.8946693000617,
+    "worker_peak_memory_bytes": {
+      "27624": 79851520,
+      "26840": 80048128,
+      "25872": 79773696,
+      "25692": 79962112,
+      "34768": 79843328,
+      "28136": 79986688,
+      "28636": 80080896,
+      "27196": 80338944,
+      "23696": 80023552,
+      "19284": 80052224
+    },
+    "startup_span_seconds": 2.8950876999879256,
+    "pool_wall_seconds": 128.83387370000128
+  },
+  "spacetime": {
+    "type": "kerr",
+    "spin": -0.9,
+    "a": -0.9,
+    "axis": "+Z",
+    "coordinates": "outgoing Cartesian Kerr-Schild"
+  },
+  "orbit": "prograde",
+  "isco_radius": 2.3208830417618866,
+  "resolved_inner_radius": 2.3208830417618866,
+  "radius_convention": "Kerr oblate r, not Euclidean or cylindrical radius",
+  "azimuth_convention": "outgoing Cartesian KS azimuth atan2(y,x), [0,360) degrees; zero +X, positive toward +Y about +Z; not BL azimuth",
+  "horizon_radius": 1.4358898943540672,
+  "capture_radial_coordinate": 1.428710444882297,
+  "background_direction": "same Hamiltonian continuation and far-field tangent as disk-disabled Kerr",
+  "emission_model": "phenomenological power-law temperature vs Kerr r; not Novikov-Thorne or an equal-accretion-rate comparison",
+  "conservation_normalization": "null: E0^2; delta E: |E0|; delta Lz: M|E0|; delta Q: (M E0)^2; samples stop at first opaque hit; escaping rays include tail",
+  "conservation_maxima": {
+    "null_error": 6.924308567107616e-08,
+    "energy_drift": 0.0,
+    "axial_momentum_drift": 6.357069312226922e-08,
+    "carter_drift": 3.566391738110439e-07
+  },
+  "kerr_multilayer_supported": false
+}

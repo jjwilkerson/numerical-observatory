@@ -1,0 +1,88 @@
+{
+  "input_render": "D:\\numerical-observatory\\examples\\kerr_disks\\schwarzschild_i85",
+  "source_rays": "D:\\numerical-observatory\\examples\\kerr_disks\\schwarzschild_i85\\disk_rays.npz",
+  "geodesics_retraced": false,
+  "source_sha256": {
+    "diagnostics.json": "745a5ceaccfde44c9a0557105e85974bbdbcb6244d4f764bc5cb297d6361ecd2",
+    "disk_rays.npz": "96c9340754bfa04e403a2adbc4e81907f567fd380a11de6e60a7b441859bea56",
+    "shadow.png": "e3d8f2dfe360b1f3bf4d9daaae7d8e0f3ba70cdb4ce7e4ad0843665eb7ad8e63"
+  },
+  "source_image_size": [
+    96,
+    72
+  ],
+  "ray_grid_shape": [
+    72,
+    96
+  ],
+  "samples_per_axis": 1,
+  "crop_bounds_xyxy_exclusive": [
+    26,
+    20,
+    70,
+    52
+  ],
+  "crop_ray_bounds_xyxy_exclusive": [
+    26,
+    20,
+    70,
+    52
+  ],
+  "enlargement": 4,
+  "effective_source_pixel_enlargement": 4,
+  "interpolation": "nearest neighbor for every crop; no added angular resolution",
+  "orientation": "top-left origin; x=column increases right, y=row increases down; no flips",
+  "panel_raster_offset_xy": [
+    20,
+    55
+  ],
+  "unannotated_suffix": "_pixels.png preserves the ray grid",
+  "radius_scale_m": [
+    6.0,
+    20.0
+  ],
+  "radius_scale_source": "saved disk radial boundaries",
+  "categories": [
+    1,
+    2
+  ],
+  "extraction": {
+    "radius_source": "hit_radius",
+    "basis": {
+      "normal": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "zero_direction": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "positive_90_direction": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    },
+    "warnings": [],
+    "max_saved_radius_position_disagreement": 0.0,
+    "valid_counts": {
+      "radius": 500,
+      "crossing": 500,
+      "azimuth": 500
+    },
+    "missing_emitted_counts": {
+      "radius": 0,
+      "crossing": 0,
+      "azimuth": 0
+    }
+  },
+  "azimuth_convention": "degrees [0,360); projected global +X as zero (fallback +Y); e90=normal cross e0; right-handed about disk normal",
+  "supersampling": "Arrays and scientific maps retain every subray, never average angles/categories. Visible image is repeated onto that grid, not reconstructed per subray.",
+  "color_maps": {
+    "radius": "nine-anchor viridis approximation",
+    "crossing": "categorical; legend lists each observed ordinal",
+    "azimuth": "cyclic HSV hue; 0 and 360 match"
+  }
+}

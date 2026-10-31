@@ -1,0 +1,8 @@
+{
+  "status_differences": 0,
+  "crossing_differences": 0,
+  "max_g_difference": 2.2763868567921008e-10,
+  "max_position_reflection_difference_M": 7.131594870202207e-09,
+  "max_relative_bolometric_difference": 1.983313513420626e-09,
+  "note": "Fixed +Z disk normal and identical camera; reflect image columns and global Y, reverse spin and prograde coordinate rotation. Photographic background need not be color-mirror symmetric."
+}

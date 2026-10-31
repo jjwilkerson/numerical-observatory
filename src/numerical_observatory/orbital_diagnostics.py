@@ -34,6 +34,8 @@ def sampled_camera(camera, samples):
 
 
 def compute_angles(metadata, raw, samples=1, eps=1e-11, progress=None):
+    if metadata.get("spacetime",{}).get("type","schwarzschild") != "schwarzschild":
+        raise ValueError("Schwarzschild planar orbital angles and alignment rings are not valid for Kerr")
     camera = sampled_camera(saved_camera(metadata), samples)
     metric = Schwarzschild(metadata["mass"])
     if not compatible(metric, camera):
@@ -205,6 +207,8 @@ def generate(source, output, features=None, bounds=(179, 134, 461, 346), scale=4
         if output == features or features in output.parents or output in features.parents:
             raise ValueError("orbital output must be separate from previous diagnostic products")
     metadata, raw, original, ray_path, samples = load_saved_render(source)
+    if metadata.get("spacetime",{}).get("type","schwarzschild") != "schwarzschild":
+        raise ValueError("Schwarzschild planar orbital angles and alignment rings are not valid for Kerr")
     bounds = crop_bounds(bounds, *original.size)
     if not isinstance(scale, int) or scale < 1:
         raise ValueError("scale must be a positive integer")

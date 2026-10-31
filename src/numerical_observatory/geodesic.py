@@ -101,8 +101,6 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
     kerr_domain = domain is None and type(metric) is Kerr
     builtin_domain = domain is None and schwarzschild
     if kerr_domain:
-        if surface is not None:
-            raise ValueError("Kerr emitting surfaces are not implemented")
         from .kerr_support import default_domain
         domain = default_domain(metric, event, settings)
     if domain is None:

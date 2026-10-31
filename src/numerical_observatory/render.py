@@ -34,7 +34,11 @@ def _render(metric, camera, integration, output, progress=None, background=None,
     if disk is not None:
         from .kerr import Kerr
         if type(metric) is Kerr:
-            raise ValueError("Kerr disk rendering is not implemented; disable the disk")
+            from .surfaces import KerrEquatorialAnnulus
+            from .emitter_motion import KerrCircular
+            if (not isinstance(disk.surface, KerrEquatorialAnnulus) or not isinstance(disk.motion, KerrCircular)
+                    or disk.surface.metric != metric or disk.motion.metric != metric):
+                raise ValueError("Kerr rendering requires a matching equatorial Kerr disk, not Schwarzschild disk physics")
         from .surface_render import render_surface
         return render_surface(metric, camera, integration, output, disk, background, samples,
                               domain, progress, requested_method=method, use_symmetry=use_symmetry, workers=workers)

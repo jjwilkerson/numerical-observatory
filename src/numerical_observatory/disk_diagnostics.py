@@ -53,13 +53,27 @@ def extract(data, metadata):
             raise ValueError(f"{name} shape does not match the saved ray grid")
         return value
     emitted = status == 3
+    radial = lambda positions: np.linalg.norm(positions, axis=-1)
+    if metadata.get("spacetime", {}).get("type") == "kerr":
+        from .kerr import Kerr
+        metric = Kerr(mass, metadata["spacetime"]["spin"])
+        def radial(positions):
+            flat = np.asarray(positions).reshape(-1,3)
+            values = np.full(len(flat), np.nan)
+            for i in np.flatnonzero(np.isfinite(flat).all(axis=1)):
+                try:
+                    values[i] = metric.radius(np.r_[0.,flat[i]])
+                except ValueError:
+                    pass
+            return values.reshape(np.asarray(positions).shape[:-1])
     position = field("hit_position", (3,))
     radius = field("hit_radius")
     warnings = []
     radius_source = "hit_radius"
     if radius is None and position is not None:
-        radius = np.linalg.norm(position, axis=-1)
-        radius_source = "norm(hit_position)"
+        radius = radial(position)
+        radius_source = ("Kerr r(hit_position)" if metadata.get("spacetime",{}).get("type")=="kerr"
+                         else "norm(hit_position)")
     if radius is None:
         radius = np.full(shape, np.nan)
         warnings.append("Emission radius unavailable: neither hit_radius nor hit_position was saved.")
@@ -90,7 +104,7 @@ def extract(data, metadata):
             warnings.append("Some saved emitting positions are off the disk plane; their azimuths are invalid.")
     if position is not None and radius_valid.any():
         common = radius_valid & np.isfinite(position).all(axis=-1)
-        discrepancy = float(np.max(np.abs(np.linalg.norm(position[common], axis=-1)-radius[common]))) if common.any() else None
+        discrepancy = float(np.max(np.abs(radial(position[common])-radius[common]))) if common.any() else None
     else:
         discrepancy = None
     arrays = dict(status=status.copy(), emitted=emitted, radius_m=radius_m,
@@ -325,6 +339,10 @@ def generate(source, output, bounds=None, scale=4, rays=None):
                   azimuth_convention="degrees [0,360); projected global +X as zero (fallback +Y); e90=normal cross e0; right-handed about disk normal",
                   supersampling="Arrays and scientific maps retain every subray, never average angles/categories. Visible image is repeated onto that grid, not reconstructed per subray.",
                   color_maps=dict(radius="nine-anchor viridis approximation", crossing="categorical; legend lists each observed ordinal", azimuth="cyclic HSV hue; 0 and 360 match"))
+    if metadata.get("spacetime",{}).get("type")=="kerr":
+        record.update(spacetime=metadata["spacetime"],
+                      radius_convention="Kerr r/M; not Euclidean radius",
+                      azimuth_convention="outgoing Cartesian KS atan2(y,x), zero +X, positive toward +Y about +Z; [0,360) degrees; not BL azimuth")
     (output/"metadata.json").write_text(json.dumps(record, indent=2, allow_nan=False)+"\n", encoding="utf-8")
     return record
 

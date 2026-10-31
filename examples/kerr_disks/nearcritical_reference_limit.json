@@ -1,0 +1,75 @@
+{
+  "pixel": [
+    314.5056064910384,
+    280.9199781195458
+  ],
+  "spin": 0.9,
+  "orbit": "retrograde",
+  "production": [
+    {
+      "rtol": 1e-11,
+      "status": "emitted",
+      "null_error": 1.8239394429553706e-10,
+      "crossing": 7,
+      "affine": 96.00263788308851,
+      "event": [
+        -159.66460135549954,
+        8.448370883461177,
+        -9.039739554829119,
+        -6.267208974009009e-14
+      ]
+    },
+    {
+      "rtol": 1e-12,
+      "status": "emitted",
+      "null_error": 2.8050853437756263e-11,
+      "crossing": 7,
+      "affine": 96.00270960033409,
+      "event": [
+        -159.6646913414035,
+        8.44842600483156,
+        -9.03978235738519,
+        3.272382365082649e-14
+      ]
+    },
+    {
+      "rtol": 1e-13,
+      "status": "emitted",
+      "null_error": 2.822542474968465e-12,
+      "crossing": 7,
+      "affine": 96.00271592754225,
+      "event": [
+        -159.66469928034547,
+        8.448430867883843,
+        -9.039786133571146,
+        1.3548190347378863e-15
+      ]
+    }
+  ],
+  "separated_reference": [
+    {
+      "rtol": 1e-12,
+      "crossing": 7,
+      "affine": 96.05107903041149,
+      "max_event_difference_M": 0.060661804071742154,
+      "coordinate_check_passed": false
+    },
+    {
+      "rtol": 1e-13,
+      "crossing": 7,
+      "affine": 96.01808293484021,
+      "max_event_difference_M": 0.01927938240098115,
+      "coordinate_check_passed": false
+    },
+    {
+      "rtol": 2.5e-14,
+      "crossing": 7,
+      "affine": 96.01244070227825,
+      "max_event_difference_M": 0.012201155178161116,
+      "coordinate_check_passed": false
+    }
+  ],
+  "coordinate_agreement_tolerance_M": 0.0003,
+  "independent_coordinate_check_passed": false,
+  "note": "Optional extreme near-critical probe. The existing double-precision second-order separated reference does not certify this event if its coordinate check fails. Production/null and reference convergence are reported separately. No criterion is relaxed; core validation covers first through fourth crossings."
+}

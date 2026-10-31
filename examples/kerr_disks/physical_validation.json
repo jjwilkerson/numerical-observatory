@@ -1,0 +1,469 @@
+{
+  "emitter_validation": [
+    {
+      "spin": 0.0,
+      "orbit": "prograde",
+      "rotation": 1,
+      "isco_M": 6.0,
+      "independent_isco_M": 5.999999999999994,
+      "isco_difference_M": 6.217248937900877e-15,
+      "max_normalization_error": 2.220446049250313e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 0.0,
+      "max_Lz_difference": 1.7763568394002505e-15,
+      "max_omega_difference": 0.0
+    },
+    {
+      "spin": 0.0,
+      "orbit": "retrograde",
+      "rotation": -1,
+      "isco_M": 6.0,
+      "independent_isco_M": 5.999999999999994,
+      "isco_difference_M": 6.217248937900877e-15,
+      "max_normalization_error": 3.3306690738754696e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 1.1102230246251565e-16,
+      "max_Lz_difference": 8.881784197001252e-16,
+      "max_omega_difference": 0.0
+    },
+    {
+      "spin": 0.5,
+      "orbit": "prograde",
+      "rotation": 1,
+      "isco_M": 4.233002529530825,
+      "independent_isco_M": 4.233002529531035,
+      "isco_difference_M": -2.0961010704922955e-13,
+      "max_normalization_error": 2.220446049250313e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 1.1102230246251565e-16,
+      "max_Lz_difference": 1.7763568394002505e-15,
+      "max_omega_difference": 0.0
+    },
+    {
+      "spin": 0.5,
+      "orbit": "retrograde",
+      "rotation": -1,
+      "isco_M": 7.554584714512359,
+      "independent_isco_M": 7.554584714512335,
+      "isco_difference_M": 2.398081733190338e-14,
+      "max_normalization_error": 4.440892098500626e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 2.220446049250313e-16,
+      "max_Lz_difference": 2.220446049250313e-15,
+      "max_omega_difference": 6.938893903907228e-18
+    },
+    {
+      "spin": -0.5,
+      "orbit": "prograde",
+      "rotation": -1,
+      "isco_M": 4.233002529530825,
+      "independent_isco_M": 4.233002529531035,
+      "isco_difference_M": -2.0961010704922955e-13,
+      "max_normalization_error": 2.220446049250313e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 1.1102230246251565e-16,
+      "max_Lz_difference": 8.881784197001252e-16,
+      "max_omega_difference": 0.0
+    },
+    {
+      "spin": -0.5,
+      "orbit": "retrograde",
+      "rotation": 1,
+      "isco_M": 7.554584714512359,
+      "independent_isco_M": 7.554584714512335,
+      "isco_difference_M": 2.398081733190338e-14,
+      "max_normalization_error": 4.440892098500626e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 2.220446049250313e-16,
+      "max_Lz_difference": 1.3322676295501878e-15,
+      "max_omega_difference": 6.938893903907228e-18
+    },
+    {
+      "spin": 0.9,
+      "orbit": "prograde",
+      "rotation": 1,
+      "isco_M": 2.3208830417618866,
+      "independent_isco_M": 2.3208830417620026,
+      "isco_difference_M": -1.1590728377086634e-13,
+      "max_normalization_error": 6.661338147750939e-16,
+      "max_geodesic_residual": 6.106226635438361e-16,
+      "max_energy_difference": 4.440892098500626e-16,
+      "max_Lz_difference": 1.7763568394002505e-15,
+      "max_omega_difference": 2.7755575615628914e-17
+    },
+    {
+      "spin": 0.9,
+      "orbit": "retrograde",
+      "rotation": -1,
+      "isco_M": 8.717352279606489,
+      "independent_isco_M": 8.717352279606454,
+      "isco_difference_M": 3.552713678800501e-14,
+      "max_normalization_error": 3.3306690738754696e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 1.1102230246251565e-16,
+      "max_Lz_difference": 8.881784197001252e-16,
+      "max_omega_difference": 6.938893903907228e-18
+    },
+    {
+      "spin": -0.9,
+      "orbit": "prograde",
+      "rotation": -1,
+      "isco_M": 2.3208830417618866,
+      "independent_isco_M": 2.3208830417620026,
+      "isco_difference_M": -1.1590728377086634e-13,
+      "max_normalization_error": 4.440892098500626e-16,
+      "max_geodesic_residual": 8.881784197001252e-16,
+      "max_energy_difference": 2.220446049250313e-16,
+      "max_Lz_difference": 1.7763568394002505e-15,
+      "max_omega_difference": 2.7755575615628914e-17
+    },
+    {
+      "spin": -0.9,
+      "orbit": "retrograde",
+      "rotation": 1,
+      "isco_M": 8.717352279606489,
+      "independent_isco_M": 8.717352279606454,
+      "isco_difference_M": 3.552713678800501e-14,
+      "max_normalization_error": 4.440892098500626e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 1.1102230246251565e-16,
+      "max_Lz_difference": 8.881784197001252e-16,
+      "max_omega_difference": 6.938893903907228e-18
+    },
+    {
+      "spin": 0.99,
+      "orbit": "prograde",
+      "rotation": 1,
+      "isco_M": 1.4544979380596716,
+      "independent_isco_M": 1.454497938059672,
+      "isco_difference_M": -4.440892098500626e-16,
+      "max_normalization_error": 3.1086244689504383e-15,
+      "max_geodesic_residual": 8.881784197001252e-15,
+      "max_energy_difference": 4.107825191113079e-15,
+      "max_Lz_difference": 1.176836406102666e-14,
+      "max_omega_difference": 5.551115123125783e-17
+    },
+    {
+      "spin": 0.99,
+      "orbit": "retrograde",
+      "rotation": -1,
+      "isco_M": 8.971861342546969,
+      "independent_isco_M": 8.97186134254705,
+      "isco_difference_M": -8.171241461241152e-14,
+      "max_normalization_error": 2.220446049250313e-16,
+      "max_geodesic_residual": 4.440892098500626e-16,
+      "max_energy_difference": 2.220446049250313e-16,
+      "max_Lz_difference": 1.7763568394002505e-15,
+      "max_omega_difference": 6.938893903907228e-18
+    },
+    {
+      "spin": -0.99,
+      "orbit": "prograde",
+      "rotation": -1,
+      "isco_M": 1.4544979380596716,
+      "independent_isco_M": 1.454497938059672,
+      "isco_difference_M": -4.440892098500626e-16,
+      "max_normalization_error": 3.1086244689504383e-15,
+      "max_geodesic_residual": 7.105427357601002e-15,
+      "max_energy_difference": 4.107825191113079e-15,
+      "max_Lz_difference": 1.176836406102666e-14,
+      "max_omega_difference": 5.551115123125783e-17
+    },
+    {
+      "spin": -0.99,
+      "orbit": "retrograde",
+      "rotation": 1,
+      "isco_M": 8.971861342546969,
+      "independent_isco_M": 8.97186134254705,
+      "isco_difference_M": -8.171241461241152e-14,
+      "max_normalization_error": 4.440892098500626e-16,
+      "max_geodesic_residual": 2.220446049250313e-16,
+      "max_energy_difference": 3.3306690738754696e-16,
+      "max_Lz_difference": 1.7763568394002505e-15,
+      "max_omega_difference": 6.938893903907228e-18
+    }
+  ],
+  "photon_validation": [
+    {
+      "name": "crossing1",
+      "spin": 0.9,
+      "orbit": "retrograde",
+      "pixel": [
+        382.05182957538767,
+        247.04245815155477
+      ],
+      "crossing": 1,
+      "affine": 52.85717504976718,
+      "event": [
+        -52.31197717730183,
+        8.08362946430691,
+        5.80844780526102,
+        -2.636779683484747e-16
+      ],
+      "radius_M": 9.91328054796455,
+      "azimuth_degrees": 35.69892851401804,
+      "preceding_crossing_radii_M": [],
+      "g": 1.0801119205241896,
+      "independent_BL_g": 1.0801119205241558,
+      "relative_g_error": 3.1308289294429414e-14,
+      "max_independent_event_difference_M": 2.0198953620820248e-11,
+      "max_independent_covector_difference": 9.152012481195015e-12,
+      "max_tighter_event_difference_M": 1.8246737454319373e-11,
+      "null_error": 1.6049706398771818e-11,
+      "E_drift": 0.0,
+      "Lz_drift": 2.900859521347298e-12,
+      "Q_drift": 4.226982011119722e-13
+    },
+    {
+      "name": "crossing2",
+      "spin": 0.9,
+      "orbit": "retrograde",
+      "pixel": [
+        304.4455154940234,
+        204.24704476156725
+      ],
+      "crossing": 2,
+      "affine": 78.11560604189982,
+      "event": [
+        -97.30480991042268,
+        3.436153814599212,
+        -11.799128046463219,
+        4.440892098500626e-14
+      ],
+      "radius_M": 12.256287190434943,
+      "azimuth_degrees": 286.23666875821186,
+      "preceding_crossing_radii_M": [
+        2.612645788240288
+      ],
+      "g": 0.8439861913039538,
+      "independent_BL_g": 0.8439861913040323,
+      "relative_g_error": 9.303668946358812e-14,
+      "max_independent_event_difference_M": 1.436137779364799e-06,
+      "max_independent_covector_difference": 3.288129346579183e-08,
+      "max_tighter_event_difference_M": 1.3164793699615984e-09,
+      "null_error": 2.1872373377568735e-10,
+      "E_drift": 0.0,
+      "Lz_drift": 1.4508017234557228e-10,
+      "Q_drift": 1.4663904896713527e-09
+    },
+    {
+      "name": "crossing3",
+      "spin": 0.9,
+      "orbit": "retrograde",
+      "pixel": [
+        367.0613895063265,
+        275.17830073795415
+      ],
+      "crossing": 3,
+      "affine": 78.233061794917,
+      "event": [
+        -95.02025988853195,
+        7.277078902728007,
+        -5.917296769184039,
+        -8.881784197001252e-16
+      ],
+      "radius_M": 9.335966924273292,
+      "azimuth_degrees": 320.88399936064803,
+      "preceding_crossing_radii_M": [
+        25.925116168037928,
+        4.018757712982365
+      ],
+      "g": 1.013867374978337,
+      "independent_BL_g": 1.013867374977978,
+      "relative_g_error": 3.539391002504999e-13,
+      "max_independent_event_difference_M": 3.0022368946447386e-07,
+      "max_independent_covector_difference": 1.0332559474690584e-08,
+      "max_tighter_event_difference_M": 1.5845671441638842e-09,
+      "null_error": 5.0675629227368405e-11,
+      "E_drift": 0.0,
+      "Lz_drift": 8.848088572907216e-11,
+      "Q_drift": 7.038285187233037e-10
+    },
+    {
+      "name": "crossing4",
+      "spin": 0.9,
+      "orbit": "retrograde",
+      "pixel": [
+        339.69077568795615,
+        286.7805635605909
+      ],
+      "crossing": 4,
+      "affine": 84.5818983177311,
+      "event": [
+        -112.44172681950623,
+        2.765869858500112,
+        10.819263716908976,
+        4.569677969357144e-13
+      ],
+      "radius_M": 11.130880623301216,
+      "azimuth_degrees": 75.65985753463491,
+      "preceding_crossing_radii_M": [
+        29.99380116648106,
+        3.334186062077469,
+        3.271997869042559
+      ],
+      "g": 0.9162206389328371,
+      "independent_BL_g": 0.9162206389330532,
+      "relative_g_error": 2.3581137043038325e-13,
+      "max_independent_event_difference_M": 9.546112877956148e-06,
+      "max_independent_covector_difference": 2.949704731580738e-07,
+      "max_tighter_event_difference_M": 3.300955597751454e-08,
+      "null_error": 3.1201458649389475e-10,
+      "E_drift": 0.0,
+      "Lz_drift": 4.436355817744155e-11,
+      "Q_drift": 4.5370371114811385e-09
+    },
+    {
+      "name": "approaching",
+      "spin": 0.9,
+      "orbit": "prograde",
+      "pixel": [
+        270.0,
+        247.5
+      ],
+      "crossing": 1,
+      "affine": 52.41646544266761,
+      "event": [
+        -51.66326981728526,
+        8.595765269744462,
+        -4.654802582969893,
+        -3.3011440803143444e-13
+      ],
+      "radius_M": 9.733671848740755,
+      "azimuth_degrees": 331.5634463500888,
+      "preceding_crossing_radii_M": [],
+      "g": 1.0356535967260403,
+      "independent_BL_g": 1.0356535967260414,
+      "relative_g_error": 1.1102230246251565e-15,
+      "max_independent_event_difference_M": 2.163247359021625e-11,
+      "max_independent_covector_difference": 7.243761146469296e-12,
+      "max_tighter_event_difference_M": 9.237055564881302e-12,
+      "null_error": 2.0200381017719473e-12,
+      "E_drift": 0.0,
+      "Lz_drift": 1.3342052675277115e-12,
+      "Q_drift": 6.018777200526521e-13
+    },
+    {
+      "name": "receding",
+      "spin": 0.9,
+      "orbit": "prograde",
+      "pixel": [
+        370.0,
+        247.5
+      ],
+      "crossing": 1,
+      "affine": 52.366102682652816,
+      "event": [
+        -51.720800896863025,
+        8.550019861852778,
+        4.677401290617792,
+        -2.2177398806277893e-13
+      ],
+      "radius_M": 9.704170364928162,
+      "azimuth_degrees": 28.681446756253287,
+      "preceding_crossing_radii_M": [],
+      "g": 0.7271255405425366,
+      "independent_BL_g": 0.7271255405425516,
+      "relative_g_error": 2.0650148258027912e-14,
+      "max_independent_event_difference_M": 2.0687451751655317e-11,
+      "max_independent_covector_difference": 9.005129975037107e-12,
+      "max_tighter_event_difference_M": 1.8260948309034575e-11,
+      "null_error": 1.625718877732382e-11,
+      "E_drift": 0.0,
+      "Lz_drift": 4.601033112009806e-12,
+      "Q_drift": 7.448745597619361e-13
+    },
+    {
+      "name": "negative_spin",
+      "spin": -0.9,
+      "orbit": "prograde",
+      "pixel": [
+        369.0,
+        247.5
+      ],
+      "crossing": 1,
+      "affine": 52.41646544266723,
+      "event": [
+        -51.66326981728491,
+        8.59576526974482,
+        4.654802582969857,
+        -2.930121423272425e-13
+      ],
+      "radius_M": 9.733671848741055,
+      "azimuth_degrees": 28.436553649910046,
+      "preceding_crossing_radii_M": [],
+      "g": 1.0356535967260367,
+      "independent_BL_g": 1.0356535967260379,
+      "relative_g_error": 1.1102230246251565e-15,
+      "max_independent_event_difference_M": 2.0520474208751693e-11,
+      "max_independent_covector_difference": 7.019496095495015e-12,
+      "max_tighter_event_difference_M": 6.671996288787341e-12,
+      "null_error": 2.022327729141447e-12,
+      "E_drift": 0.0,
+      "Lz_drift": 1.347755084056429e-12,
+      "Q_drift": 6.076197322645645e-13
+    },
+    {
+      "name": "high_spin_ergosphere",
+      "spin": 0.99,
+      "orbit": "prograde",
+      "pixel": [
+        319.5,
+        241.0
+      ],
+      "crossing": 1,
+      "affine": 59.08814455469568,
+      "event": [
+        -58.2541326783378,
+        1.767249971731514,
+        -0.060065680228064695,
+        1.936081503450815e-14
+      ],
+      "radius_M": 1.4651554008112233,
+      "azimuth_degrees": 358.05336781228567,
+      "preceding_crossing_radii_M": [],
+      "g": 0.1723459671473119,
+      "independent_BL_g": 0.1723459671473136,
+      "relative_g_error": 9.769962616701378e-15,
+      "max_independent_event_difference_M": 1.727774900928125e-08,
+      "max_independent_covector_difference": 8.477474666701568e-08,
+      "max_tighter_event_difference_M": 1.6455586893115992e-13,
+      "null_error": 1.318560018951642e-12,
+      "E_drift": 0.0,
+      "Lz_drift": 2.2391373565414983e-13,
+      "Q_drift": 4.479172585549196e-15
+    },
+    {
+      "name": "captured_without_disk",
+      "spin": 0.9,
+      "orbit": "prograde",
+      "pixel": [
+        327.5,
+        247.5
+      ],
+      "crossing": 1,
+      "affine": 52.26083490524481,
+      "event": [
+        -51.407455410908696,
+        8.643123212839928,
+        0.7389945773003594,
+        3.8441472227646045e-15
+      ],
+      "radius_M": 8.62784398662909,
+      "azimuth_degrees": 4.886953747578023,
+      "preceding_crossing_radii_M": [],
+      "g": 0.8087798693167997,
+      "independent_BL_g": 0.8087798693167996,
+      "relative_g_error": 2.220446049250313e-16,
+      "max_independent_event_difference_M": 3.583799923490005e-11,
+      "max_independent_covector_difference": 1.6817880421626796e-11,
+      "max_tighter_event_difference_M": 1.3926637620897964e-12,
+      "null_error": 1.2690458216003677e-13,
+      "E_drift": 0.0,
+      "Lz_drift": 2.2008312760665732e-13,
+      "Q_drift": 1.9053991904836337e-13
+    }
+  ],
+  "geometry": "equatorial z=0; oblate Kerr radial coordinate; first valid opaque hit",
+  "note": "Independent BL radial equilibrium, marginal-stability radial potential, and exterior Carter-separated photon intersections; crossing ordinal is not winding number"
+}

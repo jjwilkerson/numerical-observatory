@@ -1,5 +1,5 @@
 """Local rest-frame emission and invariant relativistic intensity transfer."""
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 import numpy as np
 from scipy.constants import sigma, h, c, k
@@ -53,3 +53,20 @@ class PowerLawBlackbody:
 
     def observed_specific(self, event, shift, frequency):
         return self.emissivity_scale*shift**3*planck_nu(frequency/shift, self.temperature(event))
+
+
+@dataclass(frozen=True)
+class KerrPowerLawBlackbody(PowerLawBlackbody):
+    """The same toy emission law evaluated in Kerr radial coordinate r."""
+    # keyword-only keeps the existing physical parameter ordering.
+    metric: object = field(kw_only=True)
+
+    def __post_init__(self):
+        from .kerr import Kerr
+        if type(self.metric) is not Kerr:
+            raise ValueError('Kerr radial emission requires the exact Kerr metric')
+        PowerLawBlackbody(self.inner_radius,self.temperature_inner,
+                          self.temperature_index,self.emissivity_scale)
+
+    def temperature(self,event):
+        return self.temperature_inner*(self.metric.radius(event)/self.inner_radius)**(-self.temperature_index)

@@ -1,0 +1,111 @@
+{
+  "method": "ode",
+  "requested_method": "ode",
+  "version": "0.1.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "mass": 1.0,
+  "camera": {
+    "position": [
+      30.004166377354995,
+      0.0,
+      1.83697019872103e-15
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      -6.123233995736766e-17,
+      0.0,
+      1.0
+    ],
+    "fov_degrees": 35.0,
+    "width": 64,
+    "height": 48,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "zamo"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 80.0,
+    "capture_radius": 1.99,
+    "max_affine": 350.0,
+    "max_step": 5.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0
+  },
+  "counts": {
+    "captured": 916,
+    "escaped": 2156,
+    "unresolved": 0
+  },
+  "termination_reasons": {
+    "outward_escape": 2156,
+    "capture_boundary": 916
+  },
+  "maxima": {
+    "null_error": 2.270993080226313e-08,
+    "energy_drift": 0.0,
+    "angular_momentum_drift": 5.663048135752762e-08,
+    "axial_momentum_drift": 5.663048135752762e-08,
+    "carter_drift": 3.5932559256311187e-07
+  },
+  "diagnostic_sampling": "accepted steps and dense-output midpoints; null error = |g^ab p_a p_b| / p_t(initial)^2",
+  "total_steps": 174218,
+  "rhs_evaluations": 3027082,
+  "integrated_rays": 3072,
+  "rotational_symmetry_reuse": false,
+  "elapsed_seconds": 57.03239940002095,
+  "analytic_critical_impact_parameter": null,
+  "analytic_shadow_radius_degrees": null,
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "execution": {
+    "workers": 10,
+    "requested_workers": 10,
+    "start_method": "spawn",
+    "task_count": 48,
+    "worker_cpu_seconds": 514.34375,
+    "worker_task_seconds": 516.5834091999568,
+    "worker_peak_memory_bytes": {
+      "24564": 79097856,
+      "19964": 78659584,
+      "31292": 79212544,
+      "17364": 79155200,
+      "29308": 78893056,
+      "30856": 79101952,
+      "32264": 79134720,
+      "23960": 78987264,
+      "16780": 78749696,
+      "23240": 79036416
+    },
+    "startup_span_seconds": 2.991279799985932,
+    "pool_wall_seconds": 57.031801100005396
+  },
+  "spacetime": {
+    "type": "kerr",
+    "spin": 0.5,
+    "a": 0.5,
+    "axis": "+Z",
+    "coordinates": "outgoing Cartesian Kerr-Schild"
+  },
+  "horizon_radius": 1.8660254037844386,
+  "capture_radial_coordinate": 1.8566952767655165,
+  "background_direction": "Hamiltonian continuation to kerr_source_radius, normalized outgoing Cartesian tangent; residual bending O(M*b/R^2)",
+  "conservation_normalization": "|delta E|/|E0|, |delta Lz|/(M|E0|), |delta Q|/(M E0)^2; signed past-ray E,Lz,Q saved",
+  "optimization_note": "Kerr uses general ODEs; Schwarzschild quadrature and spherical rotational reuse disabled"
+}

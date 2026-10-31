@@ -1,0 +1,1028 @@
+{
+  "spin0_i90": {
+    "samples": [
+      {
+        "angle_radians": 0.071,
+        "reference_radius_pixels": 17.225568302883474,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.225568302883474,
+          17.225652412103702
+        ],
+        "error_pixels": 4.2054610112529645e-05,
+        "ray_count": 16,
+        "max_null": 1.0837879106067355e-08,
+        "max_carter": 1.3183451651783376e-09
+      },
+      {
+        "angle_radians": 0.5945987755982988,
+        "reference_radius_pixels": 17.225568302883474,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.225568302883474,
+          17.225652412103702
+        ],
+        "error_pixels": 4.2054610112529645e-05,
+        "ray_count": 16,
+        "max_null": 1.216033464400214e-08,
+        "max_carter": 1.211025793931445e-07
+      },
+      {
+        "angle_radians": 1.1181975511965976,
+        "reference_radius_pixels": 17.22556830288347,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.22556830288347,
+          17.2256524121037
+        ],
+        "error_pixels": 4.205461011608236e-05,
+        "ray_count": 16,
+        "max_null": 1.2818337819758036e-08,
+        "max_carter": 3.284886496146555e-07
+      },
+      {
+        "angle_radians": 1.6417963267948965,
+        "reference_radius_pixels": 17.22556830288347,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.22556830288347,
+          17.2256524121037
+        ],
+        "error_pixels": 4.205461011608236e-05,
+        "ray_count": 16,
+        "max_null": 1.8303613148949538e-08,
+        "max_carter": 4.350680996420156e-07
+      },
+      {
+        "angle_radians": 2.1653951023931954,
+        "reference_radius_pixels": 17.225568302883474,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.225568302883474,
+          17.225652412103702
+        ],
+        "error_pixels": 4.2054610112529645e-05,
+        "ray_count": 16,
+        "max_null": 1.2160328934283728e-08,
+        "max_carter": 2.648231043979519e-07
+      },
+      {
+        "angle_radians": 2.688993877991494,
+        "reference_radius_pixels": 17.22556830288347,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.22556830288347,
+          17.2256524121037
+        ],
+        "error_pixels": 4.205461011608236e-05,
+        "ray_count": 16,
+        "max_null": 1.2321769854439779e-08,
+        "max_carter": 7.474065842418196e-08
+      },
+      {
+        "angle_radians": 3.2125926535897933,
+        "reference_radius_pixels": 17.225568302883474,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.225568302883474,
+          17.225652412103702
+        ],
+        "error_pixels": 4.2054610112529645e-05,
+        "ray_count": 16,
+        "max_null": 1.0838005769070358e-08,
+        "max_carter": 1.318364911287847e-09
+      },
+      {
+        "angle_radians": 3.736191429188092,
+        "reference_radius_pixels": 17.22556830288347,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.22556830288347,
+          17.2256524121037
+        ],
+        "error_pixels": 4.205461011608236e-05,
+        "ray_count": 16,
+        "max_null": 1.216033619038421e-08,
+        "max_carter": 1.211025584575103e-07
+      },
+      {
+        "angle_radians": 4.25979020478639,
+        "reference_radius_pixels": 17.22556830288347,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.22556830288347,
+          17.2256524121037
+        ],
+        "error_pixels": 4.205461011608236e-05,
+        "ray_count": 16,
+        "max_null": 1.2818337106043235e-08,
+        "max_carter": 3.2848866103409235e-07
+      },
+      {
+        "angle_radians": 4.783388980384689,
+        "reference_radius_pixels": 17.22556830288347,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.22556830288347,
+          17.2256524121037
+        ],
+        "error_pixels": 4.205461011608236e-05,
+        "ray_count": 16,
+        "max_null": 1.8348191359120388e-08,
+        "max_carter": 4.3621387644878134e-07
+      },
+      {
+        "angle_radians": 5.306987755982988,
+        "reference_radius_pixels": 17.225568302883467,
+        "radius_pixels": 17.22561035749358,
+        "bracket_pixels": [
+          17.225568302883467,
+          17.225652412103695
+        ],
+        "error_pixels": 4.2054610112529645e-05,
+        "ray_count": 16,
+        "max_null": 1.2160340353720552e-08,
+        "max_carter": 2.648231691080939e-07
+      },
+      {
+        "angle_radians": 5.830586531581287,
+        "reference_radius_pixels": 17.225568302883474,
+        "radius_pixels": 17.225610357493586,
+        "bracket_pixels": [
+          17.225568302883474,
+          17.225652412103702
+        ],
+        "error_pixels": 4.2054610112529645e-05,
+        "ray_count": 16,
+        "max_null": 1.2377982567495544e-08,
+        "max_carter": 7.50728108250038e-08
+      }
+    ],
+    "max_abs_error_pixels": 4.205461011608236e-05,
+    "rms_error_pixels": 4.2054610114306e-05,
+    "analytical_extrema_pixels": {
+      "x_min": 14.274431909607209,
+      "x_max": 48.725568302883474,
+      "y_min": 6.274431750239199,
+      "y_max": 40.7255682497608
+    },
+    "center_displacement_pixels": 1.062453414135689e-07,
+    "half_width_pixels": 17.225568196638132,
+    "half_height_pixels": 17.225568249760798
+  },
+  "spin05_i90": {
+    "samples": [
+      {
+        "angle_radians": 0.071,
+        "reference_radius_pixels": 20.50562053364584,
+        "radius_pixels": 20.505645564920904,
+        "bracket_pixels": [
+          20.50562053364584,
+          20.50567059619597
+        ],
+        "error_pixels": 2.503127506514602e-05,
+        "ray_count": 17,
+        "max_null": 1.42884452535274e-08,
+        "max_carter": 3.1402548461180307e-09
+      },
+      {
+        "angle_radians": 0.5945987755982988,
+        "reference_radius_pixels": 19.88145396006259,
+        "radius_pixels": 19.881502498768548,
+        "bracket_pixels": [
+          19.88145396006259,
+          19.8815510374745
+        ],
+        "error_pixels": 4.853870595766807e-05,
+        "ray_count": 16,
+        "max_null": 1.0655752180233484e-08,
+        "max_carter": 1.6976601926976546e-07
+      },
+      {
+        "angle_radians": 1.1181975511965976,
+        "reference_radius_pixels": 18.44937279093437,
+        "radius_pixels": 18.44941783334841,
+        "bracket_pixels": [
+          18.44937279093437,
+          18.44946287576245
+        ],
+        "error_pixels": 4.5042414040352696e-05,
+        "ray_count": 16,
+        "max_null": 1.8781038198755583e-08,
+        "max_carter": 4.2450068134367854e-07
+      },
+      {
+        "angle_radians": 1.6417963267948965,
+        "reference_radius_pixels": 16.62039727478715,
+        "radius_pixels": 16.620356697645363,
+        "bracket_pixels": [
+          16.62031612050358,
+          16.62039727478715
+        ],
+        "error_pixels": -4.0577141785291815e-05,
+        "ray_count": 16,
+        "max_null": 2.0663468226163155e-08,
+        "max_carter": 3.062944039745894e-07
+      },
+      {
+        "angle_radians": 2.1653951023931954,
+        "reference_radius_pixels": 14.913439066840978,
+        "radius_pixels": 14.91340265707763,
+        "bracket_pixels": [
+          14.913366247314283,
+          14.913439066840978
+        ],
+        "error_pixels": -3.640976334828849e-05,
+        "ray_count": 16,
+        "max_null": 1.8717840318407832e-08,
+        "max_carter": 9.646312749464569e-08
+      },
+      {
+        "angle_radians": 2.688993877991494,
+        "reference_radius_pixels": 13.777264916295588,
+        "radius_pixels": 13.777231280394911,
+        "bracket_pixels": [
+          13.777197644494237,
+          13.777264916295588
+        ],
+        "error_pixels": -3.363590067628763e-05,
+        "ray_count": 16,
+        "max_null": 1.6891202007482488e-08,
+        "max_carter": 3.714452114544807e-08
+      },
+      {
+        "angle_radians": 3.2125926535897933,
+        "reference_radius_pixels": 13.457764097903762,
+        "radius_pixels": 13.457731242034383,
+        "bracket_pixels": [
+          13.457698386165003,
+          13.457764097903762
+        ],
+        "error_pixels": -3.2855869379844194e-05,
+        "ray_count": 16,
+        "max_null": 2.3129194910157767e-08,
+        "max_carter": 8.186303405485451e-10
+      },
+      {
+        "angle_radians": 3.736191429188092,
+        "reference_radius_pixels": 14.010963392583923,
+        "radius_pixels": 14.010929186130326,
+        "bracket_pixels": [
+          14.010894979676731,
+          14.010963392583923
+        ],
+        "error_pixels": -3.420645359675234e-05,
+        "ray_count": 16,
+        "max_null": 2.1500848597492852e-08,
+        "max_carter": 2.995694869676315e-08
+      },
+      {
+        "angle_radians": 4.25979020478639,
+        "reference_radius_pixels": 15.335659131684071,
+        "radius_pixels": 15.33562169111002,
+        "bracket_pixels": [
+          15.335584250535968,
+          15.335659131684071
+        ],
+        "error_pixels": -3.7440574050862097e-05,
+        "ray_count": 16,
+        "max_null": 2.3991285098249295e-08,
+        "max_carter": 1.3323681954117707e-07
+      },
+      {
+        "angle_radians": 4.783388980384689,
+        "reference_radius_pixels": 17.126391561858508,
+        "radius_pixels": 17.126433374337907,
+        "bracket_pixels": [
+          17.126391561858508,
+          17.12647518681731
+        ],
+        "error_pixels": 4.181247939882837e-05,
+        "ray_count": 16,
+        "max_null": 1.9745070053022534e-08,
+        "max_carter": 2.782475759851815e-07
+      },
+      {
+        "angle_radians": 5.306987755982988,
+        "reference_radius_pixels": 18.89742109386441,
+        "radius_pixels": 18.897467230146376,
+        "bracket_pixels": [
+          18.89742109386441,
+          18.897513366428342
+        ],
+        "error_pixels": 4.61362819663691e-05,
+        "ray_count": 16,
+        "max_null": 7.732521576669642e-09,
+        "max_carter": 1.6572392148699724e-07
+      },
+      {
+        "angle_radians": 5.830586531581287,
+        "reference_radius_pixels": 20.142970721998655,
+        "radius_pixels": 20.143019899173268,
+        "bracket_pixels": [
+          20.142970721998655,
+          20.143069076347885
+        ],
+        "error_pixels": 4.917717461339066e-05,
+        "ray_count": 16,
+        "max_null": 1.3354832219701309e-08,
+        "max_carter": 1.0282395536620907e-07
+      }
+    ],
+    "max_abs_error_pixels": 4.917717461339066e-05,
+    "rms_error_pixels": 3.985553029652386e-05,
+    "analytical_extrema_pixels": {
+      "x_min": 18.05037383970901,
+      "x_max": 52.01493918319513,
+      "y_min": 6.265325716301323,
+      "y_max": 40.73467428369868
+    },
+    "center_displacement_pixels": 3.5326565114520747,
+    "half_width_pixels": 16.98228267174306,
+    "half_height_pixels": 17.23467428369868
+  },
+  "spin09_i90": {
+    "samples": [
+      {
+        "angle_radians": 0.071,
+        "reference_radius_pixels": 22.955861138571557,
+        "radius_pixels": 22.955889160862988,
+        "bracket_pixels": [
+          22.955861138571557,
+          22.955917183154416
+        ],
+        "error_pixels": 2.802229143128443e-05,
+        "ray_count": 17,
+        "max_null": 1.0180861921916628e-08,
+        "max_carter": 3.923255563952603e-09
+      },
+      {
+        "angle_radians": 0.5945987755982988,
+        "reference_radius_pixels": 21.77334409157367,
+        "radius_pixels": 21.773370670362844,
+        "bracket_pixels": [
+          21.77334409157367,
+          21.77339724915202
+        ],
+        "error_pixels": 2.6578789174891426e-05,
+        "ray_count": 17,
+        "max_null": 1.2450668807516867e-08,
+        "max_carter": 2.2693460557742113e-07
+      },
+      {
+        "angle_radians": 1.1181975511965976,
+        "reference_radius_pixels": 19.03248332312265,
+        "radius_pixels": 19.032529789146388,
+        "bracket_pixels": [
+          19.03248332312265,
+          19.032576255170127
+        ],
+        "error_pixels": 4.6466023736257966e-05,
+        "ray_count": 16,
+        "max_null": 2.0562561420155483e-08,
+        "max_carter": 2.623271864393736e-07
+      },
+      {
+        "angle_radians": 1.6417963267948965,
+        "reference_radius_pixels": 15.444003178805218,
+        "radius_pixels": 15.443965473719333,
+        "bracket_pixels": [
+          15.443927768633447,
+          15.444003178805218
+        ],
+        "error_pixels": -3.770508588551991e-05,
+        "ray_count": 16,
+        "max_null": 8.660906784456186e-08,
+        "max_carter": 1.5064880232825484e-07
+      },
+      {
+        "angle_radians": 2.1653951023931954,
+        "reference_radius_pixels": 12.003422299494925,
+        "radius_pixels": 12.003392994264702,
+        "bracket_pixels": [
+          12.00336368903448,
+          12.003422299494925
+        ],
+        "error_pixels": -2.93052302229313e-05,
+        "ray_count": 16,
+        "max_null": 7.236534813248231e-08,
+        "max_carter": 8.667494287722014e-08
+      },
+      {
+        "angle_radians": 2.688993877991494,
+        "reference_radius_pixels": 9.81171892937416,
+        "radius_pixels": 9.811671020590325,
+        "bracket_pixels": [
+          9.81162311180649,
+          9.81171892937416
+        ],
+        "error_pixels": -4.790878383609254e-05,
+        "ray_count": 15,
+        "max_null": 3.6011177447839406e-08,
+        "max_carter": 1.1137987005446762e-08
+      },
+      {
+        "angle_radians": 3.2125926535897933,
+        "reference_radius_pixels": 9.246544904612891,
+        "radius_pixels": 9.246499755467848,
+        "bracket_pixels": [
+          9.246454606322807,
+          9.246544904612891
+        ],
+        "error_pixels": -4.514914504305523e-05,
+        "ray_count": 15,
+        "max_null": 7.474661329290082e-08,
+        "max_carter": 4.3221140068979696e-10
+      },
+      {
+        "angle_radians": 3.736191429188092,
+        "reference_radius_pixels": 10.242504288932057,
+        "radius_pixels": 10.24247928281807,
+        "bracket_pixels": [
+          10.242454276704084,
+          10.242504288932057
+        ],
+        "error_pixels": -2.5006113986592027e-05,
+        "ray_count": 16,
+        "max_null": 4.490824477019939e-08,
+        "max_carter": 2.4709293347754367e-08
+      },
+      {
+        "angle_radians": 4.25979020478639,
+        "reference_radius_pixels": 12.854837964906457,
+        "radius_pixels": 12.854806581024707,
+        "bracket_pixels": [
+          12.854775197142956,
+          12.854837964906457
+        ],
+        "error_pixels": -3.138388174939166e-05,
+        "ray_count": 16,
+        "max_null": 8.042857257217341e-08,
+        "max_carter": 1.434735597837111e-07
+      },
+      {
+        "angle_radians": 4.783388980384689,
+        "reference_radius_pixels": 16.449092655437617,
+        "radius_pixels": 16.44913281435523,
+        "bracket_pixels": [
+          16.449092655437617,
+          16.449172973272848
+        ],
+        "error_pixels": 4.015891761355306e-05,
+        "ray_count": 16,
+        "max_null": 3.4778890713428437e-08,
+        "max_carter": 2.632302548661579e-07
+      },
+      {
+        "angle_radians": 5.306987755982988,
+        "reference_radius_pixels": 19.895074389282147,
+        "radius_pixels": 19.895122961241107,
+        "bracket_pixels": [
+          19.895074389282147,
+          19.895171533200063
+        ],
+        "error_pixels": 4.857195895979771e-05,
+        "ray_count": 16,
+        "max_null": 1.4926346751617083e-08,
+        "max_carter": 2.7399119240198994e-07
+      },
+      {
+        "angle_radians": 5.830586531581287,
+        "reference_radius_pixels": 22.269498804221122,
+        "radius_pixels": 22.269525988667905,
+        "bracket_pixels": [
+          22.269498804221122,
+          22.269553173114687
+        ],
+        "error_pixels": 2.7184446782513305e-05,
+        "ray_count": 17,
+        "max_null": 1.0312879039016586e-08,
+        "max_carter": 1.3309121617694743e-07
+      }
+    ],
+    "max_abs_error_pixels": 4.857195895979771e-05,
+    "rms_error_pixels": 3.7177682461024596e-05,
+    "analytical_extrema_pixels": {
+      "x_min": 22.26746217785055,
+      "x_max": 54.47347473330436,
+      "y_min": 6.244947948004363,
+      "y_max": 40.755052051995634
+    },
+    "center_displacement_pixels": 6.870468455577452,
+    "half_width_pixels": 16.103006277726905,
+    "half_height_pixels": 17.255052051995634
+  },
+  "spin09_i60": {
+    "samples": [
+      {
+        "angle_radians": 0.071,
+        "reference_radius_pixels": 22.097549441210706,
+        "radius_pixels": 22.09757641575836,
+        "bracket_pixels": [
+          22.097549441210706,
+          22.09760339030602
+        ],
+        "error_pixels": 2.6974547655100878e-05,
+        "ray_count": 17,
+        "max_null": 8.928405959984346e-09,
+        "max_carter": 1.2549098477542652e-07
+      },
+      {
+        "angle_radians": 0.5945987755982988,
+        "reference_radius_pixels": 21.09903124829279,
+        "radius_pixels": 21.099057003946168,
+        "bracket_pixels": [
+          21.09903124829279,
+          21.099082759599547
+        ],
+        "error_pixels": 2.5755653378922716e-05,
+        "ray_count": 17,
+        "max_null": 9.548789392254849e-09,
+        "max_carter": 2.382904384145578e-07
+      },
+      {
+        "angle_radians": 1.1181975511965976,
+        "reference_radius_pixels": 18.739825051987495,
+        "radius_pixels": 18.7398708035135,
+        "bracket_pixels": [
+          18.739825051987495,
+          18.739916555039507
+        ],
+        "error_pixels": 4.575152600594379e-05,
+        "ray_count": 16,
+        "max_null": 3.830250080855417e-08,
+        "max_carter": 2.245152707687012e-07
+      },
+      {
+        "angle_radians": 1.6417963267948965,
+        "reference_radius_pixels": 15.631167758363594,
+        "radius_pixels": 15.631205920394251,
+        "bracket_pixels": [
+          15.631167758363592,
+          15.631244082424912
+        ],
+        "error_pixels": 3.816203065731827e-05,
+        "ray_count": 16,
+        "max_null": 5.675510913356232e-08,
+        "max_carter": 1.878789690681468e-07
+      },
+      {
+        "angle_radians": 2.1653951023931954,
+        "reference_radius_pixels": 12.62399041161677,
+        "radius_pixels": 12.62395959132768,
+        "bracket_pixels": [
+          12.623928771038589,
+          12.62399041161677
+        ],
+        "error_pixels": -3.0820289090627284e-05,
+        "ray_count": 16,
+        "max_null": 1.3057900084886502e-07,
+        "max_carter": 5.915684321191914e-08
+      },
+      {
+        "angle_radians": 2.688993877991494,
+        "reference_radius_pixels": 10.633221379657977,
+        "radius_pixels": 10.633195419644842,
+        "bracket_pixels": [
+          10.63316945963171,
+          10.633221379657977
+        ],
+        "error_pixels": -2.5960013134707083e-05,
+        "ray_count": 16,
+        "max_null": 4.8178484108864173e-08,
+        "max_carter": 2.814876492527286e-08
+      },
+      {
+        "angle_radians": 3.2125926535897933,
+        "reference_radius_pixels": 10.09094126591435,
+        "radius_pixels": 10.090891993740199,
+        "bracket_pixels": [
+          10.090842721566048,
+          10.09094126591435
+        ],
+        "error_pixels": -4.9272174150516435e-05,
+        "ray_count": 15,
+        "max_null": 3.639820521221852e-08,
+        "max_carter": 3.014038604963426e-08
+      },
+      {
+        "angle_radians": 3.736191429188092,
+        "reference_radius_pixels": 11.008745572451446,
+        "radius_pixels": 11.0087186956312,
+        "bracket_pixels": [
+          11.008691818810956,
+          11.008745572451446
+        ],
+        "error_pixels": -2.687682024493654e-05,
+        "ray_count": 16,
+        "max_null": 1.0145723054593251e-07,
+        "max_carter": 3.9297425282781484e-08
+      },
+      {
+        "angle_radians": 4.25979020478639,
+        "reference_radius_pixels": 13.31626516718607,
+        "radius_pixels": 13.316232656773064,
+        "bracket_pixels": [
+          13.316200146360059,
+          13.31626516718607
+        ],
+        "error_pixels": -3.251041300700308e-05,
+        "ray_count": 16,
+        "max_null": 8.927788597137084e-08,
+        "max_carter": 1.2378334446857433e-07
+      },
+      {
+        "angle_radians": 4.783388980384689,
+        "reference_radius_pixels": 16.42029271531453,
+        "radius_pixels": 16.42033280391979,
+        "bracket_pixels": [
+          16.42029271531453,
+          16.420372892525055
+        ],
+        "error_pixels": 4.008860526028002e-05,
+        "ray_count": 16,
+        "max_null": 4.810424509357553e-08,
+        "max_carter": 1.8524159537092115e-07
+      },
+      {
+        "angle_radians": 5.306987755982988,
+        "reference_radius_pixels": 19.40510956817914,
+        "radius_pixels": 19.40515694393492,
+        "bracket_pixels": [
+          19.40510956817914,
+          19.405204319690704
+        ],
+        "error_pixels": 4.737575578062092e-05,
+        "ray_count": 16,
+        "max_null": 2.1795914803750035e-08,
+        "max_carter": 3.242877895279659e-07
+      },
+      {
+        "angle_radians": 5.830586531581287,
+        "reference_radius_pixels": 21.477576793442445,
+        "radius_pixels": 21.477603011187554,
+        "bracket_pixels": [
+          21.477576793442445,
+          21.477629228932663
+        ],
+        "error_pixels": 2.6217745109136104e-05,
+        "ray_count": 17,
+        "max_null": 1.424558570544593e-08,
+        "max_carter": 2.120861079055129e-07
+      }
+    ],
+    "max_abs_error_pixels": 4.9272174150516435e-05,
+    "rms_error_pixels": 3.5719160767844846e-05,
+    "analytical_extrema_pixels": {
+      "x_min": 21.420975954258108,
+      "x_max": 53.60913131159229,
+      "y_min": 6.500850359855672,
+      "y_max": 40.58044733959076
+    },
+    "center_displacement_pixels": 6.015053632925202,
+    "half_width_pixels": 16.09407767866709,
+    "half_height_pixels": 17.039798489867543
+  },
+  "spin09_i20": {
+    "samples": [
+      {
+        "angle_radians": 0.071,
+        "reference_radius_pixels": 18.631752931682037,
+        "radius_pixels": 18.631798419360095,
+        "bracket_pixels": [
+          18.631752931682037,
+          18.63184390703815
+        ],
+        "error_pixels": 4.548767805800935e-05,
+        "ray_count": 16,
+        "max_null": 2.2047357724862282e-08,
+        "max_carter": 2.2119629117560088e-07
+      },
+      {
+        "angle_radians": 0.5945987755982988,
+        "reference_radius_pixels": 18.24255736604331,
+        "radius_pixels": 18.24260190353688,
+        "bracket_pixels": [
+          18.24255736604331,
+          18.242646441030452
+        ],
+        "error_pixels": 4.453749356869707e-05,
+        "ray_count": 16,
+        "max_null": 4.456441985414777e-08,
+        "max_carter": 2.6379803434512827e-07
+      },
+      {
+        "angle_radians": 1.1181975511965976,
+        "reference_radius_pixels": 17.312495926532456,
+        "radius_pixels": 17.312538193368212,
+        "bracket_pixels": [
+          17.312495926532456,
+          17.31258046020397
+        ],
+        "error_pixels": 4.2266835755810916e-05,
+        "ray_count": 16,
+        "max_null": 2.475150402671426e-08,
+        "max_carter": 2.1305364031110802e-07
+      },
+      {
+        "angle_radians": 1.6417963267948965,
+        "reference_radius_pixels": 16.08669301430348,
+        "radius_pixels": 16.086653740150616,
+        "bracket_pixels": [
+          16.086614465997748,
+          16.08669301430348
+        ],
+        "error_pixels": -3.9274152864976486e-05,
+        "ray_count": 16,
+        "max_null": 6.711512763750527e-08,
+        "max_carter": 1.983888087233446e-07
+      },
+      {
+        "angle_radians": 2.1653951023931954,
+        "reference_radius_pixels": 14.894080346607673,
+        "radius_pixels": 14.894043984106826,
+        "bracket_pixels": [
+          14.894007621605981,
+          14.894080346607673
+        ],
+        "error_pixels": -3.636250084682047e-05,
+        "ray_count": 16,
+        "max_null": 1.0711571558094108e-07,
+        "max_carter": 1.3556866222741567e-07
+      },
+      {
+        "angle_radians": 2.688993877991494,
+        "reference_radius_pixels": 14.059808665913316,
+        "radius_pixels": 14.059774340208566,
+        "bracket_pixels": [
+          14.059740014503815,
+          14.059808665913316
+        ],
+        "error_pixels": -3.4325704749704755e-05,
+        "ray_count": 16,
+        "max_null": 1.0518483159817939e-07,
+        "max_carter": 1.0639172377048993e-07
+      },
+      {
+        "angle_radians": 3.2125926535897933,
+        "reference_radius_pixels": 13.809072259413151,
+        "radius_pixels": 13.809038545857831,
+        "bracket_pixels": [
+          13.80900483230251,
+          13.809072259413151
+        ],
+        "error_pixels": -3.371355531989195e-05,
+        "ray_count": 16,
+        "max_null": 1.1872663417536406e-07,
+        "max_carter": 1.1070128251663485e-07
+      },
+      {
+        "angle_radians": 3.736191429188092,
+        "reference_radius_pixels": 14.206317130928895,
+        "radius_pixels": 14.206282447537461,
+        "bracket_pixels": [
+          14.20624776414603,
+          14.206317130928895
+        ],
+        "error_pixels": -3.468339143353205e-05,
+        "ray_count": 16,
+        "max_null": 8.144332260512513e-08,
+        "max_carter": 1.1017667514690379e-07
+      },
+      {
+        "angle_radians": 4.25979020478639,
+        "reference_radius_pixels": 15.144392126797893,
+        "radius_pixels": 15.144355153184302,
+        "bracket_pixels": [
+          15.14431817957071,
+          15.144392126797893
+        ],
+        "error_pixels": -3.697361359122908e-05,
+        "ray_count": 16,
+        "max_null": 6.986774814611553e-08,
+        "max_carter": 1.7361881466911175e-07
+      },
+      {
+        "angle_radians": 4.783388980384689,
+        "reference_radius_pixels": 16.369682243200714,
+        "radius_pixels": 16.369722208245253,
+        "bracket_pixels": [
+          16.369682243200714,
+          16.369762173289793
+        ],
+        "error_pixels": 3.996504453951388e-05,
+        "ray_count": 16,
+        "max_null": 4.250082576453365e-08,
+        "max_carter": 2.682278118554029e-07
+      },
+      {
+        "angle_radians": 5.306987755982988,
+        "reference_radius_pixels": 17.55254988026927,
+        "radius_pixels": 17.55259273317425,
+        "bracket_pixels": [
+          17.55254988026927,
+          17.552635586079234
+        ],
+        "error_pixels": 4.2852904979184814e-05,
+        "ray_count": 16,
+        "max_null": 2.7758037391413317e-08,
+        "max_carter": 2.3327397625267474e-07
+      },
+      {
+        "angle_radians": 5.830586531581287,
+        "reference_radius_pixels": 18.379228292288865,
+        "radius_pixels": 18.379273163451685,
+        "bracket_pixels": [
+          18.379228292288865,
+          18.37931803461451
+        ],
+        "error_pixels": 4.487116282092529e-05,
+        "ray_count": 16,
+        "max_null": 2.647916794365625e-08,
+        "max_carter": 2.2112043707707807e-07
+      }
+    ],
+    "max_abs_error_pixels": 4.548767805800935e-05,
+    "rms_error_pixels": 3.9828522244005506e-05,
+    "analytical_extrema_pixels": {
+      "x_min": 17.695247115398523,
+      "x_max": 50.13539945671093,
+      "y_min": 7.126372889848692,
+      "y_max": 39.933847275270324
+    },
+    "center_displacement_pixels": 2.415323286054729,
+    "half_width_pixels": 16.220076170656203,
+    "half_height_pixels": 16.403737192710814
+  },
+  "spin_minus09_i90": {
+    "samples": [
+      {
+        "angle_radians": 0.071,
+        "reference_radius_pixels": 9.246544904612891,
+        "radius_pixels": 9.246499755467848,
+        "bracket_pixels": [
+          9.246454606322807,
+          9.246544904612891
+        ],
+        "error_pixels": -4.514914504305523e-05,
+        "ray_count": 15,
+        "max_null": 7.474635781944817e-08,
+        "max_carter": 4.3221026363376216e-10
+      },
+      {
+        "angle_radians": 0.5945987755982988,
+        "reference_radius_pixels": 10.242504288932055,
+        "radius_pixels": 10.242479282818067,
+        "bracket_pixels": [
+          10.24245427670408,
+          10.242504288932055
+        ],
+        "error_pixels": -2.5006113988368384e-05,
+        "ray_count": 16,
+        "max_null": 4.491443313370429e-08,
+        "max_carter": 2.4711670139763438e-08
+      },
+      {
+        "angle_radians": 1.1181975511965976,
+        "reference_radius_pixels": 12.854837964906464,
+        "radius_pixels": 12.854806581024715,
+        "bracket_pixels": [
+          12.854775197142963,
+          12.854837964906464
+        ],
+        "error_pixels": -3.138388174939166e-05,
+        "ray_count": 16,
+        "max_null": 8.01701592215751e-08,
+        "max_carter": 1.434735084088155e-07
+      },
+      {
+        "angle_radians": 1.6417963267948965,
+        "reference_radius_pixels": 16.449092655437617,
+        "radius_pixels": 16.44913281435523,
+        "bracket_pixels": [
+          16.449092655437617,
+          16.449172973272848
+        ],
+        "error_pixels": 4.015891761355306e-05,
+        "ray_count": 16,
+        "max_null": 3.477878793452194e-08,
+        "max_carter": 2.6322996936917905e-07
+      },
+      {
+        "angle_radians": 2.1653951023931954,
+        "reference_radius_pixels": 19.895074389282147,
+        "radius_pixels": 19.895122961241107,
+        "bracket_pixels": [
+          19.895074389282147,
+          19.895171533200063
+        ],
+        "error_pixels": 4.857195895979771e-05,
+        "ray_count": 16,
+        "max_null": 1.4926354843926326e-08,
+        "max_carter": 2.73991344727811e-07
+      },
+      {
+        "angle_radians": 2.688993877991494,
+        "reference_radius_pixels": 22.26949880422112,
+        "radius_pixels": 22.2695259886679,
+        "bracket_pixels": [
+          22.26949880422112,
+          22.26955317311468
+        ],
+        "error_pixels": 2.7184446782513305e-05,
+        "ray_count": 17,
+        "max_null": 1.031288271463084e-08,
+        "max_carter": 1.330912314151215e-07
+      },
+      {
+        "angle_radians": 3.2125926535897933,
+        "reference_radius_pixels": 22.955861138571553,
+        "radius_pixels": 22.95588916086298,
+        "bracket_pixels": [
+          22.955861138571553,
+          22.955917183154412
+        ],
+        "error_pixels": 2.8022291427731716e-05,
+        "ray_count": 17,
+        "max_null": 1.0181397733284649e-08,
+        "max_carter": 3.923255087712925e-09
+      },
+      {
+        "angle_radians": 3.736191429188092,
+        "reference_radius_pixels": 21.773344091573666,
+        "radius_pixels": 21.773370670362837,
+        "bracket_pixels": [
+          21.773344091573666,
+          21.773397249152012
+        ],
+        "error_pixels": 2.6578789171338713e-05,
+        "ray_count": 17,
+        "max_null": 1.2450697376413216e-08,
+        "max_carter": 2.2693458843584782e-07
+      },
+      {
+        "angle_radians": 4.25979020478639,
+        "reference_radius_pixels": 19.032483323122655,
+        "radius_pixels": 19.032529789146395,
+        "bracket_pixels": [
+          19.032483323122655,
+          19.03257625517013
+        ],
+        "error_pixels": 4.646602373981068e-05,
+        "ray_count": 16,
+        "max_null": 2.0562584266460174e-08,
+        "max_carter": 2.62327281633535e-07
+      },
+      {
+        "angle_radians": 4.783388980384689,
+        "reference_radius_pixels": 15.44400317880522,
+        "radius_pixels": 15.443965473719333,
+        "bracket_pixels": [
+          15.443927768633447,
+          15.444003178805218
+        ],
+        "error_pixels": -3.7705085887296264e-05,
+        "ray_count": 16,
+        "max_null": 8.660904691002594e-08,
+        "max_carter": 1.6517754529187182e-07
+      },
+      {
+        "angle_radians": 5.306987755982988,
+        "reference_radius_pixels": 12.00342229949493,
+        "radius_pixels": 12.003392994264708,
+        "bracket_pixels": [
+          12.003363689034483,
+          12.00342229949493
+        ],
+        "error_pixels": -2.93052302229313e-05,
+        "ray_count": 16,
+        "max_null": 6.985537409278872e-08,
+        "max_carter": 8.65334763355597e-08
+      },
+      {
+        "angle_radians": 5.830586531581287,
+        "reference_radius_pixels": 9.81171892937416,
+        "radius_pixels": 9.811671020590325,
+        "bracket_pixels": [
+          9.81162311180649,
+          9.81171892937416
+        ],
+        "error_pixels": -4.790878383609254e-05,
+        "ray_count": 15,
+        "max_null": 3.601126496509143e-08,
+        "max_carter": 1.1137987481084002e-08
+      }
+    ],
+    "max_abs_error_pixels": 4.857195895979771e-05,
+    "rms_error_pixels": 3.717768246120952e-05,
+    "analytical_extrema_pixels": {
+      "x_min": 8.526525266695646,
+      "x_max": 40.73253782214945,
+      "y_min": 6.244947948004363,
+      "y_max": 40.755052051995634
+    },
+    "center_displacement_pixels": -6.870468455577452,
+    "half_width_pixels": 16.103006277726905,
+    "half_height_pixels": 17.255052051995634
+  }
+}

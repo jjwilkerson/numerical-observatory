@@ -1,0 +1,24 @@
+# Exact Kerr, outgoing Cartesian Kerr-Schild, ZAMO observer. Lengths in M.
+mass = 1.0
+[spacetime]
+type = "kerr"
+spin = 0.5
+[camera]
+radius = 30.0
+inclination_degrees = 90.0
+observer = "zamo"
+fov_degrees = 35.0
+width = 64
+height = 48
+[integration]
+rtol = 1e-9
+atol = 1e-11
+escape_radius = 80.0
+max_affine = 350.0
+max_step = 5.0
+kerr_capture_fraction = 0.995
+kerr_source_radius = 100000.0
+[background]
+mode = "starfield"
+[disk]
+enabled = false

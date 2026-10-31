@@ -32,6 +32,9 @@ def _render(metric, camera, integration, output, progress=None, background=None,
     if not isinstance(samples, int) or samples < 1:
         raise ValueError("samples must be a positive integer")
     if disk is not None:
+        from .kerr import Kerr
+        if type(metric) is Kerr:
+            raise ValueError("Kerr disk rendering is not implemented; disable the disk")
         from .surface_render import render_surface
         return render_surface(metric, camera, integration, output, disk, background, samples,
                               domain, progress, requested_method=method, use_symmetry=use_symmetry, workers=workers)
@@ -49,8 +52,9 @@ def _render(metric, camera, integration, output, progress=None, background=None,
         output = Path(output)
         with np.load(output/"rays.npz") as rays:
             directions, status = rays["directions"], rays["status"]
+            extra = {key: rays[key] for key in rays.files if key not in ("directions", "status", "samples")}
         save_image(output/"shadow.png", shade(directions, status, background, samples))
-        np.savez_compressed(output/"rays.npz", directions=directions, status=status, samples=samples)
+        np.savez_compressed(output/"rays.npz", directions=directions, status=status, samples=samples, **extra)
         report.update(camera=asdict(camera), samples_per_axis=samples, requested_method=method,
                       count_units="subpixel rays")
         (output/"diagnostics.json").write_text(json.dumps(report, indent=2, allow_nan=False)+"\n", encoding="utf-8")
@@ -65,6 +69,12 @@ def _render(metric, camera, integration, output, progress=None, background=None,
         tracer = ParallelRays(metric, camera, integration, workers, use_symmetry, domain)
     directions = np.full((camera.height, camera.width, 3), np.nan)
     statuses = np.zeros((camera.height, camera.width), dtype=np.uint8)
+    from .kerr import Kerr
+    is_kerr = type(metric) is Kerr
+    conservation = ({key: np.full((camera.height, camera.width), np.nan)
+                     for key in ("null_error", "energy_drift", "axial_momentum_drift", "carter_drift")}
+                    if is_kerr else {})
+    constants = np.full((camera.height, camera.width, 3), np.nan) if is_kerr else None
     counts, reasons = Counter(), Counter()
     maxima = dict(null_error=0.0, energy_drift=0.0, angular_momentum_drift=0.0)
     start = time.perf_counter()
@@ -78,6 +88,12 @@ def _render(metric, camera, integration, output, progress=None, background=None,
         for row, col, momentum, result in results:
             counts[result.status] += 1
             reasons[result.reason] += 1
+            if is_kerr:
+                for key, value in (("null_error", result.max_null_error), ("energy_drift", result.energy_drift),
+                                   ("axial_momentum_drift", result.angular_momentum_drift),
+                                   ("carter_drift", result.carter_drift)):
+                    conservation[key][row, col] = value
+                constants[row, col] = result.kerr_constants
             if result.status == "escaped":
                 directions[row, col] = result.direction
                 statuses[row, col] = 1
@@ -112,11 +128,22 @@ def _render(metric, camera, integration, output, progress=None, background=None,
     }
     if workers > 1:
         diagnostics["execution"] = tracer.statistics
+    if is_kerr:
+        diagnostics.update(spacetime={"type": "kerr", "spin": metric.spin, "a": metric.a,
+                                      "axis": "+Z", "coordinates": "outgoing Cartesian Kerr-Schild"},
+                           horizon_radius=metric.horizon_radius,
+                           capture_radial_coordinate=integration.kerr_capture_fraction*metric.horizon_radius,
+                           background_direction="Hamiltonian continuation to kerr_source_radius, normalized outgoing Cartesian tangent; residual bending O(M*b/R^2)",
+                           conservation_normalization="|delta E|/|E0|, |delta Lz|/(M|E0|), |delta Q|/(M E0)^2; signed past-ray E,Lz,Q saved",
+                           optimization_note="Kerr uses general ODEs; Schwarzschild quadrature and spherical rotational reuse disabled")
+        diagnostics["maxima"].update(axial_momentum_drift=float(np.max(conservation["axial_momentum_drift"])),
+                                      carter_drift=float(np.max(conservation["carter_drift"])))
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     Image.fromarray(np.uint8(np.round(np.clip(image, 0, 1) * 255))).save(output / "shadow.png")
     # Save computed directions for later background/exposure changes without ODEs.
     # Codes: 0=captured, 1=escaped, 2=unresolved. Non-escaping directions are NaN.
-    np.savez_compressed(output / "rays.npz", directions=directions, status=statuses)
+    np.savez_compressed(output / "rays.npz", directions=directions, status=statuses,
+                        **conservation, **({"kerr_constants": constants} if is_kerr else {}))
     (output / "diagnostics.json").write_text(json.dumps(diagnostics, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     return diagnostics

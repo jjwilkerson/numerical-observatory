@@ -14,12 +14,12 @@ class Integration:
     rtol: float = 1e-8
     atol: float = 1e-10
     escape_radius: float = 100.0
-    capture_radius: float = 1.99
+    capture_radius: float = 1.99  # Schwarzschild only
     max_affine: float = 500.0
     max_step: float = 5.0
     null_tolerance: float = 1e-5
-    kerr_capture_fraction: float = 0.995
-    kerr_source_radius: float = 100000.0
+    kerr_capture_fraction: float = 0.995  # Kerr r/r_plus, strictly inside horizon
+    kerr_source_radius: float = 100000.0  # Kerr background tail endpoint
 
     def __post_init__(self):
         if any(not np.isfinite(v) or v <= 0 for v in vars(self).values()):
@@ -91,8 +91,8 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
           return_solution=False, critical_guard=True, surface=None):
     """Integrate toward the past with increasing affine parameter.
 
-    The ODE uses only Metric. Non-Schwarzschild geometries require TraceDomain;
-    only the exact Schwarzschild class gets the default spherical policy/tail.
+    The ODE uses only Metric. Other geometries require TraceDomain;
+    the exact Schwarzschild and Kerr classes have built-in domain policies.
     return_solution exposes dense output for audits. critical_guard=False is
     intended for measuring raw solver error, not ordinary production rendering.
     """

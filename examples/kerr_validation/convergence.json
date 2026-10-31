@@ -1,0 +1,404 @@
+{
+  "convergence": [
+    {
+      "rtol": 1e-07,
+      "atol": 9.999999999999999e-10,
+      "boundaries": [
+        {
+          "angle_radians": 0.3,
+          "status": "resolved",
+          "radius_pixels": 21.854265817965803,
+          "bracket_pixels": [
+            21.854262483269988,
+            21.854269152661615
+          ],
+          "error_pixels": 3.3346958154822914e-06,
+          "ray_count": 20,
+          "max_null": 4.227716850061276e-07,
+          "max_carter": 6.952188461432651e-06
+        },
+        {
+          "angle_radians": 1.2,
+          "status": "resolved",
+          "radius_pixels": 18.284268351615964,
+          "bracket_pixels": [
+            18.28426556165845,
+            18.284271141573477
+          ],
+          "error_pixels": 2.789957513016361e-06,
+          "ray_count": 20,
+          "max_null": 2.874779830018137e-06,
+          "max_carter": 2.669122672647768e-05
+        },
+        {
+          "angle_radians": 2.3,
+          "status": "resolved",
+          "radius_pixels": 11.984650935599745,
+          "bracket_pixels": [
+            11.984647278175649,
+            11.98465459302384
+          ],
+          "error_pixels": 3.6574240969144967e-06,
+          "ray_count": 19,
+          "max_null": 3.878649556469767e-06,
+          "max_carter": 5.510803840431615e-06
+        },
+        {
+          "angle_radians": 3.8,
+          "status": "unresolved",
+          "reason": "unresolved boundary ray: null_constraint_exceeded; null=1.12352e-05, radius=11.2067773479 pixels"
+        }
+      ],
+      "trajectories": [
+        {
+          "pixel": [
+            56,
+            30
+          ],
+          "status": "escaped",
+          "null_error": 1.7679589296911024e-07,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 6.525481527963442e-07,
+          "carter_drift": 4.496089834052904e-06,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 1.963345837907582e-06,
+          "max_theta_difference_radians": 1.8885387476075266e-07,
+          "max_phi_difference_radians": 5.124354407470832e-07,
+          "max_time_difference_M": 4.2840957092948884e-07
+        },
+        {
+          "pixel": [
+            48,
+            6
+          ],
+          "status": "escaped",
+          "null_error": 1.1686196320972717e-07,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 1.9986890554897722e-07,
+          "carter_drift": 4.3139036979006515e-06,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 3.5483365934396716e-07,
+          "max_theta_difference_radians": 4.942990816658721e-08,
+          "max_phi_difference_radians": 1.3840939017129017e-07,
+          "max_time_difference_M": 2.1484913759195479e-07
+        },
+        {
+          "pixel": [
+            12,
+            24
+          ],
+          "status": "escaped",
+          "null_error": 2.666221027678512e-07,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 2.599692921898614e-07,
+          "carter_drift": 7.947873190686666e-07,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 3.23605425123219e-07,
+          "max_theta_difference_radians": 5.962416915750168e-08,
+          "max_phi_difference_radians": 1.4776739742927703e-07,
+          "max_time_difference_M": 2.7139367375639267e-07
+        }
+      ]
+    },
+    {
+      "rtol": 1e-09,
+      "atol": 1.0000000000000001e-11,
+      "boundaries": [
+        {
+          "angle_radians": 0.3,
+          "status": "resolved",
+          "radius_pixels": 21.854265817965803,
+          "bracket_pixels": [
+            21.854262483269988,
+            21.854269152661615
+          ],
+          "error_pixels": 3.3346958154822914e-06,
+          "ray_count": 20,
+          "max_null": 7.89381615758118e-09,
+          "max_carter": 1.1039578989066839e-07
+        },
+        {
+          "angle_radians": 1.2,
+          "status": "resolved",
+          "radius_pixels": 18.284268351615964,
+          "bracket_pixels": [
+            18.28426556165845,
+            18.284271141573477
+          ],
+          "error_pixels": 2.789957513016361e-06,
+          "ray_count": 20,
+          "max_null": 2.3083650589652203e-08,
+          "max_carter": 2.092750172740544e-07
+        },
+        {
+          "angle_radians": 2.3,
+          "status": "resolved",
+          "radius_pixels": 11.984643620751552,
+          "bracket_pixels": [
+            11.984639963327457,
+            11.984647278175649
+          ],
+          "error_pixels": -3.6574240969144967e-06,
+          "ray_count": 19,
+          "max_null": 6.580675510360179e-08,
+          "max_carter": 4.3564528002279275e-08
+        },
+        {
+          "angle_radians": 3.8,
+          "status": "resolved",
+          "radius_pixels": 11.220799927751376,
+          "bracket_pixels": [
+            11.220796503433945,
+            11.220803352068804
+          ],
+          "error_pixels": -3.4243174287240663e-06,
+          "ray_count": 19,
+          "max_null": 8.15089602042458e-08,
+          "max_carter": 5.0226412579233715e-08
+        }
+      ],
+      "trajectories": [
+        {
+          "pixel": [
+            56,
+            30
+          ],
+          "status": "escaped",
+          "null_error": 1.4211846885543367e-09,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 7.280062326924772e-09,
+          "carter_drift": 5.1612928249241957e-08,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 1.6484907661151738e-08,
+          "max_theta_difference_radians": 1.0056735444408105e-09,
+          "max_phi_difference_radians": 1.5521055551914742e-09,
+          "max_time_difference_M": 5.385508927702176e-09
+        },
+        {
+          "pixel": [
+            48,
+            6
+          ],
+          "status": "escaped",
+          "null_error": 1.660375602626642e-09,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 3.3745858918083125e-09,
+          "carter_drift": 7.567429480904408e-08,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 1.5612869219694403e-08,
+          "max_theta_difference_radians": 1.223529721983141e-09,
+          "max_phi_difference_radians": 1.923685456054208e-09,
+          "max_time_difference_M": 3.996632358393981e-09
+        },
+        {
+          "pixel": [
+            12,
+            24
+          ],
+          "status": "escaped",
+          "null_error": 2.9985776063878277e-09,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 1.1668571230759245e-08,
+          "carter_drift": 3.426659421654705e-08,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 1.8254098677061847e-08,
+          "max_theta_difference_radians": 3.179092544769446e-10,
+          "max_phi_difference_radians": 1.3576280328972453e-09,
+          "max_time_difference_M": 3.920391122846922e-09
+        }
+      ]
+    },
+    {
+      "rtol": 1e-11,
+      "atol": 9.999999999999999e-14,
+      "boundaries": [
+        {
+          "angle_radians": 0.3,
+          "status": "resolved",
+          "radius_pixels": 21.854265817965803,
+          "bracket_pixels": [
+            21.854262483269988,
+            21.854269152661615
+          ],
+          "error_pixels": 3.3346958154822914e-06,
+          "ray_count": 20,
+          "max_null": 1.601277504459395e-10,
+          "max_carter": 2.9216743420365412e-09
+        },
+        {
+          "angle_radians": 1.2,
+          "status": "resolved",
+          "radius_pixels": 18.284268351615964,
+          "bracket_pixels": [
+            18.28426556165845,
+            18.284271141573477
+          ],
+          "error_pixels": 2.789957513016361e-06,
+          "ray_count": 20,
+          "max_null": 3.08842499112037e-10,
+          "max_carter": 4.07190688435454e-09
+        },
+        {
+          "angle_radians": 2.3,
+          "status": "resolved",
+          "radius_pixels": 11.984643620751552,
+          "bracket_pixels": [
+            11.984639963327457,
+            11.984647278175649
+          ],
+          "error_pixels": -3.6574240969144967e-06,
+          "ray_count": 19,
+          "max_null": 1.4596891035485232e-09,
+          "max_carter": 1.3586623661900836e-09
+        },
+        {
+          "angle_radians": 3.8,
+          "status": "resolved",
+          "radius_pixels": 11.220799927751376,
+          "bracket_pixels": [
+            11.220796503433945,
+            11.220803352068804
+          ],
+          "error_pixels": -3.4243174287240663e-06,
+          "ray_count": 19,
+          "max_null": 6.293806577056257e-10,
+          "max_carter": 6.604267789398723e-10
+        }
+      ],
+      "trajectories": [
+        {
+          "pixel": [
+            56,
+            30
+          ],
+          "status": "escaped",
+          "null_error": 3.225887503579141e-11,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 1.6519597167620024e-10,
+          "carter_drift": 1.1506106601605819e-09,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 2.701199264265597e-09,
+          "max_theta_difference_radians": 4.92866414347759e-10,
+          "max_phi_difference_radians": 6.604621523162488e-10,
+          "max_time_difference_M": 2.242586560896598e-09
+        },
+        {
+          "pixel": [
+            48,
+            6
+          ],
+          "status": "escaped",
+          "null_error": 4.745242543684314e-11,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 1.212734879112934e-10,
+          "carter_drift": 2.6360821956256135e-09,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 9.617053819965804e-10,
+          "max_theta_difference_radians": 1.078088729400406e-10,
+          "max_phi_difference_radians": 3.850966441429401e-10,
+          "max_time_difference_M": 6.117772954894463e-10
+        },
+        {
+          "pixel": [
+            12,
+            24
+          ],
+          "status": "escaped",
+          "null_error": 2.3662863906069184e-11,
+          "energy_drift": 0.0,
+          "axial_momentum_drift": 1.842445985842133e-10,
+          "carter_drift": 5.618245203382063e-10,
+          "radial_turning": true,
+          "polar_turning": true,
+          "max_radius_difference_M": 2.0272885592476086e-09,
+          "max_theta_difference_radians": 2.580708979849078e-10,
+          "max_phi_difference_radians": 8.133052238487645e-10,
+          "max_time_difference_M": 1.35000277623476e-09
+        }
+      ]
+    }
+  ],
+  "far_field_direction_differences": {
+    "R1e4_vs_1e5": 1.7722781517247673e-08,
+    "R1e5_vs_1e6": 1.7717094679212528e-10
+  },
+  "capture_fraction_comparison": [
+    {
+      "fraction": 0.98,
+      "radius_pixels": 20.71817215702416,
+      "bracket_pixels": [
+        20.718168995682454,
+        20.718175318365866
+      ],
+      "error_pixels": 3.161341705748555e-06,
+      "ray_count": 20,
+      "max_null": 1.2246781583744063e-08,
+      "max_carter": 2.1058653055302857e-07
+    },
+    {
+      "fraction": 0.995,
+      "radius_pixels": 20.71817215702416,
+      "bracket_pixels": [
+        20.718168995682454,
+        20.718175318365866
+      ],
+      "error_pixels": 3.161341705748555e-06,
+      "ray_count": 20,
+      "max_null": 1.2246781583744063e-08,
+      "max_carter": 2.1058653055302857e-07
+    },
+    {
+      "fraction": 0.999,
+      "radius_pixels": 20.71817215702416,
+      "bracket_pixels": [
+        20.718168995682454,
+        20.718175318365866
+      ],
+      "error_pixels": 3.161341705748555e-06,
+      "ray_count": 20,
+      "max_null": 1.2246781583744063e-08,
+      "max_carter": 2.1058653055302857e-07
+    }
+  ],
+  "schwarzschild_limit": [
+    {
+      "pixel": [
+        31.5,
+        23.5
+      ],
+      "kerr_status": "captured",
+      "schwarzschild_status": "captured",
+      "max_state_difference": 0.0,
+      "source_direction_difference": null
+    },
+    {
+      "pixel": [
+        56,
+        30
+      ],
+      "kerr_status": "escaped",
+      "schwarzschild_status": "escaped",
+      "max_state_difference": 0.0,
+      "source_direction_difference": 1.4402538360545648e-11
+    },
+    {
+      "pixel": [
+        49,
+        10
+      ],
+      "kerr_status": "escaped",
+      "schwarzschild_status": "escaped",
+      "max_state_difference": 0.0,
+      "source_direction_difference": 3.498572565196535e-12
+    }
+  ],
+  "notes": "Boundary bracket widths, curve interpolation, raster sampling and asymptotic-tail truncation are separate error sources. Carter-reference uses separated second-order Mino velocities in affine time, not production metric derivatives."
+}

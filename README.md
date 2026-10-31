@@ -1,14 +1,93 @@
 # Numerical Observatory
 
-A small, independent CPU ray tracer for the Schwarzschild black-hole shadow.
+A small, independent CPU ray tracer for Schwarzschild and exact Kerr black-hole shadows.
 It traces null geodesics toward the past from a local camera, lenses an astronomical
 star map at infinity, and saves a PNG plus numerical diagnostics. No existing C++
 project, CarpetX installation, GPU, CUDA, or compiler is required.
 
-An optional opaque luminous disk now adds circular orbital motion, gravitational
+For Schwarzschild, an optional opaque luminous disk adds circular orbital motion, gravitational
 redshift, Doppler beaming, and higher-order surface images. It is **disabled by
 default**; existing starfield/grid configurations retain their original results.
 See the [disk validation report](examples/disks/REPORT.md).
+
+## Exact Kerr spacetime (shadow and celestial background)
+
+Kerr describes an isolated stationary rotating vacuum black hole. Select it
+explicitly; configurations without `[spacetime]` still use Schwarzschild.
+There is **no Kerr accretion disk yet**: enabling one is rejected, including at
+zero spin. Kerr uses the existing general Hamiltonian ODE, multiprocessing,
+starfield/grid and camera projection. Schwarzschild planar quadrature and
+spherical rotational reuse never activate for Kerr; a requested quadrature
+render falls back to ODE and records this choice.
+
+```toml
+[spacetime]
+type = "kerr"
+spin = 0.9
+[camera]
+radius = 30.0
+inclination_degrees = 60.0
+observer = "zamo"
+fov_degrees = 35.0
+width = 64
+height = 48
+```
+
+`spin` is dimensionless a*=J/M² in [-0.99,0.99], while a=M a* is dimensional.
+Positive spin points along +Z. Inclination is measured from +Z: 0° polar,
+90° equatorial. Radius is the oblate Kerr coordinate in M, not Euclidean
+radius. The default Kerr observer is a ZAMO at fixed r,theta with zero axial
+angular momentum; it rotates relative to the coordinates. Static observers
+are distinct and cannot exist inside the ergosphere. At zero spin ZAMO and
+static conventions agree with the existing Schwarzschild camera. The exact
+outgoing Cartesian Kerr–Schild metric has analytic derivatives and uses the
+correct outer horizon r_plus=M(1+sqrt(1-a*²)) for capture.
+
+Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory --config examples/kerr/spin09_i60.toml --workers 10 --output output/kerr
+.\.venv\Scripts\python -m numerical_observatory --config examples/kerr/spin09_i60.toml --background grid --workers 10 --output output/kerr-grid
+```
+
+Ubuntu:
+
+```bash
+.venv/bin/python -m numerical_observatory --config examples/kerr/spin09_i60.toml --workers 10 --output output/kerr
+.venv/bin/python -m numerical_observatory --config examples/kerr/spin09_i60.toml --background grid --workers 10 --output output/kerr-grid
+```
+
+Six matched 64×48 preview configurations in `examples/kerr/` cover spin 0,
+0.5, 0.9, -0.9 at 90°, plus 0.9 at 60° and 20°. All use r=30M, FOV=35° and
+identical numerical/display settings. Override width/height/samples normally;
+Kerr tracing is slower because it lacks spherical orbit reuse. `--workers 1`
+remains serial; `--workers 0` uses the existing automatic selection.
+
+```text
+python -m numerical_observatory.kerr_validation --render --workers 10
+python -m numerical_observatory.kerr_validation
+python -m numerical_observatory.kerr_validation --figures-only
+python -m pytest -q
+```
+
+The first command reproduces six small renders, repaints grids from the same
+saved rays and runs numerical audits. Without `--render` only audits run;
+`--figures-only` reuses saved rays without tracing. `--output` selects a separate
+directory. No full-resolution Kerr batch is launched automatically.
+
+See the [comparison](examples/kerr_validation/comparison.png),
+[grid comparison](examples/kerr_validation/grid_comparison.png),
+[quantitative validation report](examples/kerr_validation/REPORT.md) and
+[coordinate, observer and data conventions](examples/kerr/README.md).
+Analytical spherical-photon directions are projected into the actual finite
+camera tetrad; distant-observer alpha/beta are not treated as finite pixels.
+Independent Carter-separated equations audit trajectories and turning points.
+Kerr `rays.npz` adds per-ray null/E/Lz/Q conservation errors and initial signed
+(E,Lz,Q), while metadata records spin, coordinates, horizon and observer.
+Source directions use Hamiltonian continuation to 100000M and the outgoing
+Cartesian tangent: the remaining O(M b/R²) bending is checked separately from
+integration error. Coarse raster sampling, sampled conservation bounds, finite
+source truncation, CPU cost and unsupported Kerr disk physics remain limits.
 
 ## Optional luminous disk
 
@@ -829,7 +908,10 @@ temporary test directory).
 | Module | Responsibility |
 | --- | --- |
 | `metric.py` | Four-dimensional event-based metric and all four inverse-metric derivatives |
-| `geodesic.py` | Generic Hamiltonian RHS, SciPy integration, Schwarzschild boundaries and asymptotic continuation |
+| `geodesic.py` | Generic Hamiltonian RHS, SciPy integration, domain events and constraint diagnostics |
+| `kerr.py` | Exact outgoing Kerr–Schild metric, analytic derivatives, ZAMOs and Kerr invariants |
+| `kerr_support.py` | Kerr horizon/escape policy and numerical asymptotic background continuation |
+| `kerr_reference.py` / `kerr_validation.py` | Independent Carter equations, finite-camera analytical shadows, convergence and example comparisons |
 | `camera.py` | Camera geometry, metric-based rest-space tetrad or supplied observer frame |
 | `background.py` | Direction-to-RGB emission model |
 | `symmetry.py` | Exact rotational reuse for centered Schwarzschild views |
@@ -840,21 +922,24 @@ temporary test directory).
 | `validation.py` | Reproducible boundary and convergence diagnostics |
 | `lensing_validation.py` | Systematic trajectory/winding checks, shadow sweep, matched renders |
 
-The metric contract always receives (t,x,y,z), even though this metric is
+The metric contract always receives (t,x,y,z), even though the analytic metrics are
 stationary. The RHS includes the time derivative and can evolve p_t for a
 time-dependent metric. The camera's default observer follows coordinate time
 where it is timelike. It uses the positive-definite rest-space metric
 `h_ij = g_ij - g_0i g_0j/g_00` and its symmetric inverse square root; this
 reproduces the old Schwarzschild frame. A supplied `observer_frame` handles
 moving observers and regions where a coordinate-static observer is impossible.
-The supplied frame must be orthonormal; the caller chooses its future direction.
+The supplied frame must be orthonormal and future-directed. Kerr configuration
+selects the ZAMO observer instead of the default coordinate-static observer.
 
-Non-Schwarzschild metrics must supply a `TraceDomain` with capture/escape level
+Metrics other than the exact Schwarzschild and Kerr implementations must
+supply a `TraceDomain` with capture/escape level
 sets and a source-direction mapping in the background's sky frame. An optional
 valid-data level set terminates unavailable numerical data as unresolved. No
 generic metric is presumed spherical or asymptotically flat. The exact
-Schwarzschild implementation alone supplies the default horizon, escape sphere,
-conservation diagnostics, and analytic continuation to infinity. Quadrature and
+Schwarzschild implementation supplies its spherical horizon policy and analytical
+continuation to infinity; Kerr supplies its oblate horizon policy, E/Lz/Q checks
+and numerical far-field continuation. Quadrature and
 rotational reuse require this exact type, a centered coordinate-static camera,
 and no custom domain; subclasses cannot silently inherit these optimizations.
 Low-level quadrature rejects incompatible inputs; the renderer selects ODE.

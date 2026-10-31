@@ -18,10 +18,14 @@ class Integration:
     max_affine: float = 500.0
     max_step: float = 5.0
     null_tolerance: float = 1e-5
+    kerr_capture_fraction: float = 0.995
+    kerr_source_radius: float = 100000.0
 
     def __post_init__(self):
         if any(not np.isfinite(v) or v <= 0 for v in vars(self).values()):
             raise ValueError("integration parameters must be finite and positive")
+        if self.kerr_capture_fraction >= 1:
+            raise ValueError("kerr_capture_fraction must be strictly between 0 and 1")
 
 
 @dataclass
@@ -37,6 +41,8 @@ class RayResult:
     raw_status: str | None = None
     critical_uncertainty: float | None = None
     hit: SurfaceHit | None = None
+    carter_drift: float | None = None
+    kerr_constants: np.ndarray | None = None
 
 
 def hamilton_rhs(metric: Metric, state):
@@ -91,7 +97,14 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
     intended for measuring raw solver error, not ordinary production rendering.
     """
     schwarzschild = type(metric) is Schwarzschild
+    from .kerr import Kerr
+    kerr_domain = domain is None and type(metric) is Kerr
     builtin_domain = domain is None and schwarzschild
+    if kerr_domain:
+        if surface is not None:
+            raise ValueError("Kerr emitting surfaces are not implemented")
+        from .kerr_support import default_domain
+        domain = default_domain(metric, event, settings)
     if domain is None:
         if not schwarzschild:
             raise ValueError("non-Schwarzschild metrics require an explicit TraceDomain")
@@ -126,6 +139,9 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
                     events=events, dense_output=True)
     result = summarize_solution(metric, event, momentum, settings, sol, domain,
                                 builtin_domain, critical_guard, surface)
+    if type(metric) is Kerr:
+        from .kerr_support import finish_kerr
+        result = finish_kerr(metric, event, momentum, settings, sol, result, kerr_domain)
     if return_solution and result.hit is not None:
         # The public opaque-ray solution terminates at the emitting surface.
         # Only geometry caches (which call without a surface) retain later data.

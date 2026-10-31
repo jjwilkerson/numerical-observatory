@@ -1,0 +1,152 @@
+{
+  "mass": 1.0,
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      60.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 640,
+    "height": 480,
+    "time": 0.0,
+    "observer_frame": null
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110.0,
+    "capture_radius": 1.99,
+    "max_affine": 400.0,
+    "max_step": 4.0,
+    "null_tolerance": 1e-05
+  },
+  "geometry": {
+    "inner_radius": 6.0,
+    "outer_radius": 20.0,
+    "normal": [
+      0.0,
+      0.9961946980917455,
+      0.08715574274765814
+    ]
+  },
+  "emission": {
+    "inner_radius": 6.0,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0
+  },
+  "display": {
+    "exposure": 2.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "blackbody"
+  },
+  "rotation": 1,
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 15.0,
+    "latitude_degrees": 18.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "source_render": "D:\\numerical-observatory\\output\\disk-edge-on-blackbody-hires",
+  "samples": 1,
+  "collection": {
+    "method": "quadrature",
+    "requested_method": "quadrature",
+    "max_crossing": 4,
+    "elapsed_seconds": 50.14148970000679,
+    "workers": 10,
+    "execution": {
+      "workers": 10,
+      "requested_workers": 10,
+      "start_method": "spawn",
+      "task_count": 7193,
+      "worker_cpu_seconds": 412.078125,
+      "worker_task_seconds": 418.05223300043144,
+      "worker_peak_memory_bytes": {
+        "29160": 80842752,
+        "34984": 80596992,
+        "22540": 80867328,
+        "17664": 80801792,
+        "26824": 81108992,
+        "24024": 80617472,
+        "8004": 80596992,
+        "16524": 81244160,
+        "23960": 81186816,
+        "8464": 80617472
+      },
+      "startup_span_seconds": 3.0921158000128344,
+      "pool_wall_seconds": 45.53502100001788
+    },
+    "work": {
+      "geometry_groups_or_integrations": 28772,
+      "ode_steps": 0,
+      "rhs_evaluations": 0
+    },
+    "counts": {
+      "captured": 7036,
+      "escaped": 300164,
+      "unresolved": 0
+    },
+    "backend_rays": {
+      "quadrature": 307200,
+      "ode": 0
+    },
+    "plane_crossings": 220080,
+    "valid_emitting_crossings": 23272,
+    "max_recorded_null_error": 6.2019355168715646e-15,
+    "nonfinite_recorded_null_errors": 0,
+    "diagnostic_scope": "ODE: sampled dense trajectory constraint checks. Quadrature: reconstructed-state null checks, not an ODE path residual.",
+    "termination": "capture/escape/max_affine as configured. Recording stops at max_crossing; truncated is explicit. ODE cache retains the natural trajectory for diagnostics/reuse."
+  },
+  "crossing_dtype": "[('plane_ordinal', '<u4'), ('emitting_ordinal', '<u4'), ('event', '<f8', (4,)), ('momentum', '<f8', (4,)), ('affine', '<f8'), ('radius_M', '<f8'), ('azimuth_degrees', '<f8'), ('region', 'u1'), ('geometry_valid', '?'), ('emission_valid', '?'), ('g', '<f8'), ('bolometric_intensity', '<f8'), ('observed_temperature', '<f8'), ('phi_radians', '<f8'), ('null_error', '<f8')]",
+  "region_codes": {
+    "0": "invalid",
+    "1": "central hole",
+    "2": "emitting annulus",
+    "3": "beyond outer edge"
+  },
+  "reason_codes": {
+    "0": "capture_boundary",
+    "1": "outward_escape",
+    "2": "affine_limit",
+    "3": "numerical_failure",
+    "4": "coplanar_surface"
+  },
+  "note": "Opt-in hypothetical transparent continuation; normal physical rendering remains first-valid-hit opaque",
+  "opaque_comparison": {
+    "first_hit_category_differences": 0,
+    "unknown_first_hit_due_to_recording_limit": 0,
+    "normally_visible_crossing_2_differences": 0,
+    "max_first_hit_position_difference_M": 2.8648441340066194e-06,
+    "max_g_absolute_difference": 4.7938720770801524e-08,
+    "max_relative_bolometric_difference": 6.467425777145763e-07
+  },
+  "source_opaque_counts": {
+    "captured": 5326,
+    "escaped": 279180,
+    "unresolved": 0,
+    "emitted": 22694
+  },
+  "source_sha256": {
+    "diagnostics.json": "a4be04099423afcb05186b57f5b8c8b1d8129a6e8b6c07e1462a2b4a0f02f133",
+    "disk_rays.npz": "a175a924fc70ce64c37e1c3f0b46925dce562839d4d06f10143e873eaac92bf1",
+    "shadow.png": "3775b399b5f0e15fdfd42775d7e9f22b0471a99d5239269e85a2347ad67f9184"
+  }
+}

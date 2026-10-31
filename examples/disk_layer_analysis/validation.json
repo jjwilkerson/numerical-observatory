@@ -1,0 +1,651 @@
+{
+  "cases": [
+    {
+      "x": 310,
+      "y": 192,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            1,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 5.720970928242796e-07,
+          "max_affine_difference_M": 3.740301366406129e-07,
+          "max_covector_difference": 7.054086632863342e-09,
+          "max_orbital_angle_difference_radians": 2.6645352591003757e-15,
+          "max_g_difference": 1.547110772825988e-09,
+          "max_relative_bolometric_difference": 5.5010522914678006e-08,
+          "max_explicit_formula_g_difference": 0.0
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            1,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 6.084804950133375e-09,
+          "max_affine_difference_M": 4.004434117632627e-09,
+          "max_covector_difference": 7.664623525030915e-11,
+          "max_orbital_angle_difference_radians": 2.220446049250313e-15,
+          "max_g_difference": 1.6277534875541733e-11,
+          "max_relative_bolometric_difference": 5.793368007545041e-10,
+          "max_explicit_formula_g_difference": 0.0
+        }
+      ]
+    },
+    {
+      "x": 266,
+      "y": 240,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            1,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 1.0639130672604113e-07,
+          "max_affine_difference_M": 7.155205139497411e-08,
+          "max_covector_difference": 1.2881364130877103e-09,
+          "max_orbital_angle_difference_radians": 8.881784197001252e-15,
+          "max_g_difference": 7.017431080669212e-11,
+          "max_relative_bolometric_difference": 1.0741767919597578e-08,
+          "max_explicit_formula_g_difference": 4.440892098500626e-16
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            1,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 7.229686435565434e-10,
+          "max_affine_difference_M": 4.988720547771663e-10,
+          "max_covector_difference": 8.656289652367613e-12,
+          "max_orbital_angle_difference_radians": 8.881784197001252e-16,
+          "max_g_difference": 2.686739719592879e-13,
+          "max_relative_bolometric_difference": 6.860856327506326e-11,
+          "max_explicit_formula_g_difference": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "x": 285,
+      "y": 272,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 4,
+          "regions": [
+            3,
+            1,
+            1,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "emitting_ordinals": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 4.661925528131775e-06,
+          "max_affine_difference_M": 2.971679435859187e-06,
+          "max_covector_difference": 1.0401551995984347e-07,
+          "max_orbital_angle_difference_radians": 2.4868995751603507e-14,
+          "max_g_difference": 4.012561061195186e-09,
+          "max_relative_bolometric_difference": 6.467425777145763e-07,
+          "max_explicit_formula_g_difference": 2.220446049250313e-16
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 4,
+          "regions": [
+            3,
+            1,
+            1,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "emitting_ordinals": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 5.224722086799138e-08,
+          "max_affine_difference_M": 3.3320432635264297e-08,
+          "max_covector_difference": 1.1672547321590573e-09,
+          "max_orbital_angle_difference_radians": 2.0596857552845904e-12,
+          "max_g_difference": 4.47494263866588e-11,
+          "max_relative_bolometric_difference": 7.245288369261971e-09,
+          "max_explicit_formula_g_difference": 2.220446049250313e-16
+        }
+      ]
+    },
+    {
+      "x": 260,
+      "y": 250,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.327220681297722e-08,
+          "max_affine_difference_M": 8.162487574736588e-09,
+          "max_covector_difference": 7.422429330088633e-10,
+          "max_orbital_angle_difference_radians": 5.551115123125783e-17,
+          "max_g_difference": 1.5923107277160398e-10,
+          "max_relative_bolometric_difference": 2.968930434832373e-09,
+          "max_explicit_formula_g_difference": 4.440892098500626e-16
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.2251327356475813e-10,
+          "max_affine_difference_M": 8.478195923089515e-11,
+          "max_covector_difference": 5.42136294024987e-12,
+          "max_orbital_angle_difference_radians": 4.440892098500626e-16,
+          "max_g_difference": 1.0469403122215226e-12,
+          "max_relative_bolometric_difference": 2.387612330068123e-11,
+          "max_explicit_formula_g_difference": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "x": 379,
+      "y": 250,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.327220681297722e-08,
+          "max_affine_difference_M": 8.162487574736588e-09,
+          "max_covector_difference": 7.422429330088633e-10,
+          "max_orbital_angle_difference_radians": 0.0,
+          "max_g_difference": 2.682859490121814e-10,
+          "max_relative_bolometric_difference": 8.508789228756086e-10,
+          "max_explicit_formula_g_difference": 3.3306690738754696e-16
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.2251327356475813e-10,
+          "max_affine_difference_M": 8.478195923089515e-11,
+          "max_covector_difference": 5.42136294024987e-12,
+          "max_orbital_angle_difference_radians": 4.440892098500626e-16,
+          "max_g_difference": 2.1298518504409003e-12,
+          "max_relative_bolometric_difference": 7.872147378407135e-12,
+          "max_explicit_formula_g_difference": 3.3306690738754696e-16
+        }
+      ]
+    },
+    {
+      "x": 250,
+      "y": 260,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.5199824575551652e-08,
+          "max_affine_difference_M": 1.081971845451335e-08,
+          "max_covector_difference": 3.184463782145293e-10,
+          "max_orbital_angle_difference_radians": 1.3322676295501878e-15,
+          "max_g_difference": 3.2186919796117763e-11,
+          "max_relative_bolometric_difference": 1.5234546957287876e-09,
+          "max_explicit_formula_g_difference": 0.0
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.7680754170185598e-10,
+          "max_affine_difference_M": 1.4924239621905144e-10,
+          "max_covector_difference": 6.90866441166247e-12,
+          "max_orbital_angle_difference_radians": 3.2862601528904634e-14,
+          "max_g_difference": 5.32018873400375e-13,
+          "max_relative_bolometric_difference": 1.1253442622205512e-11,
+          "max_explicit_formula_g_difference": 0.0
+        }
+      ]
+    },
+    {
+      "x": 389,
+      "y": 260,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.5199824575551652e-08,
+          "max_affine_difference_M": 1.081971845451335e-08,
+          "max_covector_difference": 3.184463782145293e-10,
+          "max_orbital_angle_difference_radians": 1.3322676295501878e-15,
+          "max_g_difference": 9.245448850947469e-11,
+          "max_relative_bolometric_difference": 9.624997465706997e-10,
+          "max_explicit_formula_g_difference": 2.220446049250313e-16
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            2
+          ],
+          "max_spacetime_event_difference_M": 1.7680754170185598e-10,
+          "max_affine_difference_M": 1.4924239621905144e-10,
+          "max_covector_difference": 6.90866441166247e-12,
+          "max_orbital_angle_difference_radians": 3.2862601528904634e-14,
+          "max_g_difference": 8.256728634137289e-13,
+          "max_relative_bolometric_difference": 5.2937654260176714e-12,
+          "max_explicit_formula_g_difference": 2.220446049250313e-16
+        }
+      ]
+    },
+    {
+      "x": 275,
+      "y": 245,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            1
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            0
+          ],
+          "max_spacetime_event_difference_M": 2.6693505331749175e-09,
+          "max_affine_difference_M": 1.7606680557946675e-09,
+          "max_covector_difference": 1.043411060956226e-09,
+          "max_orbital_angle_difference_radians": 6.217248937900877e-15,
+          "max_g_difference": 1.5909940032088343e-11,
+          "max_relative_bolometric_difference": 2.8407021179788217e-10,
+          "max_explicit_formula_g_difference": 4.440892098500626e-16
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            2,
+            1
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            1,
+            0
+          ],
+          "max_spacetime_event_difference_M": 2.3912443725033846e-11,
+          "max_affine_difference_M": 1.963940121640917e-11,
+          "max_covector_difference": 1.0619455274867133e-11,
+          "max_orbital_angle_difference_radians": 5.773159728050814e-15,
+          "max_g_difference": 3.097522238704187e-13,
+          "max_relative_bolometric_difference": 2.513877994658742e-12,
+          "max_explicit_formula_g_difference": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "x": 280,
+      "y": 270,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            3,
+            1
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            0
+          ],
+          "max_spacetime_event_difference_M": 4.329788842564505e-09,
+          "max_affine_difference_M": 1.8506653987060417e-09,
+          "max_covector_difference": 2.1744199489046495e-09,
+          "max_orbital_angle_difference_radians": 2.1649348980190553e-15
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            3,
+            1
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            0
+          ],
+          "max_spacetime_event_difference_M": 4.550480446787204e-11,
+          "max_affine_difference_M": 2.1444179765239824e-11,
+          "max_covector_difference": 1.3348405492452101e-11,
+          "max_orbital_angle_difference_radians": 2.220446049250313e-15
+        }
+      ]
+    },
+    {
+      "x": 319,
+      "y": 310,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 2,
+          "regions": [
+            3,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 7.3958354786594534e-09,
+          "max_affine_difference_M": 5.064833885626285e-09,
+          "max_covector_difference": 2.8564515376100707e-10,
+          "max_orbital_angle_difference_radians": 1.3877787807814457e-17,
+          "max_g_difference": 5.719813511717575e-11,
+          "max_relative_bolometric_difference": 8.877261148398929e-10,
+          "max_explicit_formula_g_difference": 0.0
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 2,
+          "regions": [
+            3,
+            2
+          ],
+          "plane_ordinals": [
+            1,
+            2
+          ],
+          "emitting_ordinals": [
+            0,
+            1
+          ],
+          "max_spacetime_event_difference_M": 7.800085730904442e-11,
+          "max_affine_difference_M": 5.806555236631539e-11,
+          "max_covector_difference": 3.6629064657837776e-12,
+          "max_orbital_angle_difference_radians": 1.1102230246251565e-16,
+          "max_g_difference": 5.019318294330333e-13,
+          "max_relative_bolometric_difference": 7.801537194040975e-12,
+          "max_explicit_formula_g_difference": 0.0
+        }
+      ]
+    },
+    {
+      "x": 320,
+      "y": 250,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 1,
+          "regions": [
+            2
+          ],
+          "plane_ordinals": [
+            1
+          ],
+          "emitting_ordinals": [
+            1
+          ],
+          "max_spacetime_event_difference_M": 2.2060969468667894e-10,
+          "max_affine_difference_M": 1.4272671933213132e-10,
+          "max_covector_difference": 2.712820306589185e-12,
+          "max_orbital_angle_difference_radians": 1.6375789613221059e-15,
+          "max_g_difference": 2.3783197633520103e-12,
+          "max_relative_bolometric_difference": 3.153410865763817e-11,
+          "max_explicit_formula_g_difference": 0.0
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 1,
+          "regions": [
+            2
+          ],
+          "plane_ordinals": [
+            1
+          ],
+          "emitting_ordinals": [
+            1
+          ],
+          "max_spacetime_event_difference_M": 6.516146066147754e-12,
+          "max_affine_difference_M": 3.304023721284466e-12,
+          "max_covector_difference": 4.551061261129878e-14,
+          "max_orbital_angle_difference_radians": 3.3306690738754696e-16,
+          "max_g_difference": 7.061018436615996e-14,
+          "max_relative_bolometric_difference": 9.399148126476575e-13,
+          "max_explicit_formula_g_difference": 0.0
+        }
+      ]
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "runs": [
+        {
+          "rtol": 1e-09,
+          "crossing_count": 0,
+          "regions": [],
+          "plane_ordinals": [],
+          "emitting_ordinals": []
+        },
+        {
+          "rtol": 1e-11,
+          "crossing_count": 0,
+          "regions": [],
+          "plane_ordinals": [],
+          "emitting_ordinals": []
+        }
+      ]
+    }
+  ],
+  "tight_run_maxima": {
+    "max_spacetime_event_difference_M": 5.224722086799138e-08,
+    "max_affine_difference_M": 3.3320432635264297e-08,
+    "max_covector_difference": 1.1672547321590573e-09,
+    "max_orbital_angle_difference_radians": 2.0596857552845904e-12,
+    "max_g_difference": 4.47494263866588e-11,
+    "max_relative_bolometric_difference": 7.245288369261971e-09,
+    "max_explicit_formula_g_difference": 4.440892098500626e-16
+  },
+  "subpixel_crown_probes": [
+    {
+      "x": 319.0,
+      "y": 191.0,
+      "plane_ordinal": 2,
+      "radius_M": 21.801496837467212,
+      "emission_valid": false,
+      "ode_radius_difference_M": 5.619842369242178e-09
+    },
+    {
+      "x": 319.0,
+      "y": 192.0,
+      "plane_ordinal": 2,
+      "radius_M": 3.5483609452344433,
+      "emission_valid": false,
+      "ode_radius_difference_M": 1.656075276912361e-10
+    },
+    {
+      "x": 319.5,
+      "y": 191.25,
+      "plane_ordinal": 2,
+      "radius_M": 11.237764892007114,
+      "emission_valid": true,
+      "ode_radius_difference_M": 1.711855546204788e-09
+    },
+    {
+      "x": 319.5,
+      "y": 191.5,
+      "plane_ordinal": 2,
+      "radius_M": 7.093925656649246,
+      "emission_valid": true,
+      "ode_radius_difference_M": 5.772449185315054e-10
+    },
+    {
+      "x": 319.5,
+      "y": 191.75,
+      "plane_ordinal": 2,
+      "radius_M": 4.889230874617556,
+      "emission_valid": false,
+      "ode_radius_difference_M": 2.8746427460646373e-10
+    }
+  ],
+  "elapsed_seconds": 5.243272899999283,
+  "ode_integrations": 29,
+  "image_rerendered": false,
+  "note": "Explicit small audit of all recorded crossings, not a second image trace; first and later emitting events checked"
+}

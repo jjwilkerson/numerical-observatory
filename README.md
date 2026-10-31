@@ -168,6 +168,135 @@ regenerate both backgrounds, unlensed references, a labelled grid atlas, a fresh
 traced near-shadow close-up, and quantitative diagnostics in `examples/validated/`.
 Historical renders remain in `examples/composition/` and `examples/rendered/`.
 
+## Reveal hidden disk-crossing layers
+
+The separate, opt-in `disk_layers` command traces through earlier emitting
+surfaces to reveal later **plane-crossing** images. Ordinary rendering continues
+to stop its radiative history at the first valid opaque hit. A crossing-2 layer
+is a mathematical diagnostic, not a physical observation through an opaque disk.
+
+Reference experiment, Windows PowerShell:
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory.disk_layers --input-render output/disk-edge-on-blackbody-hires --workers 10 --method quadrature --max-crossing 4 --crop 179 134 461 346 --output examples/disk_layer_analysis
+```
+
+Ubuntu:
+
+```bash
+.venv/bin/python -m numerical_observatory.disk_layers --input-render output/disk-edge-on-blackbody-hires --workers 10 --method quadrature --max-crossing 4 --crop 179 134 461 346 --output examples/disk_layer_analysis
+```
+
+This is new geodesic intersection calculation at the original 640×480 sampling,
+not reconstruction of unrecorded events from the old first-hit file. The
+Schwarzschild quadrature backend collected the reference data in about 50 s on
+this computer, followed by compression/output. No large supersampled image was
+launched. See the [hidden-layer report](examples/disk_layer_analysis/REPORT.md)
+for the images, numerical validation and scientific conclusions.
+
+For an independent configuration use `--config examples/disk_layers.toml`
+instead of `--input-render`. This new example matches the reference physical and
+numerical parameters and uses the blackbody palette. `--width` and `--height`
+override dimensions; `--samples` chooses subrays per pixel axis (default matches
+the input render, or one for a config). Workers use the existing spawn-safe
+scheduler and exact rotational trajectory grouping.
+
+`--target 2` is the default. `--max-crossing 4` records up to four plane crossings
+in one trajectory calculation and produces crossing-1/2/3/4 images from those
+records. A higher maximum is supported. Observed higher emitting ordinals and
+the selected target can also be displayed; no later event substitutes for a
+missing target. At crossing 2, a previous hole or outside-edge crossing still
+counts as crossing 1 but does not conceal it. A previous valid material hit does
+conceal it, even if that material's emissivity is zero. For target 3 or higher,
+the visibility classification considers **any** earlier valid emitting hit.
+
+Reuse the same data with no new trajectories, changing target, crop, alpha or
+display palette:
+
+```text
+python -m numerical_observatory.disk_layers --reuse examples/disk_layer_analysis --target 2 --alpha 0.2 --palette gray --crop 220 170 420 315 --output output/layers-gray
+python -m numerical_observatory.disk_layers --reuse examples/disk_layer_analysis --target 3 --output output/layer-three
+```
+
+Raw data are in `disk_layers.npz`, with context in `trace_metadata.json`:
+
+- `crossings` is a structured array, ordered by ray and increasing affine
+  parameter. Fields include `plane_ordinal`, `emitting_ordinal`, spacetime
+  `event=(t,x,y,z)`, covariant `momentum`, `affine`, `radius_M`,
+  `azimuth_degrees`, `region`, `geometry_valid`, `emission_valid`, `g`,
+  `bolometric_intensity`, `observed_temperature`, `phi_radians`, and `null_error`.
+- `pixel_index` identifies the row-major subray for each table row;
+  `ray_offsets[i]:ray_offsets[i+1]` selects ray i's records. A plane hit in the
+  central hole has region 1, material annulus 2, and beyond the outer edge 3.
+  Region 0 means invalid. Nonemitting records retain radius, event, momentum and
+  plane ordinal; they have no valid emitting ordinal or emission frequency.
+- `ray_status`, `ray_reason`, `ray_null_error`, `directions`,
+  `crossing_limit_reached` and `backend` describe the transparent trajectory and
+  numerical/recording limits. Status counts describe full geometry, not physical
+  opaque visibility. Directions are mathematical background continuations.
+- Phi is the nonnegative unwrapped orbital angle to the selected crossing,
+  when recoverable; it is not disk azimuth. ODE angles are unavailable if the
+  dense-angle unwrap fails its step check. Missing emission values use NaN or
+  zero intensity together with explicit validity flags.
+
+`views/` contains the original opaque reference (when available), the independently
+reconstructed first-hit image, each `crossing_N.png`, a crossing-1 foreground
+outline over the selected layer, the adjustable composite, visibility and
+intersection-region maps, emission-radius and cyclic azimuth maps, a valid-hit
+mask, matching crops and a six-panel comparison atlas. Black in a layer image
+means no valid emitting hit at that ordinal, **not necessarily capture**.
+Scientific map color bars and legends are separate from display exposure.
+`target_arrays.npz` and `crops/target_arrays.npz` expose values, masks, plane-hit
+region and presence, emitting ordinal and source crop bounds. Crop enlargement
+is nearest neighbor and adds no new angular information.
+
+The composite overlays the separately tone-mapped, display-linear crossing-1
+image with alpha 0.35 by default over the selected layer. This alpha blend is
+not attenuation, radiative transfer or a physical sum of emitted fluxes. Each
+individual event uses the unchanged emitter velocity, g, g^4 bolometric intensity,
+temperature law and display pipeline. Other layers remain independent images.
+
+`--method auto` uses exact Schwarzschild radial quadrature only for a centered
+static camera outside the annulus. It uses the existing orbital-angle turning
+point quadratures to locate successive plane roots, reconstruct full events and
+momenta, and apply the configured capture/escape/affine limits. Critical or
+numerically unsuitable cases fall back to ODE. `--method ode` uses the original
+Hamiltonian tracer and existing dense plane-root detector on a full trajectory.
+It is useful for validation and general camera configurations. Both methods
+keep distinct radii grouped across workers, evaluate each pixel's own tilted
+disk intersections and retain all requested layers in one pass. Quad constraint
+diagnostics test reconstructed states; they are not claimed as ODE trajectory
+residuals. The ODE cache still follows its natural endpoint for constraint checks
+and reuse, while stored crossings are capped at the requested maximum.
+
+Quick native-sampling window, preserving the original pixel-to-ray projection:
+
+```text
+python -m numerical_observatory.disk_layers --input-render output/disk-edge-on-blackbody-hires --window 248 236 392 266 --workers 5 --crop 0 0 144 30 --output output/layer-window
+```
+
+`--density N` with `--window` explicitly requests genuinely denser angular
+sampling; it is never automatic. Window metadata stores virtual full-camera
+dimensions and pixel origins. View crop bounds then refer to the local window
+image. `--features` selects earlier region masks for continuity analysis; the
+reference masks are used only when their visible-layer samples agree.
+
+The reference result has **4,668 crossing-2 emitting pixels: 4,108 normally
+visible and 560 formerly concealed**. They match the old opaque classification
+exactly. A 4,592-pixel component connects both branch bases and the lower crescent,
+but 24 smaller upper-halo raster components remain. Extra subpixel ray probes
+confirm emission between some missed pixel rows. The report distinguishes this
+raster result from source-map continuity and image-family interpretation.
+`views/continuity.json` and `continuity_arrays.npz` record component labels,
+unchanged feature masks, sampled bridge paths and circular source-coordinate
+differences; no morphological filling is applied.
+
+An explicit small independent audit is reproducible with
+`python examples/validate_disk_layers.py`. It compares stored quadrature states
+against the existing ODE at original and tighter validation tolerances, including
+later emitting hits. It does not repeat the full image integration. The normal
+opaque renderer and its saved format are unchanged.
+
 ## Scientific disk-hit diagnostic maps
 
 Generate maps directly from a completed render with no tracing:

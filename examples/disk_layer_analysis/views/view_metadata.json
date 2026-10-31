@@ -1,0 +1,31 @@
+{
+  "target_crossing": 2,
+  "emitting_subrays": 4668,
+  "normally_visible_subrays": 4108,
+  "concealed_subrays": 560,
+  "alpha": 0.35,
+  "samples": 1,
+  "crop_bounds_xyxy_exclusive": [
+    179,
+    134,
+    461,
+    346
+  ],
+  "enlargement": 4,
+  "palette": "blackbody",
+  "geometry_traced_again": false,
+  "composite": "Diagnostic alpha blend of separately tone-mapped display-linear RGB; not physical transmission or radiative transfer",
+  "ordinal": "Plane-crossing ordinal includes hole and outside-edge crossings; emitting ordinal counts valid material intersections only",
+  "reference_comparison": {
+    "first_hit_category_differences": 0,
+    "unknown_first_hit_due_to_recording_limit": 0,
+    "normally_visible_crossing_2_differences": 0,
+    "max_first_hit_position_difference_M": 2.8648441340066194e-06,
+    "max_g_absolute_difference": 4.7938720770801524e-08,
+    "max_relative_bolometric_difference": 6.467425777145763e-07
+  },
+  "reconstructed_opaque_image_difference": {
+    "max_8bit": 0,
+    "differing_pixels": 0
+  }
+}

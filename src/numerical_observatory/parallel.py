@@ -143,6 +143,9 @@ def _run(task):
         radius = _SCENE[1]
         values = [(index, orbit(angle, radius).direction) for index, angle in task]
         work = (len(task), 0, 0)
+    elif _SCENE[0] == "disk_layers":
+        from .layer_tracing import layer_task
+        values, work = layer_task(_SCENE[1], task)
     else:
         _, metric, camera, integration, domain, symmetry, surface = _SCENE
         cache = (SurfacePathCache(metric, camera, integration, domain, symmetry) if surface is not None

@@ -37,6 +37,9 @@ def make_disk(metric, options=None):
         raise ValueError("disk enabled must be a boolean")
     if not config.enabled:
         return None
+    from .metric import Schwarzschild
+    if type(metric) is not Schwarzschild:
+        raise ValueError("luminous disk physics currently requires Schwarzschild; Kerr disks are not implemented")
     if not np.isfinite([config.inclination_degrees, config.position_angle_degrees]).all():
         raise ValueError("disk orientation must be finite")
     if config.inner_radius <= 3:

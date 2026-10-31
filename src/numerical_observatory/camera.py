@@ -24,6 +24,7 @@ class Camera:
     height: int = 240
     time: float = 0.0
     observer_frame: tuple | None = None
+    observer: str = "static"
 
     def __post_init__(self):
         if (not isinstance(self.width, int) or not isinstance(self.height, int)
@@ -36,6 +37,8 @@ class Camera:
         if np.asarray(self.position).shape != (3,) or not np.isfinite(self.position).all():
             raise ValueError("position must be a finite three-vector")
         self.axes()
+        if self.observer not in ("static", "zamo"):
+            raise ValueError("observer must be static or zamo")
 
     @property
     def event(self):
@@ -59,9 +62,27 @@ class Camera:
         if self.observer_frame is not None:
             frame = np.asarray(self.observer_frame, dtype=float)
             if (frame.shape != (4, 4) or not np.isfinite(frame).all()
+                    or frame[0, 0] <= 0
                     or not np.allclose(frame @ g @ frame.T, ETA, atol=1e-10, rtol=1e-10)):
                 raise ValueError("observer_frame must be an orthonormal tetrad")
             return frame
+        if self.observer == "zamo":
+            from .kerr import Kerr
+            if type(metric) is Kerr:
+                u = metric.zamo_velocity(self.event)
+                # Project the Cartesian coordinate basis into the observer rest
+                # space, then symmetrically orthonormalize its Gram matrix.
+                ucov = g @ u
+                projected = np.column_stack((np.zeros(3), np.eye(3))) + ucov[1:, None]*u
+                gram = projected @ g @ projected.T
+                values, vectors = np.linalg.eigh(gram)
+                if np.any(values <= 0):
+                    raise ValueError("ZAMO rest-space metric is not positive definite")
+                frame = np.vstack((u, ((vectors/np.sqrt(values)) @ vectors.T) @ projected))
+                return frame
+            from .metric import Schwarzschild
+            if type(metric) is not Schwarzschild:
+                raise ValueError("ZAMO observers currently require Kerr or Schwarzschild")
         if g[0, 0] >= 0:
             raise ValueError("coordinate-static observer is not timelike; supply observer_frame")
         rest = g[1:, 1:] - np.outer(g[0, 1:], g[0, 1:])/g[0, 0]

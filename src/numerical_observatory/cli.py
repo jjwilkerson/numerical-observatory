@@ -15,17 +15,29 @@ from .disk import make_disk
 
 def load_configuration(path=None):
     data = {} if path is None else tomllib.loads(Path(path).read_text(encoding="utf-8"))
-    unknown = set(data) - {"mass", "camera", "integration", "background", "disk"}
+    unknown = set(data) - {"mass", "camera", "integration", "background", "disk", "spacetime"}
     if unknown:
         raise ValueError(f"unknown configuration keys: {sorted(unknown)}")
-    metric = Schwarzschild(data.get("mass", 1.0))
+    spacetime = dict(data.get("spacetime", {}))
+    kind = spacetime.pop("type", "schwarzschild")
+    if kind == "kerr":
+        from .kerr import Kerr
+        metric = Kerr(data.get("mass", 1.0), **spacetime)
+    elif kind == "schwarzschild" and not spacetime:
+        metric = Schwarzschild(data.get("mass", 1.0))
+    else:
+        raise ValueError("spacetime must select schwarzschild or kerr (with spin)")
     # Configuration lengths/times are in M, so mass changes preserve the scene.
-    camera_data = asdict(Camera()) | data.get("camera", {})
+    camera_options = dict(data.get("camera", {}))
+    if kind == "kerr":
+        from .kerr_support import inclined_camera_options
+        camera_options = inclined_camera_options(metric, camera_options)
+    camera_data = asdict(Camera()) | camera_options
     for key in ("position", "target"):
         camera_data[key] = tuple(metric.mass * v for v in camera_data[key])
     camera_data["time"] *= metric.mass
     integration_data = asdict(Integration()) | data.get("integration", {})
-    for key in ("capture_radius", "escape_radius", "max_affine", "max_step"):
+    for key in ("capture_radius", "escape_radius", "max_affine", "max_step", "kerr_source_radius"):
         integration_data[key] *= metric.mass
     return metric, Camera(**camera_data), Integration(**integration_data)
 

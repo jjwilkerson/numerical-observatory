@@ -1,0 +1,6 @@
+{
+  "small_background": "PNG bytes and every saved array byte exactly equal; all non-execution diagnostics exactly equal",
+  "disk_moderate": "PNG bytes and every saved array byte exactly equal; all non-execution diagnostics exactly equal",
+  "disk_supersampled": "PNG bytes and every saved array byte exactly equal; all non-execution diagnostics exactly equal",
+  "rotational_reuse": "PNG bytes and every saved array byte exactly equal; all non-execution diagnostics exactly equal"
+}

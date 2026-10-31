@@ -1,0 +1,132 @@
+{
+  "method": "ode_surface",
+  "requested_method": "ode",
+  "quadrature_used": false,
+  "exact_rotational_path_reuse": true,
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      60.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 128,
+    "height": 96,
+    "time": 0.0,
+    "observer_frame": null
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110.0,
+    "capture_radius": 1.99,
+    "max_affine": 400.0,
+    "max_step": 4.0,
+    "null_tolerance": 1e-05
+  },
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 15.0,
+    "latitude_degrees": 18.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "geometry": {
+    "inner_radius": 6.0,
+    "outer_radius": 20.0,
+    "normal": [
+      0.0,
+      0.9961946980917455,
+      0.08715574274765814
+    ]
+  },
+  "emission": {
+    "inner_radius": 6.0,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0
+  },
+  "display": {
+    "exposure": 2.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "thermal"
+  },
+  "rotation": 1,
+  "mass": 1.0,
+  "counts": {
+    "captured": 206,
+    "escaped": 11170,
+    "unresolved": 0,
+    "emitted": 912
+  },
+  "termination_reasons": {
+    "capture_boundary": 206,
+    "first_opaque_surface": 912,
+    "outward_escape": 11170
+  },
+  "max_sampled_null_error": 1.2198561930691296e-08,
+  "samples_per_axis": 1,
+  "elapsed_seconds": 23.997018399997614,
+  "count_units": "subpixel rays",
+  "g_range": [
+    0.4824400599405466,
+    1.4296813628817955
+  ],
+  "crossing_counts": {
+    "1": 746,
+    "2": 160,
+    "3": 6
+  },
+  "intensity_units": "bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
+  "solver_note": "dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit",
+  "integrated_rays": 1338,
+  "total_steps": 61267,
+  "rhs_evaluations": 943677,
+  "execution": {
+    "workers": 20,
+    "requested_workers": 20,
+    "start_method": "spawn",
+    "task_count": 335,
+    "worker_cpu_seconds": 359.71875,
+    "worker_task_seconds": 371.09778620004363,
+    "worker_peak_memory_bytes": {
+      "29800": 79732736,
+      "12600": 79089664,
+      "11480": 79159296,
+      "20736": 79089664,
+      "11164": 79245312,
+      "18008": 79540224,
+      "37808": 79056896,
+      "33292": 79106048,
+      "31068": 79171584,
+      "18016": 79384576,
+      "17356": 78954496,
+      "8584": 79044608,
+      "27904": 79089664,
+      "32832": 79417344,
+      "37680": 79011840,
+      "33152": 79118336,
+      "492": 79642624,
+      "28080": 79372288,
+      "32508": 79679488,
+      "31088": 79499264
+    },
+    "startup_span_seconds": 5.05123400001321,
+    "pool_wall_seconds": 23.97320240001136
+  }
+}

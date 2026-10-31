@@ -1,0 +1,55 @@
+{
+  "representative_temperatures": [
+    {
+      "temperature": 3000.0,
+      "xy": [
+        0.43693112838346715,
+        0.4040738897512596
+      ],
+      "reference_xy": [
+        0.43693063825935785,
+        0.4040736951804813
+      ],
+      "max_normalized_xyz_error": 6.846948876204628e-07
+    },
+    {
+      "temperature": 5800.0,
+      "xy": [
+        0.3259828508093696,
+        0.33531946274615226
+      ],
+      "reference_xy": [
+        0.3259829321663164,
+        0.33531957634688564
+      ],
+      "max_normalized_xyz_error": 1.9495768027733007e-07
+    },
+    {
+      "temperature": 10000.0,
+      "xy": [
+        0.28063378458962523,
+        0.2882884140182368
+      ],
+      "reference_xy": [
+        0.2806338384733,
+        0.28828850126209626
+      ],
+      "max_normalized_xyz_error": 1.411275341034468e-07
+    },
+    {
+      "temperature": 15000.0,
+      "xy": [
+        0.26370636197016206,
+        0.26728007585684344
+      ],
+      "reference_xy": [
+        0.2637062920940862,
+        0.2672800046451162
+      ],
+      "max_normalized_xyz_error": 1.410878031626872e-07
+    }
+  ],
+  "full_range_max_normalized_xyz_error": 2.0784991998645808e-06,
+  "lookup_only_max_normalized_xyz_error": 6.222292468077706e-08,
+  "thermal_repaint_max_8bit_difference_vs_saved_image": 0
+}

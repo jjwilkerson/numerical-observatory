@@ -3,6 +3,7 @@ import argparse
 from dataclasses import asdict
 from pathlib import Path
 import tomllib
+import time
 
 from .camera import Camera
 from .background import make_background
@@ -38,6 +39,8 @@ def main():
     parser.add_argument("--background", choices=("starfield", "grid"), help="override background mode")
     parser.add_argument("--method", choices=("ode", "quadrature"), default="ode")
     parser.add_argument("--samples", type=int, default=1, help="subpixel samples per image axis")
+    parser.add_argument("--workers", type=int, default=1,
+                        help="CPU processes: 1 serial (default), 0 automatic physical-core selection")
     parser.add_argument("--disk", action=argparse.BooleanOptionalAction, default=None,
                         help="override the optional disk enabled state (--no-disk disables it)")
     args = parser.parse_args()
@@ -48,9 +51,20 @@ def main():
             if getattr(args, key) is not None:
                 camera_data[key] = getattr(args, key)
         camera = Camera(**camera_data)
+        started, last_update = time.perf_counter(), [0.]
         def progress(row, total):
-            if row % max(1, total // 8) == 0 or row == total:
-                print(f"Rows {row}/{total}", flush=True)
+            elapsed = time.perf_counter()-started
+            if row == total or elapsed-last_update[0] >= 5:
+                estimate = elapsed*(total-row)/row if row else float("inf")
+                print(f"Completed rows {row}/{total}; elapsed {elapsed:.1f}s; estimated remaining {estimate:.1f}s", flush=True)
+                last_update[0] = elapsed
+        def work_progress(done, total, pixels, total_pixels):
+            elapsed = time.perf_counter()-started
+            if elapsed-last_update[0] >= 5:
+                estimate = elapsed*(total_pixels-pixels)/pixels if pixels else float("inf")
+                print(f"Completed batches {done}/{total}, work units {pixels}/{total_pixels}; elapsed {elapsed:.1f}s; estimated remaining {estimate:.1f}s", flush=True)
+                last_update[0] = elapsed
+        progress.work = work_progress
         data = {} if args.config is None else tomllib.loads(args.config.read_text(encoding="utf-8"))
         background_options = data.get("background", {})
         if args.background:
@@ -61,8 +75,10 @@ def main():
             disk_options["enabled"] = args.disk
         disk = make_disk(metric, disk_options)
         diagnostics = render(metric, camera, integration, args.output, progress, background,
-                             method=args.method, samples=args.samples, disk=disk)
-    except (ValueError, TypeError, OSError) as exc:
+                             method=args.method, samples=args.samples, disk=disk, workers=args.workers)
+    except KeyboardInterrupt:
+        parser.exit(130, "Render interrupted; workers stopped; no incomplete render published.\n")
+    except (ValueError, TypeError, OSError, RuntimeError) as exc:
         parser.error(str(exc))
     print(f"Saved {args.output / 'shadow.png'} and diagnostics.json")
     print(diagnostics["counts"])

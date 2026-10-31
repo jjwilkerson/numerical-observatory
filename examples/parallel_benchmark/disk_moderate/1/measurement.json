@@ -1,0 +1,27 @@
+{
+  "wall_seconds": 145.94822140000178,
+  "parent_cpu_seconds": 145.59375,
+  "rendering_cpu_seconds": 145.59375,
+  "cpu_core_equivalents": 0.9975712523482538,
+  "parent_peak_memory_bytes": 542658560,
+  "worker_sum_peak_memory_bytes": 0,
+  "scene": {
+    "width": 128,
+    "height": 96,
+    "samples": 1,
+    "disk": true,
+    "method": "ode",
+    "background": "starfield"
+  },
+  "counts": {
+    "captured": 206,
+    "escaped": 11170,
+    "unresolved": 0,
+    "emitted": 912
+  },
+  "integrated_rays": 1338,
+  "distinct_orbits": null,
+  "execution": {},
+  "workers": 1,
+  "case": "disk_moderate"
+}

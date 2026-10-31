@@ -32,10 +32,13 @@ def save_image(path, image):
     Image.fromarray(np.uint8(np.round(np.clip(image, 0, 1)*255))).save(path)
 
 
-def render_quadrature(metric, camera, integration, output, background, samples=1):
+def render_quadrature(metric, camera, integration, output, background, samples=1, workers=1, progress=None):
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
-    directions, status, count = ray_map(metric, camera, samples)
+    execution = {}
+    directions, status, count = ray_map(metric, camera, samples, workers=workers, execution=execution, progress=progress)
+    if progress:
+        progress(camera.height*samples, camera.height*samples)
     save_image(output/"shadow.png", shade(directions, status, background, samples))
     np.savez_compressed(output/"rays.npz", directions=directions, status=status, samples=samples)
     report = dict(method="Schwarzschild orbital quadrature", camera=asdict(camera),
@@ -44,6 +47,8 @@ def render_quadrature(metric, camera, integration, output, background, samples=1
                   counts={key: int(np.count_nonzero(status == code)) for code, key in
                           enumerate(("captured", "escaped", "unresolved"))},
                   diagnostic_scope="Counts are subpixel rays; no ODE null residual is inferred for quadrature rays.")
+    if execution:
+        report["execution"] = execution
     (output/"diagnostics.json").write_text(json.dumps(report, indent=2)+"\n", encoding="utf-8")
     return report
 

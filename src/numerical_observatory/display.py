@@ -6,6 +6,7 @@ from scipy.constants import sigma, c
 
 from .background import linear_to_srgb
 from .emission import planck_nu
+from .blackbody_color import blackbody_rgb
 
 
 def srgb_to_linear(rgb):
@@ -24,7 +25,7 @@ class DiskDisplay:
         if (not np.isfinite([self.exposure, self.reference_temperature]).all()
                 or self.exposure <= 0 or self.reference_temperature <= 0
                 or self.tone_mapping not in ("reinhard", "linear")
-                or self.palette not in ("thermal", "gray")):
+                or self.palette not in ("thermal", "gray", "blackbody")):
             raise ValueError("invalid disk display settings")
 
     def linear_rgb(self, intensity, observed_temperature):
@@ -33,6 +34,8 @@ class DiskDisplay:
             level = level/(1+level)
         if self.palette == "gray":
             color = np.ones(level.shape+(3,))
+        elif self.palette == "blackbody":
+            color = blackbody_rgb(observed_temperature)
         else:
             # Illustrative three-band color, NOT CIE or a calibrated camera RGB.
             color = planck_nu(c/np.array([650e-9, 550e-9, 450e-9]), np.asarray(observed_temperature)[..., None])

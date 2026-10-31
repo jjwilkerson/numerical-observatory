@@ -1,0 +1,76 @@
+{
+  "method": "Schwarzschild orbital quadrature",
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      60.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 64,
+    "height": 48,
+    "time": 0.0,
+    "observer_frame": null
+  },
+  "mass": 1.0,
+  "background": {
+    "model": "celestial coordinate grid",
+    "longitude_degrees": 15.0,
+    "latitude_degrees": 18.0,
+    "roll_degrees": 25.0,
+    "spacing_degrees": 15.0,
+    "line_width_degrees": 0.25,
+    "legend": "cool cyan/blue meridians; warm red/gold parallels; gray minor lines at spacing/3",
+    "accretion_disk": false
+  },
+  "samples_per_axis": 1,
+  "distinct_orbits": 364,
+  "counts": {
+    "captured": 68,
+    "escaped": 3004,
+    "unresolved": 0
+  },
+  "diagnostic_scope": "Counts are subpixel rays; no ODE null residual is inferred for quadrature rays.",
+  "execution": {
+    "workers": 20,
+    "requested_workers": 20,
+    "start_method": "spawn",
+    "task_count": 23,
+    "worker_cpu_seconds": 0.046875,
+    "worker_task_seconds": 0.06314270001894329,
+    "worker_peak_memory_bytes": {
+      "35684": 78819328,
+      "36224": 78258176,
+      "27324": 78565376,
+      "18336": 78397440,
+      "22824": 77787136,
+      "24908": 78106624,
+      "25476": 78143488,
+      "6884": 78483456,
+      "36736": 78315520,
+      "9496": 78221312,
+      "36080": 78053376,
+      "37080": 78069760,
+      "6008": 78155776,
+      "11860": 78372864,
+      "8108": 78036992,
+      "12436": 78180352,
+      "31748": 78221312,
+      "16560": 78176256,
+      "35720": 78360576,
+      "14880": 78344192
+    },
+    "startup_span_seconds": 4.90305680000165,
+    "pool_wall_seconds": 5.015734999993583
+  }
+}

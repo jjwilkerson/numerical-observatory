@@ -27,19 +27,26 @@ class SurfacePathCache:
         self.enabled = enabled and compatible(metric, camera) and domain is None
         self.forward, self.right, self.up = camera.axes()
         self.paths = {}
+        self.integrated_rays = self.steps = self.evaluations = 0
+
+    def _trace(self, momentum):
+        sol = trace(self.metric, self.camera.event, momentum, self.integration,
+                    domain=self.domain, return_solution=True)[1]
+        self.integrated_rays += 1
+        self.steps += len(sol.t)-1
+        self.evaluations += sol.nfev
+        return sol
 
     def solution(self, row, col, momentum):
         camera = self.camera
         ix, iy = 2*col+1-camera.width, camera.height-2*row-1
         key = ix*ix+iy*iy
         if not self.enabled:
-            return trace(self.metric, camera.event, momentum, self.integration,
-                         domain=self.domain, return_solution=True)[1]
+            return self._trace(momentum)
         if key not in self.paths:
             offset = np.sqrt(key)*np.tan(np.deg2rad(camera.fov_degrees)/2)/camera.width
             canonical = camera.momentum(self.metric, self.forward+offset*self.right)
-            self.paths[key] = trace(self.metric, camera.event, canonical, self.integration,
-                                    return_solution=True)[1]
+            self.paths[key] = self._trace(canonical)
         sol = self.paths[key]
         if key == 0:
             return sol
@@ -58,7 +65,9 @@ class SurfacePathCache:
 
 def render_surface(metric, camera, integration, output, scene, background=None,
                    samples=1, domain=None, progress=None, path_cache=None, requested_method="ode",
-                   use_symmetry=True):
+                   use_symmetry=True, workers=1):
+    from .parallel import resolve_workers
+    workers = resolve_workers(workers)
     from dataclasses import replace
     if not isinstance(samples, int) or samples < 1:
         raise ValueError("samples must be a positive integer")
@@ -73,6 +82,12 @@ def render_surface(metric, camera, integration, output, scene, background=None,
         raise ValueError("supplied path cache enables disabled symmetry reuse")
     if abs(scene.surface.level(camera.event)) < 1e-10 and scene.surface.contains(camera.event):
         raise ValueError("camera cannot lie on the opaque emitting surface")
+    if workers > 1:
+        if path_cache is not None:
+            raise ValueError("parallel rendering cannot accept an external dense path cache; use workers=1")
+        from .parallel import ParallelRays
+        cache = ParallelRays(metric, sampled, integration, workers, use_symmetry, domain, scene.surface)
+    initial_work = (cache.integrated_rays, cache.steps, cache.evaluations)
     h, w = sampled.height, sampled.width
     codes = np.zeros((h, w), dtype=np.uint8)
     shift = np.full((h, w), np.nan)
@@ -86,34 +101,44 @@ def render_surface(metric, camera, integration, output, scene, background=None,
     null_max = 0.0
     counts, reasons = Counter(), Counter()
     start = time.perf_counter()
-    for row, col, momentum in sampled.rays(metric):
-        sol = cache.solution(row, col, momentum)
-        result = summarize_solution(metric, sampled.event, momentum, integration, sol, domain=domain,
-                                    builtin_domain=cache.domain is None, surface=scene.surface)
-        counts[result.status] += 1
-        reasons[result.reason] += 1
-        null_max = max(null_max, result.max_null_error)
-        if result.status == "emitted":
-            hit = result.hit
-            g = frequency_shift(momentum, observer, hit.momentum, scene.motion.four_velocity(hit.event))
-            bolometric = scene.emission.observed_bolometric(hit.event, g)
-            observed_temperature = g*scene.emission.temperature(hit.event)
-            codes[row, col] = 3
-            shift[row, col], intensity[row, col] = g, bolometric
-            temperature[row, col] = observed_temperature
-            hit_radius[row, col] = np.linalg.norm(hit.event[1:4])
-            hit_position[row, col] = hit.event[1:4]
-            crossing[row, col] = hit.crossing_index
-            rgb[row, col] = scene.display.linear_rgb(bolometric, observed_temperature)
-        elif result.status == "escaped":
-            codes[row, col] = 1
-            directions[row, col] = result.direction
-            rgb[row, col] = srgb_to_linear(background.color(result.direction))
-        elif result.status == "unresolved":
-            codes[row, col] = 2
-            rgb[row, col] = (1, 0, 0.7)
-        if progress and col == w-1:
-            progress(row+1, h)
+    def serial_results():
+        for row, col, momentum in sampled.rays(metric):
+            sol = cache.solution(row, col, momentum)
+            result = summarize_solution(metric, sampled.event, momentum, integration, sol, domain=domain,
+                                        builtin_domain=cache.domain is None, surface=scene.surface)
+            yield row, col, momentum, result
+    results = cache.results(progress) if workers > 1 else serial_results()
+    remaining, completed = np.full(h, w), 0
+    from contextlib import closing
+    with closing(results):
+        for row, col, momentum, result in results:
+            counts[result.status] += 1
+            reasons[result.reason] += 1
+            null_max = max(null_max, result.max_null_error)
+            if result.status == "emitted":
+                hit = result.hit
+                g = frequency_shift(momentum, observer, hit.momentum, scene.motion.four_velocity(hit.event))
+                bolometric = scene.emission.observed_bolometric(hit.event, g)
+                observed_temperature = g*scene.emission.temperature(hit.event)
+                codes[row, col] = 3
+                shift[row, col], intensity[row, col] = g, bolometric
+                temperature[row, col] = observed_temperature
+                hit_radius[row, col] = np.linalg.norm(hit.event[1:4])
+                hit_position[row, col] = hit.event[1:4]
+                crossing[row, col] = hit.crossing_index
+                rgb[row, col] = scene.display.linear_rgb(bolometric, observed_temperature)
+            elif result.status == "escaped":
+                codes[row, col] = 1
+                directions[row, col] = result.direction
+                rgb[row, col] = srgb_to_linear(background.color(result.direction))
+            elif result.status == "unresolved":
+                codes[row, col] = 2
+                rgb[row, col] = (1, 0, 0.7)
+            remaining[row] -= 1
+            if remaining[row] == 0:
+                completed += 1
+                if progress:
+                    progress(completed, h)
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     image = linear_to_srgb(rgb.reshape(camera.height, samples, camera.width, samples, 3).mean(axis=(1, 3)))
@@ -134,6 +159,10 @@ def render_surface(metric, camera, integration, output, scene, background=None,
                   crossing_counts={str(int(i)): int(np.count_nonzero(crossing == i)) for i in np.unique(crossing[emitted])},
                   intensity_units="bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
                   solver_note="dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit")
+    report.update(integrated_rays=cache.integrated_rays-initial_work[0], total_steps=cache.steps-initial_work[1],
+                  rhs_evaluations=cache.evaluations-initial_work[2])
+    if workers > 1:
+        report["execution"] = cache.statistics
     (output/"diagnostics.json").write_text(json.dumps(report, indent=2, allow_nan=False)+"\n", encoding="utf-8")
     return report
 

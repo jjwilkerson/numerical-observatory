@@ -1,0 +1,115 @@
+{
+  "method": "ode_surface",
+  "requested_method": "ode",
+  "quadrature_used": false,
+  "exact_rotational_path_reuse": true,
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      60.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 24,
+    "height": 18,
+    "time": 0.0,
+    "observer_frame": null
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 110.0,
+    "capture_radius": 1.99,
+    "max_affine": 400.0,
+    "max_step": 4.0,
+    "null_tolerance": 1e-05
+  },
+  "background": {
+    "model": "celestial coordinate grid",
+    "longitude_degrees": 15.0,
+    "latitude_degrees": 18.0,
+    "roll_degrees": 25.0,
+    "spacing_degrees": 15.0,
+    "line_width_degrees": 0.25,
+    "legend": "cool cyan/blue meridians; warm red/gold parallels; gray minor lines at spacing/3",
+    "accretion_disk": false
+  },
+  "geometry": {
+    "inner_radius": 6.0,
+    "outer_radius": 20.0,
+    "normal": [
+      0.0,
+      0.9961946980917455,
+      0.08715574274765814
+    ]
+  },
+  "emission": {
+    "inner_radius": 6.0,
+    "temperature_inner": 10000.0,
+    "temperature_index": 0.75,
+    "emissivity_scale": 1.0
+  },
+  "display": {
+    "exposure": 2.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "thermal"
+  },
+  "rotation": 1,
+  "mass": 1.0,
+  "counts": {
+    "captured": 30,
+    "escaped": 1566,
+    "unresolved": 0,
+    "emitted": 132
+  },
+  "termination_reasons": {
+    "capture_boundary": 30,
+    "first_opaque_surface": 132,
+    "outward_escape": 1566
+  },
+  "max_sampled_null_error": 1.0075005427635546e-08,
+  "samples_per_axis": 2,
+  "elapsed_seconds": 7.167903199995635,
+  "count_units": "subpixel rays",
+  "g_range": [
+    0.5411270485175593,
+    1.3145717505670624
+  ],
+  "crossing_counts": {
+    "1": 108,
+    "2": 24
+  },
+  "intensity_units": "bolometric radiance W m^-2 sr^-1 (toy blackbody); display RGB illustrative",
+  "solver_note": "dense geometry may extend past first hit for reuse; radiance and constraint diagnostics stop at first opaque hit",
+  "integrated_rays": 214,
+  "total_steps": 9809,
+  "rhs_evaluations": 151355,
+  "execution": {
+    "workers": 5,
+    "requested_workers": 5,
+    "start_method": "spawn",
+    "task_count": 54,
+    "worker_cpu_seconds": 24.328125,
+    "worker_task_seconds": 24.40772480009764,
+    "worker_peak_memory_bytes": {
+      "33400": 79269888,
+      "34372": 79060992,
+      "24220": 78983168,
+      "31444": 78921728,
+      "35864": 79233024
+    },
+    "startup_span_seconds": 2.0671874999970896,
+    "pool_wall_seconds": 7.139678699997603
+  }
+}

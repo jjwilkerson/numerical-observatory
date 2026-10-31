@@ -1,0 +1,27 @@
+{
+  "wall_seconds": 22.188436700002057,
+  "parent_cpu_seconds": 22.0625,
+  "rendering_cpu_seconds": 22.0625,
+  "cpu_core_equivalents": 0.994324219335288,
+  "parent_peak_memory_bytes": 93450240,
+  "worker_sum_peak_memory_bytes": 0,
+  "scene": {
+    "width": 24,
+    "height": 18,
+    "samples": 2,
+    "disk": true,
+    "method": "ode",
+    "background": "grid"
+  },
+  "counts": {
+    "captured": 30,
+    "escaped": 1566,
+    "unresolved": 0,
+    "emitted": 132
+  },
+  "integrated_rays": 214,
+  "distinct_orbits": null,
+  "execution": {},
+  "workers": 1,
+  "case": "disk_supersampled"
+}

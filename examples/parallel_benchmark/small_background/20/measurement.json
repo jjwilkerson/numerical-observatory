@@ -1,0 +1,57 @@
+{
+  "wall_seconds": 5.0893423999950755,
+  "parent_cpu_seconds": 0.171875,
+  "rendering_cpu_seconds": 0.21875,
+  "cpu_core_equivalents": 0.042981977396571246,
+  "parent_peak_memory_bytes": 83013632,
+  "worker_sum_peak_memory_bytes": 1565069312,
+  "scene": {
+    "width": 64,
+    "height": 48,
+    "samples": 1,
+    "disk": false,
+    "method": "quadrature",
+    "background": "grid"
+  },
+  "counts": {
+    "captured": 68,
+    "escaped": 3004,
+    "unresolved": 0
+  },
+  "integrated_rays": null,
+  "distinct_orbits": 364,
+  "execution": {
+    "workers": 20,
+    "requested_workers": 20,
+    "start_method": "spawn",
+    "task_count": 23,
+    "worker_cpu_seconds": 0.046875,
+    "worker_task_seconds": 0.06314270001894329,
+    "worker_peak_memory_bytes": {
+      "35684": 78819328,
+      "36224": 78258176,
+      "27324": 78565376,
+      "18336": 78397440,
+      "22824": 77787136,
+      "24908": 78106624,
+      "25476": 78143488,
+      "6884": 78483456,
+      "36736": 78315520,
+      "9496": 78221312,
+      "36080": 78053376,
+      "37080": 78069760,
+      "6008": 78155776,
+      "11860": 78372864,
+      "8108": 78036992,
+      "12436": 78180352,
+      "31748": 78221312,
+      "16560": 78176256,
+      "35720": 78360576,
+      "14880": 78344192
+    },
+    "startup_span_seconds": 4.90305680000165,
+    "pool_wall_seconds": 5.015734999993583
+  },
+  "workers": 20,
+  "case": "small_background"
+}

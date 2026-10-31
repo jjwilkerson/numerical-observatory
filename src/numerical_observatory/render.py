@@ -1,4 +1,4 @@
-"""Serial CPU rendering, portable image output, and compact JSON diagnostics."""
+"""CPU rendering with optional spawn workers, portable output and diagnostics."""
 from collections import Counter
 from dataclasses import asdict, replace
 import json
@@ -17,7 +17,16 @@ from .schwarzschild_orbit import compatible
 
 
 def render(metric, camera, integration, output, progress=None, background=None,
-           use_symmetry=True, domain=None, method="ode", samples=1, disk=None):
+           use_symmetry=True, domain=None, method="ode", samples=1, disk=None, workers=1):
+    from .parallel import resolve_workers
+    from .output import staged_render
+    selected = resolve_workers(workers)
+    return staged_render(output, lambda stage: _render(metric, camera, integration, stage, progress,
+                         background, use_symmetry, domain, method, samples, disk, selected))
+
+
+def _render(metric, camera, integration, output, progress=None, background=None,
+            use_symmetry=True, domain=None, method="ode", samples=1, disk=None, workers=1):
     if method not in ("ode", "quadrature"):
         raise ValueError("method must be ode or quadrature")
     if not isinstance(samples, int) or samples < 1:
@@ -25,17 +34,18 @@ def render(metric, camera, integration, output, progress=None, background=None,
     if disk is not None:
         from .surface_render import render_surface
         return render_surface(metric, camera, integration, output, disk, background, samples,
-                              domain, progress, requested_method=method, use_symmetry=use_symmetry)
+                              domain, progress, requested_method=method, use_symmetry=use_symmetry, workers=workers)
     if method == "quadrature" and compatible(metric, camera) and domain is None:
         from .diagnostic_render import render_quadrature
         return render_quadrature(metric, camera, integration, output,
-                                 Starfield() if background is None else background, samples)
+                                 Starfield() if background is None else background, samples, workers=workers,
+                                 progress=progress)
     if samples > 1:
         from .diagnostic_render import shade, save_image
         background = Starfield() if background is None else background
         sampled_camera = replace(camera, width=camera.width*samples, height=camera.height*samples)
-        report = render(metric, sampled_camera, integration, output, progress, background,
-                        use_symmetry=use_symmetry, domain=domain, method="ode")
+        report = _render(metric, sampled_camera, integration, output, progress, background,
+                         use_symmetry=use_symmetry, domain=domain, method="ode", workers=workers)
         output = Path(output)
         with np.load(output/"rays.npz") as rays:
             directions, status = rays["directions"], rays["status"]
@@ -50,28 +60,40 @@ def render(metric, camera, integration, output, progress=None, background=None,
     image = np.zeros((camera.height, camera.width, 3))
     background = Starfield() if background is None else background
     tracer = CenteredRayCache(metric, camera, integration, enabled=use_symmetry, domain=domain)
+    if workers > 1:
+        from .parallel import ParallelRays
+        tracer = ParallelRays(metric, camera, integration, workers, use_symmetry, domain)
     directions = np.full((camera.height, camera.width, 3), np.nan)
     statuses = np.zeros((camera.height, camera.width), dtype=np.uint8)
     counts, reasons = Counter(), Counter()
     maxima = dict(null_error=0.0, energy_drift=0.0, angular_momentum_drift=0.0)
     start = time.perf_counter()
-    for row, col, momentum in camera.rays(metric):
-        result = tracer.ray(row, col, momentum)
-        counts[result.status] += 1
-        reasons[result.reason] += 1
-        if result.status == "escaped":
-            directions[row, col] = result.direction
-            statuses[row, col] = 1
-            image[row, col] = background.color(result.direction)
-        elif result.status == "unresolved":
-            statuses[row, col] = 2
-            image[row, col] = (1.0, 0.0, 0.7)
-        maxima["null_error"] = max(maxima["null_error"], result.max_null_error)
-        for key in ("energy_drift", "angular_momentum_drift"):
-            value = getattr(result, key)
-            maxima[key] = max(maxima[key], value) if value is not None else None
-        if progress and col == camera.width - 1:
-            progress(row + 1, camera.height)
+    remaining = np.full(camera.height, camera.width)
+    completed = 0
+    results = (tracer.results(progress) if workers > 1 else
+               ((row, col, momentum, tracer.ray(row, col, momentum))
+                for row, col, momentum in camera.rays(metric)))
+    from contextlib import closing
+    with closing(results):
+        for row, col, momentum, result in results:
+            counts[result.status] += 1
+            reasons[result.reason] += 1
+            if result.status == "escaped":
+                directions[row, col] = result.direction
+                statuses[row, col] = 1
+                image[row, col] = background.color(result.direction)
+            elif result.status == "unresolved":
+                statuses[row, col] = 2
+                image[row, col] = (1.0, 0.0, 0.7)
+            maxima["null_error"] = max(maxima["null_error"], result.max_null_error)
+            for key in ("energy_drift", "angular_momentum_drift"):
+                value = getattr(result, key)
+                maxima[key] = max(maxima[key], value) if value is not None else None
+            remaining[row] -= 1
+            if remaining[row] == 0:
+                completed += 1
+                if progress:
+                    progress(completed, camera.height)
     radius = np.linalg.norm(camera.position)
     diagnostics = {
         "method": "ode", "requested_method": method,
@@ -88,6 +110,8 @@ def render(metric, camera, integration, output, progress=None, background=None,
         "analytic_shadow_radius_degrees": float(np.rad2deg(metric.shadow_angle(radius))) if type(metric) is Schwarzschild and radius > 3*metric.mass else None,
         "background": background.description,
     }
+    if workers > 1:
+        diagnostics["execution"] = tracer.statistics
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     Image.fromarray(np.uint8(np.round(np.clip(image, 0, 1) * 255))).save(output / "shadow.png")

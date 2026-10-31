@@ -52,12 +52,14 @@ def compatible(metric, camera):
                 and np.linalg.norm(camera.axes()[0]+np.asarray(camera.position)/radius) < 1e-14)
 
 
-def ray_map(metric, camera, samples=1, window=None):
+def ray_map(metric, camera, samples=1, window=None, workers=1, execution=None, progress=None):
     """Subpixel ray directions with exact rotational reuse; explicit guard.
 
     Each subpixel follows its own orbit; there is no direction interpolation.
     Near machine-precision-critical rays are unresolved rather than captured.
     """
+    from .parallel import resolve_workers
+    workers = resolve_workers(workers)
     if not compatible(metric, camera):
         raise ValueError("Schwarzschild quadrature is incompatible with this metric or camera; use the ODE tracer")
     if not isinstance(samples, int) or samples < 1:
@@ -80,8 +82,17 @@ def ray_map(metric, camera, samples=1, window=None):
     ambiguous = np.abs(angles-critical) <= 32*np.finfo(float).eps
     escaped = (angles > critical) & ~ambiguous
     orbits = np.full((len(keys), 3), np.nan)
-    for i in np.flatnonzero(escaped):
-        orbits[i] = orbit(angles[i], radius/metric.mass).direction
+    if workers > 1 and escaped.any():
+        from .parallel import parallel_orbits
+        ids = np.flatnonzero(escaped)
+        results, statistics = parallel_orbits(angles[ids], radius/metric.mass, workers, progress)
+        for i, value in results.items():
+            orbits[ids[i]] = value
+        if execution is not None:
+            execution.update(statistics)
+    else:
+        for i in np.flatnonzero(escaped):
+            orbits[i] = orbit(angles[i], radius/metric.mass).direction
     mapped = orbits[reverse].reshape(*k.shape, 3)
     transverse = (ix[..., None]*right+iy[..., None]*up)/np.maximum(np.sqrt(k)[..., None], 1)
     directions = mapped[..., 0, None]*transverse-mapped[..., 2, None]*forward

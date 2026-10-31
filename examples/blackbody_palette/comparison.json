@@ -1,0 +1,17 @@
+{
+  "source": "examples\\disks\\edge_on_starfield",
+  "source_rays_sha256": "14024a608ed4ecf763e00d8395e8ff091d8a6f8166dfd041a812ddee70648098",
+  "geodesics_retraced": false,
+  "observed_temperature_range": [
+    3086.054092191508,
+    13967.681630245394
+  ],
+  "display": {
+    "exposure": 2.0,
+    "reference_temperature": 10000.0,
+    "tone_mapping": "reinhard",
+    "palette": "thermal"
+  },
+  "changed_parameter": "palette only",
+  "cie_data_license": "CC BY-SA 4.0; see src/numerical_observatory/data/ATTRIBUTION.md"
+}

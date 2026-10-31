@@ -20,7 +20,7 @@ numerical-observatory = "numerical_observatory.cli:main"
 where = ["src"]
 
 [tool.setuptools.package-data]
-numerical_observatory = ["data/*.jpg", "data/*.md"]
+numerical_observatory = ["data/*.jpg", "data/*.md", "data/*.csv", "data/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

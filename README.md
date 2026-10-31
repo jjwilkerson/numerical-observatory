@@ -77,6 +77,60 @@ and escaped directions. Status codes are 0 captured, 1 escaped, 2 unresolved,
 it is not a calibrated color observation. `palette="gray"` and
 `tone_mapping="linear"` are alternatives. Starfield exposure is independent.
 
+For CIE-based thermal color, set `palette = "blackbody"` in `[disk.display]`.
+The default remains `"thermal"`; `"gray"` is also available. The blackbody palette
+integrates Planck **spectral radiance per wavelength** against the standard
+CIE 1931 2° color-matching functions over 360–830 nm. It uses the **observed**
+temperature `g*T_emitted`, already stored by the renderer. Only chromaticity is
+retained: the existing observed bolometric radiance (including g⁴), exposure,
+and tone mapping supply brightness. There is no extra Doppler multiplier or
+visible-flux weighting of the saved intensity.
+
+The bundled, unmodified 1 nm CIE table comes from
+[CIE 018:2019, Table 6](https://doi.org/10.25039/CIE.DS.xvudnb9b), licensed
+CC BY-SA 4.0; original metadata, checksums, attribution and license links are in
+`src/numerical_observatory/data/ATTRIBUTION.md`. No new dependency is required.
+A lazy 4,097-entry log-temperature lookup (1,000–10,000,000 K) avoids spectral
+integration per pixel. Positive temperatures outside that range use endpoint
+chromaticities, without clamping physical temperature or intensity. Invalid
+nonpositive/nonfinite display temperatures raise an error.
+
+XYZ is converted to linear sRGB using a matrix derived from the
+[standard sRGB primaries and D65 white point](https://registry.color.org/rgb-registry/srgb).
+These are self-luminous source colors: no chromatic adaptation or per-temperature
+white balancing is applied, and there is no D50 ICC profile-connection step.
+In particular, a 6,504 K Planck spectrum is not assumed identical to daylight D65.
+Negative out-of-gamut RGB channels are clipped to zero, then the largest channel
+is normalized to one. The existing bolometric display level multiplies that
+color, and final channels are clipped to [0,1] before standard sRGB encoding.
+Thus the brightness control retains its existing maximum-channel convention;
+it does not promise constant photopic luminance or a calibrated visible-light
+flux. Gamut clipping changes chromaticity for very cool sources. Actual
+appearance also depends on exposure, tone mapping, display gamut and viewing
+conditions. The palette adds no artistic orange bias.
+
+The tests compare the lookup against independent SI Planck-frequency integration
+with the wavelength Jacobian and 0.25 nm Simpson quadrature: normalized XYZ agrees
+within 3e-6 across the supported range, and within 2e-6 at 3,000, 5,800, 10,000
+and 15,000 K. Lookup interpolation alone agrees with direct 1 nm integration
+within 3e-7. These are numerical colorimetry checks, not guarantees about human
+appearance.
+
+Recolor an existing completed render without retracing or changing its files:
+
+```text
+python examples/compare_disk_palettes.py
+```
+
+This reads `examples/disks/edge_on_starfield/disk_rays.npz` and writes a labelled
+comparison plus individual images to the separate `examples/blackbody_palette/`
+directory. It changes only the palette; background, physical intensities,
+frequency shifts, exposure and tone mapping are identical. `--source` and
+`--output` select other completed ray data and a separate destination. The
+script does not consult or modify the high-resolution render configuration.
+
+![Thermal and blackbody palettes](examples/blackbody_palette/comparison.png)
+
 Disk tracing uses the general ODE path even when `--method quadrature` is
 requested; diagnostics record this fallback. Plane crossings through the inner
 hole or outside the outer radius are skipped, and the first valid opaque hit
@@ -113,6 +167,108 @@ Settings are in `examples/composition.toml`. After setup, the commands below
 regenerate both backgrounds, unlensed references, a labelled grid atlas, a freshly
 traced near-shadow close-up, and quantitative diagnostics in `examples/validated/`.
 Historical renders remain in `examples/composition/` and `examples/rendered/`.
+
+## Parallel CPU rendering
+
+`--workers 1` retains serial rendering and is the default. `--workers N` enables
+up to N spawned processes for N>1. `--workers 0` selects available physical CPU
+cores when Windows topology or Linux sysfs can identify them, intersecting the
+result with process CPU affinity. If physical topology is unavailable, it uses
+half the available logical CPUs, rounded up (at least one). Here it detects
+10 physical cores and 20 logical CPUs, so automatic selection is 10. Containers
+with CPU quotas that do not restrict affinity may require an explicit count.
+For very small workloads the pool is capped to the number of work batches;
+diagnostics record both requested and selected pool sizes. Windows allows at
+most 61 workers. Negative counts are errors.
+
+Windows PowerShell (after setup):
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory --config examples/disk_edge_on.toml --workers 0 --output output/disk-edge-on-auto
+.\.venv\Scripts\python -m numerical_observatory --config examples/disk_edge_on.toml --workers 5 --samples 2 --background grid --output output/disk-grid-parallel
+```
+
+Ubuntu:
+
+```bash
+.venv/bin/python -m numerical_observatory --config examples/disk_edge_on.toml --workers 0 --output output/disk-edge-on-auto
+.venv/bin/python -m numerical_observatory --config examples/disk_edge_on.toml --workers 5 --samples 2 --background grid --output output/disk-grid-parallel
+```
+
+Spawn is used on both platforms. Python callers must put rendering inside
+`if __name__ == "__main__":`; metric, surface and custom domain objects must be
+pickleable, with functions/classes defined at module scope. The normal CLI
+already handles this. An explicitly supplied dense `path_cache` remains a
+serial-only API; parallel rendering creates its own exact orbit tasks.
+
+Tasks are dynamically scheduled, with at most twice the worker count in flight.
+General ODE views use 64-pixel linear tiles. Centered Schwarzschild views group
+all pixels with the same image-plane radius, batching four distinct radii per
+task. Each representative trajectory is integrated exactly once across the
+whole pool; every disk ray still evaluates its own rotated trajectory, surface
+crossings and emitter state. Quadrature groups sixteen escaping orbits per
+task. There is no trajectory interpolation or change to integration tolerances.
+The parent assembles results by pixel coordinates, shades the sky/disk with
+the original display code and averages subpixels in the original order.
+
+Worker scenes initialize once; large star textures and final image arrays live
+only in the parent. Dense trajectories stay within their worker and are released
+between batches. Small ray results cross process boundaries. NumPy/BLAS thread
+counts are set to one in spawned workers to avoid multiplying process parallelism
+by library thread parallelism; the parent's environment is restored afterward.
+Each process still incurs Python/NumPy/SciPy memory and startup costs. Small
+quadrature renders can be much faster with one worker. Parent-side display,
+assembly, compression, communication and serial work limit total speedup.
+Hyper-Threading shares physical core resources: 20 workers need benchmarking
+against 5 and 10, rather than an assumed 2× gain. On this 10-core/20-thread
+Windows computer, **10 workers is the measured recommendation**. The 128×96
+disk benchmark took 145.95 s serially, 33.33 s with 5 workers, 23.04 s with 10,
+and 24.41 s with 20. Three-run medians confirmed 10 (22.37 s) ahead of 20
+(24.04 s): approximately 6.5× the serial speed on this workload. Ten workers also
+won the supersampled and background ODE comparisons. The small quadrature
+background was fastest serially. See the [benchmark report](examples/parallel_benchmark/REPORT.md)
+for efficiency, memory, startup measurements and exact output comparisons.
+
+Recommended 640×480 nearly edge-on command (the full-size runtime has not been
+remeasured, so the small-scene speedup is not a promised completion time):
+
+```powershell
+.\.venv\Scripts\python -m numerical_observatory --config examples/disk_edge_on.toml --width 640 --height 480 --workers 10 --output output/disk-edge-on-parallel
+```
+
+Ubuntu equivalent:
+
+```bash
+.venv/bin/python -m numerical_observatory --config examples/disk_edge_on.toml --width 640 --height 480 --workers 10 --output output/disk-edge-on-parallel
+```
+
+Progress reports completed rows, elapsed wall time and estimated remaining time.
+When exact orbit groups finish out of row order, batch/work-unit updates keep
+the indicator active. Estimates use observed throughput and can shift near
+expensive critical trajectories. Updates are throttled to roughly five seconds.
+Disk rays, supersampling, both backgrounds and all palettes work with workers.
+
+Worker errors and unexpected exits propagate to the caller; Ctrl+C terminates
+and joins this render's workers. Completed images/ray files/diagnostics are staged
+in a temporary sibling directory and published after successful rendering.
+Interrupted or failed computations leave previous output files intact. Temporary
+staging needs additional disk space comparable to the output. Numerical counts,
+constraint diagnostics, integration work and saved arrays remain available;
+an additional `execution` object records process, startup, CPU-time and memory
+measurements. Execution-specific fields and wall-clock timing can differ.
+
+Run the controlled benchmark and inspect its report:
+
+```text
+python examples/benchmark_parallel.py --repeat-selection
+```
+
+It compares 1, 5, 10 and 20 workers with fresh processes, fixed scene parameters
+and tolerances, plus an empty-message startup/communication baseline. Outputs
+are isolated in `examples/parallel_benchmark/`; `--resume` retains completed
+measurements. The regular tests use exact array/image comparisons, check
+integration counts to catch duplicated symmetry work, and exercise worker
+failures, abrupt exits, spawn startup and interruption cleanup.
 
 ## Setup and execution
 

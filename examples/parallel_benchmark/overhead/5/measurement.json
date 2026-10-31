@@ -1,0 +1,23 @@
+{
+  "wall_seconds": 2.1742076000082307,
+  "execution": {
+    "workers": 5,
+    "requested_workers": 5,
+    "start_method": "spawn",
+    "task_count": 128,
+    "worker_cpu_seconds": 0.0,
+    "worker_task_seconds": 0.0005802999512525275,
+    "worker_peak_memory_bytes": {
+      "5816": 77987840,
+      "37784": 78422016,
+      "6060": 78057472,
+      "14740": 78348288,
+      "28240": 78303232
+    },
+    "startup_span_seconds": 2.1018941000074847,
+    "pool_wall_seconds": 2.1699707000079798
+  },
+  "description": "128 empty messages; spawn/import/shutdown and minimal communication baseline",
+  "workers": 5,
+  "case": "overhead"
+}

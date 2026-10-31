@@ -1,0 +1,875 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.7",
+  "cpu": {
+    "logical": 20,
+    "physical": 10,
+    "source": "Windows core topology intersected with process affinity"
+  },
+  "results": [
+    {
+      "wall_seconds": 0.09346160000131931,
+      "parent_cpu_seconds": 0.09375,
+      "rendering_cpu_seconds": 0.09375,
+      "cpu_core_equivalents": 1.003085759270937,
+      "parent_peak_memory_bytes": 82079744,
+      "worker_sum_peak_memory_bytes": 0,
+      "scene": {
+        "width": 64,
+        "height": 48,
+        "samples": 1,
+        "disk": false,
+        "method": "quadrature",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 68,
+        "escaped": 3004,
+        "unresolved": 0
+      },
+      "integrated_rays": null,
+      "distinct_orbits": 364,
+      "execution": {},
+      "workers": 1,
+      "case": "small_background",
+      "speedup": 1.0,
+      "efficiency": 1.0
+    },
+    {
+      "wall_seconds": 2.2068641999940155,
+      "parent_cpu_seconds": 0.125,
+      "rendering_cpu_seconds": 0.140625,
+      "cpu_core_equivalents": 0.06372163724454878,
+      "parent_peak_memory_bytes": 82739200,
+      "worker_sum_peak_memory_bytes": 390995968,
+      "scene": {
+        "width": 64,
+        "height": 48,
+        "samples": 1,
+        "disk": false,
+        "method": "quadrature",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 68,
+        "escaped": 3004,
+        "unresolved": 0
+      },
+      "integrated_rays": null,
+      "distinct_orbits": 364,
+      "execution": {
+        "workers": 5,
+        "requested_workers": 5,
+        "start_method": "spawn",
+        "task_count": 23,
+        "worker_cpu_seconds": 0.015625,
+        "worker_task_seconds": 0.03498069997294806,
+        "worker_peak_memory_bytes": {
+          "27384": 78168064,
+          "20696": 78188544,
+          "24676": 78356480,
+          "25076": 78118912,
+          "29368": 78163968
+        },
+        "startup_span_seconds": 2.062734699997236,
+        "pool_wall_seconds": 2.1356473000050755
+      },
+      "workers": 5,
+      "case": "small_background",
+      "speedup": 0.042350408331229786,
+      "efficiency": 0.008470081666245957
+    },
+    {
+      "wall_seconds": 3.0723377000103937,
+      "parent_cpu_seconds": 0.140625,
+      "rendering_cpu_seconds": 0.203125,
+      "cpu_core_equivalents": 0.0661141514486877,
+      "parent_peak_memory_bytes": 82182144,
+      "worker_sum_peak_memory_bytes": 781266944,
+      "scene": {
+        "width": 64,
+        "height": 48,
+        "samples": 1,
+        "disk": false,
+        "method": "quadrature",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 68,
+        "escaped": 3004,
+        "unresolved": 0
+      },
+      "integrated_rays": null,
+      "distinct_orbits": 364,
+      "execution": {
+        "workers": 10,
+        "requested_workers": 10,
+        "start_method": "spawn",
+        "task_count": 23,
+        "worker_cpu_seconds": 0.0625,
+        "worker_task_seconds": 0.039509900016128086,
+        "worker_peak_memory_bytes": {
+          "18252": 78290944,
+          "31992": 77983744,
+          "20960": 78139392,
+          "24672": 78159872,
+          "26016": 78098432,
+          "14584": 78041088,
+          "29996": 78569472,
+          "37376": 78049280,
+          "31984": 77971456,
+          "4008": 77963264
+        },
+        "startup_span_seconds": 2.79440529999556,
+        "pool_wall_seconds": 2.911298299994087
+      },
+      "workers": 10,
+      "case": "small_background",
+      "speedup": 0.030420353856609947,
+      "efficiency": 0.0030420353856609947
+    },
+    {
+      "wall_seconds": 5.0893423999950755,
+      "parent_cpu_seconds": 0.171875,
+      "rendering_cpu_seconds": 0.21875,
+      "cpu_core_equivalents": 0.042981977396571246,
+      "parent_peak_memory_bytes": 83013632,
+      "worker_sum_peak_memory_bytes": 1565069312,
+      "scene": {
+        "width": 64,
+        "height": 48,
+        "samples": 1,
+        "disk": false,
+        "method": "quadrature",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 68,
+        "escaped": 3004,
+        "unresolved": 0
+      },
+      "integrated_rays": null,
+      "distinct_orbits": 364,
+      "execution": {
+        "workers": 20,
+        "requested_workers": 20,
+        "start_method": "spawn",
+        "task_count": 23,
+        "worker_cpu_seconds": 0.046875,
+        "worker_task_seconds": 0.06314270001894329,
+        "worker_peak_memory_bytes": {
+          "35684": 78819328,
+          "36224": 78258176,
+          "27324": 78565376,
+          "18336": 78397440,
+          "22824": 77787136,
+          "24908": 78106624,
+          "25476": 78143488,
+          "6884": 78483456,
+          "36736": 78315520,
+          "9496": 78221312,
+          "36080": 78053376,
+          "37080": 78069760,
+          "6008": 78155776,
+          "11860": 78372864,
+          "8108": 78036992,
+          "12436": 78180352,
+          "31748": 78221312,
+          "16560": 78176256,
+          "35720": 78360576,
+          "14880": 78344192
+        },
+        "startup_span_seconds": 4.90305680000165,
+        "pool_wall_seconds": 5.015734999993583
+      },
+      "workers": 20,
+      "case": "small_background",
+      "speedup": 0.018364180016932984,
+      "efficiency": 0.0009182090008466492
+    },
+    {
+      "wall_seconds": 145.94822140000178,
+      "parent_cpu_seconds": 145.59375,
+      "rendering_cpu_seconds": 145.59375,
+      "cpu_core_equivalents": 0.9975712523482538,
+      "parent_peak_memory_bytes": 542658560,
+      "worker_sum_peak_memory_bytes": 0,
+      "scene": {
+        "width": 128,
+        "height": 96,
+        "samples": 1,
+        "disk": true,
+        "method": "ode",
+        "background": "starfield"
+      },
+      "counts": {
+        "captured": 206,
+        "escaped": 11170,
+        "unresolved": 0,
+        "emitted": 912
+      },
+      "integrated_rays": 1338,
+      "distinct_orbits": null,
+      "execution": {},
+      "workers": 1,
+      "case": "disk_moderate",
+      "speedup": 1.0,
+      "efficiency": 1.0
+    },
+    {
+      "wall_seconds": 33.329064400008065,
+      "parent_cpu_seconds": 1.46875,
+      "rendering_cpu_seconds": 155.515625,
+      "cpu_core_equivalents": 4.666066323780825,
+      "parent_peak_memory_bytes": 541908992,
+      "worker_sum_peak_memory_bytes": 399077376,
+      "scene": {
+        "width": 128,
+        "height": 96,
+        "samples": 1,
+        "disk": true,
+        "method": "ode",
+        "background": "starfield"
+      },
+      "counts": {
+        "captured": 206,
+        "escaped": 11170,
+        "unresolved": 0,
+        "emitted": 912
+      },
+      "integrated_rays": 1338,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 5,
+        "requested_workers": 5,
+        "start_method": "spawn",
+        "task_count": 335,
+        "worker_cpu_seconds": 154.046875,
+        "worker_task_seconds": 154.31018440010666,
+        "worker_peak_memory_bytes": {
+          "30356": 79810560,
+          "33292": 79822848,
+          "27476": 80265216,
+          "2432": 79519744,
+          "35228": 79659008
+        },
+        "startup_span_seconds": 2.1525876999949105,
+        "pool_wall_seconds": 33.2650993999996
+      },
+      "workers": 5,
+      "case": "disk_moderate",
+      "speedup": 4.37900745272545,
+      "efficiency": 0.8758014905450899
+    },
+    {
+      "wall_seconds": 23.03851539999596,
+      "parent_cpu_seconds": 2.359375,
+      "rendering_cpu_seconds": 199.296875,
+      "cpu_core_equivalents": 8.650595385153808,
+      "parent_peak_memory_bytes": 542310400,
+      "worker_sum_peak_memory_bytes": 793837568,
+      "scene": {
+        "width": 128,
+        "height": 96,
+        "samples": 1,
+        "disk": true,
+        "method": "ode",
+        "background": "starfield"
+      },
+      "counts": {
+        "captured": 206,
+        "escaped": 11170,
+        "unresolved": 0,
+        "emitted": 912
+      },
+      "integrated_rays": 1338,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 10,
+        "requested_workers": 10,
+        "start_method": "spawn",
+        "task_count": 335,
+        "worker_cpu_seconds": 196.9375,
+        "worker_task_seconds": 197.90678439990734,
+        "worker_peak_memory_bytes": {
+          "12360": 78757888,
+          "22044": 79073280,
+          "6192": 79466496,
+          "1416": 79486976,
+          "30856": 79724544,
+          "5624": 79302656,
+          "37000": 79413248,
+          "9972": 79708160,
+          "7444": 79261696,
+          "37112": 79642624
+        },
+        "startup_span_seconds": 2.8743953999946825,
+        "pool_wall_seconds": 22.87200920000032
+      },
+      "workers": 10,
+      "case": "disk_moderate",
+      "speedup": 6.334966418887712,
+      "efficiency": 0.6334966418887712
+    },
+    {
+      "wall_seconds": 24.407862699998077,
+      "parent_cpu_seconds": 2.53125,
+      "rendering_cpu_seconds": 366.21875,
+      "cpu_core_equivalents": 15.004130205961411,
+      "parent_peak_memory_bytes": 542564352,
+      "worker_sum_peak_memory_bytes": 1583976448,
+      "scene": {
+        "width": 128,
+        "height": 96,
+        "samples": 1,
+        "disk": true,
+        "method": "ode",
+        "background": "starfield"
+      },
+      "counts": {
+        "captured": 206,
+        "escaped": 11170,
+        "unresolved": 0,
+        "emitted": 912
+      },
+      "integrated_rays": 1338,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 20,
+        "requested_workers": 20,
+        "start_method": "spawn",
+        "task_count": 335,
+        "worker_cpu_seconds": 363.6875,
+        "worker_task_seconds": 377.4414940998977,
+        "worker_peak_memory_bytes": {
+          "5552": 79351808,
+          "3216": 79486976,
+          "19288": 79310848,
+          "31728": 79392768,
+          "15384": 79380480,
+          "10616": 79421440,
+          "35924": 79261696,
+          "1336": 79347712,
+          "36080": 78921728,
+          "25344": 79364096,
+          "31404": 78471168,
+          "20200": 79298560,
+          "30572": 79036416,
+          "9940": 79233024,
+          "23200": 79683584,
+          "34860": 78815232,
+          "25280": 79187968,
+          "7856": 79364096,
+          "22728": 78884864,
+          "3896": 78761984
+        },
+        "startup_span_seconds": 4.998852100005024,
+        "pool_wall_seconds": 24.13527400000021
+      },
+      "workers": 20,
+      "case": "disk_moderate",
+      "speedup": 5.9795576201767675,
+      "efficiency": 0.2989778810088384
+    },
+    {
+      "wall_seconds": 22.188436700002057,
+      "parent_cpu_seconds": 22.0625,
+      "rendering_cpu_seconds": 22.0625,
+      "cpu_core_equivalents": 0.994324219335288,
+      "parent_peak_memory_bytes": 93450240,
+      "worker_sum_peak_memory_bytes": 0,
+      "scene": {
+        "width": 24,
+        "height": 18,
+        "samples": 2,
+        "disk": true,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 30,
+        "escaped": 1566,
+        "unresolved": 0,
+        "emitted": 132
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {},
+      "workers": 1,
+      "case": "disk_supersampled",
+      "speedup": 1.0,
+      "efficiency": 1.0
+    },
+    {
+      "wall_seconds": 7.209254200002761,
+      "parent_cpu_seconds": 0.3125,
+      "rendering_cpu_seconds": 24.640625,
+      "cpu_core_equivalents": 3.417915961402854,
+      "parent_peak_memory_bytes": 81985536,
+      "worker_sum_peak_memory_bytes": 395468800,
+      "scene": {
+        "width": 24,
+        "height": 18,
+        "samples": 2,
+        "disk": true,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 30,
+        "escaped": 1566,
+        "unresolved": 0,
+        "emitted": 132
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 5,
+        "requested_workers": 5,
+        "start_method": "spawn",
+        "task_count": 54,
+        "worker_cpu_seconds": 24.328125,
+        "worker_task_seconds": 24.40772480009764,
+        "worker_peak_memory_bytes": {
+          "33400": 79269888,
+          "34372": 79060992,
+          "24220": 78983168,
+          "31444": 78921728,
+          "35864": 79233024
+        },
+        "startup_span_seconds": 2.0671874999970896,
+        "pool_wall_seconds": 7.139678699997603
+      },
+      "workers": 5,
+      "case": "disk_supersampled",
+      "speedup": 3.0777714427095053,
+      "efficiency": 0.6155542885419011
+    },
+    {
+      "wall_seconds": 6.390104300007806,
+      "parent_cpu_seconds": 0.421875,
+      "rendering_cpu_seconds": 30.515625,
+      "cpu_core_equivalents": 4.775450222301179,
+      "parent_peak_memory_bytes": 82108416,
+      "worker_sum_peak_memory_bytes": 788639744,
+      "scene": {
+        "width": 24,
+        "height": 18,
+        "samples": 2,
+        "disk": true,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 30,
+        "escaped": 1566,
+        "unresolved": 0,
+        "emitted": 132
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 10,
+        "requested_workers": 10,
+        "start_method": "spawn",
+        "task_count": 54,
+        "worker_cpu_seconds": 30.09375,
+        "worker_task_seconds": 30.156436500052223,
+        "worker_peak_memory_bytes": {
+          "32264": 78749696,
+          "2168": 79163392,
+          "25808": 78884864,
+          "36256": 79028224,
+          "26852": 79560704,
+          "37580": 78512128,
+          "33364": 78897152,
+          "25340": 78823424,
+          "37516": 78561280,
+          "24828": 78458880
+        },
+        "startup_span_seconds": 2.9960168000106933,
+        "pool_wall_seconds": 6.321549200001755
+      },
+      "workers": 10,
+      "case": "disk_supersampled",
+      "speedup": 3.4723121342440297,
+      "efficiency": 0.347231213424403
+    },
+    {
+      "wall_seconds": 8.013472300008289,
+      "parent_cpu_seconds": 0.625,
+      "rendering_cpu_seconds": 52.875,
+      "cpu_core_equivalents": 6.598263277199487,
+      "parent_peak_memory_bytes": 82173952,
+      "worker_sum_peak_memory_bytes": 1572872192,
+      "scene": {
+        "width": 24,
+        "height": 18,
+        "samples": 2,
+        "disk": true,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 30,
+        "escaped": 1566,
+        "unresolved": 0,
+        "emitted": 132
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 20,
+        "requested_workers": 20,
+        "start_method": "spawn",
+        "task_count": 54,
+        "worker_cpu_seconds": 52.25,
+        "worker_task_seconds": 53.592345100056264,
+        "worker_peak_memory_bytes": {
+          "37576": 78503936,
+          "1588": 78868480,
+          "23712": 78282752,
+          "36856": 79020032,
+          "34144": 78749696,
+          "22036": 77922304,
+          "22368": 78987264,
+          "37628": 78733312,
+          "2300": 78987264,
+          "25904": 79106048,
+          "31200": 78495744,
+          "3680": 78745600,
+          "2828": 78520320,
+          "26952": 78233600,
+          "21444": 78729216,
+          "22584": 77983744,
+          "10908": 78606336,
+          "26468": 78860288,
+          "25308": 78684160,
+          "3664": 78852096
+        },
+        "startup_span_seconds": 4.939654999994673,
+        "pool_wall_seconds": 7.93013009999413
+      },
+      "workers": 20,
+      "case": "disk_supersampled",
+      "speedup": 2.7688916700915165,
+      "efficiency": 0.13844458350457584
+    },
+    {
+      "wall_seconds": 13.67236789999879,
+      "parent_cpu_seconds": 13.640625,
+      "rendering_cpu_seconds": 13.640625,
+      "cpu_core_equivalents": 0.9976783173016583,
+      "parent_peak_memory_bytes": 81846272,
+      "worker_sum_peak_memory_bytes": 0,
+      "scene": {
+        "width": 48,
+        "height": 36,
+        "samples": 1,
+        "disk": false,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 44,
+        "escaped": 1684,
+        "unresolved": 0
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {},
+      "workers": 1,
+      "case": "rotational_reuse",
+      "speedup": 1.0,
+      "efficiency": 1.0
+    },
+    {
+      "wall_seconds": 5.29087709999294,
+      "parent_cpu_seconds": 0.25,
+      "rendering_cpu_seconds": 15.359375,
+      "cpu_core_equivalents": 2.9029922089894122,
+      "parent_peak_memory_bytes": 82718720,
+      "worker_sum_peak_memory_bytes": 393166848,
+      "scene": {
+        "width": 48,
+        "height": 36,
+        "samples": 1,
+        "disk": false,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 44,
+        "escaped": 1684,
+        "unresolved": 0
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 5,
+        "requested_workers": 5,
+        "start_method": "spawn",
+        "task_count": 54,
+        "worker_cpu_seconds": 15.109375,
+        "worker_task_seconds": 15.126325999983237,
+        "worker_peak_memory_bytes": {
+          "10968": 78647296,
+          "36416": 78413824,
+          "9792": 78848000,
+          "10588": 78680064,
+          "6396": 78577664
+        },
+        "startup_span_seconds": 2.0360516000073403,
+        "pool_wall_seconds": 5.2238919000083115
+      },
+      "workers": 5,
+      "case": "rotational_reuse",
+      "speedup": 2.5841401419089913,
+      "efficiency": 0.5168280283817983
+    },
+    {
+      "wall_seconds": 4.923917399995844,
+      "parent_cpu_seconds": 0.40625,
+      "rendering_cpu_seconds": 18.140625,
+      "cpu_core_equivalents": 3.6841854820747626,
+      "parent_peak_memory_bytes": 82034688,
+      "worker_sum_peak_memory_bytes": 786927616,
+      "scene": {
+        "width": 48,
+        "height": 36,
+        "samples": 1,
+        "disk": false,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 44,
+        "escaped": 1684,
+        "unresolved": 0
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 10,
+        "requested_workers": 10,
+        "start_method": "spawn",
+        "task_count": 54,
+        "worker_cpu_seconds": 17.734375,
+        "worker_task_seconds": 17.89522510005918,
+        "worker_peak_memory_bytes": {
+          "9240": 78426112,
+          "30768": 79024128,
+          "29900": 78479360,
+          "12276": 78479360,
+          "26872": 79024128,
+          "19068": 78901248,
+          "24948": 78569472,
+          "22284": 78782464,
+          "31036": 78462976,
+          "31112": 78778368
+        },
+        "startup_span_seconds": 2.8793021999881603,
+        "pool_wall_seconds": 4.847074799996335
+      },
+      "workers": 10,
+      "case": "rotational_reuse",
+      "speedup": 2.776725681874828,
+      "efficiency": 0.2776725681874828
+    },
+    {
+      "wall_seconds": 6.960030300004291,
+      "parent_cpu_seconds": 0.53125,
+      "rendering_cpu_seconds": 31.484375,
+      "cpu_core_equivalents": 4.523597404451039,
+      "parent_peak_memory_bytes": 82194432,
+      "worker_sum_peak_memory_bytes": 1570856960,
+      "scene": {
+        "width": 48,
+        "height": 36,
+        "samples": 1,
+        "disk": false,
+        "method": "ode",
+        "background": "grid"
+      },
+      "counts": {
+        "captured": 44,
+        "escaped": 1684,
+        "unresolved": 0
+      },
+      "integrated_rays": 214,
+      "distinct_orbits": null,
+      "execution": {
+        "workers": 20,
+        "requested_workers": 20,
+        "start_method": "spawn",
+        "task_count": 54,
+        "worker_cpu_seconds": 30.953125,
+        "worker_task_seconds": 31.91729390004184,
+        "worker_peak_memory_bytes": {
+          "29232": 78209024,
+          "21308": 78479360,
+          "22008": 79077376,
+          "22184": 78426112,
+          "24976": 78274560,
+          "3040": 78974976,
+          "8300": 78000128,
+          "10768": 78888960,
+          "1416": 78229504,
+          "7724": 78520320,
+          "24844": 78942208,
+          "36160": 78282752,
+          "25604": 78188544,
+          "29912": 78675968,
+          "16296": 78860288,
+          "27596": 78491648,
+          "30788": 78618624,
+          "15084": 78872576,
+          "8728": 78209024,
+          "29828": 78635008
+        },
+        "startup_span_seconds": 5.025336300008348,
+        "pool_wall_seconds": 6.762623900009203
+      },
+      "workers": 20,
+      "case": "rotational_reuse",
+      "speedup": 1.9644121233193998,
+      "efficiency": 0.09822060616596999
+    },
+    {
+      "wall_seconds": 1.6028480999957537,
+      "execution": {
+        "workers": 1,
+        "requested_workers": 1,
+        "start_method": "spawn",
+        "task_count": 128,
+        "worker_cpu_seconds": 0.0,
+        "worker_task_seconds": 0.000478399932035245,
+        "worker_peak_memory_bytes": {
+          "26008": 78352384
+        },
+        "startup_span_seconds": 1.5126479000027757,
+        "pool_wall_seconds": 1.598141199996462
+      },
+      "description": "128 empty messages; spawn/import/shutdown and minimal communication baseline",
+      "workers": 1,
+      "case": "overhead",
+      "speedup": 1.0,
+      "efficiency": 1.0
+    },
+    {
+      "wall_seconds": 2.1742076000082307,
+      "execution": {
+        "workers": 5,
+        "requested_workers": 5,
+        "start_method": "spawn",
+        "task_count": 128,
+        "worker_cpu_seconds": 0.0,
+        "worker_task_seconds": 0.0005802999512525275,
+        "worker_peak_memory_bytes": {
+          "5816": 77987840,
+          "37784": 78422016,
+          "6060": 78057472,
+          "14740": 78348288,
+          "28240": 78303232
+        },
+        "startup_span_seconds": 2.1018941000074847,
+        "pool_wall_seconds": 2.1699707000079798
+      },
+      "description": "128 empty messages; spawn/import/shutdown and minimal communication baseline",
+      "workers": 5,
+      "case": "overhead",
+      "speedup": 0.7372102369569888,
+      "efficiency": 0.14744204739139777
+    },
+    {
+      "wall_seconds": 2.8830470999964746,
+      "execution": {
+        "workers": 10,
+        "requested_workers": 10,
+        "start_method": "spawn",
+        "task_count": 128,
+        "worker_cpu_seconds": 0.0,
+        "worker_task_seconds": 0.0008287999080494046,
+        "worker_peak_memory_bytes": {
+          "25368": 78360576,
+          "33292": 78303232,
+          "15688": 78098432,
+          "29408": 78401536,
+          "17240": 77889536,
+          "27904": 78221312,
+          "23708": 78241792,
+          "32336": 77864960,
+          "25392": 78401536,
+          "35320": 78528512
+        },
+        "startup_span_seconds": 2.7891373000020394,
+        "pool_wall_seconds": 2.878776300000027
+      },
+      "description": "128 empty messages; spawn/import/shutdown and minimal communication baseline",
+      "workers": 10,
+      "case": "overhead",
+      "speedup": 0.5559562658541769,
+      "efficiency": 0.05559562658541769
+    },
+    {
+      "wall_seconds": 5.031900400004815,
+      "execution": {
+        "workers": 20,
+        "requested_workers": 20,
+        "start_method": "spawn",
+        "task_count": 128,
+        "worker_cpu_seconds": 0.0,
+        "worker_task_seconds": 0.0008552000363124534,
+        "worker_peak_memory_bytes": {
+          "6812": 78209024,
+          "37860": 78856192,
+          "5788": 78458880,
+          "5108": 78401536,
+          "10924": 78135296,
+          "34760": 78143488,
+          "10612": 78360576,
+          "32240": 77721600,
+          "2336": 77889536,
+          "26584": 78577664,
+          "6712": 78372864,
+          "2744": 78426112,
+          "36420": 78209024,
+          "19284": 78225408,
+          "37768": 78327808,
+          "16164": 78278656,
+          "24824": 78442496,
+          "32436": 77946880,
+          "7432": 78127104,
+          "22752": 78274560
+        },
+        "startup_span_seconds": 4.899135400002706,
+        "pool_wall_seconds": 5.0272264999948675
+      },
+      "description": "128 empty messages; spawn/import/shutdown and minimal communication baseline",
+      "workers": 20,
+      "case": "overhead",
+      "speedup": 0.31853732637359433,
+      "efficiency": 0.015926866318679716
+    }
+  ],
+  "notes": [
+    "Separate fresh process per case; identical settings across worker counts.",
+    "Wall includes render staging, computation, assembly, compression and writing; scene loading excluded.",
+    "CPU core equivalents=sum parent+worker task CPU/wall; worker import/startup CPU excluded (lower bound).",
+    "Memory=sum per-process peak working sets is an upper bound, not simultaneous peak memory.",
+    "Empty-message baseline includes spawn/import/shutdown; it does not isolate real payload transfer costs."
+  ],
+  "disk_selection_seconds": {
+    "10": [
+      23.03851539999596,
+      22.142147999998997,
+      22.373592500007362
+    ],
+    "20": [
+      24.407862699998077,
+      23.882700300004217,
+      24.040222700001323
+    ]
+  },
+  "recommended_workers": 10
+}

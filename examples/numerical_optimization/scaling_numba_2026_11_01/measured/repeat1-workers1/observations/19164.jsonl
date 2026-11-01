@@ -1,0 +1,1 @@
+{"kind": "first_metric", "pid": 19164, "seconds": 0.8501770999937435, "cpu_seconds": 0.84375, "root_kernel_cache_hits": 1, "root_kernel_cache_misses": 0, "memory": {"rss_bytes": 169439232, "lifetime_peak_rss_bytes": 169439232}}

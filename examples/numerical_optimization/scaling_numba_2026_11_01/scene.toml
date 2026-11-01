@@ -1,0 +1,27 @@
+[spacetime]
+type = "numerical"
+dataset = "../../../reference/geodesics-cpp/results/amr-composite-multilevel/carpetx-native-gmds"
+spatial_interpolation = "cubic_amr_c1_hierarchy"
+backend = "numba"
+
+[camera]
+position = [6.5, 0.23, 0.17]
+target = [7.5, 0.23, 0.17]
+up = [0.0, 0.0, 1.0]
+time = 4.0
+fov_degrees = 40.0
+width = 40
+height = 32
+
+[integration]
+rtol = 1e-10
+atol = 1e-12
+max_step = 0.06
+max_affine = 6.0
+
+[numerical_domain]
+background = "finite_direction_sphere"
+background_radius = 8.0
+
+[background]
+mode = "grid"

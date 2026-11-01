@@ -1,0 +1,6 @@
+workers=5 completed rows 1/32
+workers=5 completed rows 9/32
+workers=5 completed rows 17/32
+workers=5 completed rows 25/32
+workers=5 completed rows 32/32
+DONE workers=5, actual=5, render=172.48s, pipeline=174.27s, {'captured': 0, 'escaped': 1280, 'unresolved': 0}

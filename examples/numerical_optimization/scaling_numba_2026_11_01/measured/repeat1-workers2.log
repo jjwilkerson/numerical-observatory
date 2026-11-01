@@ -1,0 +1,12 @@
+workers=2 completed rows 1/32
+workers=2 completed rows 4/32
+workers=2 completed rows 7/32
+workers=2 completed rows 10/32
+workers=2 completed rows 13/32
+workers=2 completed rows 17/32
+workers=2 completed rows 20/32
+workers=2 completed rows 23/32
+workers=2 completed rows 26/32
+workers=2 completed rows 29/32
+workers=2 completed rows 32/32
+DONE workers=2, actual=2, render=371.31s, pipeline=373.23s, {'captured': 0, 'escaped': 1280, 'unresolved': 0}

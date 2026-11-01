@@ -1,0 +1,16 @@
+START repetition=1, workers=1
+FINISH repetition=1, workers=1, total=733.56s; arrays/image exactly equal
+START repetition=1, workers=2
+FINISH repetition=1, workers=2, total=375.07s; arrays/image exactly equal
+START repetition=1, workers=5
+FINISH repetition=1, workers=5, total=177.14s; arrays/image exactly equal
+START repetition=1, workers=10
+FINISH repetition=1, workers=10, total=120.00s; arrays/image exactly equal
+START repetition=2, workers=10
+FINISH repetition=2, workers=10, total=121.50s; arrays/image exactly equal
+START repetition=2, workers=5
+FINISH repetition=2, workers=5, total=176.15s; arrays/image exactly equal
+START repetition=2, workers=2
+FINISH repetition=2, workers=2, total=367.49s; arrays/image exactly equal
+START repetition=2, workers=1
+FINISH repetition=2, workers=1, total=724.47s; arrays/image exactly equal

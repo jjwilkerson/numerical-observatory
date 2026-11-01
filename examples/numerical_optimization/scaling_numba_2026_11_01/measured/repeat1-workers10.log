@@ -1,0 +1,4 @@
+workers=10 completed rows 1/32
+workers=10 completed rows 17/32
+workers=10 completed rows 32/32
+DONE workers=10, actual=10, render=116.54s, pipeline=118.25s, {'captured': 0, 'escaped': 1280, 'unresolved': 0}

@@ -1,0 +1,39 @@
+{
+  "scene": "D:\\numerical-observatory\\examples\\numerical_optimization\\scaling_numba_2026_11_01\\scene.toml",
+  "config_sha256": "33f85678a15912ac0ed3256af23373cf4e9a0758d4f7c3b51685653feeb499ba",
+  "recommended_workers": 10,
+  "results": [
+    {
+      "workers": 1,
+      "median_wall_seconds": 729.0134380999989,
+      "speedup": 1.0,
+      "parallel_efficiency": 1.0,
+      "conservative_peak_sum_mib": 168.85546875,
+      "per_compute_process_peak_mib": 168.85546875
+    },
+    {
+      "workers": 2,
+      "median_wall_seconds": 371.2801228999997,
+      "speedup": 1.9635132427930995,
+      "parallel_efficiency": 0.9817566213965497,
+      "conservative_peak_sum_mib": 494.9609375,
+      "per_compute_process_peak_mib": 165.62890625
+    },
+    {
+      "workers": 5,
+      "median_wall_seconds": 176.64504794999812,
+      "speedup": 4.126996179968524,
+      "parallel_efficiency": 0.8253992359937048,
+      "conservative_peak_sum_mib": 990.8671875,
+      "per_compute_process_peak_mib": 165.62890625
+    },
+    {
+      "workers": 10,
+      "median_wall_seconds": 120.75028205000126,
+      "speedup": 6.037364267175153,
+      "parallel_efficiency": 0.6037364267175154,
+      "conservative_peak_sum_mib": 1797.765625,
+      "per_compute_process_peak_mib": 163.71875
+    }
+  ]
+}

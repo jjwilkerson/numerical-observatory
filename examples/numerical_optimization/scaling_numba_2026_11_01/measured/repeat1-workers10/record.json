@@ -1,0 +1,959 @@
+{
+  "config": "D:\\numerical-observatory\\examples\\numerical_optimization\\scaling_numba_2026_11_01\\scene.toml",
+  "config_sha256": "33f85678a15912ac0ed3256af23373cf4e9a0758d4f7c3b51685653feeb499ba",
+  "requested_workers": 10,
+  "actual_compute_workers": 10,
+  "child_processes_launched": 10,
+  "parent_pid": 35528,
+  "resolution": [
+    40,
+    32
+  ],
+  "samples": 1,
+  "equivalent_64_ray_batches": 20,
+  "completed_task_batches": 20,
+  "parent_provider_constructor_seconds": 0.869227499999397,
+  "parent_first_metric_seconds": 0.8442578000031062,
+  "render_wall_seconds": 116.53574710000248,
+  "pipeline_wall_seconds": 118.24924299999839,
+  "parent_cpu_delta": 2.046875,
+  "parent_cpu_lifetime": 3.4375,
+  "approx_aggregate_cpu_seconds": 986.484375,
+  "parent_memory": {
+    "rss_bytes": 172261376,
+    "lifetime_peak_rss_bytes": 172261376
+  },
+  "execution": {
+    "workers": 10,
+    "requested_workers": 10,
+    "start_method": "spawn",
+    "task_count": 20,
+    "worker_cpu_seconds": 964.578125,
+    "worker_task_seconds": 971.9928780999908,
+    "worker_peak_memory_bytes": {
+      "4812": 171520000,
+      "25796": 170536960,
+      "32892": 170631168,
+      "7080": 171044864,
+      "35660": 171671552,
+      "29312": 171376640,
+      "16736": 171618304,
+      "896": 171253760,
+      "40840": 171552768,
+      "39428": 171626496
+    },
+    "startup_span_seconds": 19.513356200004637,
+    "pool_wall_seconds": 116.4330340000015
+  },
+  "workers": {
+    "896": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 97.1233327000009,
+      "task_cpu": 96.546875,
+      "process_cpu_lifetime": 98.53125,
+      "peak_memory": 171253760,
+      "first_metric_seconds": 1.2346967999983463,
+      "first_metric_cpu": 1.21875,
+      "ray_task_seconds_less_first_metric": 95.88863590000255
+    },
+    "4812": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 95.55848819999665,
+      "task_cpu": 94.828125,
+      "process_cpu_lifetime": 96.34375,
+      "peak_memory": 171520000,
+      "first_metric_seconds": 0.8644191000057617,
+      "first_metric_cpu": 0.84375,
+      "ray_task_seconds_less_first_metric": 94.69406909999088
+    },
+    "7080": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 97.20961039999384,
+      "task_cpu": 96.453125,
+      "process_cpu_lifetime": 98.171875,
+      "peak_memory": 171044864,
+      "first_metric_seconds": 1.0696606000055908,
+      "first_metric_cpu": 1.078125,
+      "ray_task_seconds_less_first_metric": 96.13994979998824
+    },
+    "16736": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 98.36963370000012,
+      "task_cpu": 97.515625,
+      "process_cpu_lifetime": 99.484375,
+      "peak_memory": 171618304,
+      "first_metric_seconds": 1.2332348999989335,
+      "first_metric_cpu": 1.203125,
+      "ray_task_seconds_less_first_metric": 97.13639880000119
+    },
+    "25796": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 97.10927570000058,
+      "task_cpu": 96.40625,
+      "process_cpu_lifetime": 97.90625,
+      "peak_memory": 170536960,
+      "first_metric_seconds": 0.9977317000011681,
+      "first_metric_cpu": 0.984375,
+      "ray_task_seconds_less_first_metric": 96.11154399999941
+    },
+    "29312": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 98.10741209999833,
+      "task_cpu": 97.21875,
+      "process_cpu_lifetime": 99.109375,
+      "peak_memory": 171376640,
+      "first_metric_seconds": 1.1449236000044039,
+      "first_metric_cpu": 1.109375,
+      "ray_task_seconds_less_first_metric": 96.96248849999392
+    },
+    "32892": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 97.19440100000065,
+      "task_cpu": 96.390625,
+      "process_cpu_lifetime": 98.078125,
+      "peak_memory": 170631168,
+      "first_metric_seconds": 1.052899399997841,
+      "first_metric_cpu": 1.046875,
+      "ray_task_seconds_less_first_metric": 96.14150160000281
+    },
+    "35660": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 98.35772839999845,
+      "task_cpu": 97.5,
+      "process_cpu_lifetime": 99.3125,
+      "peak_memory": 171671552,
+      "first_metric_seconds": 1.132487900002161,
+      "first_metric_cpu": 1.125,
+      "ray_task_seconds_less_first_metric": 97.22524049999629
+    },
+    "39428": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 96.4267600000021,
+      "task_cpu": 95.8125,
+      "process_cpu_lifetime": 98.09375,
+      "peak_memory": 171626496,
+      "first_metric_seconds": 1.3132033000001684,
+      "first_metric_cpu": 1.3125,
+      "ray_task_seconds_less_first_metric": 95.11355670000194
+    },
+    "40840": {
+      "task_batches": 2,
+      "rays": 128,
+      "task_wall": 96.53623589999916,
+      "task_cpu": 95.90625,
+      "process_cpu_lifetime": 98.015625,
+      "peak_memory": 171552768,
+      "first_metric_seconds": 1.306907999998657,
+      "first_metric_cpu": 1.3125,
+      "ray_task_seconds_less_first_metric": 95.2293279000005
+    }
+  },
+  "initial_metric_observations": [
+    {
+      "kind": "first_metric",
+      "pid": 16736,
+      "seconds": 1.2332348999989335,
+      "cpu_seconds": 1.203125,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 166281216,
+        "lifetime_peak_rss_bytes": 166281216
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 25796,
+      "seconds": 0.9977317000011681,
+      "cpu_seconds": 0.984375,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 165220352,
+        "lifetime_peak_rss_bytes": 165220352
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 29312,
+      "seconds": 1.1449236000044039,
+      "cpu_seconds": 1.109375,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 166055936,
+        "lifetime_peak_rss_bytes": 166055936
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 32892,
+      "seconds": 1.052899399997841,
+      "cpu_seconds": 1.046875,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 165289984,
+        "lifetime_peak_rss_bytes": 165289984
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 35528,
+      "seconds": 0.8433158000043477,
+      "cpu_seconds": 0.84375,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 169693184,
+        "lifetime_peak_rss_bytes": 169693184
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 35660,
+      "seconds": 1.132487900002161,
+      "cpu_seconds": 1.125,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 166326272,
+        "lifetime_peak_rss_bytes": 166326272
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 39428,
+      "seconds": 1.3132033000001684,
+      "cpu_seconds": 1.3125,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 166289408,
+        "lifetime_peak_rss_bytes": 166289408
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 40840,
+      "seconds": 1.306907999998657,
+      "cpu_seconds": 1.3125,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 166240256,
+        "lifetime_peak_rss_bytes": 166240256
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 4812,
+      "seconds": 0.8644191000057617,
+      "cpu_seconds": 0.84375,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 166141952,
+        "lifetime_peak_rss_bytes": 166141952
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 7080,
+      "seconds": 1.0696606000055908,
+      "cpu_seconds": 1.078125,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 165724160,
+        "lifetime_peak_rss_bytes": 165724160
+      }
+    },
+    {
+      "kind": "first_metric",
+      "pid": 896,
+      "seconds": 1.2346967999983463,
+      "cpu_seconds": 1.21875,
+      "root_kernel_cache_hits": 1,
+      "root_kernel_cache_misses": 0,
+      "memory": {
+        "rss_bytes": 165912576,
+        "lifetime_peak_rss_bytes": 165912576
+      }
+    }
+  ],
+  "counts": {
+    "captured": 0,
+    "escaped": 1280,
+    "unresolved": 0
+  },
+  "termination_reasons": {
+    "numerical_finite_background": 1280
+  },
+  "rhs_evaluations": 1449119,
+  "integrated_rays": 1280,
+  "metric_backend_fallbacks": 0,
+  "maxima": {
+    "null_error": 1.4263598817892382e-07,
+    "energy_drift": null,
+    "angular_momentum_drift": null
+  },
+  "progress_rows": [
+    [
+      62019.6680114,
+      1,
+      32
+    ],
+    [
+      62022.4045065,
+      2,
+      32
+    ],
+    [
+      62022.4091242,
+      3,
+      32
+    ],
+    [
+      62024.3874834,
+      4,
+      32
+    ],
+    [
+      62026.2454807,
+      5,
+      32
+    ],
+    [
+      62026.2521345,
+      6,
+      32
+    ],
+    [
+      62028.8576221,
+      7,
+      32
+    ],
+    [
+      62028.8661539,
+      8,
+      32
+    ],
+    [
+      62030.9393863,
+      9,
+      32
+    ],
+    [
+      62033.2060965,
+      10,
+      32
+    ],
+    [
+      62033.2102793,
+      11,
+      32
+    ],
+    [
+      62034.8780693,
+      12,
+      32
+    ],
+    [
+      62037.1742638,
+      13,
+      32
+    ],
+    [
+      62037.1784081,
+      14,
+      32
+    ],
+    [
+      62040.1148417,
+      15,
+      32
+    ],
+    [
+      62040.1194976,
+      16,
+      32
+    ],
+    [
+      62068.0759026,
+      17,
+      32
+    ],
+    [
+      62071.2273577,
+      18,
+      32
+    ],
+    [
+      62071.2312994,
+      19,
+      32
+    ],
+    [
+      62073.1076384,
+      20,
+      32
+    ],
+    [
+      62074.9635952,
+      21,
+      32
+    ],
+    [
+      62074.9671,
+      22,
+      32
+    ],
+    [
+      62078.0218124,
+      23,
+      32
+    ],
+    [
+      62078.0253782,
+      24,
+      32
+    ],
+    [
+      62079.7901979,
+      25,
+      32
+    ],
+    [
+      62082.0980543,
+      26,
+      32
+    ],
+    [
+      62082.101387,
+      27,
+      32
+    ],
+    [
+      62082.9750913,
+      28,
+      32
+    ],
+    [
+      62084.6017614,
+      29,
+      32
+    ],
+    [
+      62084.6051403,
+      30,
+      32
+    ],
+    [
+      62086.8335254,
+      31,
+      32
+    ],
+    [
+      62086.8373764,
+      32,
+      32
+    ]
+  ],
+  "batch_progress": [
+    [
+      62019.6602157,
+      1,
+      20,
+      64,
+      1280
+    ],
+    [
+      62022.4022767,
+      2,
+      20,
+      128,
+      1280
+    ],
+    [
+      62024.3807292,
+      3,
+      20,
+      192,
+      1280
+    ],
+    [
+      62026.2437899,
+      4,
+      20,
+      256,
+      1280
+    ],
+    [
+      62028.8519865,
+      5,
+      20,
+      320,
+      1280
+    ],
+    [
+      62030.9325558,
+      6,
+      20,
+      384,
+      1280
+    ],
+    [
+      62033.204153,
+      7,
+      20,
+      448,
+      1280
+    ],
+    [
+      62034.8743638,
+      8,
+      20,
+      512,
+      1280
+    ],
+    [
+      62037.1732002,
+      9,
+      20,
+      576,
+      1280
+    ],
+    [
+      62040.1120638,
+      10,
+      20,
+      640,
+      1280
+    ],
+    [
+      62068.0715813,
+      11,
+      20,
+      704,
+      1280
+    ],
+    [
+      62071.22575,
+      12,
+      20,
+      768,
+      1280
+    ],
+    [
+      62073.1041553,
+      13,
+      20,
+      832,
+      1280
+    ],
+    [
+      62074.9627939,
+      14,
+      20,
+      896,
+      1280
+    ],
+    [
+      62078.0188754,
+      15,
+      20,
+      960,
+      1280
+    ],
+    [
+      62079.7854358,
+      16,
+      20,
+      1024,
+      1280
+    ],
+    [
+      62082.0965806,
+      17,
+      20,
+      1088,
+      1280
+    ],
+    [
+      62082.9722712,
+      18,
+      20,
+      1152,
+      1280
+    ],
+    [
+      62084.6009778,
+      19,
+      20,
+      1216,
+      1280
+    ],
+    [
+      62086.8314299,
+      20,
+      20,
+      1280,
+      1280
+    ]
+  ],
+  "array_sha256": {
+    "directions": "1d19fec021ec48aacf18d1f2c29ba8bed8b934c70cc070e58c05d1b9ad1720ba",
+    "status": "e968f86cb40d99cc534c6178d66064898a022a5295224ead8912735eb504fa00",
+    "null_error": "9ebd3c2e65bff28aa20ae5aaa8708a961c5a3d12de8904fe42392b63a5745648",
+    "finest_selected_level": "a7be71940cd5e3af7b14d6acf28008fc0c853d22f86392a3f29772041356a925",
+    "selected_level_count": "9cbb347776d51c936df17f76b64922a9fe1baa9c97e5719172826c1c9bdf2d13",
+    "capture_index": "feacb6771f44353bf57e2d7ec43c830e713c921cacffd0b0b93b85ef7c525864",
+    "time_slabs": "f5335b72b258ce77ee474b03fc2ee3e7a66117e4cadb3846af2792b9699fb6f9",
+    "temporal_stage_rejections": "a9e0f56885d9dba49349a3460bb76389dd2d22506ef9dc53926555f178a4514d",
+    "lookup_stage_rejections": "e0551445bec7b73278f5eb002f05f93c4c6a69183177bd9d117af60eed9dae8f",
+    "metric_backend_fallbacks": "e0551445bec7b73278f5eb002f05f93c4c6a69183177bd9d117af60eed9dae8f",
+    "constraint_diagnostics_complete": "93e9da7899a916b6a43165937cfc95c6faab9c87143af74bb2b53f968f7d9fee",
+    "termination_code": "feacb6771f44353bf57e2d7ec43c830e713c921cacffd0b0b93b85ef7c525864"
+  },
+  "output_sha256": {
+    "rays.npz": "4a060f5b0eb48e347ae7cf996e27fff55986d3e121d9df65968f48a77db70905",
+    "shadow.png": "89c6507234ab3a41744750075e956c5c42b034a9d2e7b592616a6a2497b0ee0a",
+    "diagnostics.json": "42c97d43d9e5bc8d553a29aa0221717f6e8c6cad5e1a78fd20671e87bd6284a1"
+  },
+  "production_sha256": {
+    "src/numerical_observatory/__init__.py": "84287bb39fcb98cf11e6bbb03570dd94b3a778ae4bf7fd19bf089b2899149a40",
+    "src/numerical_observatory/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "src/numerical_observatory/amr_geometry.py": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+    "src/numerical_observatory/backend_records.py": "ce46f50d3912755981e3afb66e1ea25ff307e661d2729a74af114a3c27841139",
+    "src/numerical_observatory/background.py": "13d309dc799e68fb378dfdd18469316cc540f4ad4516c51f33730cf4874ffbda",
+    "src/numerical_observatory/binary_ks_approx.py": "343bb71f6e416784d39eb0d20e94e908c8322855db873c347d5e3568e1475a5a",
+    "src/numerical_observatory/binary_ks_orbit_approx.py": "cadb3b41d84abd9eeee04a4c7204a2d65c109082fb9a21796c9a86fc2fc11e50",
+    "src/numerical_observatory/binary_support.py": "a413c55c8146fc015b12dc4af51bf63a4d90c2b6e50e4e83f1e827c095279855",
+    "src/numerical_observatory/binary_validation.py": "e9794317a6bbe9550b1bb74b1cf2a4a47a3cc9c395b4dfd8da2f1125482f1ce5",
+    "src/numerical_observatory/blackbody_color.py": "c60994ca261bdf032682632aa52ae6c28cf731772cb403697832593b7c529c7c",
+    "src/numerical_observatory/boosted_ks.py": "d21b2d5c318de17767851610b7876e2423478c2ac703bc948252dbcc6b7795bb",
+    "src/numerical_observatory/camera.py": "54e8afd9c0d1afbb5f467adfc07204a2e39fcd183c8e234d920b45c0b46c7592",
+    "src/numerical_observatory/carter_validation.py": "91e669246845f3f8b6fba100164a6581078a44ad6ba0e65d25e60169ba539167",
+    "src/numerical_observatory/cli.py": "49b18bb64247c441bd1fbf7101e7940e2cb918cbb094fcb3e03752cedf7d18d6",
+    "src/numerical_observatory/convert_carpetx.py": "68a694d244704269d0ab98bf5f4f24b00d79f1b9e9bcc1303edaa32a718879d4",
+    "src/numerical_observatory/cpp_oracle.py": "15cb12cd09129c59a658e0b528a691cb6f8b680dceae14f1f2005921212ba0bc",
+    "src/numerical_observatory/curvature_diagnostic.py": "c5b54d258c8d3f077b8fc512f17addba66b18bafa1d29526d056af6c4da81207",
+    "src/numerical_observatory/diagnostic_render.py": "5bb89949fabb5ad1dc09d2b47478c68628e4d4362ffd0e0d621228ce56156e64",
+    "src/numerical_observatory/diagnostic_zoom.py": "65fe947a3242964a310d6538b211970645b235b3de98b23a0cfff0752af87c7d",
+    "src/numerical_observatory/disk.py": "d2395a23ef6f197975f3e616793fe120a5eb297695bdb4a5ecbb14ffe95863e6",
+    "src/numerical_observatory/disk_diagnostics.py": "ffd01918526bde58a4b6fcc0bb734464b7e6c285f054f26d1c254252ecd76a0c",
+    "src/numerical_observatory/disk_layers.py": "3ce5dbbc93faa00e6840a6e55df138557344c390eccb83e37b5e4a64e7c1578e",
+    "src/numerical_observatory/disk_validation.py": "89121d7b60829a812057dfd9c090594772da99cfb259a1a6bb537498a0803578",
+    "src/numerical_observatory/display.py": "a54b6b07a1bb9008806ed4e2dc8f333cf28952a578dae4c879c0423e7ea2e849",
+    "src/numerical_observatory/emission.py": "56a6de9f8445510cf03d2551da0bf3811c36fee615b8dfb9641d91ad5d28fcf1",
+    "src/numerical_observatory/emitter_motion.py": "6b3278989564067f2dd6b992023806355dde3001107996aa733e34d79b71a833",
+    "src/numerical_observatory/geodesic.py": "2205bae74ba217cdd97416a6e28b56f872f72954077b087307e43eee3530021d",
+    "src/numerical_observatory/kerr.py": "24f9594bdac093c4c62c0424afdbb1d3544de5137f29fc8e164179306b1a7859",
+    "src/numerical_observatory/kerr_carter.py": "aa27b7af33c9db552e757e205faefa492b34fae987e85e1a9cdaad692dc99d1f",
+    "src/numerical_observatory/kerr_carter_quadrature.py": "9f149fffd5e2421ba72f133f0c4b05cd1fce152032f642ccf4d97e981d25b75b",
+    "src/numerical_observatory/kerr_disk_reference.py": "29051995fc8861c5c91d80cb78177617ae2427c08fb2199df9b9ea1d18b79e90",
+    "src/numerical_observatory/kerr_disk_validation.py": "f120dfa0c57a5328f670bec6197717a5ab94e0804017a76ebe202000eb1a461f",
+    "src/numerical_observatory/kerr_reference.py": "d20fb45c0ca6686d0579b3b46cdccfcee9d073ae28a9d3abc9bacf454859d561",
+    "src/numerical_observatory/kerr_support.py": "379df87625fbd472cc4d397fb9c23a46d029d232614edd464c58069fe6527004",
+    "src/numerical_observatory/kerr_validation.py": "adccd5e2590cb27642d63c331c983abc5c59a54283ea662764c06dd7ce0d1521",
+    "src/numerical_observatory/layer_analysis.py": "bad8e47ad01d4e770bb187cfeb8adeac11a1bb5529b4d75f45b7ab359ebde546",
+    "src/numerical_observatory/layer_tracing.py": "ac41404e7d55987b9a37e525a446ee0cea94dc336ceb54e55d031799f073af16",
+    "src/numerical_observatory/lensing_validation.py": "3f0266794879f41b9518b01d3101ee2b8d9884e3da2235197c7cb7324db47502",
+    "src/numerical_observatory/metric.py": "6e50c5f5423323559ad418a5957130b037685154ab51f16e698fe5b3be86ff11",
+    "src/numerical_observatory/numerical_acceleration.py": "dabcad548bb66abd7444525ee682ff0bd131d16fac26d2e2cfe82c665239311b",
+    "src/numerical_observatory/numerical_benchmark.py": "6080cc868c1214e2a5896ce4aa042ddf5bef98e5e2e1a55d9ac5c0729c2592c6",
+    "src/numerical_observatory/numerical_comparison.py": "56a214b8fbb62f1ba5734caa1594850737a6a7ad92f0763cb79713cb04978776",
+    "src/numerical_observatory/numerical_data.py": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+    "src/numerical_observatory/numerical_experiments.py": "29a1582b2d884db0d9ecdd44f8581c5d240bb6c2aa8a5e464efc4ac6b8d0d4aa",
+    "src/numerical_observatory/numerical_fixtures.py": "efd195ceafb6090c6f2afadd4153c474f139aba33dfad2c489b504bf2aeae894",
+    "src/numerical_observatory/numerical_initialization_benchmark.py": "137878acde163086cce503dec84e15bbb0e40ec19ec8aa6f7f61a65821d5ec08",
+    "src/numerical_observatory/numerical_kernels.py": "c2c6857f11ce7053e72f55b0afeee4d6b8d70020184ffdf08681959d7afd9a14",
+    "src/numerical_observatory/numerical_metric.py": "ff6e0e13d8569ee650edcd524b0d0753f81daa6a474b76ef63e17559a24165d5",
+    "src/numerical_observatory/numerical_numpy.py": "42982db3c0321545ae7f16244eda09889daaa436a39c7a6d495e0c68f0fd2c79",
+    "src/numerical_observatory/numerical_parallel_benchmark.py": "8b034f6e37f65d4462ab614f85abc520b4e740641aee05f058898fdb4d0c786f",
+    "src/numerical_observatory/numerical_trace.py": "55fad05c32f87b636a832f3eedf12cd612319ed18e9c3ac4791ecd648a98be64",
+    "src/numerical_observatory/numerical_validation.py": "715351800d4964915300739c490e66f86f1988ed03e5d18f465a8facf524bc53",
+    "src/numerical_observatory/orbit_binary_support.py": "f5ac2d39766c64295b553eada638e3352a8f53068ec06e4ff2c124d0b954e4f9",
+    "src/numerical_observatory/orbit_binary_validation.py": "8a30e1af10e565bba1656a0647e858964f58046ef2a9791785d70897773256cf",
+    "src/numerical_observatory/orbital_angle.py": "8396675fda8906a58dadbf62e939ddad075b9d4f41a0571f44edd00cf53baf7a",
+    "src/numerical_observatory/orbital_diagnostics.py": "0d6504b6936f7885b0630afbf9109b0fd2ba23e418609830d690575c75cde01d",
+    "src/numerical_observatory/orbital_validation.py": "19e731b1df152b1af78eec91eff91202d346207d98e57668566cc23f2686d6a2",
+    "src/numerical_observatory/output.py": "a9d482a88c3d7aad415f753d894664932b08743e54ac23957f700e67b1600d0f",
+    "src/numerical_observatory/parallel.py": "b7d87d2510664b5d743f01ebcbea917a9c80c63941e1d57befb0f2e6dec9898e",
+    "src/numerical_observatory/render.py": "7b1543dd3d75b1f4806a83e9241b39e538ce07f0644bbaba373314d13430c2c0",
+    "src/numerical_observatory/schwarzschild_orbit.py": "6c2aeb1fe3d379cebbcfe61d0a007533ddb821a1e25bd6610804b49f38f97ff8",
+    "src/numerical_observatory/surface_render.py": "f98155bfffa7c171a8d5d27d906798b596108e7b16b3ba13b4d6085af14f25ab",
+    "src/numerical_observatory/surfaces.py": "1a1683ed356798188923f119e15ddd637281626182e084fa62c5b003c692ac47",
+    "src/numerical_observatory/symmetry.py": "d2764cbf33f8966aafaaea95105abbad915f4531fa74ba864e4ea2e423793368",
+    "src/numerical_observatory/trajectories.py": "852b9c9b296e98103e8b610c6fae3da042c40ba0013f378a0540c79fcb9c8bc1",
+    "src/numerical_observatory/validation.py": "d5a02e09e79af029f8ca990cae3fd34a0823373d1e52154e6d440e39b71c0daf"
+  },
+  "harness_sha256": "1c9a64fd132a7435c44ed89bcf0918c180cd6c6ec5e48b14ab5db84fd6c5d376",
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.67.0",
+    "cpu": "Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz",
+    "logical_cpus": 20,
+    "affinity": null,
+    "topology": {
+      "logical": 20,
+      "physical": 10,
+      "source": "Windows core topology intersected with process affinity"
+    },
+    "source_sha256": {
+      "numerical_metric": "ff6e0e13d8569ee650edcd524b0d0753f81daa6a474b76ef63e17559a24165d5",
+      "numerical_numpy": "42982db3c0321545ae7f16244eda09889daaa436a39c7a6d495e0c68f0fd2c79",
+      "numerical_kernels": "c2c6857f11ce7053e72f55b0afeee4d6b8d70020184ffdf08681959d7afd9a14",
+      "numerical_acceleration": "dabcad548bb66abd7444525ee682ff0bd131d16fac26d2e2cfe82c665239311b",
+      "numerical_data": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+      "amr_geometry": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+      "numerical_trace": "55fad05c32f87b636a832f3eedf12cd612319ed18e9c3ac4791ecd648a98be64",
+      "numerical_benchmark": "6080cc868c1214e2a5896ce4aa042ddf5bef98e5e2e1a55d9ac5c0729c2592c6"
+    }
+  },
+  "metric": {
+    "type": "numerical",
+    "dataset": {
+      "identifier": "experiment-j-three-level",
+      "directory": "D:\\numerical-observatory\\reference\\geodesics-cpp\\results\\amr-composite-multilevel\\carpetx-native-gmds",
+      "format": "GMDS v1, converted physical CarpetX ADM",
+      "manifest_sha256": "57607c50b1916e8f0e304f220ec2bb7f73a1df6fc21440bb9b3b3b5593b16a20",
+      "fields": [
+        "alp",
+        "betax",
+        "betay",
+        "betaz",
+        "gxx",
+        "gxy",
+        "gxz",
+        "gyy",
+        "gyz",
+        "gzz"
+      ],
+      "units": "CarpetX code units, c=G=1",
+      "time_coverage": [
+        0.0,
+        8.0
+      ],
+      "snapshots": 17,
+      "snapshot_times": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5,
+        8.0
+      ],
+      "native_regions": [
+        {
+          "level": 0,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -16,
+            -16,
+            -16
+          ],
+          "upper": [
+            16,
+            16,
+            16
+          ]
+        },
+        {
+          "level": 1,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -8,
+            -8,
+            -8
+          ],
+          "upper": [
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "level": 2,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -4,
+            -4,
+            -4
+          ],
+          "upper": [
+            4,
+            4,
+            4
+          ]
+        }
+      ],
+      "fixed_geometry": true,
+      "raw_bytes_per_snapshot": 8624880,
+      "cache_budget": 1073741824,
+      "source_series": "/mnt/data/numerical-relativity/geodesics/results/amr-composite-multilevel/carpetx-native-source/j-native.it%08T.bp5",
+      "source_time_unit_si": 4.925639893961039e-06,
+      "patches": [
+        {
+          "level": 0,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -16,
+            -16,
+            -16
+          ],
+          "spacing": [
+            1,
+            1,
+            1
+          ],
+          "centering": "vertex",
+          "file": "patch-0.bin"
+        },
+        {
+          "level": 1,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -8,
+            -8,
+            -8
+          ],
+          "spacing": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "centering": "vertex",
+          "file": "patch-1.bin"
+        },
+        {
+          "level": 2,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -4,
+            -4,
+            -4
+          ],
+          "spacing": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "centering": "vertex",
+          "file": "patch-2.bin"
+        }
+      ],
+      "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+    },
+    "spatial_interpolation": "cubic_amr_c1_hierarchy",
+    "evaluation_backend": "numba",
+    "acceleration_versions": {
+      "numba": "0.67.0",
+      "llvmlite": "0.49.0"
+    },
+    "acceleration_policy": "strict float64 CPU ADM interpolation kernels; reference NumPy reconstruction; no fastmath; reference evaluation resolves rejected/ill-conditioned queries; fallback counts include rejected queries",
+    "temporal_interpolation": "piecewise linear saved ADM; right-sided standalone knots, incoming closed-slab tracing",
+    "derivative_method": "analytic interpolation-weight and ADM inverse chain rule; AMR weight gradients included",
+    "levels": [
+      0,
+      1,
+      2
+    ],
+    "transitions": [
+      {
+        "coarse_level": 0,
+        "fine_level": 1,
+        "outer_lower": [
+          -7.0,
+          -7.0,
+          -7.0
+        ],
+        "inner_lower": [
+          -6.0,
+          -6.0,
+          -6.0
+        ],
+        "inner_upper": [
+          6.0,
+          6.0,
+          6.0
+        ],
+        "outer_upper": [
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      {
+        "coarse_level": 1,
+        "fine_level": 2,
+        "outer_lower": [
+          -3.5,
+          -3.5,
+          -3.5
+        ],
+        "inner_lower": [
+          -3.0,
+          -3.0,
+          -3.0
+        ],
+        "inner_upper": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "outer_upper": [
+          3.5,
+          3.5,
+          3.5
+        ]
+      }
+    ],
+    "support_strata_certified": 3375,
+    "background": "none unless explicit finite-boundary model configured; data exits are unresolved",
+    "domain": {
+      "background": "finite_direction_sphere",
+      "background_radius": 8.0
+    }
+  },
+  "total_command_wall_seconds": 120.00005450000026,
+  "average_busy_logical_cpus": 8.220699391432342,
+  "cpu_utilization_allowed_logical_percent": 41.10349695716171,
+  "conservative_sum_of_process_peak_bytes": 1885093888
+}

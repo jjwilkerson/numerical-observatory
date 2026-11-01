@@ -1,0 +1,10 @@
+{
+  "production_sources_unchanged": true,
+  "measured_runs": 8,
+  "measured_rays": 10240,
+  "all_ray_arrays_and_images_identical": true,
+  "all_requested_workers_active": true,
+  "minimum_batches_per_child_at_ten_workers": 2,
+  "cold_root_kernel_compilations": 0,
+  "regression_suite_run": false
+}

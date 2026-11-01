@@ -1,0 +1,11 @@
+{"kind": "first_metric", "pid": 9700, "seconds": 0.9388112000015099, "cpu_seconds": 0.921875, "root_kernel_cache_hits": 1, "root_kernel_cache_misses": 0, "memory": {"rss_bytes": 166244352, "lifetime_peak_rss_bytes": 166244352}}
+{"kind": "task", "pid": 9700, "task_first": 64, "rays": 64, "task_wall": 37.61261999999988, "task_cpu": 37.40625, "peak_memory": 171577344, "process_cpu_lifetime": 39.0, "finished_monotonic": 61459.9480339}
+{"kind": "task", "pid": 9700, "task_first": 192, "rays": 64, "task_wall": 35.6996599999984, "task_cpu": 35.578125, "peak_memory": 171585536, "process_cpu_lifetime": 74.578125, "finished_monotonic": 61495.6492156}
+{"kind": "task", "pid": 9700, "task_first": 320, "rays": 64, "task_wall": 36.2150244000004, "task_cpu": 36.109375, "peak_memory": 173531136, "process_cpu_lifetime": 110.6875, "finished_monotonic": 61531.8657574}
+{"kind": "task", "pid": 9700, "task_first": 448, "rays": 64, "task_wall": 37.356370100002096, "task_cpu": 37.234375, "peak_memory": 173551616, "process_cpu_lifetime": 147.921875, "finished_monotonic": 61569.9108036}
+{"kind": "task", "pid": 9700, "task_first": 576, "rays": 64, "task_wall": 35.80305010000302, "task_cpu": 35.625, "peak_memory": 173551616, "process_cpu_lifetime": 183.546875, "finished_monotonic": 61605.7153886}
+{"kind": "task", "pid": 9700, "task_first": 704, "rays": 64, "task_wall": 36.6131211000029, "task_cpu": 36.484375, "peak_memory": 173551616, "process_cpu_lifetime": 220.03125, "finished_monotonic": 61642.3299711}
+{"kind": "task", "pid": 9700, "task_first": 832, "rays": 64, "task_wall": 35.54203779999807, "task_cpu": 35.390625, "peak_memory": 173551616, "process_cpu_lifetime": 255.421875, "finished_monotonic": 61677.8735014}
+{"kind": "task", "pid": 9700, "task_first": 960, "rays": 64, "task_wall": 36.44202950000181, "task_cpu": 36.28125, "peak_memory": 173555712, "process_cpu_lifetime": 291.703125, "finished_monotonic": 61714.3169921}
+{"kind": "task", "pid": 9700, "task_first": 1088, "rays": 64, "task_wall": 36.42186999999831, "task_cpu": 36.21875, "peak_memory": 173674496, "process_cpu_lifetime": 327.921875, "finished_monotonic": 61750.7403957}
+{"kind": "task", "pid": 9700, "task_first": 1216, "rays": 64, "task_wall": 39.18420000000333, "task_cpu": 38.9375, "peak_memory": 173674496, "process_cpu_lifetime": 366.859375, "finished_monotonic": 61789.9264461}

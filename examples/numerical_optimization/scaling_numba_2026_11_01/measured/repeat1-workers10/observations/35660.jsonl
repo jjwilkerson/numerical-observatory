@@ -1,0 +1,3 @@
+{"kind": "first_metric", "pid": 35660, "seconds": 1.132487900002161, "cpu_seconds": 1.125, "root_kernel_cache_hits": 1, "root_kernel_cache_misses": 0, "memory": {"rss_bytes": 166326272, "lifetime_peak_rss_bytes": 166326272}}
+{"kind": "task", "pid": 35660, "task_first": 256, "rays": 64, "task_wall": 49.192054899998766, "task_cpu": 48.796875, "peak_memory": 171638784, "process_cpu_lifetime": 50.59375, "finished_monotonic": 62028.8488758}
+{"kind": "task", "pid": 35660, "task_first": 896, "rays": 64, "task_wall": 49.165673499999684, "task_cpu": 48.703125, "peak_memory": 171671552, "process_cpu_lifetime": 99.3125, "finished_monotonic": 62078.0166104}

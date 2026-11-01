@@ -1,6 +1,7 @@
 # Numerical Observatory
 
-A small, independent CPU ray tracer for Schwarzschild, exact Kerr and experimental binary metrics.
+A small, independent CPU ray tracer for Schwarzschild, exact Kerr, experimental
+binary metrics, and imported numerical spacetimes.
 It traces null geodesics toward the past from a local camera, lenses an astronomical
 celestial star map, and saves a PNG plus numerical diagnostics. Background
 termination conventions are documented for each metric. No existing C++
@@ -11,6 +12,18 @@ circular orbital motion, gravitational
 redshift, Doppler beaming, and higher-order surface images. It is **disabled by
 default**; existing starfield/grid configurations retain their original results.
 See the [disk validation report](examples/disks/REPORT.md).
+
+## CarpetX numerical data, Phase 1
+
+`spacetime.type = "numerical"` reads saved physical ADM data on a fixed
+rectangular AMR hierarchy. It reproduces the standalone reference's GMDS
+interpolation methods and temporal support; an optional preprocessing command
+converts native ADMBaseX openPMD BP/BP5 exports. No simulation installation is
+needed. See the [setup and example](examples/numerical_spacetime/README.md),
+[reference audit](examples/numerical_spacetime/ARCHITECTURE.md), and
+[measured validation](examples/numerical_spacetime/VALIDATION.md). Dataset exits
+are unresolved; finite background boundaries must be explicit. Dynamic AMR and
+numerical-spacetime disks are outside this phase.
 
 ## Experimental binary KS approximation
 
@@ -1114,10 +1127,14 @@ and numerical far-field continuation. Quadrature and
 rotational reuse require this exact type, a centered coordinate-static camera,
 and no custom domain; subclasses cannot silently inherit these optimizations.
 Low-level quadrature rejects incompatible inputs; the renderer selects ODE.
-Future CarpetX support
-should read saved spacetime fields, interpolate their values/derivatives at
-events, and enforce data-domain boundaries. It should not import or require
-the CarpetX simulation software. No such loader is implemented here.
+CarpetX Phase 1 now reads saved physical ADM fields through the numerical metric
+provider, with the reference tracer's static rectangular AMR interpolation and
+piecewise-linear temporal support. It requires neither CarpetX nor the C++ tracer
+at runtime. See the [dedicated guide](examples/numerical_spacetime/README.md),
+[architecture/parity audit](examples/numerical_spacetime/ARCHITECTURE.md), and
+[validation report](examples/numerical_spacetime/VALIDATION.md). Numerical data exits
+are unresolved unless an explicit finite background or justified absorber is
+configured. Dynamic regridding and numerical-spacetime disks remain unsupported.
 
 Ray generation, integration, and output are separate so optional future batch
 CPU/GPU backends can replace the serial loop without changing the observing

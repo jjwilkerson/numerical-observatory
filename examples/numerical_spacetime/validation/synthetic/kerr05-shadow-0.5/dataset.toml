@@ -1,0 +1,34 @@
+schema_version = 1
+identifier = "kerr05-shadow-samples"
+coordinates = "cartesian_txyz"
+signature = "-+++"
+units = "geometrized code units; no SI conversion"
+symmetry = "none"
+fields = "alp betax betay betaz gxx gxy gxz gyy gyz gzz"
+synthetic_temporal_model = "known_stationary_analytic_samples"
+
+[[snapshots]]
+time = -100.0
+[[snapshots.patches]]
+level = 0
+centering = "cell"
+shape = [64, 64, 64]
+origin = [-15.75, -15.75, -15.75]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-0.bin"
+
+[[snapshots]]
+time = 100.0
+[[snapshots.patches]]
+level = 0
+centering = "cell"
+shape = [64, 64, 64]
+origin = [-15.75, -15.75, -15.75]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-0.bin"
+
+[[native_regions]]
+level = 0
+provenance = "analytic_sampling"
+lower = [-15.75, -15.75, -15.75]
+upper = [15.75, 15.75, 15.75]

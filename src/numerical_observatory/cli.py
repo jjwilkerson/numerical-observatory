@@ -15,12 +15,18 @@ from .disk import make_disk
 
 def load_configuration(path=None):
     data = {} if path is None else tomllib.loads(Path(path).read_text(encoding="utf-8"))
-    unknown = set(data) - {"mass", "camera", "integration", "background", "disk", "spacetime", "geodesics"}
+    unknown = set(data) - {"mass", "camera", "integration", "background", "disk", "spacetime", "geodesics", "numerical_domain"}
     if unknown:
         raise ValueError(f"unknown configuration keys: {sorted(unknown)}")
     spacetime = dict(data.get("spacetime", {}))
     kind = spacetime.pop("type", "schwarzschild")
-    if kind == "kerr":
+    if kind == 'numerical':
+        from .numerical_metric import NumericalMetric
+        if data.get('mass',1.)!=1.:raise ValueError('numerical data retains stored code coordinates; implicit mass rescaling is forbidden')
+        directory=Path(spacetime.pop('dataset'))
+        if not directory.is_absolute():directory=(Path(path).resolve().parent if path else Path.cwd())/directory
+        metric=NumericalMetric(directory,domain=data.get('numerical_domain'),**spacetime)
+    elif kind == "kerr":
         from .kerr import Kerr
         metric = Kerr(data.get("mass", 1.0), **spacetime)
     elif kind == "schwarzschild" and not spacetime:
@@ -47,14 +53,14 @@ def load_configuration(path=None):
         if spacetime:raise ValueError('orbit spacetime accepts masses, separation, phase_degrees, epoch, barycenter only')
         metric=BinaryKSOrbitApprox(masses,CircularOrbit(masses,separation,phase,epoch,center))
     else:
-        raise ValueError("spacetime must select schwarzschild, kerr, binary_ks_approx, or binary_ks_orbit_approx")
+        raise ValueError("spacetime must select schwarzschild, kerr, binary_ks_approx, binary_ks_orbit_approx, or numerical")
     # Configuration lengths/times are in M, so mass changes preserve the scene.
     camera_options = dict(data.get("camera", {}))
     if kind == "kerr":
         from .kerr_support import inclined_camera_options
         camera_options = inclined_camera_options(metric, camera_options)
     camera_data = asdict(Camera()) | camera_options
-    length_unit = data.get('mass',1.) if kind in ('binary_ks_approx','binary_ks_orbit_approx') else metric.mass
+    length_unit = 1. if kind=='numerical' else data.get('mass',1.) if kind in ('binary_ks_approx','binary_ks_orbit_approx') else metric.mass
     for key in ("position", "target"):
         camera_data[key] = tuple(length_unit * v for v in camera_data[key])
     camera_data["time"] *= length_unit

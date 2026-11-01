@@ -1,0 +1,22 @@
+{
+  "full_suite": {
+    "tests": 252,
+    "passed": 252,
+    "seconds": 418.15,
+    "command": "python -m pytest -q"
+  },
+  "focused_suite": {
+    "tests": 17,
+    "passed": 17,
+    "seconds": 18.73
+  },
+  "cli_smoke": {
+    "resolution": [
+      2,
+      2
+    ],
+    "escaped": 4,
+    "captured": 0,
+    "unresolved": 0
+  }
+}

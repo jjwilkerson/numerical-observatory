@@ -1,0 +1,82 @@
+[
+  {
+    "model": "schwarzschild",
+    "h": 1.0,
+    "metric_rms": 2.2533614114151024e-05,
+    "derivative_rms": 5.7083778241493136e-05,
+    "max_event_error": 0.0003243016444196001,
+    "max_momentum_error": 0.0003636183094907347,
+    "initial_momentum_error": 0.00010022209058098419,
+    "status": "unresolved",
+    "reason": "affine_limit",
+    "null_error": 2.3264938329689967e-09
+  },
+  {
+    "model": "schwarzschild",
+    "h": 0.5,
+    "metric_rms": 2.316491219200302e-06,
+    "derivative_rms": 1.4630929732399442e-05,
+    "max_event_error": 2.8367368544279792e-05,
+    "max_momentum_error": 2.3190324679012164e-05,
+    "initial_momentum_error": 9.379490323757622e-06,
+    "status": "unresolved",
+    "reason": "affine_limit",
+    "null_error": 1.916523183709535e-10,
+    "metric_observed_order": 3.282065603774286,
+    "derivative_observed_order": 1.9640593771485788
+  },
+  {
+    "model": "schwarzschild",
+    "h": 0.25,
+    "metric_rms": 2.6952391435746225e-07,
+    "derivative_rms": 3.7230543511212562e-06,
+    "max_event_error": 4.946251767667942e-06,
+    "max_momentum_error": 3.3338838045793295e-06,
+    "initial_momentum_error": 1.1889273279080959e-06,
+    "status": "unresolved",
+    "reason": "affine_limit",
+    "null_error": 1.138260121638761e-09,
+    "metric_observed_order": 3.1034560223317778,
+    "derivative_observed_order": 1.9744628667459252
+  },
+  {
+    "model": "kerr_spin05",
+    "h": 1.0,
+    "metric_rms": 2.2914497857584993e-05,
+    "derivative_rms": 5.813799808732458e-05,
+    "max_event_error": 0.0003336370304627412,
+    "max_momentum_error": 0.0003703050927115481,
+    "initial_momentum_error": 0.00010177531887196889,
+    "status": "unresolved",
+    "reason": "affine_limit",
+    "null_error": 3.518419775430966e-10
+  },
+  {
+    "model": "kerr_spin05",
+    "h": 0.5,
+    "metric_rms": 2.3595962411606606e-06,
+    "derivative_rms": 1.4858448710594076e-05,
+    "max_event_error": 4.619834553476476e-05,
+    "max_momentum_error": 3.2149163989608764e-05,
+    "initial_momentum_error": 1.0330976650541057e-05,
+    "status": "unresolved",
+    "reason": "affine_limit",
+    "null_error": 2.292047023154276e-09,
+    "metric_observed_order": 3.2796487500315203,
+    "derivative_observed_order": 1.968197895008923
+  },
+  {
+    "model": "kerr_spin05",
+    "h": 0.25,
+    "metric_rms": 2.7458409922844474e-07,
+    "derivative_rms": 3.7667253943926102e-06,
+    "max_event_error": 7.202992941879316e-06,
+    "max_momentum_error": 5.295362771301493e-06,
+    "initial_momentum_error": 1.125605779223049e-06,
+    "status": "unresolved",
+    "reason": "affine_limit",
+    "null_error": 5.524597371514426e-10,
+    "metric_observed_order": 3.103220027451347,
+    "derivative_observed_order": 1.9799007344110677
+  }
+]

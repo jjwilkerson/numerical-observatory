@@ -1,0 +1,29 @@
+{
+  "measurements": [
+    {
+      "workers": 1,
+      "wall_seconds": 18.58237569999983,
+      "render_seconds": 18.45528379999996,
+      "counts": {
+        "captured": 0,
+        "escaped": 12,
+        "unresolved": 0
+      },
+      "rays": 12
+    },
+    {
+      "workers": 2,
+      "wall_seconds": 18.728172099999938,
+      "render_seconds": 18.652894299999843,
+      "counts": {
+        "captured": 0,
+        "escaped": 12,
+        "unresolved": 0
+      },
+      "rays": 12
+    }
+  ],
+  "all_saved_arrays_exactly_equal": true,
+  "speedup": 0.9922151292063304,
+  "caveat": "12 rays; startup and validation overhead significant; not a scaling benchmark"
+}

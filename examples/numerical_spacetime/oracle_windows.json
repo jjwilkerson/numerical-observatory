@@ -1,0 +1,11 @@
+{
+  "command": [
+    "wsl",
+    "--exec",
+    "/mnt/d/numerical-observatory/output/numerical_cpp_parity"
+  ],
+  "path_map": {
+    "local": "D:/numerical-observatory",
+    "remote": "/mnt/d/numerical-observatory"
+  }
+}

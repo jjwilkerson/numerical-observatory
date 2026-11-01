@@ -1,0 +1,54 @@
+schema_version = 1
+identifier = "schwarzschild-nested-samples"
+coordinates = "cartesian_txyz"
+signature = "-+++"
+units = "geometrized code units; no SI conversion"
+symmetry = "none"
+fields = "alp betax betay betaz gxx gxy gxz gyy gyz gzz"
+synthetic_temporal_model = "known_stationary_analytic_samples"
+
+[[snapshots]]
+time = -30.0
+[[snapshots.patches]]
+level = 0
+centering = "vertex"
+shape = [17, 17, 17]
+origin = [2.0, -8.0, -8.0]
+spacing = [1.0, 1.0, 1.0]
+file = "patch-0.bin"
+[[snapshots.patches]]
+level = 1
+centering = "vertex"
+shape = [17, 17, 17]
+origin = [6.0, -4.0, -4.0]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-1.bin"
+
+[[snapshots]]
+time = 30.0
+[[snapshots.patches]]
+level = 0
+centering = "vertex"
+shape = [17, 17, 17]
+origin = [2.0, -8.0, -8.0]
+spacing = [1.0, 1.0, 1.0]
+file = "patch-0.bin"
+[[snapshots.patches]]
+level = 1
+centering = "vertex"
+shape = [17, 17, 17]
+origin = [6.0, -4.0, -4.0]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-1.bin"
+
+[[native_regions]]
+level = 0
+provenance = "analytic_sampling"
+lower = [2.0, -8.0, -8.0]
+upper = [18.0, 8.0, 8.0]
+
+[[native_regions]]
+level = 1
+provenance = "analytic_sampling"
+lower = [6.0, -4.0, -4.0]
+upper = [14.0, 4.0, 4.0]

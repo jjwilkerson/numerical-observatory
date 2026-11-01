@@ -58,6 +58,7 @@ class RayResult:
     fallback_reason: str | None = None
     carter_diagnostics: dict | None = None
     binary_diagnostics: dict | None = None
+    numerical_diagnostics: dict | None = None
 
 
 def hamilton_rhs(metric: Metric, state):
@@ -115,6 +116,10 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
     if settings.integrator == "carter":
         from .kerr_carter import trace_carter
         return trace_carter(metric,event,momentum,settings,domain,return_solution,surface)
+    from .numerical_metric import NumericalMetric
+    if type(metric) is NumericalMetric:
+        from .numerical_trace import trace_numerical
+        return trace_numerical(metric,event,momentum,settings,return_solution,surface,domain)
     schwarzschild = type(metric) is Schwarzschild
     from .binary_ks_approx import BinaryKSApprox
     from .binary_ks_orbit_approx import BinaryKSOrbitApprox

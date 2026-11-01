@@ -1,0 +1,54 @@
+[
+  {
+    "model": "schwarzschild",
+    "h": 1.0,
+    "event_error": 0.0033090532570082543,
+    "momentum_error": 0.0011990606156130727,
+    "selected_levels": [
+      0,
+      1
+    ],
+    "null_error": 2.4251474727624045e-08,
+    "status": "unresolved",
+    "reason": "affine_limit"
+  },
+  {
+    "model": "schwarzschild",
+    "h": 0.5,
+    "event_error": 0.00021414813956421863,
+    "momentum_error": 6.841223871329599e-05,
+    "selected_levels": [
+      0,
+      1
+    ],
+    "null_error": 4.322121370918136e-08,
+    "status": "unresolved",
+    "reason": "affine_limit"
+  },
+  {
+    "model": "kerr05",
+    "h": 1.0,
+    "event_error": 0.003404991447952921,
+    "momentum_error": 0.0012329964204872111,
+    "selected_levels": [
+      0,
+      1
+    ],
+    "null_error": 4.156621480014467e-09,
+    "status": "unresolved",
+    "reason": "affine_limit"
+  },
+  {
+    "model": "kerr05",
+    "h": 0.5,
+    "event_error": 0.0002804329561448826,
+    "momentum_error": 9.145003136747099e-05,
+    "selected_levels": [
+      0,
+      1
+    ],
+    "null_error": 1.5553577774761534e-08,
+    "status": "unresolved",
+    "reason": "affine_limit"
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "method": "ode",
+  "requested_method": "ode",
+  "version": "0.1.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "mass": null,
+  "camera": {
+    "position": [
+      6.5,
+      0.23,
+      0.17
+    ],
+    "target": [
+      7.5,
+      0.23,
+      0.17
+    ],
+    "up": [
+      0,
+      0,
+      1
+    ],
+    "fov_degrees": 40,
+    "width": 4,
+    "height": 3,
+    "time": 4,
+    "observer_frame": null,
+    "observer": "static"
+  },
+  "integration": {
+    "rtol": 1e-10,
+    "atol": 1e-12,
+    "escape_radius": 100.0,
+    "capture_radius": 1.99,
+    "max_affine": 6,
+    "max_step": 0.06,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "hamiltonian",
+    "carter_fallback": "none",
+    "binary_capture_fraction": 0.995,
+    "binary_signature_margin": 0.05
+  },
+  "counts": {
+    "captured": 0,
+    "escaped": 12,
+    "unresolved": 0
+  },
+  "termination_reasons": {
+    "numerical_finite_background": 12
+  },
+  "maxima": {
+    "null_error": 1.1872143119192236e-08,
+    "energy_drift": null,
+    "angular_momentum_drift": null
+  },
+  "diagnostic_sampling": "accepted steps and dense-output midpoints; null error = |g^ab p_a p_b| / p_t(initial)^2",
+  "total_steps": 752,
+  "rhs_evaluations": 13018,
+  "integrated_rays": 12,
+  "rotational_symmetry_reuse": false,
+  "elapsed_seconds": 18.652894299999843,
+  "analytic_critical_impact_parameter": null,
+  "analytic_shadow_radius_degrees": null,
+  "background": {
+    "model": "celestial coordinate grid",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "spacing_degrees": 15.0,
+    "line_width_degrees": 0.25,
+    "legend": "cool cyan/blue meridians; warm red/gold parallels; gray minor lines at spacing/3",
+    "accretion_disk": false
+  },
+  "execution": {
+    "workers": 1,
+    "requested_workers": 2,
+    "start_method": "spawn",
+    "task_count": 1,
+    "worker_cpu_seconds": 16.875,
+    "worker_task_seconds": 16.912993899999947,
+    "worker_peak_memory_bytes": {
+      "2528": 100839424
+    },
+    "startup_span_seconds": 1.6826551999997719,
+    "pool_wall_seconds": 18.647450399999798
+  },
+  "spacetime": {
+    "type": "numerical",
+    "dataset": {
+      "identifier": "experiment-j-three-level",
+      "directory": "D:\\numerical-observatory\\reference\\geodesics-cpp\\results\\amr-composite-multilevel\\carpetx-native-gmds",
+      "format": "GMDS v1, converted physical CarpetX ADM",
+      "manifest_sha256": "57607c50b1916e8f0e304f220ec2bb7f73a1df6fc21440bb9b3b3b5593b16a20",
+      "fields": [
+        "alp",
+        "betax",
+        "betay",
+        "betaz",
+        "gxx",
+        "gxy",
+        "gxz",
+        "gyy",
+        "gyz",
+        "gzz"
+      ],
+      "units": "CarpetX code units, c=G=1",
+      "time_coverage": [
+        0.0,
+        8.0
+      ],
+      "snapshots": 17,
+      "snapshot_times": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5,
+        8.0
+      ],
+      "native_regions": [
+        {
+          "level": 0,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -16,
+            -16,
+            -16
+          ],
+          "upper": [
+            16,
+            16,
+            16
+          ]
+        },
+        {
+          "level": 1,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -8,
+            -8,
+            -8
+          ],
+          "upper": [
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "level": 2,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -4,
+            -4,
+            -4
+          ],
+          "upper": [
+            4,
+            4,
+            4
+          ]
+        }
+      ],
+      "fixed_geometry": true,
+      "raw_bytes_per_snapshot": 8624880,
+      "cache_budget": 1073741824,
+      "source_series": "/mnt/data/numerical-relativity/geodesics/results/amr-composite-multilevel/carpetx-native-source/j-native.it%08T.bp5",
+      "source_time_unit_si": 4.925639893961039e-06,
+      "patches": [
+        {
+          "level": 0,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -16,
+            -16,
+            -16
+          ],
+          "spacing": [
+            1,
+            1,
+            1
+          ],
+          "centering": "vertex",
+          "file": "patch-0.bin"
+        },
+        {
+          "level": 1,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -8,
+            -8,
+            -8
+          ],
+          "spacing": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "centering": "vertex",
+          "file": "patch-1.bin"
+        },
+        {
+          "level": 2,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -4,
+            -4,
+            -4
+          ],
+          "spacing": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "centering": "vertex",
+          "file": "patch-2.bin"
+        }
+      ],
+      "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+    },
+    "spatial_interpolation": "cubic_amr_c1_hierarchy",
+    "temporal_interpolation": "piecewise linear saved ADM; right-sided standalone knots, incoming closed-slab tracing",
+    "derivative_method": "analytic interpolation-weight and ADM inverse chain rule; AMR weight gradients included",
+    "levels": [
+      0,
+      1,
+      2
+    ],
+    "transitions": [
+      {
+        "coarse_level": 0,
+        "fine_level": 1,
+        "outer_lower": [
+          -7.0,
+          -7.0,
+          -7.0
+        ],
+        "inner_lower": [
+          -6.0,
+          -6.0,
+          -6.0
+        ],
+        "inner_upper": [
+          6.0,
+          6.0,
+          6.0
+        ],
+        "outer_upper": [
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      {
+        "coarse_level": 1,
+        "fine_level": 2,
+        "outer_lower": [
+          -3.5,
+          -3.5,
+          -3.5
+        ],
+        "inner_lower": [
+          -3.0,
+          -3.0,
+          -3.0
+        ],
+        "inner_upper": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "outer_upper": [
+          3.5,
+          3.5,
+          3.5
+        ]
+      }
+    ],
+    "support_strata_certified": 3375,
+    "background": "none unless explicit finite-boundary model configured; data exits are unresolved",
+    "domain": {
+      "background": "finite_direction_sphere",
+      "background_radius": 8.0
+    }
+  },
+  "integrator": "hamiltonian / guarded SciPy DOP853 temporal slabs",
+  "selected_level_ray_counts": {
+    "0": 12,
+    "1": 12
+  },
+  "numerical_metric_evaluations": 14995,
+  "numerical_stencils": 40050,
+  "lookup_failure_attempts": {},
+  "invalid_lookup_counts": {},
+  "temporal_stage_rejections": 38,
+  "lookup_stage_rejections": 0,
+  "incomplete_diagnostics": 0,
+  "termination_codes": {
+    "0": "numerical_finite_background"
+  },
+  "background_direction": "Explicit finite direction-sphere only; normalized outgoing Cartesian tangent; no infinity or horizon inference",
+  "optimization_note": "No Carter, Schwarzschild quadrature, spherical reuse, or native CarpetX runtime"
+}

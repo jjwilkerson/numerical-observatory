@@ -12,6 +12,7 @@ dependencies = ["numpy>=1.24", "scipy>=1.11", "Pillow>=10"]
 
 [project.optional-dependencies]
 test = ["pytest>=7"]
+carpetx = ["openpmd-api>=0.17.1,<0.18"]
 
 [project.scripts]
 numerical-observatory = "numerical_observatory.cli:main"

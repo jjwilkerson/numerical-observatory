@@ -1,0 +1,11 @@
+{
+  "dataset": "D:\\numerical-observatory\\reference\\geodesics-cpp\\results\\amr-composite-multilevel\\carpetx-native-gmds",
+  "first_lookup_seconds": 0.06287599999996019,
+  "warm_evaluations": 500,
+  "warm_seconds": 0.6855913999997938,
+  "metric_evaluations_per_second": 729.2973628317834,
+  "active_mapped_bytes": 17249760,
+  "serialized_provider_bytes": 16936,
+  "cache_budget": 1073741824,
+  "caveat": "single measurement; OS page cache and system load affect timing; mmap byte count is not peak RSS"
+}

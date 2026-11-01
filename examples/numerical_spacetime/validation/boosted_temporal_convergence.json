@@ -1,0 +1,21 @@
+[
+  {
+    "cadence": 1.0,
+    "metric_rms": 4.915380602064012e-06,
+    "time_derivative_rms": 1.5428160955538938e-05
+  },
+  {
+    "cadence": 0.5,
+    "metric_rms": 1.2289587133481467e-06,
+    "time_derivative_rms": 7.723316884359876e-06,
+    "metric_order": 1.9998666805457601,
+    "time_derivative_order": 0.9982736313303215
+  },
+  {
+    "cadence": 0.25,
+    "metric_rms": 3.072540155621547e-07,
+    "time_derivative_rms": 3.863949729581754e-06,
+    "metric_order": 1.9999326787441858,
+    "time_derivative_order": 0.9991442410758402
+  }
+]

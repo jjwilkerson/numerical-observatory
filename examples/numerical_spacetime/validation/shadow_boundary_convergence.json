@@ -1,0 +1,298 @@
+[
+  {
+    "model": "schwarzschild",
+    "h": 1.0,
+    "reference_radius_pixels": 35.777087639996644,
+    "valid_bracket": true,
+    "bracket_pixels": [
+      35.589587639996644,
+      35.601306389996644
+    ],
+    "midpoint_error_pixels": -0.181640625,
+    "seconds": 65.70652419999988,
+    "samples": [
+      {
+        "radius_pixels": 34.277087639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 1.6396852755363244e-07
+      },
+      {
+        "radius_pixels": 37.277087639996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 8.432954833216897e-07
+      },
+      {
+        "radius_pixels": 35.777087639996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 7.839242804430268e-07
+      },
+      {
+        "radius_pixels": 35.027087639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 5.323566765673216e-07
+      },
+      {
+        "radius_pixels": 35.402087639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.3898731003242196e-07
+      },
+      {
+        "radius_pixels": 35.589587639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 2.096536018704842e-06
+      },
+      {
+        "radius_pixels": 35.683337639996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 4.692651408219106e-07
+      },
+      {
+        "radius_pixels": 35.636462639996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 3.991033730413643e-06
+      },
+      {
+        "radius_pixels": 35.613025139996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 6.278855455776683e-07
+      },
+      {
+        "radius_pixels": 35.601306389996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 2.097678098298445e-06
+      }
+    ]
+  },
+  {
+    "model": "schwarzschild",
+    "h": 0.5,
+    "reference_radius_pixels": 35.777087639996644,
+    "valid_bracket": true,
+    "bracket_pixels": [
+      35.753650139996644,
+      35.765368889996644
+    ],
+    "midpoint_error_pixels": -0.017578125,
+    "seconds": 99.17994649999991,
+    "samples": [
+      {
+        "radius_pixels": 34.277087639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 5.878795841752499e-07
+      },
+      {
+        "radius_pixels": 37.277087639996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 3.853861002189687e-07
+      },
+      {
+        "radius_pixels": 35.777087639996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 5.150053306941225e-07
+      },
+      {
+        "radius_pixels": 35.027087639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 3.790133175204206e-07
+      },
+      {
+        "radius_pixels": 35.402087639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 5.925900992929079e-07
+      },
+      {
+        "radius_pixels": 35.589587639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 1.007095026779818e-06
+      },
+      {
+        "radius_pixels": 35.683337639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.748987625076791e-06
+      },
+      {
+        "radius_pixels": 35.730212639996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 1.0679787835795768e-06
+      },
+      {
+        "radius_pixels": 35.753650139996644,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 3.8624020155666474e-07
+      },
+      {
+        "radius_pixels": 35.765368889996644,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 2.1830567838864064e-06
+      }
+    ]
+  },
+  {
+    "model": "kerr05",
+    "h": 1.0,
+    "reference_radius_pixels": 43.39726422375488,
+    "valid_bracket": true,
+    "bracket_pixels": [
+      43.24492047375488,
+      43.25663922375488
+    ],
+    "midpoint_error_pixels": -0.146484375,
+    "seconds": 61.46354289999999,
+    "samples": [
+      {
+        "radius_pixels": 41.89726422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 3.3992745609954615e-07
+      },
+      {
+        "radius_pixels": 44.89726422375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 1.2729390251097038e-06
+      },
+      {
+        "radius_pixels": 43.39726422375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 1.912275317316207e-07
+      },
+      {
+        "radius_pixels": 42.64726422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 5.578618728135959e-07
+      },
+      {
+        "radius_pixels": 43.02226422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 2.612118239450321e-07
+      },
+      {
+        "radius_pixels": 43.20976422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.734788454269994e-07
+      },
+      {
+        "radius_pixels": 43.30351422375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 4.506763308744806e-07
+      },
+      {
+        "radius_pixels": 43.25663922375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 8.326419085074586e-07
+      },
+      {
+        "radius_pixels": 43.23320172375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 6.069361495000751e-07
+      },
+      {
+        "radius_pixels": 43.24492047375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.490283710560275e-07
+      }
+    ]
+  },
+  {
+    "model": "kerr05",
+    "h": 0.5,
+    "reference_radius_pixels": 43.39726422375488,
+    "valid_bracket": true,
+    "bracket_pixels": [
+      43.37382672375488,
+      43.38554547375488
+    ],
+    "midpoint_error_pixels": -0.017578125,
+    "seconds": 98.75774269999965,
+    "samples": [
+      {
+        "radius_pixels": 41.89726422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.607462467191683e-07
+      },
+      {
+        "radius_pixels": 44.89726422375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 4.3377082588930336e-07
+      },
+      {
+        "radius_pixels": 43.39726422375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 6.190407405985999e-07
+      },
+      {
+        "radius_pixels": 42.64726422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 8.104436838848436e-06
+      },
+      {
+        "radius_pixels": 43.02226422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.013257964670768e-07
+      },
+      {
+        "radius_pixels": 43.20976422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 6.2501566065248e-07
+      },
+      {
+        "radius_pixels": 43.30351422375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 5.899042779124737e-07
+      },
+      {
+        "radius_pixels": 43.35038922375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 1.181169855296697e-06
+      },
+      {
+        "radius_pixels": 43.37382672375488,
+        "status": "captured",
+        "reason": "numerical_supplied_capture",
+        "null_error": 4.6237381829028064e-07
+      },
+      {
+        "radius_pixels": 43.38554547375488,
+        "status": "escaped",
+        "reason": "numerical_finite_background",
+        "null_error": 2.1110783922921035e-06
+      }
+    ]
+  }
+]

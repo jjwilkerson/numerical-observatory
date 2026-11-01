@@ -22,6 +22,12 @@ def render(metric, camera, integration, output, progress=None, background=None,
     from .output import staged_render
     from .kerr_carter import validate_backend
     validate_backend(metric,integration,domain,None if disk is None else disk.surface)
+    from .numerical_metric import NumericalMetric
+    if type(metric) is NumericalMetric:
+        if method!='ode' or disk is not None or domain is not None:
+            raise ValueError('numerical metrics require guarded generic Hamiltonian, numerical domain, and no disk')
+        from .numerical_trace import NumericalDomain
+        NumericalDomain(metric).validate_camera(camera.event)
     from .binary_ks_approx import BinaryKSApprox
     from .binary_ks_orbit_approx import BinaryKSOrbitApprox
     if type(metric) in (BinaryKSApprox,BinaryKSOrbitApprox):
@@ -97,6 +103,16 @@ def _render(metric, camera, integration, output, progress=None, background=None,
                       'energy_drift':np.full(statuses.shape,np.nan),
                       'constraint_diagnostics_complete':np.zeros(statuses.shape,dtype=bool)} if is_binary else {})
     binary_reasons=np.empty(statuses.shape,dtype=object) if is_binary else None
+    from .numerical_metric import NumericalMetric
+    is_numerical=type(metric) is NumericalMetric
+    numerical_arrays=({'null_error':np.full(statuses.shape,np.nan),'finest_selected_level':np.full(statuses.shape,-1,dtype=np.int32),
+                       'selected_level_count':np.zeros(statuses.shape,dtype=np.uint16),
+                       'capture_index':np.zeros(statuses.shape,dtype=np.uint16),'time_slabs':np.zeros(statuses.shape,dtype=np.uint32),
+                       'temporal_stage_rejections':np.zeros(statuses.shape,dtype=np.uint32),
+                       'lookup_stage_rejections':np.zeros(statuses.shape,dtype=np.int32),
+                       'constraint_diagnostics_complete':np.zeros(statuses.shape,dtype=bool)} if is_numerical else {})
+    numerical_reasons=np.empty(statuses.shape,dtype=object) if is_numerical else None
+    level_counts=Counter();numerical_failures=Counter();numerical_metric_calls=numerical_stencils=0
     if is_orbit_binary:
         binary_arrays.update(energy_change=np.full(statuses.shape,np.nan),helical_error=np.full(statuses.shape,np.nan))
     from .backend_records import BackendRecords
@@ -118,6 +134,19 @@ def _render(metric, camera, integration, output, progress=None, background=None,
         for row, col, momentum, result in results:
             counts[result.status] += 1
             reasons[result.reason] += 1
+            if is_numerical:
+                info=result.numerical_diagnostics;levels=info['selected_levels'];level_counts.update(levels)
+                numerical_failures.update(info['lookup_failures'])
+                numerical_metric_calls+=info['evaluations'];numerical_stencils+=info['stencils']
+                numerical_arrays['null_error'][row,col]=result.max_null_error
+                numerical_arrays['finest_selected_level'][row,col]=max(levels,default=-1)
+                numerical_arrays['selected_level_count'][row,col]=len(levels)
+                numerical_arrays['capture_index'][row,col]=info['capture_index']
+                numerical_arrays['time_slabs'][row,col]=info['slabs']
+                numerical_arrays['temporal_stage_rejections'][row,col]=info['temporal_stage_rejections']
+                numerical_arrays['lookup_stage_rejections'][row,col]=info['lookup_stage_rejections']
+                numerical_arrays['constraint_diagnostics_complete'][row,col]=info['complete']
+                numerical_reasons[row,col]=result.reason
             if is_binary:
                 info=result.binary_diagnostics
                 binary_arrays['capture_index'][row,col]=info['capture_index']
@@ -206,13 +235,29 @@ def _render(metric, camera, integration, output, progress=None, background=None,
                 capture_index_codes={'0':'no provisional capture','1':'provisional moving rest-radius ellipsoid 1','2':'provisional moving rest-radius ellipsoid 2'},
                 maxima=diagnostics['maxima'] | dict(energy_change=float(np.nanmax(binary_arrays['energy_change'])) if np.isfinite(binary_arrays['energy_change']).any() else None,
                     helical_error=float(np.nanmax(binary_arrays['helical_error'])) if np.isfinite(binary_arrays['helical_error']).any() else None))
+    if is_numerical:
+        names=sorted(reasons)
+        numerical_arrays['termination_code']=np.array([[names.index(v) for v in row] for row in numerical_reasons],dtype=np.uint16)
+        diagnostics.update(spacetime=metric.description(),integrator='hamiltonian / guarded SciPy DOP853 temporal slabs',
+            selected_level_ray_counts={str(k):v for k,v in sorted(level_counts.items())},
+            numerical_metric_evaluations=numerical_metric_calls,numerical_stencils=numerical_stencils,
+            lookup_failure_attempts=dict(numerical_failures),
+            invalid_lookup_counts={k:v for k,v in reasons.items() if k.startswith('numerical_') and k not in ('numerical_supplied_capture','numerical_finite_background')},
+            temporal_stage_rejections=int(numerical_arrays['temporal_stage_rejections'].sum()),
+            lookup_stage_rejections=int(numerical_arrays['lookup_stage_rejections'].sum()),
+            incomplete_diagnostics=int((~numerical_arrays['constraint_diagnostics_complete']).sum()),
+            termination_codes={str(i):v for i,v in enumerate(names)},
+            background_direction='Explicit finite direction-sphere only; normalized outgoing Cartesian tangent; no infinity or horizon inference',
+            optimization_note='No Carter, Schwarzschild quadrature, spherical reuse, or native CarpetX runtime')
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
+    if is_numerical:
+        (output/'numerical-dataset.toml').write_bytes((metric.data.root/'dataset.toml').read_bytes())
     Image.fromarray(np.uint8(np.round(np.clip(image, 0, 1) * 255))).save(output / "shadow.png")
     # Save computed directions for later background/exposure changes without ODEs.
     # Codes: 0=captured, 1=escaped, 2=unresolved. Non-escaping directions are NaN.
     np.savez_compressed(output / "rays.npz", directions=directions, status=statuses,
                         **conservation, **({"kerr_constants": constants} if is_kerr else {}),
-                        **(backend_records.arrays() if is_kerr else {}), **binary_arrays)
+                        **(backend_records.arrays() if is_kerr else {}), **binary_arrays, **numerical_arrays)
     (output / "diagnostics.json").write_text(json.dumps(diagnostics, indent=2, allow_nan=False) + "\n", encoding="utf-8")
     return diagnostics

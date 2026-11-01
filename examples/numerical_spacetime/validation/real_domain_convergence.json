@@ -1,0 +1,233 @@
+[
+  {
+    "radius": 7.5,
+    "rtol": 1e-08,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 3.509728390929635e-07,
+    "direction": [
+      0.9936888498179949,
+      0.1003999716297249,
+      0.050023149082605724
+    ],
+    "endpoint": [
+      2.832206263984228,
+      7.489456075108731,
+      0.3309877486904225,
+      0.22021537011245723
+    ],
+    "tolerance_direction_error_radians": 1.7960037109375742e-08
+  },
+  {
+    "radius": 7.5,
+    "rtol": 1e-10,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 7.961443376881654e-10,
+    "direction": [
+      0.9936888518357216,
+      0.10039995566189246,
+      0.0500231410498737
+    ],
+    "endpoint": [
+      2.832206354535914,
+      7.489456075581911,
+      0.33098774066460823,
+      0.22021536608269118
+    ],
+    "tolerance_direction_error_radians": 2.7949934632528602e-11
+  },
+  {
+    "radius": 7.5,
+    "rtol": 1e-12,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 1.5216953830069122e-10,
+    "direction": [
+      0.9936888518325863,
+      0.10039995568670136,
+      0.050023141062359146
+    ],
+    "endpoint": [
+      2.8322063543961886,
+      7.489456075581178,
+      0.330987740677039,
+      0.22021536608894
+    ],
+    "tolerance_direction_error_radians": 0.0
+  },
+  {
+    "radius": 8.0,
+    "rtol": 1e-08,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 3.509728390929635e-07,
+    "direction": [
+      0.9937439756129913,
+      0.09994662596137945,
+      0.04983555850818187
+    ],
+    "endpoint": [
+      2.259387256817571,
+      7.987152279970272,
+      0.381140681974273,
+      0.24521467555974855
+    ],
+    "tolerance_direction_error_radians": 1.7780991268886158e-08
+  },
+  {
+    "radius": 8.0,
+    "rtol": 1e-10,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 7.961443376881654e-10,
+    "direction": [
+      0.9937439776018866,
+      0.09994661015471222,
+      0.04983555054941193
+    ],
+    "endpoint": [
+      2.25938743613741,
+      7.987152280982097,
+      0.3811406659524171,
+      0.24521466750548876
+    ],
+    "tolerance_direction_error_radians": 2.767099671046177e-11
+  },
+  {
+    "radius": 8.0,
+    "rtol": 1e-12,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 1.5216953830069122e-10,
+    "direction": [
+      0.9937439775987963,
+      0.0999466101792703,
+      0.049835550561782675
+    ],
+    "endpoint": [
+      2.2593874358598396,
+      7.987152280980528,
+      0.3811406659772712,
+      0.24521466751799292
+    ],
+    "tolerance_direction_error_radians": 0.0,
+    "direction_change_from_previous_radius": 0.0004937116568057876
+  },
+  {
+    "radius": 8.5,
+    "rtol": 1e-08,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 3.509728390929635e-07,
+    "direction": [
+      0.9937628955474471,
+      0.09979176643710744,
+      0.04976857225715544
+    ],
+    "endpoint": [
+      1.6934033861485474,
+      8.484759221686947,
+      0.4311387892108784,
+      0.2701486524787655
+    ],
+    "tolerance_direction_error_radians": 1.6242579447038724e-08
+  },
+  {
+    "radius": 8.5,
+    "rtol": 1e-10,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 7.961443376881654e-10,
+    "direction": [
+      0.9937628973625703,
+      0.09979175199141421,
+      0.04976856497864569
+    ],
+    "endpoint": [
+      1.6934036451779642,
+      8.484759223245014,
+      0.4311387658970718,
+      0.27014864075063977
+    ],
+    "tolerance_direction_error_radians": 3.4687798712310384e-11
+  },
+  {
+    "radius": 8.5,
+    "rtol": 1e-12,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 1.619909274754652e-10,
+    "direction": [
+      0.9937628973587022,
+      0.09979175202220798,
+      0.04976856499413842
+    ],
+    "endpoint": [
+      1.693403644730767,
+      8.484759223242321,
+      0.43113876593735695,
+      0.2701486407709068
+    ],
+    "tolerance_direction_error_radians": 0.0,
+    "direction_change_from_previous_radius": 0.00016978242684536398
+  },
+  {
+    "radius": 9.0,
+    "rtol": 1e-08,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 3.509728390929635e-07,
+    "direction": [
+      0.9937619045413036,
+      0.09980319484944844,
+      0.04976544363595989
+    ],
+    "endpoint": [
+      1.1326729829998274,
+      8.982287334776931,
+      0.48109543748667477,
+      0.29506171479105425
+    ],
+    "tolerance_direction_error_radians": 1.5110820329733473e-08
+  },
+  {
+    "radius": 9.0,
+    "rtol": 1e-10,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 7.961443376881654e-10,
+    "direction": [
+      0.9937619062303588,
+      0.09980318140911006,
+      0.04976543686158048
+    ],
+    "endpoint": [
+      1.1326733204675605,
+      8.982287336920654,
+      0.48109540690156816,
+      0.2950616994004363
+    ],
+    "tolerance_direction_error_radians": 3.473413016620146e-11
+  },
+  {
+    "radius": 9.0,
+    "rtol": 1e-12,
+    "status": "escaped",
+    "reason": "numerical_finite_background",
+    "null_error": 1.619909274754652e-10,
+    "direction": [
+      0.9937619062264851,
+      0.09980318143994646,
+      0.04976543687709081
+    ],
+    "endpoint": [
+      1.1326733198519905,
+      8.982287336916745,
+      0.4810954069573543,
+      0.2950616994285002
+    ],
+    "tolerance_direction_error_radians": 0.0,
+    "direction_change_from_previous_radius": 1.189113321671337e-05
+  }
+]

@@ -1,0 +1,243 @@
+{
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "source_sha256": {
+    "reference/geodesics-cpp/src/metrics/numerical.cpp": "1d301512e2cb040c88961e81ff8b9edcd922667b3e291eeb83ed87f36399a810",
+    "reference/geodesics-cpp/src/integrator.cpp": "78d8fe4b24ab513300c246f5984bfa33eeb2a6a2539ac12ed9f698068ff1a1cb",
+    "reference/geodesics-cpp/include/geodesic/metrics/numerical.hpp": "615312c4db8d75d4b56ccbacdc17a508d1c5466938ee854685e9c64b16e7a058",
+    "reference/geodesics-cpp/include/geodesic/detail/cubic_weights.hpp": "2d9243cf910012aaf2d68c79c4e6946ab57dd18682a6591f9eee3feb022632e0",
+    "reference/geodesics-cpp/include/geodesic/detail/coverage_boxes.hpp": "1df7678b99075d90f45678ea5a1f28b31e71082afd08014e6b41de671a42e508",
+    "reference/geodesics-cpp/include/geodesic/detail/box_amr_weight.hpp": "8d832645129ab331a1d6dc95d0b5eabdff6b426f70ec7150a041cbc74d11c552",
+    "reference/geodesics-cpp/tools/convert_openpmd.cpp": "17367a0e92688f08c582844501423731d55a675900eb9c0b4c59bbdfa4d29551",
+    "tools/numerical_cpp_parity.cpp": "ac39e575b386ff25fb7794d3417643417fa78b0f7fa30266996eb3f6e5c9f236",
+    "output/numerical_cpp_parity": "799e6fbd588bd3170b241f3600c8baead81d12fc76cb38b2be0c12ade4716f30",
+    "src/numerical_observatory/numerical_data.py": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+    "src/numerical_observatory/numerical_metric.py": "404b04842d90ae88308b10735a33c6d6345c7dae210e1f58bec4d230e7e6319d",
+    "src/numerical_observatory/amr_geometry.py": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+    "src/numerical_observatory/numerical_trace.py": "a9c97f0f231fb8b23e109e4c99339350ea18579aa968156e6bff588283d27334",
+    "src/numerical_observatory/convert_carpetx.py": "68a694d244704269d0ab98bf5f4f24b00d79f1b9e9bcc1303edaa32a718879d4",
+    "src/numerical_observatory/numerical_fixtures.py": "efd195ceafb6090c6f2afadd4153c474f139aba33dfad2c489b504bf2aeae894",
+    "src/numerical_observatory/numerical_validation.py": "f5a669f1c56ddbde732eed289b087682354e9dd311600ee27d09d2769f38b0c9",
+    "src/numerical_observatory/numerical_experiments.py": "29a1582b2d884db0d9ecdd44f8581c5d240bb6c2aa8a5e464efc4ac6b8d0d4aa",
+    "src/numerical_observatory/cpp_oracle.py": "15cb12cd09129c59a658e0b528a691cb6f8b680dceae14f1f2005921212ba0bc",
+    "src/numerical_observatory/metric.py": "6e50c5f5423323559ad418a5957130b037685154ab51f16e698fe5b3be86ff11",
+    "src/numerical_observatory/kerr.py": "24f9594bdac093c4c62c0424afdbb1d3544de5137f29fc8e164179306b1a7859",
+    "src/numerical_observatory/binary_ks_approx.py": "343bb71f6e416784d39eb0d20e94e908c8322855db873c347d5e3568e1475a5a",
+    "src/numerical_observatory/binary_ks_orbit_approx.py": "cadb3b41d84abd9eeee04a4c7204a2d65c109082fb9a21796c9a86fc2fc11e50",
+    "src/numerical_observatory/boosted_ks.py": "d21b2d5c318de17767851610b7876e2423478c2ac703bc948252dbcc6b7795bb",
+    "src/numerical_observatory/camera.py": "54e8afd9c0d1afbb5f467adfc07204a2e39fcd183c8e234d920b45c0b46c7592",
+    "src/numerical_observatory/kerr_carter.py": "aa27b7af33c9db552e757e205faefa492b34fae987e85e1a9cdaad692dc99d1f",
+    "src/numerical_observatory/disk.py": "d2395a23ef6f197975f3e616793fe120a5eb297695bdb4a5ecbb14ffe95863e6",
+    "src/numerical_observatory/emitter_motion.py": "6b3278989564067f2dd6b992023806355dde3001107996aa733e34d79b71a833"
+  },
+  "native_reference_manifest_sha256": "57607c50b1916e8f0e304f220ec2bb7f73a1df6fc21440bb9b3b3b5593b16a20",
+  "native_python_manifest_sha256": "39b38a01c44e289122eb6909936ab78f95b4d889d3d83cd1150b246937fbe06d",
+  "native_payload_sha256": {
+    "patch-0.bin": {
+      "reference": "c829710efbefc2a71816e6c8692e3f33afc000ebb66553747bcbec301acc0f64",
+      "python": "c829710efbefc2a71816e6c8692e3f33afc000ebb66553747bcbec301acc0f64"
+    },
+    "patch-1.bin": {
+      "reference": "5f32ec5cf359a1ce46df25c9bacc1335fdce0644954790efbb59c6395ffae5c3",
+      "python": "5f32ec5cf359a1ce46df25c9bacc1335fdce0644954790efbb59c6395ffae5c3"
+    },
+    "patch-10.bin": {
+      "reference": "efb5399366e06d3e79f243eb1de97e86ef886b8d1328db57255a18bbfced83a3",
+      "python": "efb5399366e06d3e79f243eb1de97e86ef886b8d1328db57255a18bbfced83a3"
+    },
+    "patch-11.bin": {
+      "reference": "1f557de41173bb6583f6280bc26d0e00eba7f9e9186cde7c730656ad34db023b",
+      "python": "1f557de41173bb6583f6280bc26d0e00eba7f9e9186cde7c730656ad34db023b"
+    },
+    "patch-12.bin": {
+      "reference": "9f7498b3897c20803e80ca5ac137e9f8d25ef6f42bd62aa31fd68d7e25412798",
+      "python": "9f7498b3897c20803e80ca5ac137e9f8d25ef6f42bd62aa31fd68d7e25412798"
+    },
+    "patch-13.bin": {
+      "reference": "2f01f6fa31b04001d5a51ffcb6c3f6ecd3123b867f38e8caa776252bc2ce7501",
+      "python": "2f01f6fa31b04001d5a51ffcb6c3f6ecd3123b867f38e8caa776252bc2ce7501"
+    },
+    "patch-14.bin": {
+      "reference": "de5f944709075a802d56ef4692e9da6c2e07aed96cd806c4d1ac3e83acc9ae32",
+      "python": "de5f944709075a802d56ef4692e9da6c2e07aed96cd806c4d1ac3e83acc9ae32"
+    },
+    "patch-15.bin": {
+      "reference": "2a32f9220cd371641a8a5325d44563bf6d800db8f9cb515bde50e0387571116a",
+      "python": "2a32f9220cd371641a8a5325d44563bf6d800db8f9cb515bde50e0387571116a"
+    },
+    "patch-16.bin": {
+      "reference": "82d310a9ec0da7d7c3f99ac4e29a20be72fe95c3fd8a923d7491fae985a5e327",
+      "python": "82d310a9ec0da7d7c3f99ac4e29a20be72fe95c3fd8a923d7491fae985a5e327"
+    },
+    "patch-17.bin": {
+      "reference": "cf1da6f190876dc4fdaffb1653cdc52e5ca8d792a6cf594fd7e9af1894371e4d",
+      "python": "cf1da6f190876dc4fdaffb1653cdc52e5ca8d792a6cf594fd7e9af1894371e4d"
+    },
+    "patch-18.bin": {
+      "reference": "5311addf6b5af80dcfcf3b1526d48a6ff36a41c803d132f90088717c5e3fe6f1",
+      "python": "5311addf6b5af80dcfcf3b1526d48a6ff36a41c803d132f90088717c5e3fe6f1"
+    },
+    "patch-19.bin": {
+      "reference": "8f56618d80c518009e52d951acd6f081205ac04e4a460c59a3c4e3ce001842c1",
+      "python": "8f56618d80c518009e52d951acd6f081205ac04e4a460c59a3c4e3ce001842c1"
+    },
+    "patch-2.bin": {
+      "reference": "986e58576df476c2d977a98ad738d48ce77f2aa8a4a7958a95b2064b69c3d762",
+      "python": "986e58576df476c2d977a98ad738d48ce77f2aa8a4a7958a95b2064b69c3d762"
+    },
+    "patch-20.bin": {
+      "reference": "92114470c6ee53ab1d51b798a4873446a8cc521108ed48ec3c01fec925d90d50",
+      "python": "92114470c6ee53ab1d51b798a4873446a8cc521108ed48ec3c01fec925d90d50"
+    },
+    "patch-21.bin": {
+      "reference": "b4ac79fa8dea17ebeab0b5be2567d74009b873933b9eee311d5837d1124dee21",
+      "python": "b4ac79fa8dea17ebeab0b5be2567d74009b873933b9eee311d5837d1124dee21"
+    },
+    "patch-22.bin": {
+      "reference": "59c22836f17ff85c1f37b2a1cce10d41e23f562d84e9631691788c7440480841",
+      "python": "59c22836f17ff85c1f37b2a1cce10d41e23f562d84e9631691788c7440480841"
+    },
+    "patch-23.bin": {
+      "reference": "bb8b4f8748e4ac5db8391d4ebc1510fd310460c4255cbdd784802a161916f263",
+      "python": "bb8b4f8748e4ac5db8391d4ebc1510fd310460c4255cbdd784802a161916f263"
+    },
+    "patch-24.bin": {
+      "reference": "ac463547f467311f65ba838bf21ae36f54ba5c4170582bcc7be47e788fc46035",
+      "python": "ac463547f467311f65ba838bf21ae36f54ba5c4170582bcc7be47e788fc46035"
+    },
+    "patch-25.bin": {
+      "reference": "e1aca2755f63ded31a4eef6401345e57ebc5574fef561c9b5e94586fab4be01f",
+      "python": "e1aca2755f63ded31a4eef6401345e57ebc5574fef561c9b5e94586fab4be01f"
+    },
+    "patch-26.bin": {
+      "reference": "45e63f32d8dde95a4ba97857985b1e2ec0120fc99c634b0e6960487d3b46830b",
+      "python": "45e63f32d8dde95a4ba97857985b1e2ec0120fc99c634b0e6960487d3b46830b"
+    },
+    "patch-27.bin": {
+      "reference": "47358a2ea59714f93f2ae303f3f970a5bc5214a012ba8236c25304b3dc993480",
+      "python": "47358a2ea59714f93f2ae303f3f970a5bc5214a012ba8236c25304b3dc993480"
+    },
+    "patch-28.bin": {
+      "reference": "9327b357dd43423261d76819d04aa12e2dd315ffca898c7e9abdb96c8bf98050",
+      "python": "9327b357dd43423261d76819d04aa12e2dd315ffca898c7e9abdb96c8bf98050"
+    },
+    "patch-29.bin": {
+      "reference": "788802b9d4db902b690ae3a2858886c8499a91947edf11bdd9f332fb8f743bda",
+      "python": "788802b9d4db902b690ae3a2858886c8499a91947edf11bdd9f332fb8f743bda"
+    },
+    "patch-3.bin": {
+      "reference": "afa797ec243a77e9ee8bf1ed80fba25682f4b5373028816ec48ee76e1e258f8d",
+      "python": "afa797ec243a77e9ee8bf1ed80fba25682f4b5373028816ec48ee76e1e258f8d"
+    },
+    "patch-30.bin": {
+      "reference": "0ffe8d8c61ba9d2ee11969e41cb3a0657bd843cc0dcd1119750ff552aa8e418d",
+      "python": "0ffe8d8c61ba9d2ee11969e41cb3a0657bd843cc0dcd1119750ff552aa8e418d"
+    },
+    "patch-31.bin": {
+      "reference": "d4b7dec27b914f0ae5e2b4abd75233f17ba4d7eaebca9e7f9e70b40358d11903",
+      "python": "d4b7dec27b914f0ae5e2b4abd75233f17ba4d7eaebca9e7f9e70b40358d11903"
+    },
+    "patch-32.bin": {
+      "reference": "1218e63769740b9c8d8d0a6ae69bac170a96e93fdf167f71602530094cda8f4c",
+      "python": "1218e63769740b9c8d8d0a6ae69bac170a96e93fdf167f71602530094cda8f4c"
+    },
+    "patch-33.bin": {
+      "reference": "292456a0e602830ccacf105004b732ce399f07768ba9a86f680ca224b9b48030",
+      "python": "292456a0e602830ccacf105004b732ce399f07768ba9a86f680ca224b9b48030"
+    },
+    "patch-34.bin": {
+      "reference": "510b002d4c80eed1e24832514358b737a2e9f672b1ca5f03c3a5c2cceb65df96",
+      "python": "510b002d4c80eed1e24832514358b737a2e9f672b1ca5f03c3a5c2cceb65df96"
+    },
+    "patch-35.bin": {
+      "reference": "2174f74b7591182319cadfa1375e46d36a266c9de904ea3df29c6b01d4861feb",
+      "python": "2174f74b7591182319cadfa1375e46d36a266c9de904ea3df29c6b01d4861feb"
+    },
+    "patch-36.bin": {
+      "reference": "aba2ad4646cd006e15696d824b8a625f166d812f998c3cb598046d26b1936417",
+      "python": "aba2ad4646cd006e15696d824b8a625f166d812f998c3cb598046d26b1936417"
+    },
+    "patch-37.bin": {
+      "reference": "a1308b08b0d4749ccecb7074cb51087801de269ed4f314b40eedc85054076b51",
+      "python": "a1308b08b0d4749ccecb7074cb51087801de269ed4f314b40eedc85054076b51"
+    },
+    "patch-38.bin": {
+      "reference": "06652c8a7aecc484e7a76537aabf5eaa6f52f797a4cc27ea88091e902c4543a8",
+      "python": "06652c8a7aecc484e7a76537aabf5eaa6f52f797a4cc27ea88091e902c4543a8"
+    },
+    "patch-39.bin": {
+      "reference": "99c7f24da07db50cda5c9ded7a35ea0d4e721a9ff025dba618e3a91f04980f66",
+      "python": "99c7f24da07db50cda5c9ded7a35ea0d4e721a9ff025dba618e3a91f04980f66"
+    },
+    "patch-4.bin": {
+      "reference": "ddedad069a67c7494ddf01ab1694896e8b52e5e95faa3c0199b1fb910ecaff19",
+      "python": "ddedad069a67c7494ddf01ab1694896e8b52e5e95faa3c0199b1fb910ecaff19"
+    },
+    "patch-40.bin": {
+      "reference": "125031bd163295c0610e7298ccbf748e155bd7110017ede5fe39da79d50ea229",
+      "python": "125031bd163295c0610e7298ccbf748e155bd7110017ede5fe39da79d50ea229"
+    },
+    "patch-41.bin": {
+      "reference": "f35a3dc0b1ba87ebe2bdf3f75df5c8f6e03e58498c65af98a4e3ddc15f14f3db",
+      "python": "f35a3dc0b1ba87ebe2bdf3f75df5c8f6e03e58498c65af98a4e3ddc15f14f3db"
+    },
+    "patch-42.bin": {
+      "reference": "5aa4295b7643adfa9d361b05de1e8f2914334b27a89a2af49ba36f670e04e5f1",
+      "python": "5aa4295b7643adfa9d361b05de1e8f2914334b27a89a2af49ba36f670e04e5f1"
+    },
+    "patch-43.bin": {
+      "reference": "319673b0c6b77919efaa2febe1f3cf3b821270143b154d214c6414d5c55255b5",
+      "python": "319673b0c6b77919efaa2febe1f3cf3b821270143b154d214c6414d5c55255b5"
+    },
+    "patch-44.bin": {
+      "reference": "9989af187a1dcc3f77e1fcdf7c48cf43f0c2756e29055c881b7ce436b2d85767",
+      "python": "9989af187a1dcc3f77e1fcdf7c48cf43f0c2756e29055c881b7ce436b2d85767"
+    },
+    "patch-45.bin": {
+      "reference": "716d9f824b78f3fa8194a0704499987c9f4d12f6797a7577bae651af5e559f79",
+      "python": "716d9f824b78f3fa8194a0704499987c9f4d12f6797a7577bae651af5e559f79"
+    },
+    "patch-46.bin": {
+      "reference": "e50fe3d3349da0869bc0b6313a8e69299a610c871fc706810be3c93d18eeb698",
+      "python": "e50fe3d3349da0869bc0b6313a8e69299a610c871fc706810be3c93d18eeb698"
+    },
+    "patch-47.bin": {
+      "reference": "d7b5671e3719d155ebdc5a1e8e1a55fed199be493e5999ad3f49dc72fa549794",
+      "python": "d7b5671e3719d155ebdc5a1e8e1a55fed199be493e5999ad3f49dc72fa549794"
+    },
+    "patch-48.bin": {
+      "reference": "e71e1ebc6f8e3a2d63cbfbf6d9849c87c2e56b9ba2f7c22b48ee918b6b3156a1",
+      "python": "e71e1ebc6f8e3a2d63cbfbf6d9849c87c2e56b9ba2f7c22b48ee918b6b3156a1"
+    },
+    "patch-49.bin": {
+      "reference": "50a0e52d30156076d8a82b7084369e573c3cb67ba940943791cf39d76db00fa0",
+      "python": "50a0e52d30156076d8a82b7084369e573c3cb67ba940943791cf39d76db00fa0"
+    },
+    "patch-5.bin": {
+      "reference": "b2d787f24aa85d12ca3831dcb34ae3efc64cfd738fc5304512b0888a08b45d77",
+      "python": "b2d787f24aa85d12ca3831dcb34ae3efc64cfd738fc5304512b0888a08b45d77"
+    },
+    "patch-50.bin": {
+      "reference": "a4dcb97f7208fcf0cf374cef2f3a566202c6073a2969761b37c15da9e1cc1668",
+      "python": "a4dcb97f7208fcf0cf374cef2f3a566202c6073a2969761b37c15da9e1cc1668"
+    },
+    "patch-6.bin": {
+      "reference": "e0a197647e26de0d33b805eb46eb6106fb10149cc9b27233ead534d8f1ef04b8",
+      "python": "e0a197647e26de0d33b805eb46eb6106fb10149cc9b27233ead534d8f1ef04b8"
+    },
+    "patch-7.bin": {
+      "reference": "f3cf57665d051e2ddeaa497745e5ee48c36feead451a775656aeb1c7b97de4a8",
+      "python": "f3cf57665d051e2ddeaa497745e5ee48c36feead451a775656aeb1c7b97de4a8"
+    },
+    "patch-8.bin": {
+      "reference": "2a47914c2f36a378637a3a25e1aa66edd66dec881253b566e8c227953a1c55a0",
+      "python": "2a47914c2f36a378637a3a25e1aa66edd66dec881253b566e8c227953a1c55a0"
+    },
+    "patch-9.bin": {
+      "reference": "bb4154472787d486015e2ed1a8b86042bba297ab18c3d7b034420811333c1920",
+      "python": "bb4154472787d486015e2ed1a8b86042bba297ab18c3d7b034420811333c1920"
+    }
+  }
+}

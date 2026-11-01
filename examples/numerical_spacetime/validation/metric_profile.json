@@ -1,0 +1,165 @@
+{
+  "evaluations": 500,
+  "top_cumulative": [
+    {
+      "file": "numerical_metric.py",
+      "line": 194,
+      "function": "evaluate",
+      "calls": 500,
+      "own_seconds": 0.0025281,
+      "cumulative_seconds": 0.9396591000000001
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 184,
+      "function": "evaluate_adm",
+      "calls": 499,
+      "own_seconds": 0.0130188,
+      "cumulative_seconds": 0.8176098
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 162,
+      "function": "spatial",
+      "calls": 998,
+      "own_seconds": 0.0014112,
+      "cumulative_seconds": 0.7557268
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 154,
+      "function": "_composite",
+      "calls": 2994,
+      "own_seconds": 0.007367500000000001,
+      "cumulative_seconds": 0.7538286000000001
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 142,
+      "function": "_independent",
+      "calls": 1996,
+      "own_seconds": 0.0092796,
+      "cumulative_seconds": 0.6152215000000001
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 116,
+      "function": "_interpolate",
+      "calls": 1996,
+      "own_seconds": 0.1692768,
+      "cumulative_seconds": 0.45714010000000005
+    },
+    {
+      "file": "numerical_data.py",
+      "line": 20,
+      "function": "validate_fields",
+      "calls": 3992,
+      "own_seconds": 0.052939200000000006,
+      "cumulative_seconds": 0.19488470000000002
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 101,
+      "function": "_nodes",
+      "calls": 1996,
+      "own_seconds": 0.0902506,
+      "cumulative_seconds": 0.16359700000000002
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 18,
+      "function": "reconstruct",
+      "calls": 499,
+      "own_seconds": 0.052687500000000005,
+      "cumulative_seconds": 0.11952120000000001
+    },
+    {
+      "file": "_linalg.py",
+      "line": 789,
+      "function": "cholesky",
+      "calls": 3992,
+      "own_seconds": 0.0461702,
+      "cumulative_seconds": 0.0952307
+    },
+    {
+      "file": "fromnumeric.py",
+      "line": 86,
+      "function": "_wrapreduction_any_all",
+      "calls": 15968,
+      "own_seconds": 0.028162700000000002,
+      "cumulative_seconds": 0.0698502
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "calls": 40419,
+      "own_seconds": 0.0692238,
+      "cumulative_seconds": 0.0692238
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 149,
+      "function": "_blend",
+      "calls": 998,
+      "own_seconds": 0.0147095,
+      "cumulative_seconds": 0.0628988
+    },
+    {
+      "file": "fromnumeric.py",
+      "line": 3325,
+      "function": "prod",
+      "calls": 8982,
+      "own_seconds": 0.010395900000000001,
+      "cumulative_seconds": 0.0525284
+    },
+    {
+      "file": "fromnumeric.py",
+      "line": 66,
+      "function": "_wrapreduction",
+      "calls": 10978,
+      "own_seconds": 0.0192532,
+      "cumulative_seconds": 0.0487877
+    },
+    {
+      "file": "fromnumeric.py",
+      "line": 2474,
+      "function": "any",
+      "calls": 7984,
+      "own_seconds": 0.0078476,
+      "cumulative_seconds": 0.047679900000000004
+    },
+    {
+      "file": "numerical_metric.py",
+      "line": 138,
+      "function": "_candidate",
+      "calls": 1996,
+      "own_seconds": 0.0259821,
+      "cumulative_seconds": 0.0455255
+    },
+    {
+      "file": "amr_geometry.py",
+      "line": 40,
+      "function": "branch",
+      "calls": 1996,
+      "own_seconds": 0.0183554,
+      "cumulative_seconds": 0.041032200000000005
+    },
+    {
+      "file": "fromnumeric.py",
+      "line": 2586,
+      "function": "all",
+      "calls": 7984,
+      "own_seconds": 0.0072215000000000005,
+      "cumulative_seconds": 0.0372394
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy.array>",
+      "calls": 20958,
+      "own_seconds": 0.034151,
+      "cumulative_seconds": 0.034151
+    }
+  ]
+}

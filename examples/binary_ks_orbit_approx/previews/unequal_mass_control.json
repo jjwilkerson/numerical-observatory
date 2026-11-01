@@ -1,0 +1,169 @@
+{
+  "spacetime": {
+    "type": "binary_ks_orbit_approx",
+    "experimental": true,
+    "exact_vacuum_solution": false,
+    "masses": [
+      0.7,
+      0.3
+    ],
+    "total_mass_parameter": 1.0,
+    "trajectory": {
+      "model": "leading_order_circular",
+      "separation": 30,
+      "phase_degrees": 0.0,
+      "epoch": 0.0,
+      "barycenter": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "omega": 0.006085806194501846,
+      "rate_scale": 1.0,
+      "period": 1032.4326977181856,
+      "initial_positions": [
+        [
+          9.0,
+          0.0,
+          0.0
+        ],
+        [
+          -21.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "initial_velocities": [
+        [
+          -0.0,
+          0.05477225575051661,
+          0.0
+        ],
+        [
+          0.0,
+          -0.12780193008453877,
+          -0.0
+        ]
+      ],
+      "initial_accelerations": [
+        [
+          -0.0003333333333333334,
+          -0.0,
+          -0.0
+        ],
+        [
+          0.000777777777777778,
+          0.0,
+          0.0
+        ]
+      ],
+      "orbital_speeds": [
+        0.05477225575051661,
+        0.12780193008453877
+      ],
+      "angular_momentum_axis": "+Z",
+      "regime_policy": "d >=20 M_total; not an accuracy guarantee",
+      "inspiral": false
+    },
+    "coordinates": "outgoing Cartesian KS, instantaneous Lorentz/no-acceleration-Jacobian ansatz",
+    "derivative_policy": "analytic derivatives of the full prescribed metric, including velocity and acceleration",
+    "warning": "Not the published PN/merger metric; moving capture ellipsoids are provisional, not computed horizons."
+  },
+  "camera": {
+    "position": [
+      0,
+      0,
+      75
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 60.0,
+    "width": 320,
+    "height": 240,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "static"
+  },
+  "integration": {
+    "rtol": 1e-10,
+    "atol": 1e-12,
+    "escape_radius": 500,
+    "capture_radius": 1.99,
+    "max_affine": 1500,
+    "max_step": 30,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "hamiltonian",
+    "carter_fallback": "none",
+    "binary_capture_fraction": 0.995,
+    "binary_signature_margin": 0.05
+  },
+  "rays": [
+    {
+      "camera_direction": [
+        0.11,
+        -0.052,
+        -1
+      ],
+      "status": "captured",
+      "reason": "provisional_moving_capture_1",
+      "null_error": 2.1925555344302325e-11,
+      "diagnostics": {
+        "capture_index": 1,
+        "provisional_capture": true,
+        "minimum_signature_margin": 0.9717722672346134,
+        "complete": true,
+        "energy_change": 7.529654200668331e-05,
+        "helical_error": 2.4078998863771503e-14,
+        "stationary_energy_conserved": false
+      }
+    },
+    {
+      "camera_direction": [
+        -0.25,
+        0.12,
+        -1
+      ],
+      "status": "captured",
+      "reason": "provisional_moving_capture_2",
+      "null_error": 2.712431924479087e-10,
+      "diagnostics": {
+        "capture_index": 2,
+        "provisional_capture": true,
+        "minimum_signature_margin": 0.8796718594874354,
+        "complete": true,
+        "energy_change": 0.06203127108595279,
+        "helical_error": 3.904398413891921e-14,
+        "stationary_energy_conserved": false
+      }
+    },
+    {
+      "camera_direction": [
+        0.4,
+        0.15,
+        -1
+      ],
+      "status": "escaped",
+      "reason": "outward_escape",
+      "null_error": 5.6553267856603543e-11,
+      "diagnostics": {
+        "capture_index": 0,
+        "provisional_capture": false,
+        "minimum_signature_margin": 0.999941048214615,
+        "complete": true,
+        "energy_change": 0.00438566127227368,
+        "helical_error": 6.751121176758366e-13,
+        "stationary_energy_conserved": false
+      }
+    }
+  ]
+}

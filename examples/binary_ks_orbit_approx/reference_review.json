@@ -1,0 +1,10 @@
+{
+  "url": "https://zenodo.org/records/10841021",
+  "archive_md5": "ecc4d1268342520f29e4537d5f3ab183",
+  "reviewed_files": {
+    "public_repo/SuperposedBBH.c": "b44462d42048244f41ea4c1eb72ab4b108f1b58acb6846a26f5613b529f410cd",
+    "public_repo/MetricBuilder/SKS_NoAcc_3D_spinarb.nb": "998fb8e9c6bdc12a2b9d643054c06cb1c2ac3896101793cdc79fc9af7a21883a",
+    "public_repo/CBwaves/src/trajectory_tools.py": "ab8f967cfd9c7d200cf440b85197ae7b74df97b26a1a25597fba5b13607891b5"
+  },
+  "implementation": "Independent implementation of the stated ansatz; no reference code compiled or imported; references reviewed before editing production code."
+}

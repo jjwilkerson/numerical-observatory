@@ -1,0 +1,284 @@
+[
+  {
+    "name": "phase0",
+    "camera": {
+      "position": [
+        0.0,
+        0.0,
+        75.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov_degrees": 40.0,
+      "width": 96,
+      "height": 72,
+      "time": 0.0,
+      "observer_frame": null,
+      "observer": "static"
+    },
+    "spacetime": {
+      "type": "binary_ks_orbit_approx",
+      "experimental": true,
+      "exact_vacuum_solution": false,
+      "masses": [
+        0.5,
+        0.5
+      ],
+      "total_mass_parameter": 1.0,
+      "trajectory": {
+        "model": "leading_order_circular",
+        "separation": 30.0,
+        "phase_degrees": 0.0,
+        "epoch": 0.0,
+        "barycenter": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "omega": 0.006085806194501846,
+        "rate_scale": 1.0,
+        "period": 1032.4326977181856,
+        "initial_positions": [
+          [
+            15.0,
+            0.0,
+            0.0
+          ],
+          [
+            -15.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "initial_velocities": [
+          [
+            -0.0,
+            0.09128709291752769,
+            0.0
+          ],
+          [
+            0.0,
+            -0.09128709291752769,
+            -0.0
+          ]
+        ],
+        "initial_accelerations": [
+          [
+            -0.0005555555555555557,
+            -0.0,
+            -0.0
+          ],
+          [
+            0.0005555555555555557,
+            0.0,
+            0.0
+          ]
+        ],
+        "orbital_speeds": [
+          0.09128709291752769,
+          0.09128709291752769
+        ],
+        "angular_momentum_axis": "+Z",
+        "regime_policy": "d >=20 M_total; not an accuracy guarantee",
+        "inspiral": false
+      },
+      "coordinates": "outgoing Cartesian KS, instantaneous Lorentz/no-acceleration-Jacobian ansatz",
+      "derivative_policy": "analytic derivatives of the full prescribed metric, including velocity and acceleration",
+      "warning": "Not the published PN/merger metric; moving capture ellipsoids are provisional, not computed horizons."
+    },
+    "counts": {
+      "captured": 144,
+      "escaped": 6768,
+      "unresolved": 0
+    },
+    "maxima": {
+      "null_error": 1.4843307816450076e-08,
+      "energy_drift": null,
+      "angular_momentum_drift": null,
+      "energy_change": 0.2929960861567782,
+      "helical_error": 2.496148447996123e-11
+    },
+    "runtime": 447.5368279000104,
+    "grid_additional_integrations": 0
+  },
+  {
+    "name": "phase45",
+    "camera": {
+      "position": [
+        0.0,
+        0.0,
+        75.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov_degrees": 40.0,
+      "width": 96,
+      "height": 72,
+      "time": 129.0540872147732,
+      "observer_frame": null,
+      "observer": "static"
+    },
+    "spacetime": {
+      "type": "binary_ks_orbit_approx",
+      "experimental": true,
+      "exact_vacuum_solution": false,
+      "masses": [
+        0.5,
+        0.5
+      ],
+      "total_mass_parameter": 1.0,
+      "trajectory": {
+        "model": "leading_order_circular",
+        "separation": 30.0,
+        "phase_degrees": 0.0,
+        "epoch": 0.0,
+        "barycenter": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "omega": 0.006085806194501846,
+        "rate_scale": 1.0,
+        "period": 1032.4326977181856,
+        "initial_positions": [
+          [
+            15.0,
+            0.0,
+            0.0
+          ],
+          [
+            -15.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "initial_velocities": [
+          [
+            -0.0,
+            0.09128709291752769,
+            0.0
+          ],
+          [
+            0.0,
+            -0.09128709291752769,
+            -0.0
+          ]
+        ],
+        "initial_accelerations": [
+          [
+            -0.0005555555555555557,
+            -0.0,
+            -0.0
+          ],
+          [
+            0.0005555555555555557,
+            0.0,
+            0.0
+          ]
+        ],
+        "orbital_speeds": [
+          0.09128709291752769,
+          0.09128709291752769
+        ],
+        "angular_momentum_axis": "+Z",
+        "regime_policy": "d >=20 M_total; not an accuracy guarantee",
+        "inspiral": false
+      },
+      "coordinates": "outgoing Cartesian KS, instantaneous Lorentz/no-acceleration-Jacobian ansatz",
+      "derivative_policy": "analytic derivatives of the full prescribed metric, including velocity and acceleration",
+      "warning": "Not the published PN/merger metric; moving capture ellipsoids are provisional, not computed horizons."
+    },
+    "counts": {
+      "captured": 148,
+      "escaped": 6764,
+      "unresolved": 0
+    },
+    "maxima": {
+      "null_error": 1.807295746132695e-08,
+      "energy_drift": null,
+      "angular_momentum_drift": null,
+      "energy_change": 0.2811739141601379,
+      "helical_error": 5.059896298628998e-11
+    },
+    "runtime": 435.78050910000456,
+    "grid_additional_integrations": 0
+  },
+  {
+    "name": "stationary_zero_rate_control",
+    "camera": {
+      "position": [
+        0.0,
+        0.0,
+        75.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "up": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "fov_degrees": 40.0,
+      "width": 96,
+      "height": 72,
+      "time": 0.0,
+      "observer_frame": null,
+      "observer": "static"
+    },
+    "spacetime": {
+      "type": "binary_ks_approx",
+      "experimental": true,
+      "exact_vacuum_solution": false,
+      "masses": [
+        0.5,
+        0.5
+      ],
+      "centers": [
+        [
+          15.0,
+          0.0,
+          0.0
+        ],
+        [
+          -15.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "total_mass_parameter": 1.0,
+      "coordinates": "stationary outgoing Cartesian Kerr-Schild superposition",
+      "warning": "Provisional absorbing spheres are not computed binary event horizons; no Einstein constraint solve."
+    },
+    "counts": {
+      "captured": 144,
+      "escaped": 6768,
+      "unresolved": 0
+    },
+    "maxima": {
+      "null_error": 1.582292106763497e-08,
+      "energy_drift": 0.0,
+      "angular_momentum_drift": null
+    },
+    "runtime": 218.62914460001048,
+    "grid_additional_integrations": 0
+  }
+]

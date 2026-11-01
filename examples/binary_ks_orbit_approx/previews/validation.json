@@ -1,0 +1,1795 @@
+{
+  "metric": {
+    "type": "binary_ks_orbit_approx",
+    "experimental": true,
+    "exact_vacuum_solution": false,
+    "masses": [
+      0.5,
+      0.5
+    ],
+    "total_mass_parameter": 1.0,
+    "trajectory": {
+      "model": "leading_order_circular",
+      "separation": 30.0,
+      "phase_degrees": 0.0,
+      "epoch": 0.0,
+      "barycenter": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "omega": 0.006085806194501846,
+      "rate_scale": 1.0,
+      "period": 1032.4326977181856,
+      "initial_positions": [
+        [
+          15.0,
+          0.0,
+          0.0
+        ],
+        [
+          -15.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "initial_velocities": [
+        [
+          -0.0,
+          0.09128709291752769,
+          0.0
+        ],
+        [
+          0.0,
+          -0.09128709291752769,
+          -0.0
+        ]
+      ],
+      "initial_accelerations": [
+        [
+          -0.0005555555555555557,
+          -0.0,
+          -0.0
+        ],
+        [
+          0.0005555555555555557,
+          0.0,
+          0.0
+        ]
+      ],
+      "orbital_speeds": [
+        0.09128709291752769,
+        0.09128709291752769
+      ],
+      "angular_momentum_axis": "+Z",
+      "regime_policy": "d >=20 M_total; not an accuracy guarantee",
+      "inspiral": false
+    },
+    "coordinates": "outgoing Cartesian KS, instantaneous Lorentz/no-acceleration-Jacobian ansatz",
+    "derivative_policy": "analytic derivatives of the full prescribed metric, including velocity and acceleration",
+    "warning": "Not the published PN/merger metric; moving capture ellipsoids are provisional, not computed horizons."
+  },
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      75.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 40.0,
+    "width": 96,
+    "height": 72,
+    "time": 0.0,
+    "observer_frame": null,
+    "observer": "static"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 500.0,
+    "capture_radius": 1.99,
+    "max_affine": 1500.0,
+    "max_step": 30.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "hamiltonian",
+    "carter_fallback": "none",
+    "binary_capture_fraction": 0.995,
+    "binary_signature_margin": 0.05
+  },
+  "derivatives": [
+    {
+      "event": [
+        27.0,
+        15.0,
+        1.5,
+        0.0
+      ],
+      "axis": 0,
+      "complex_step_error": 5.551115123125783e-17,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        1.9051774047262882e-13,
+        5.480338405305929e-13,
+        1.1890821660642814e-11
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        15.0,
+        1.5,
+        0.0
+      ],
+      "axis": 1,
+      "complex_step_error": 2.220446049250313e-16,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        7.954290437428568e-08,
+        8.413825192121749e-12,
+        3.288369576637251e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        15.0,
+        1.5,
+        0.0
+      ],
+      "axis": 2,
+      "complex_step_error": 4.440892098500626e-16,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        4.0776415743959404e-08,
+        4.096445405110671e-12,
+        2.4988899838263023e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        15.0,
+        1.5,
+        0.0
+      ],
+      "axis": 3,
+      "complex_step_error": 2.220446049250313e-16,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        8.151719399496216e-08,
+        8.157141628828413e-12,
+        5.551115123125782e-13
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        -10.0,
+        4.0,
+        2.0
+      ],
+      "axis": 0,
+      "complex_step_error": 1.0842021724855044e-18,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        2.7514123791816392e-14,
+        1.6602439366873722e-13,
+        2.5840353077774547e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        -10.0,
+        4.0,
+        2.0
+      ],
+      "axis": 1,
+      "complex_step_error": 5.204170427930421e-18,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        1.554780609813733e-13,
+        2.460531778325503e-13,
+        2.039155302946405e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        -10.0,
+        4.0,
+        2.0
+      ],
+      "axis": 2,
+      "complex_step_error": 5.204170427930421e-18,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        1.4401761033733251e-13,
+        1.6119484219645486e-13,
+        2.89682340615105e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        -10.0,
+        4.0,
+        2.0
+      ],
+      "axis": 3,
+      "complex_step_error": 3.469446951953614e-18,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        2.201372764631948e-13,
+        1.7292504234101003e-13,
+        7.337572389964908e-13
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        2.0,
+        3.0,
+        80.0
+      ],
+      "axis": 0,
+      "complex_step_error": 1.9058241313221758e-21,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        2.6360166338542127e-14,
+        2.0219707120650368e-13,
+        1.4974572667436918e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        2.0,
+        3.0,
+        80.0
+      ],
+      "axis": 1,
+      "complex_step_error": 1.0842021724855044e-19,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        2.1699093531116903e-14,
+        1.9050979360951768e-13,
+        1.3245202935201032e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        2.0,
+        3.0,
+        80.0
+      ],
+      "axis": 2,
+      "complex_step_error": 5.421010862427522e-20,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        1.2318705083780301e-14,
+        3.0271519781144025e-13,
+        1.2649084863845979e-12
+      ]
+    },
+    {
+      "event": [
+        27.0,
+        2.0,
+        3.0,
+        80.0
+      ],
+      "axis": 3,
+      "complex_step_error": 1.0842021724855044e-19,
+      "fd_steps": [
+        0.01,
+        0.001,
+        0.0001
+      ],
+      "fd_errors": [
+        9.227861530458625e-15,
+        1.1827337205319935e-13,
+        4.091322265242607e-12
+      ]
+    }
+  ],
+  "inertial_tensor_controls": [
+    {
+      "velocity": [
+        0,
+        0,
+        0
+      ],
+      "covariant_error": 0.0,
+      "inverse_error": 2.220446049250313e-16,
+      "inverse_derivative_error": 4.163336342344337e-17
+    },
+    {
+      "velocity": [
+        0.15,
+        -0.08,
+        0.1
+      ],
+      "covariant_error": 2.220446049250313e-16,
+      "inverse_error": 8.881784197001252e-16,
+      "inverse_derivative_error": 9.71445146547012e-17
+    },
+    {
+      "velocity": [
+        -0.2,
+        0,
+        0
+      ],
+      "covariant_error": 2.220446049250313e-16,
+      "inverse_error": 2.220446049250313e-16,
+      "inverse_derivative_error": 1.3877787807814457e-17
+    }
+  ],
+  "zero_rate_family": [
+    {
+      "rate_scale": 0.1,
+      "times": [
+        -70,
+        0,
+        100
+      ],
+      "covariant_errors": [
+        0.007950563584843508,
+        0.0012062924447306805,
+        0.010879051767244817
+      ]
+    },
+    {
+      "rate_scale": 0.01,
+      "times": [
+        -70,
+        0,
+        100
+      ],
+      "covariant_errors": [
+        0.0008362681889629089,
+        0.00012049277568848549,
+        0.001009190232349716
+      ]
+    },
+    {
+      "rate_scale": 0.001,
+      "times": [
+        -70,
+        0,
+        100
+      ],
+      "covariant_errors": [
+        8.402652688118545e-05,
+        1.2047953690683122e-05,
+        0.00010007761472668325
+      ]
+    },
+    {
+      "rate_scale": 0,
+      "times": [
+        -70,
+        0,
+        100
+      ],
+      "covariant_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "boundary_slice": {
+    "y_direction": -0.09,
+    "captured_x": 0.22078125,
+    "escaped_x": 0.2209375,
+    "width": 0.00015624999999999667
+  },
+  "ray_convergence": [
+    {
+      "camera_direction": [
+        0.4,
+        0.2,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 5.0634412347579296e-08,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9998468695691884,
+            "complete": true,
+            "energy_change": 0.005054792112429307,
+            "helical_error": 2.423776131478128e-10,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -583.4490198993128,
+            163.85859727353437,
+            66.17310335015726,
+            -467.7301363955064
+          ],
+          "direction": [
+            0.2752684374980061,
+            0.10611148058272231,
+            -0.955493401864162
+          ],
+          "pt_equation_error": 9.016886489954235e-13,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 1.2806826958922102e-06,
+          "source_difference_from_tight": 3.440673643764231e-09
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 4.550671574636034e-10,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9998467709219411,
+            "complete": true,
+            "energy_change": 0.005054780878091559,
+            "helical_error": 3.0643637330424935e-12,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -583.4490203272369,
+            163.85859627200693,
+            66.17310205815197,
+            -467.7301369291579
+          ],
+          "direction": [
+            0.2752684354225825,
+            0.10611147796104886,
+            -0.9554934027532191
+          ],
+          "pt_equation_error": 4.645303141883564e-13,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 1.1958491086261347e-08,
+          "source_difference_from_tight": 2.2019858178802464e-11
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 9.464642093925053e-12,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9998468362963813,
+            "complete": true,
+            "energy_change": 0.005054745315100215,
+            "helical_error": 6.075845110493653e-14,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -583.4490203391954,
+            163.85859627369663,
+            66.17310206947457,
+            -467.7301369269641
+          ],
+          "direction": [
+            0.2752684354261031,
+            0.10611147798251815,
+            -0.9554934027498206
+          ],
+          "pt_equation_error": 3.481757728809008e-14,
+          "past_time_monotonic": true
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0.26,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 5.7700246250763124e-08,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9991474907998129,
+            "complete": true,
+            "energy_change": 0.025947738053745072,
+            "helical_error": 5.7800189630027286e-11,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -599.4257478817406,
+            -150.01865308017312,
+            -52.20128992488981,
+            -474.0985436153419
+          ],
+          "direction": [
+            -0.3354518737887468,
+            -0.08909578648519391,
+            -0.9378347302175386
+          ],
+          "pt_equation_error": 5.822477104379996e-14,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 5.2709161764141754e-06,
+          "source_difference_from_tight": 3.1162133002842033e-09
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.6372884381086767e-09,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9991472806168147,
+            "complete": true,
+            "energy_change": 0.025948914915277323,
+            "helical_error": 2.0422715666772278e-12,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -599.4257530878255,
+            -150.01865399768295,
+            -52.201290819959134,
+            -474.0985432264622
+          ],
+          "direction": [
+            -0.335451875684652,
+            -0.08909578827206788,
+            -0.937834729369641
+          ],
+          "pt_equation_error": 5.651119162776899e-14,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 1.7830049614531163e-07,
+          "source_difference_from_tight": 3.9866171497465135e-10
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 2.1265512076579734e-11,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.999147282971085,
+            "complete": true,
+            "energy_change": 0.02594903735916357,
+            "helical_error": 2.6328662145472496e-14,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -599.4257531526567,
+            -150.01865417598344,
+            -52.201290889622335,
+            -474.09854316237215
+          ],
+          "direction": [
+            -0.33545187603240895,
+            -0.08909578841022153,
+            -0.9378347292321279
+          ],
+          "pt_equation_error": 5.392615745172981e-14,
+          "past_time_monotonic": true
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0.18,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "captured",
+          "reason": "provisional_moving_capture_1",
+          "null_error": 2.5401197260931825e-08,
+          "diagnostics": {
+            "capture_index": 1,
+            "provisional_capture": true,
+            "minimum_signature_margin": 0.9179476883830586,
+            "complete": true,
+            "energy_change": 0.0001756160271552262,
+            "helical_error": 2.6687699585242594e-11,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -75.86862795636647,
+            12.923773181155818,
+            -6.447535081261704,
+            0.8242111750743182
+          ],
+          "direction": null,
+          "pt_equation_error": 1.186811928474952e-13,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 1.5096775030087883e-07
+        },
+        {
+          "rtol": 1e-09,
+          "status": "captured",
+          "reason": "provisional_moving_capture_1",
+          "null_error": 9.078722059435764e-10,
+          "diagnostics": {
+            "capture_index": 1,
+            "provisional_capture": true,
+            "minimum_signature_margin": 0.9179477055006033,
+            "complete": true,
+            "energy_change": 0.00017556269237443045,
+            "helical_error": 4.273344394380536e-13,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -75.86862807304296,
+            12.923773331212733,
+            -6.447535131451345,
+            0.8242112816090512
+          ],
+          "direction": null,
+          "pt_equation_error": 3.9701986732734344e-13,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 3.326334763187333e-09
+        },
+        {
+          "rtol": 1e-11,
+          "status": "captured",
+          "reason": "provisional_moving_capture_1",
+          "null_error": 9.084697183477615e-12,
+          "diagnostics": {
+            "capture_index": 1,
+            "provisional_capture": true,
+            "minimum_signature_margin": 0.9179477056364066,
+            "complete": true,
+            "energy_change": 0.00017572331044817118,
+            "helical_error": 6.075845110493653e-15,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -75.86862806971662,
+            12.923773332123568,
+            -6.447535132129879,
+            0.8242112823554357
+          ],
+          "direction": null,
+          "pt_equation_error": 8.371568289629349e-15,
+          "past_time_monotonic": true
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        -0.18,
+        0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "captured",
+          "reason": "provisional_moving_capture_2",
+          "null_error": 2.5401201251949793e-08,
+          "diagnostics": {
+            "capture_index": 2,
+            "provisional_capture": true,
+            "minimum_signature_margin": 0.91794768838306,
+            "complete": true,
+            "energy_change": 0.00017561602714251192,
+            "helical_error": 2.668781210089279e-11,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -75.86862795636651,
+            -12.92377318115582,
+            6.447535081261702,
+            0.8242111750743257
+          ],
+          "direction": null,
+          "pt_equation_error": 1.18681193112193e-13,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 1.5096775207723567e-07
+        },
+        {
+          "rtol": 1e-09,
+          "status": "captured",
+          "reason": "provisional_moving_capture_2",
+          "null_error": 8.375684859624587e-10,
+          "diagnostics": {
+            "capture_index": 2,
+            "provisional_capture": true,
+            "minimum_signature_margin": 0.9179477055005236,
+            "complete": true,
+            "energy_change": 0.00017551681164541978,
+            "helical_error": 4.03368605946662e-13,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -75.86862807276506,
+            -12.923773331189244,
+            6.447535131475676,
+            0.8242112816010956
+          ],
+          "direction": null,
+          "pt_equation_error": 2.305018390564515e-13,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 3.0484130775221274e-09
+        },
+        {
+          "rtol": 1e-11,
+          "status": "captured",
+          "reason": "provisional_moving_capture_2",
+          "null_error": 9.084241067138542e-12,
+          "diagnostics": {
+            "capture_index": 2,
+            "provisional_capture": true,
+            "minimum_signature_margin": 0.917947705636407,
+            "complete": true,
+            "energy_change": 0.00017572331044828372,
+            "helical_error": 6.075845110493653e-15,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -75.86862806971665,
+            -12.923773332123572,
+            6.447535132129886,
+            0.8242112823554405
+          ],
+          "direction": null,
+          "pt_equation_error": 8.371570089574362e-15,
+          "past_time_monotonic": true
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0,
+        0,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 8.171288474348785e-07,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9822216359166613,
+            "complete": true,
+            "energy_change": 0.0,
+            "helical_error": 0.0,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -590.4976053495236,
+            0.0,
+            0.0,
+            -500.0
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "pt_equation_error": 1.1154486309231673e-22,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 8.466281019536837e-05,
+          "source_difference_from_tight": 0.0
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.0738882793454488e-08,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9819740249714396,
+            "complete": true,
+            "energy_change": 0.0,
+            "helical_error": 0.0,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -590.4975212775252,
+            0.0,
+            0.0,
+            -499.9999999999999
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "pt_equation_error": 3.1066800184626942e-22,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 5.908117373110144e-07,
+          "source_difference_from_tight": 0.0
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.1269688297079259e-10,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9819247064698101,
+            "complete": true,
+            "energy_change": 0.0,
+            "helical_error": 0.0,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -590.4975206867134,
+            0.0,
+            0.0,
+            -500.0
+          ],
+          "direction": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "pt_equation_error": 7.866446272985876e-22,
+          "past_time_monotonic": true
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0.22113750000000001,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "rtol": 1e-07,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.0106916688314448e-06,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9415804967753704,
+            "complete": true,
+            "energy_change": 0.13656076577916718,
+            "helical_error": 6.634696843130852e-10,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -597.1929558555864,
+            466.04829014732263,
+            -8.580795915947258,
+            180.90152346568482
+          ],
+          "direction": [
+            0.9309734596078155,
+            -0.0007436837255092886,
+            0.36508610551535847
+          ],
+          "pt_equation_error": 5.06932017132496e-12,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 0.008397447429473459,
+          "source_difference_from_tight": 1.844645156283981e-05
+        },
+        {
+          "rtol": 1e-09,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 1.627126257297408e-08,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9416096130830512,
+            "complete": true,
+            "energy_change": 0.13656094382677958,
+            "helical_error": 1.053225246774036e-11,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -597.1930019905448,
+            466.0450275295252,
+            -8.580777651422212,
+            180.9099294397652
+          ],
+          "direction": [
+            0.9309667181131943,
+            -0.0007436408075321699,
+            0.3651032960189454
+          ],
+          "pt_equation_error": 9.718843331301633e-14,
+          "past_time_monotonic": true,
+          "event_difference_from_tight": 8.526650901785615e-06,
+          "source_difference_from_tight": 1.8732378581653432e-08
+        },
+        {
+          "rtol": 1e-11,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "null_error": 2.296189996485838e-10,
+          "diagnostics": {
+            "capture_index": 0,
+            "provisional_capture": false,
+            "minimum_signature_margin": 0.9415931363478188,
+            "complete": true,
+            "energy_change": 0.13654059203820157,
+            "helical_error": 1.7282403869848613e-13,
+            "stationary_energy_conserved": false
+          },
+          "end_event": [
+            -597.193002278359,
+            466.04503083804804,
+            -8.580777725456558,
+            180.9099209131143
+          ],
+          "direction": [
+            0.9309667249520999,
+            -0.0007436409646391623,
+            0.36510327858029024
+          ],
+          "pt_equation_error": 4.776930482170436e-14,
+          "past_time_monotonic": true
+        }
+      ]
+    }
+  ],
+  "source_radius": [
+    {
+      "camera_direction": [
+        0.4,
+        0.2,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            0.27524923887813174,
+            0.10615655813278747,
+            -0.9554939254973887
+          ],
+          "null_error": 9.464642093925053e-12
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            0.2752684354260583,
+            0.10611147798249014,
+            -0.9554934027498366
+          ],
+          "null_error": 9.464642093925053e-12
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            0.2752735771611182,
+            0.10612958041454326,
+            -0.9554899109242101
+          ],
+          "null_error": 9.464642093925053e-12
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            0.27527625510216097,
+            0.10613783652643304,
+            -0.9554882223420749
+          ],
+          "null_error": 9.464642093925053e-12
+        }
+      ],
+      "successive_direction_changes": [
+        4.9000006822553744e-05,
+        1.9139705637302862e-05,
+        8.842288244166306e-06
+      ]
+    },
+    {
+      "camera_direction": [
+        0.26,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            -0.33542786290772464,
+            -0.08914017616086851,
+            -0.9378391001548005
+          ],
+          "null_error": 2.1265512076579734e-11
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            -0.33545187603246196,
+            -0.08909578841019963,
+            -0.9378347292321109
+          ],
+          "null_error": 2.1265512076579734e-11
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            -0.33546033422980825,
+            -0.08911079960415977,
+            -0.9378302775834936
+          ],
+          "null_error": 2.1265512076579734e-11
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            -0.3354643764559597,
+            -0.08911893116809858,
+            -0.9378280589940087
+          ],
+          "null_error": 2.1265512076579734e-11
+        }
+      ],
+      "successive_direction_changes": [
+        5.0655774940278914e-05,
+        1.7795904637799032e-05,
+        9.347944354440186e-06
+      ]
+    },
+    {
+      "camera_direction": [
+        0.22113750000000001,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "radius": 250,
+          "status": "escaped",
+          "direction": [
+            0.9309475091712992,
+            -0.0006266791613560714,
+            0.3651524920372069
+          ],
+          "null_error": 2.296189996485838e-10
+        },
+        {
+          "radius": 500,
+          "status": "escaped",
+          "direction": [
+            0.9309667249520998,
+            -0.0007436409646353372,
+            0.3651032785802906
+          ],
+          "null_error": 2.296189996485838e-10
+        },
+        {
+          "radius": 1000,
+          "status": "escaped",
+          "direction": [
+            0.9309693912345005,
+            -0.0007081685166424222,
+            0.36509655035595123
+          ],
+          "null_error": 2.296189996485838e-10
+        },
+        {
+          "radius": 2000,
+          "status": "escaped",
+          "direction": [
+            0.9309705337323232,
+            -0.0006905451576663138,
+            0.36509367081550276
+          ],
+          "null_error": 2.296189996485838e-10
+        }
+      ],
+      "successive_direction_changes": [
+        0.0001283404613610687,
+        3.620321299767966e-05,
+        1.7893569685184242e-05
+      ]
+    }
+  ],
+  "capture_sensitivity": [
+    {
+      "camera_direction": [
+        0.18,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "fraction": 0.98,
+          "status": "captured",
+          "reason": "provisional_moving_capture_1",
+          "end_event": [
+            -75.88544826777677,
+            12.92649272807145,
+            -6.448974499029753,
+            0.8081828478087498
+          ],
+          "direction": null
+        },
+        {
+          "fraction": 0.995,
+          "status": "captured",
+          "reason": "provisional_moving_capture_1",
+          "end_event": [
+            -75.86862807304296,
+            12.923773331212733,
+            -6.447535131451345,
+            0.8242112816090512
+          ],
+          "direction": null
+        },
+        {
+          "fraction": 0.999,
+          "status": "captured",
+          "reason": "provisional_moving_capture_1",
+          "end_event": [
+            -75.86415024217399,
+            12.923052768900321,
+            -6.447154606278583,
+            0.8284804457904429
+          ],
+          "direction": null
+        }
+      ]
+    },
+    {
+      "camera_direction": [
+        0.22113750000000001,
+        -0.09,
+        -1
+      ],
+      "runs": [
+        {
+          "fraction": 0.98,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "end_event": [
+            -597.1930019905448,
+            466.0450275295252,
+            -8.580777651422212,
+            180.9099294397652
+          ],
+          "direction": [
+            0.9309667181131943,
+            -0.0007436408075321699,
+            0.3651032960189454
+          ]
+        },
+        {
+          "fraction": 0.995,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "end_event": [
+            -597.1930019905448,
+            466.0450275295252,
+            -8.580777651422212,
+            180.9099294397652
+          ],
+          "direction": [
+            0.9309667181131943,
+            -0.0007436408075321699,
+            0.3651032960189454
+          ]
+        },
+        {
+          "fraction": 0.999,
+          "status": "escaped",
+          "reason": "outward_escape",
+          "end_event": [
+            -597.1930019905448,
+            466.0450275295252,
+            -8.580777651422212,
+            180.9099294397652
+          ],
+          "direction": [
+            0.9309667181131943,
+            -0.0007436408075321699,
+            0.3651032960189454
+          ]
+        }
+      ]
+    }
+  ],
+  "curvature": [
+    {
+      "label": "exact_inertial",
+      "event": [
+        0,
+        3,
+        1,
+        2
+      ],
+      "values": [
+        {
+          "step": 0.03,
+          "scalar": 1.996519104626183e-10,
+          "max_coordinate_component": 3.7571626521765156e-09,
+          "tensor": [
+            [
+              2.4510732159199744e-10,
+              1.2596960974331495e-10,
+              -1.3087286458539349e-09,
+              1.1955874745089856e-10
+            ],
+            [
+              1.2596863656344492e-10,
+              -3.493629876713533e-09,
+              3.7571626521765156e-09,
+              -8.812267174654331e-10
+            ],
+            [
+              -1.3087289542010327e-09,
+              3.757162457887486e-09,
+              1.909367645653963e-09,
+              1.8223899834936969e-09
+            ],
+            [
+              1.1955826693249572e-10,
+              -8.812244883457665e-10,
+              1.8223889322512704e-09,
+              1.515105647713344e-09
+            ]
+          ],
+          "antisymmetric_residual": 2.229119666630197e-15
+        },
+        {
+          "step": 0.01,
+          "scalar": 2.458284760362958e-12,
+          "max_coordinate_component": 4.6403109653370134e-11,
+          "tensor": [
+            [
+              3.025713360416127e-12,
+              1.5462128105658834e-12,
+              -1.616107855179072e-11,
+              1.48678031691718e-12
+            ],
+            [
+              1.5510908529803302e-12,
+              -4.310343228175473e-11,
+              4.640120145754656e-11,
+              -1.0896086984069075e-11
+            ],
+            [
+              -1.6159061935749897e-11,
+              4.6403109653370134e-11,
+              2.3576471395829468e-11,
+              2.2490809345118712e-11
+            ],
+            [
+              1.4880640122894029e-12,
+              -1.0902533216505805e-11,
+              2.2491585200193343e-11,
+              1.8666137212297595e-11
+            ]
+          ],
+          "antisymmetric_residual": 6.446232436729815e-15
+        },
+        {
+          "step": 0.003,
+          "scalar": -7.598964932409986e-14,
+          "max_coordinate_component": 4.0365887715720916e-13,
+          "tensor": [
+            [
+              2.921274333544943e-14,
+              -1.0678957718113224e-14,
+              -1.3981654375938568e-13,
+              -1.682074618480911e-14
+            ],
+            [
+              1.2496947920936918e-14,
+              -3.553320832017093e-13,
+              4.005814777108263e-13,
+              -5.2937688954646234e-14
+            ],
+            [
+              -1.3644467500295576e-13,
+              4.0365887715720916e-13,
+              1.443523035479788e-13,
+              2.0033432378274707e-13
+            ],
+            [
+              -3.591744957009979e-15,
+              -3.612301430200304e-14,
+              2.031302643451527e-13,
+              1.0909589204244341e-13
+            ]
+          ],
+          "antisymmetric_residual": 2.3175905639050143e-14
+        }
+      ]
+    },
+    {
+      "label": "orbit_near",
+      "event": [
+        0,
+        15,
+        2,
+        1
+      ],
+      "values": [
+        {
+          "step": 0.03,
+          "scalar": -0.0017856534997293442,
+          "max_coordinate_component": 0.0047809373023352895,
+          "tensor": [
+            [
+              -0.0011257839835851768,
+              0.0014811683369385942,
+              -0.0007134189076185501,
+              -0.0005179506603322816
+            ],
+            [
+              0.0014811681348787257,
+              -0.0019427432538768595,
+              2.1215029580089998e-05,
+              0.0003699848520341188
+            ],
+            [
+              -0.0007134188409940109,
+              2.1212949142609397e-05,
+              0.004120696206429009,
+              0.0047809373023352895
+            ],
+            [
+              -0.0005179506581192758,
+              0.00036998381542953455,
+              0.004780936883144302,
+              -0.0031679961156724206
+            ]
+          ],
+          "antisymmetric_residual": 2.080437480601015e-09
+        },
+        {
+          "step": 0.01,
+          "scalar": -0.0017856206202119316,
+          "max_coordinate_component": 0.004780904225372884,
+          "tensor": [
+            [
+              -0.0011257766454097554,
+              0.0014811697581812893,
+              -0.0007134071291430566,
+              -0.0005179565676641483
+            ],
+            [
+              0.0014811697556874543,
+              -0.001942677775298262,
+              2.1210340853324646e-05,
+              0.00036998263613424677
+            ],
+            [
+              -0.0007134071283165441,
+              2.1210315145403285e-05,
+              0.004120654917400966,
+              0.004780904225372884
+            ],
+            [
+              -0.0005179565676360805,
+              0.00036998262332132986,
+              0.004780904220187352,
+              -0.003167995829549462
+            ]
+          ],
+          "antisymmetric_residual": 2.5707921360272612e-11
+        },
+        {
+          "step": 0.003,
+          "scalar": -0.0017856202129783302,
+          "max_coordinate_component": 0.004780903816907595,
+          "tensor": [
+            [
+              -0.0011257765543744892,
+              0.001481169775828041,
+              -0.0007134069832800648,
+              -0.0005179566412841334
+            ],
+            [
+              0.0014811697758108759,
+              -0.0019426769629446818,
+              2.1210282640199353e-05,
+              0.00036998260861225167
+            ],
+            [
+              -0.000713406983297929,
+              2.1210282425116736e-05,
+              0.004120654404987257,
+              0.004780903816907595
+            ],
+            [
+              -0.0005179566412929996,
+              0.00036998260851458766,
+              0.0047809038168882215,
+              -0.00316799582629187
+            ]
+          ],
+          "antisymmetric_residual": 2.1508261751485014e-13
+        }
+      ]
+    },
+    {
+      "label": "orbit_intermediate",
+      "event": [
+        0,
+        4,
+        3,
+        7
+      ],
+      "values": [
+        {
+          "step": 0.03,
+          "scalar": 1.0244876131369025e-05,
+          "max_coordinate_component": 3.497234032329189e-05,
+          "tensor": [
+            [
+              8.442838067636747e-06,
+              -6.131475937982962e-06,
+              6.11809889284953e-06,
+              1.382699841710318e-05
+            ],
+            [
+              -6.131475938316805e-06,
+              8.794544019236253e-06,
+              -1.8237218620599758e-06,
+              -3.282281365929915e-06
+            ],
+            [
+              6.118098892521671e-06,
+              -1.823721883594345e-06,
+              -1.9144153336456798e-05,
+              2.511778980029445e-05
+            ],
+            [
+              1.3826998418201389e-05,
+              -3.282281342582691e-06,
+              2.5117789738872788e-05,
+              3.497234032329189e-05
+            ]
+          ],
+          "antisymmetric_residual": 6.142166243390361e-14
+        },
+        {
+          "step": 0.01,
+          "scalar": 1.0244876180505535e-05,
+          "max_coordinate_component": 3.4972340254172185e-05,
+          "tensor": [
+            [
+              8.442838075779857e-06,
+              -6.131475956107961e-06,
+              6.118098906597663e-06,
+              1.3826998423040806e-05
+            ],
+            [
+              -6.131475956165563e-06,
+              8.794544216032147e-06,
+              -1.8237216661029082e-06,
+              -3.2822814154333937e-06
+            ],
+            [
+              6.118098906527078e-06,
+              -1.8237216664484976e-06,
+              -1.9144153397258015e-05,
+              2.5117789656026742e-05
+            ],
+            [
+              1.382699842289388e-05,
+              -3.28228141517767e-06,
+              2.5117789655389776e-05,
+              3.4972340254172185e-05
+            ]
+          ],
+          "antisymmetric_residual": 6.369653882034448e-16
+        },
+        {
+          "step": 0.003,
+          "scalar": 1.024487618124162e-05,
+          "max_coordinate_component": 3.497234025277682e-05,
+          "tensor": [
+            [
+              8.442838075418242e-06,
+              -6.131475956131829e-06,
+              6.118098906646375e-06,
+              1.382699842332627e-05
+            ],
+            [
+              -6.1314759566204755e-06,
+              8.79454421908274e-06,
+              -1.8237216636717271e-06,
+              -3.2822814157027772e-06
+            ],
+            [
+              6.118098906938884e-06,
+              -1.8237216636491215e-06,
+              -1.9144153398431854e-05,
+              2.5117789654200484e-05
+            ],
+            [
+              1.3826998423030002e-05,
+              -3.2822814162012383e-06,
+              2.511778965457695e-05,
+              3.497234025277682e-05
+            ]
+          ],
+          "antisymmetric_residual": 4.984611017672634e-16
+        }
+      ]
+    },
+    {
+      "label": "orbit_far",
+      "event": [
+        0,
+        2,
+        3,
+        80
+      ],
+      "values": [
+        {
+          "step": 0.03,
+          "scalar": 3.5589097733640894e-08,
+          "max_coordinate_component": 3.275423812786548e-08,
+          "tensor": [
+            [
+              -2.2506554013042767e-08,
+              1.5436217061866923e-09,
+              1.2271225941337356e-09,
+              3.275423812753255e-08
+            ],
+            [
+              1.543621706901522e-09,
+              7.841714447054672e-09,
+              -4.986900733253375e-09,
+              -9.616929923664389e-11
+            ],
+            [
+              1.2271225947413637e-09,
+              -4.986900732971904e-09,
+              1.657175756730296e-08,
+              -1.147842112283938e-09
+            ],
+            [
+              3.275423812786548e-08,
+              -9.616929644461164e-11,
+              -1.1478421120768383e-09,
+              -1.0534544469121791e-08
+            ]
+          ],
+          "antisymmetric_residual": 2.792032248989411e-18
+        },
+        {
+          "step": 0.01,
+          "scalar": 3.558909774390617e-08,
+          "max_coordinate_component": 3.275423813344634e-08,
+          "tensor": [
+            [
+              -2.250655401455707e-08,
+              1.5436217060697802e-09,
+              1.227122593880359e-09,
+              3.2754238128198264e-08
+            ],
+            [
+              1.5436217068179932e-09,
+              7.841714456454197e-09,
+              -4.986900734395561e-09,
+              -9.616929952489979e-11
+            ],
+            [
+              1.2271225941662332e-09,
+              -4.98690073267017e-09,
+              1.657175757116797e-08,
+              -1.147842114267054e-09
+            ],
+            [
+              3.275423813344634e-08,
+              -9.616930718477766e-11,
+              -1.1478421228353214e-09,
+              -1.0534544473637747e-08
+            ]
+          ],
+          "antisymmetric_residual": 8.568267450274129e-18
+        },
+        {
+          "step": 0.003,
+          "scalar": 3.558909773366014e-08,
+          "max_coordinate_component": 3.275423812285637e-08,
+          "tensor": [
+            [
+              -2.2506554047286985e-08,
+              1.5436217053549522e-09,
+              1.2271225866605794e-09,
+              3.275423812285637e-08
+            ],
+            [
+              1.54362170329472e-09,
+              7.841714407391507e-09,
+              -4.9869007345305554e-09,
+              -9.616929776624764e-11
+            ],
+            [
+              1.2271225927133352e-09,
+              -4.98690073448351e-09,
+              1.6571757548275212e-08,
+              -1.1478421111311262e-09
+            ],
+            [
+              3.275423810765682e-08,
+              -9.61692940341147e-11,
+              -1.1478421101075925e-09,
+              -1.0534544445593333e-08
+            ]
+          ],
+          "antisymmetric_residual": 1.519954963478029e-17
+        }
+      ]
+    }
+  ],
+  "passed": true,
+  "inertial_ray_control": {
+    "velocity": [
+      0.15,
+      -0.07,
+      0
+    ],
+    "settings": {
+      "rtol": 1e-11,
+      "atol": 1e-13,
+      "escape_radius": 150,
+      "capture_radius": 1.99,
+      "max_affine": 500,
+      "max_step": 20,
+      "null_tolerance": 1e-05,
+      "kerr_capture_fraction": 0.995,
+      "kerr_source_radius": 100000.0,
+      "integrator": "hamiltonian",
+      "carter_fallback": "none",
+      "binary_capture_fraction": 0.995,
+      "binary_signature_margin": 0.05
+    },
+    "comparison": "same affine normalization, transformed observer/p, matched GLOBAL finite escape sphere",
+    "rays": [
+      {
+        "local_camera_direction": [
+          0,
+          0,
+          -1
+        ],
+        "global_event": [
+          0.0,
+          0.0,
+          0.0,
+          20.0
+        ],
+        "global_momentum": [
+          0.961953595195251,
+          -0.14429303927928763,
+          0.06733675166366758,
+          -0.9486832980505138
+        ],
+        "status": "captured",
+        "reference_status": "captured",
+        "max_event_error": 2.4868995751603507e-14,
+        "max_covector_error": 1.1102230246251565e-15
+      },
+      {
+        "local_camera_direction": [
+          0.4,
+          0,
+          -1
+        ],
+        "global_event": [
+          0.0,
+          0.0,
+          0.0,
+          20.0
+        ],
+        "global_momentum": [
+          0.9054657350618998,
+          0.23136365174763965,
+          0.0653459448163499,
+          -0.873291110518893
+        ],
+        "status": "escaped",
+        "reference_status": "escaped",
+        "max_event_error": 6.185416623338824e-10,
+        "max_covector_error": 8.450129485026991e-12,
+        "source_direction_error": 1.0782527561501318e-12
+      },
+      {
+        "local_camera_direction": [
+          0,
+          0.7,
+          -1
+        ],
+        "global_event": [
+          0.0,
+          0.0,
+          0.0,
+          20.0
+        ],
+        "global_momentum": [
+          1.0026574755631354,
+          -0.14736703341679488,
+          0.6422336266244993,
+          -0.7581370115791204
+        ],
+        "status": "escaped",
+        "reference_status": "escaped",
+        "max_event_error": 3.5060665481978504e-10,
+        "max_covector_error": 6.6876504334345555e-12,
+        "source_direction_error": 1.1629601418696033e-13
+      }
+    ]
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "method": "ode",
+  "requested_method": "ode",
+  "version": "0.1.0",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "mass": 1.0,
+  "camera": {
+    "position": [
+      0.0,
+      0.0,
+      75.0
+    ],
+    "target": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "up": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "fov_degrees": 40.0,
+    "width": 96,
+    "height": 72,
+    "time": 129.0540872147732,
+    "observer_frame": null,
+    "observer": "static"
+  },
+  "integration": {
+    "rtol": 1e-09,
+    "atol": 1e-11,
+    "escape_radius": 500.0,
+    "capture_radius": 1.99,
+    "max_affine": 1500.0,
+    "max_step": 30.0,
+    "null_tolerance": 1e-05,
+    "kerr_capture_fraction": 0.995,
+    "kerr_source_radius": 100000.0,
+    "integrator": "hamiltonian",
+    "carter_fallback": "none",
+    "binary_capture_fraction": 0.995,
+    "binary_signature_margin": 0.05
+  },
+  "counts": {
+    "captured": 148,
+    "escaped": 6764,
+    "unresolved": 0
+  },
+  "termination_reasons": {
+    "outward_escape": 6764,
+    "provisional_moving_capture_1": 74,
+    "provisional_moving_capture_2": 74
+  },
+  "maxima": {
+    "null_error": 1.807295746132695e-08,
+    "energy_drift": null,
+    "angular_momentum_drift": null,
+    "energy_change": 0.2811739141601379,
+    "helical_error": 5.059896298628998e-11
+  },
+  "diagnostic_sampling": "accepted steps and dense-output midpoints; null error = |g^ab p_a p_b| / p_t(initial)^2",
+  "total_steps": 312619,
+  "rhs_evaluations": 5492421,
+  "integrated_rays": 6912,
+  "rotational_symmetry_reuse": false,
+  "elapsed_seconds": 435.12421460001497,
+  "analytic_critical_impact_parameter": null,
+  "analytic_shadow_radius_degrees": null,
+  "background": {
+    "model": "NASA catalog-based Deep Star Maps (2012), galactic 4k",
+    "source": "https://svs.gsfc.nasa.gov/3895/",
+    "credit": "NASA/Goddard Space Flight Center Scientific Visualization Studio",
+    "longitude_degrees": 0.0,
+    "latitude_degrees": 10.0,
+    "roll_degrees": 25.0,
+    "exposure": 3.0,
+    "accretion_disk": false,
+    "resolution": 4
+  },
+  "execution": {
+    "workers": 10,
+    "requested_workers": 10,
+    "start_method": "spawn",
+    "task_count": 108,
+    "worker_cpu_seconds": 4227.0625,
+    "worker_task_seconds": 4245.194548100088,
+    "worker_peak_memory_bytes": {
+      "31740": 79589376,
+      "33364": 79261696,
+      "12408": 79790080,
+      "31376": 79609856,
+      "2384": 79106048,
+      "29852": 79589376,
+      "36620": 79360000,
+      "37760": 79036416,
+      "2468": 79032320,
+      "33964": 79843328
+    },
+    "startup_span_seconds": 3.2587644000013825,
+    "pool_wall_seconds": 435.1234439999971
+  },
+  "spacetime": {
+    "type": "binary_ks_orbit_approx",
+    "experimental": true,
+    "exact_vacuum_solution": false,
+    "masses": [
+      0.5,
+      0.5
+    ],
+    "total_mass_parameter": 1.0,
+    "trajectory": {
+      "model": "leading_order_circular",
+      "separation": 30.0,
+      "phase_degrees": 0.0,
+      "epoch": 0.0,
+      "barycenter": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "omega": 0.006085806194501846,
+      "rate_scale": 1.0,
+      "period": 1032.4326977181856,
+      "initial_positions": [
+        [
+          15.0,
+          0.0,
+          0.0
+        ],
+        [
+          -15.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "initial_velocities": [
+        [
+          -0.0,
+          0.09128709291752769,
+          0.0
+        ],
+        [
+          0.0,
+          -0.09128709291752769,
+          -0.0
+        ]
+      ],
+      "initial_accelerations": [
+        [
+          -0.0005555555555555557,
+          -0.0,
+          -0.0
+        ],
+        [
+          0.0005555555555555557,
+          0.0,
+          0.0
+        ]
+      ],
+      "orbital_speeds": [
+        0.09128709291752769,
+        0.09128709291752769
+      ],
+      "angular_momentum_axis": "+Z",
+      "regime_policy": "d >=20 M_total; not an accuracy guarantee",
+      "inspiral": false
+    },
+    "coordinates": "outgoing Cartesian KS, instantaneous Lorentz/no-acceleration-Jacobian ansatz",
+    "derivative_policy": "analytic derivatives of the full prescribed metric, including velocity and acceleration",
+    "warning": "Not the published PN/merger metric; moving capture ellipsoids are provisional, not computed horizons."
+  },
+  "integrator": "hamiltonian",
+  "provisional_capture_counts": {
+    "1": 74,
+    "2": 74
+  },
+  "capture_radii": [
+    0.995,
+    0.995
+  ],
+  "escape_center": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "background_direction": "Normalized outgoing Cartesian tangent at finite escape_radius; residual bending requires radius convergence; no analytic tail",
+  "signature_guard": 0.05,
+  "minimum_sampled_signature_margin": 0.8585777405546757,
+  "incomplete_diagnostics": 0,
+  "termination_codes": {
+    "0": "outward_escape",
+    "1": "provisional_moving_capture_1",
+    "2": "provisional_moving_capture_2"
+  },
+  "capture_index_codes": {
+    "0": "no provisional capture",
+    "1": "provisional moving rest-radius ellipsoid 1",
+    "2": "provisional moving rest-radius ellipsoid 2"
+  },
+  "optimization_note": "Generic Hamiltonian only; no Schwarzschild quadrature, rotational reuse or Carter integration",
+  "camera_time_body_positions": [
+    [
+      10.606601717798213,
+      10.606601717798213,
+      0.0
+    ],
+    [
+      -10.606601717798213,
+      -10.606601717798213,
+      0.0
+    ]
+  ],
+  "camera_time_body_velocities": [
+    [
+      -0.06454972243679029,
+      0.06454972243679029,
+      0.0
+    ],
+    [
+      0.06454972243679029,
+      -0.06454972243679029,
+      -0.0
+    ]
+  ],
+  "camera_time_body_accelerations": [
+    [
+      -0.00039283710065919316,
+      -0.00039283710065919316,
+      -0.0
+    ],
+    [
+      0.00039283710065919316,
+      0.00039283710065919316,
+      0.0
+    ]
+  ],
+  "stationary_energy_conserved": false,
+  "capture_prescription": "moving rest-radius ellipsoids, not computed horizons"
+}

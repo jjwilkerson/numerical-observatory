@@ -1,0 +1,10 @@
+{
+  "binary_ks_approx.py": true,
+  "binary_support.py": true,
+  "kerr.py": true,
+  "camera.py": true,
+  "metric.py": true,
+  "emission.py": true,
+  "emitter_motion.py": true,
+  "blackbody_color.py": true
+}

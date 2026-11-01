@@ -1,0 +1,29 @@
+# Experimental instantaneous boosted KS ansatz; not a PN/NR binary metric.
+mass = 1.0
+[spacetime]
+type = "binary_ks_approx"
+masses = [0.5, 0.5]
+centers = [[15.0, 0.0, 0.0], [-15.0, 0.0, 0.0]]
+[camera]
+time = 0.0
+position = [0.0, 0.0, 75.0]
+target = [0.0, 0.0, 0.0]
+up = [0.0, 1.0, 0.0]
+observer = "static"
+fov_degrees = 40.0
+width = 96
+height = 72
+[geodesics]
+integrator = "hamiltonian"
+[integration]
+rtol = 1e-9
+atol = 1e-11
+escape_radius = 500.0
+max_affine = 1500.0
+max_step = 30.0
+binary_capture_fraction = 0.995
+binary_signature_margin = 0.05
+[background]
+mode = "starfield"
+[disk]
+enabled = false

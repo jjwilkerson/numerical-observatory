@@ -117,13 +117,18 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
         return trace_carter(metric,event,momentum,settings,domain,return_solution,surface)
     schwarzschild = type(metric) is Schwarzschild
     from .binary_ks_approx import BinaryKSApprox
-    binary = type(metric) is BinaryKSApprox
+    from .binary_ks_orbit_approx import BinaryKSOrbitApprox
+    orbit_binary = type(metric) is BinaryKSOrbitApprox
+    binary = type(metric) is BinaryKSApprox or orbit_binary
     if binary:
         if surface is not None:
-            raise ValueError('binary_ks_approx does not support emitting disks')
+            raise ValueError('binary approximate metrics do not support emitting disks')
         if domain is not None:
-            raise ValueError('binary_ks_approx currently requires its built-in provisional domain')
-        from .binary_support import default_domain as binary_domain
+            raise ValueError('binary approximate metrics require their built-in provisional domain')
+        if orbit_binary:
+            from .orbit_binary_support import default_domain as binary_domain
+        else:
+            from .binary_support import default_domain as binary_domain
         domain = binary_domain(metric,event,settings)
     from .kerr import Kerr
     kerr_domain = domain is None and type(metric) is Kerr
@@ -171,7 +176,7 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
     except (ValueError, np.linalg.LinAlgError, FloatingPointError) as exc:
         if not binary: raise
         result=RayResult('unresolved',None,float(abs(momentum@metric.inverse(event)@momentum)/max(momentum[0]**2,1e-28)),
-                         0.,None,0,attempted[0],'binary_integration_failure: '+str(exc),
+                         None if orbit_binary else 0.,None,0,attempted[0],'binary_integration_failure: '+str(exc),
                          binary_diagnostics=dict(capture_index=0,provisional_capture=False,complete=False,
                                                  minimum_signature_margin=metric.signature_margin(event)))
         return (result,None) if return_solution else result
@@ -181,7 +186,10 @@ def trace(metric: Metric, event, momentum, settings: Integration, domain=None,
         from .kerr_support import finish_kerr
         result = finish_kerr(metric, event, momentum, settings, sol, result, kerr_domain)
     if binary:
-        from .binary_support import finish_binary
+        if orbit_binary:
+            from .orbit_binary_support import finish_orbit_binary as finish_binary
+        else:
+            from .binary_support import finish_binary
         result = finish_binary(metric,settings,sol,result)
     if return_solution and result.hit is not None:
         # The public opaque-ray solution terminates at the emitting surface.

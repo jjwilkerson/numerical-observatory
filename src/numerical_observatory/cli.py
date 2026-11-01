@@ -34,15 +34,27 @@ def load_configuration(path=None):
         centers=spacetime.pop('centers',[[-6,0,0],[6,0,0]])
         if spacetime: raise ValueError('binary spacetime accepts only masses and centers')
         metric=BinaryKSApprox(tuple(scale*v for v in masses),tuple(tuple(scale*v for v in c) for c in centers))
+    elif kind == 'binary_ks_orbit_approx':
+        from .binary_ks_orbit_approx import BinaryKSOrbitApprox
+        from .trajectories import CircularOrbit
+        scale=data.get('mass',1.)
+        if not isinstance(scale,(int,float)) or not 0<scale<float('inf'):raise ValueError('reference mass must be finite and positive')
+        masses=tuple(scale*v for v in spacetime.pop('masses',[.5,.5]))
+        separation=scale*spacetime.pop('separation',30.)
+        phase=spacetime.pop('phase_degrees',0.)
+        epoch=scale*spacetime.pop('epoch',0.)
+        center=tuple(scale*v for v in spacetime.pop('barycenter',[0.,0.,0.]))
+        if spacetime:raise ValueError('orbit spacetime accepts masses, separation, phase_degrees, epoch, barycenter only')
+        metric=BinaryKSOrbitApprox(masses,CircularOrbit(masses,separation,phase,epoch,center))
     else:
-        raise ValueError("spacetime must select schwarzschild, kerr, or binary_ks_approx")
+        raise ValueError("spacetime must select schwarzschild, kerr, binary_ks_approx, or binary_ks_orbit_approx")
     # Configuration lengths/times are in M, so mass changes preserve the scene.
     camera_options = dict(data.get("camera", {}))
     if kind == "kerr":
         from .kerr_support import inclined_camera_options
         camera_options = inclined_camera_options(metric, camera_options)
     camera_data = asdict(Camera()) | camera_options
-    length_unit = data.get('mass',1.) if kind=='binary_ks_approx' else metric.mass
+    length_unit = data.get('mass',1.) if kind in ('binary_ks_approx','binary_ks_orbit_approx') else metric.mass
     for key in ("position", "target"):
         camera_data[key] = tuple(length_unit * v for v in camera_data[key])
     camera_data["time"] *= length_unit
@@ -61,7 +73,7 @@ def load_configuration(path=None):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="CPU observatory: Schwarzschild, Kerr, or experimental binary KS approximation")
+    parser = argparse.ArgumentParser(description="CPU observatory: Schwarzschild, Kerr, stationary or orbiting experimental binary KS")
     parser.add_argument("--config", type=Path, help="TOML configuration (lengths in M)")
     parser.add_argument("--output", type=Path, default=Path("output"))
     parser.add_argument("--width", type=int, help="override pixel width")

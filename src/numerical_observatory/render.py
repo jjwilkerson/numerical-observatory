@@ -23,10 +23,14 @@ def render(metric, camera, integration, output, progress=None, background=None,
     from .kerr_carter import validate_backend
     validate_backend(metric,integration,domain,None if disk is None else disk.surface)
     from .binary_ks_approx import BinaryKSApprox
-    if type(metric) is BinaryKSApprox:
+    from .binary_ks_orbit_approx import BinaryKSOrbitApprox
+    if type(metric) in (BinaryKSApprox,BinaryKSOrbitApprox):
         if method!='ode' or disk is not None or domain is not None:
-            raise ValueError('binary_ks_approx supports only generic Hamiltonian ODE, its built-in domain, and no disk')
-        from .binary_support import default_domain
+            raise ValueError('binary approximations support only generic Hamiltonian ODE, their built-in domain, and no disk')
+        if type(metric) is BinaryKSOrbitApprox:
+            from .orbit_binary_support import default_domain
+        else:
+            from .binary_support import default_domain
         default_domain(metric,camera.event,integration)
     selected = resolve_workers(workers)
     return staged_render(output, lambda stage: _render(metric, camera, integration, stage, progress,
@@ -84,13 +88,17 @@ def _render(metric, camera, integration, output, progress=None, background=None,
     from .kerr import Kerr
     is_kerr = type(metric) is Kerr
     from .binary_ks_approx import BinaryKSApprox
-    is_binary = type(metric) is BinaryKSApprox
+    from .binary_ks_orbit_approx import BinaryKSOrbitApprox
+    is_orbit_binary = type(metric) is BinaryKSOrbitApprox
+    is_binary = type(metric) in (BinaryKSApprox,BinaryKSOrbitApprox)
     binary_arrays = ({'capture_index':np.zeros(statuses.shape,dtype=np.uint8),
                       'signature_margin':np.full(statuses.shape,np.nan),
                       'null_error':np.full(statuses.shape,np.nan),
                       'energy_drift':np.full(statuses.shape,np.nan),
                       'constraint_diagnostics_complete':np.zeros(statuses.shape,dtype=bool)} if is_binary else {})
     binary_reasons=np.empty(statuses.shape,dtype=object) if is_binary else None
+    if is_orbit_binary:
+        binary_arrays.update(energy_change=np.full(statuses.shape,np.nan),helical_error=np.full(statuses.shape,np.nan))
     from .backend_records import BackendRecords
     backend_records=BackendRecords((camera.height,camera.width),integration) if is_kerr else None
     conservation = ({key: np.full((camera.height, camera.width), np.nan)
@@ -118,6 +126,9 @@ def _render(metric, camera, integration, output, progress=None, background=None,
                 binary_arrays['null_error'][row,col]=result.max_null_error
                 binary_arrays['energy_drift'][row,col]=result.energy_drift
                 binary_reasons[row,col]=result.reason
+                if is_orbit_binary:
+                    binary_arrays['energy_change'][row,col]=info.get('energy_change',np.nan)
+                    binary_arrays['helical_error'][row,col]=info.get('helical_error',np.nan)
             if is_kerr:
                 backend_records.record(row,col,result)
                 for key, value in (("null_error", result.max_null_error), ("energy_drift", result.energy_drift),
@@ -187,6 +198,14 @@ def _render(metric, camera, integration, output, progress=None, background=None,
             termination_codes={str(i):v for i,v in enumerate(reason_names)},
             capture_index_codes={'0':'no provisional capture','1':'provisional sphere at center 1','2':'provisional sphere at center 2'},
             optimization_note='Generic Hamiltonian only; no Schwarzschild quadrature, rotational reuse or Carter integration')
+        if is_orbit_binary:
+            positions,velocities,accelerations=metric.body_states(camera.time)
+            diagnostics.update(camera_time_body_positions=positions.tolist(),camera_time_body_velocities=velocities.tolist(),
+                camera_time_body_accelerations=accelerations.tolist(),stationary_energy_conserved=False,
+                capture_prescription='moving rest-radius ellipsoids, not computed horizons',
+                capture_index_codes={'0':'no provisional capture','1':'provisional moving rest-radius ellipsoid 1','2':'provisional moving rest-radius ellipsoid 2'},
+                maxima=diagnostics['maxima'] | dict(energy_change=float(np.nanmax(binary_arrays['energy_change'])) if np.isfinite(binary_arrays['energy_change']).any() else None,
+                    helical_error=float(np.nanmax(binary_arrays['helical_error'])) if np.isfinite(binary_arrays['helical_error']).any() else None))
     output = Path(output)
     output.mkdir(parents=True, exist_ok=True)
     Image.fromarray(np.uint8(np.round(np.clip(image, 0, 1) * 255))).save(output / "shadow.png")

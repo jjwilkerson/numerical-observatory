@@ -1,0 +1,55 @@
+{
+  "full_suite": "235 passed in 524.86s",
+  "all_local_links_valid": true,
+  "preserved_physics_sources": true,
+  "identical_spatial_camera": true,
+  "all_scene_arrays_checked": true,
+  "scenes": [
+    {
+      "name": "phase0",
+      "counts": {
+        "captured": 144,
+        "escaped": 6768,
+        "unresolved": 0
+      },
+      "signature_minimum": 0.8604664457639458,
+      "maxima": {
+        "null_error": 1.4843307816450076e-08,
+        "energy_drift": null,
+        "angular_momentum_drift": null,
+        "energy_change": 0.2929960861567782,
+        "helical_error": 2.496148447996123e-11
+      }
+    },
+    {
+      "name": "phase45",
+      "counts": {
+        "captured": 148,
+        "escaped": 6764,
+        "unresolved": 0
+      },
+      "signature_minimum": 0.8585777405546757,
+      "maxima": {
+        "null_error": 1.807295746132695e-08,
+        "energy_drift": null,
+        "angular_momentum_drift": null,
+        "energy_change": 0.2811739141601379,
+        "helical_error": 5.059896298628998e-11
+      }
+    },
+    {
+      "name": "stationary_zero_rate_control",
+      "counts": {
+        "captured": 144,
+        "escaped": 6768,
+        "unresolved": 0
+      },
+      "signature_minimum": 0.8731308227387438,
+      "maxima": {
+        "null_error": 1.582292106763497e-08,
+        "energy_drift": 0.0,
+        "angular_momentum_drift": null
+      }
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 # Numerical Observatory
 
-A small, independent CPU ray tracer for Schwarzschild and exact Kerr black-hole shadows.
+A small, independent CPU ray tracer for Schwarzschild, exact Kerr and experimental binary metrics.
 It traces null geodesics toward the past from a local camera, lenses an astronomical
-star map at infinity, and saves a PNG plus numerical diagnostics. No existing C++
+celestial star map, and saves a PNG plus numerical diagnostics. Background
+termination conventions are documented for each metric. No existing C++
 project, CarpetX installation, GPU, CUDA, or compiler is required.
 
 An optional opaque luminous disk supports Schwarzschild and equatorial Kerr
@@ -26,6 +27,16 @@ and [numerical validation and limitations](examples/binary_ks_approx/REPORT.md).
 Schwarzschild and Kerr remain independently selectable with their previous
 defaults. No specialized Schwarzschild or Carter solver activates for binary
 scenes.
+
+The separate experimental `binary_ks_orbit_approx` adds instantaneous Lorentz
+boosts and leading-order circular motion evaluated at each photon's coordinate
+time. It uses analytic time derivatives and tracks helical conservation rather
+than assuming conserved photon energy. Moving absorption ellipsoids remain
+provisional; this is not the published PN/merger metric or an exact binary
+solution. The reference scene uses separation 30M_total. See the
+[orbiting-binary guide](examples/binary_ks_orbit_approx/README.md),
+[validation and curvature residuals](examples/binary_ks_orbit_approx/REPORT.md),
+and [fixed-camera time comparison](examples/binary_ks_orbit_approx/previews/comparison.png).
 
 ## Exact Kerr spacetime (shadow and celestial background)
 

@@ -1,0 +1,1998 @@
+{
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.67.0",
+    "cpu": "Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz",
+    "logical_cpus": 20,
+    "affinity": null,
+    "topology": {
+      "logical": 20,
+      "physical": 10,
+      "source": "Windows core topology intersected with process affinity"
+    },
+    "source_sha256": {
+      "numerical_metric": "ff6e0e13d8569ee650edcd524b0d0753f81daa6a474b76ef63e17559a24165d5",
+      "numerical_numpy": "42982db3c0321545ae7f16244eda09889daaa436a39c7a6d495e0c68f0fd2c79",
+      "numerical_kernels": "c2c6857f11ce7053e72f55b0afeee4d6b8d70020184ffdf08681959d7afd9a14",
+      "numerical_acceleration": "dabcad548bb66abd7444525ee682ff0bd131d16fac26d2e2cfe82c665239311b",
+      "numerical_data": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+      "amr_geometry": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+      "numerical_trace": "55fad05c32f87b636a832f3eedf12cd612319ed18e9c3ac4791ecd648a98be64",
+      "numerical_benchmark": "6080cc868c1214e2a5896ce4aa042ddf5bef98e5e2e1a55d9ac5c0729c2592c6"
+    }
+  },
+  "parameters": {
+    "output": "examples\\numerical_optimization\\controlled-final\\numpy\\synthetic",
+    "backend": "numpy",
+    "count": 512,
+    "repeats": 3,
+    "real": null,
+    "modes": [
+      "linear",
+      "cubic",
+      "cubic_amr_c1",
+      "cubic_amr_c1_box",
+      "cubic_amr_c1_hierarchy"
+    ],
+    "trajectories": false,
+    "renders": false,
+    "seams": true,
+    "suite": false
+  },
+  "cases": [
+    {
+      "mode": "linear",
+      "backend": "numpy",
+      "real": false,
+      "requested_events": 512,
+      "valid_events": 512,
+      "rejections": {},
+      "query_sha256": "978ce79167150a00c68f1980577919ef2f8f734ce93bff130536e64789b8ea9b",
+      "constructor_seconds": 0.006762099998013582,
+      "first_lookup_seconds": 0.03213360000154353,
+      "metric": {
+        "seconds": [
+          0.25205369999821414,
+          0.25621379999938654,
+          0.253079300000536
+        ],
+        "median_seconds": 0.253079300000536,
+        "minimum_seconds": 0.25205369999821414,
+        "maximum_seconds": 0.25621379999938654,
+        "stdev_seconds": 0.002167309300619514
+      },
+      "rejected": null,
+      "evaluations_per_second": 2023.0813029707115,
+      "spatial": {
+        "seconds": [
+          0.07227989999955753,
+          0.07602939999924274,
+          0.07762000000002445
+        ],
+        "median_seconds": 0.07602939999924274,
+        "minimum_seconds": 0.07227989999955753,
+        "maximum_seconds": 0.07762000000002445,
+        "stdev_seconds": 0.0027418189408101863
+      },
+      "validation": {
+        "seconds": [
+          0.009384199998748954,
+          0.011320000001433073,
+          0.008988699999463279
+        ],
+        "median_seconds": 0.009384199998748954,
+        "minimum_seconds": 0.008988699999463279,
+        "maximum_seconds": 0.011320000001433073,
+        "stdev_seconds": 0.0012475777597015186
+      },
+      "reconstruction": {
+        "seconds": [
+          0.06905490000281134,
+          0.07171580000067479,
+          0.07836930000121356
+        ],
+        "median_seconds": 0.07171580000067479,
+        "minimum_seconds": 0.06905490000281134,
+        "maximum_seconds": 0.07836930000121356,
+        "stdev_seconds": 0.00479769907327173
+      },
+      "gather": {
+        "seconds": [
+          0.01452179999978398,
+          0.01396269999895594,
+          0.014089500000409316
+        ],
+        "median_seconds": 0.014089500000409316,
+        "minimum_seconds": 0.01396269999895594,
+        "maximum_seconds": 0.01452179999978398,
+        "stdev_seconds": 0.0002931308981649163
+      },
+      "rhs": {
+        "seconds": [
+          0.2520382000002428,
+          0.2584545999998227,
+          0.2548246000005747
+        ],
+        "median_seconds": 0.2548246000005747,
+        "minimum_seconds": 0.2520382000002428,
+        "maximum_seconds": 0.2584545999998227,
+        "stdev_seconds": 0.0032174294582010287
+      },
+      "python_allocations": {
+        "current_bytes": 1704,
+        "peak_bytes": 10544
+      },
+      "backend_reconstruction": {
+        "seconds": [
+          0.042064199999003904,
+          0.043346300000848714,
+          0.040842200000042794
+        ],
+        "median_seconds": 0.042064199999003904,
+        "minimum_seconds": 0.040842200000042794,
+        "maximum_seconds": 0.043346300000848714,
+        "stdev_seconds": 0.0012521701978450335
+      },
+      "backend_gather": null,
+      "reference_coordinate_stencil_construction": {
+        "seconds": [
+          0.006157800002256408,
+          0.006278199998632772,
+          0.006115600001066923
+        ],
+        "median_seconds": 0.006157800002256408,
+        "minimum_seconds": 0.006115600001066923,
+        "maximum_seconds": 0.006278199998632772,
+        "stdev_seconds": 8.437590338897606e-05
+      },
+      "compiled_reconstruction_prototype": null,
+      "process_memory_before": {
+        "rss_bytes": 80760832,
+        "lifetime_peak_rss_bytes": 80760832
+      },
+      "process_memory_after": {
+        "rss_bytes": 85606400,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "backend_fallbacks": 0,
+      "memory_after_first_lookup": {
+        "rss_bytes": 84123648,
+        "lifetime_peak_rss_bytes": 84123648
+      },
+      "mapped_bytes": 2358240,
+      "pickled_provider_bytes": 4021,
+      "profile": [
+        {
+          "file": "numerical_benchmark.py",
+          "line": 99,
+          "function": "evaluate",
+          "calls": 1,
+          "own_seconds": 0.0005605,
+          "cumulative_seconds": 0.3224581
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 222,
+          "function": "evaluate",
+          "calls": 512,
+          "own_seconds": 0.0046362,
+          "cumulative_seconds": 0.3218976
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 208,
+          "function": "evaluate_adm",
+          "calls": 512,
+          "own_seconds": 0.0004930000000000001,
+          "cumulative_seconds": 0.25103600000000004
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 212,
+          "function": "_adm_reference",
+          "calls": 512,
+          "own_seconds": 0.011065400000000001,
+          "cumulative_seconds": 0.250543
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 180,
+          "function": "_spatial_reference",
+          "calls": 1024,
+          "own_seconds": 0.0040718,
+          "cumulative_seconds": 0.2056379
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 129,
+          "function": "_interpolate",
+          "calls": 1086,
+          "own_seconds": 0.07857940000000001,
+          "cumulative_seconds": 0.17245880000000002
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 6,
+          "function": "reconstruct",
+          "calls": 512,
+          "own_seconds": 0.029334700000000002,
+          "cumulative_seconds": 0.0655507
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 111,
+          "function": "_nodes",
+          "calls": 1086,
+          "own_seconds": 0.0039169,
+          "cumulative_seconds": 0.0467175
+        },
+        {
+          "file": "numerical_data.py",
+          "line": 20,
+          "function": "validate_fields",
+          "calls": 1024,
+          "own_seconds": 0.0116894,
+          "cumulative_seconds": 0.0436447
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 32,
+          "function": "nodes",
+          "calls": 1086,
+          "own_seconds": 0.0212167,
+          "cumulative_seconds": 0.0409425
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 151,
+          "function": "_candidate",
+          "calls": 1024,
+          "own_seconds": 0.0006718000000000001,
+          "cumulative_seconds": 0.027031000000000003
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 27,
+          "function": "candidate",
+          "calls": 1024,
+          "own_seconds": 0.0116573,
+          "cumulative_seconds": 0.026359200000000003
+        },
+        {
+          "file": "_linalg.py",
+          "line": 789,
+          "function": "cholesky",
+          "calls": 1024,
+          "own_seconds": 0.010267,
+          "cumulative_seconds": 0.021279100000000002
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 12210,
+          "own_seconds": 0.020836300000000002,
+          "cumulative_seconds": 0.020836300000000002
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 3325,
+          "function": "prod",
+          "calls": 4096,
+          "own_seconds": 0.0040467,
+          "cumulative_seconds": 0.0200644
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 66,
+          "function": "_wrapreduction",
+          "calls": 5182,
+          "own_seconds": 0.0080392,
+          "cumulative_seconds": 0.019665000000000002
+        }
+      ],
+      "dataset": {
+        "identifier": "synthetic-observatory",
+        "directory": "D:\\numerical-observatory\\examples\\numerical_optimization\\controlled-final\\numpy\\synthetic\\fixtures\\manufactured-3",
+        "format": "GMDS v1, converted physical CarpetX ADM",
+        "manifest_sha256": "463276de8f2c0f5957ae23b61c6ac7bf29116a6bef5e4934397e5c56a62923ee",
+        "fields": [
+          "alp",
+          "betax",
+          "betay",
+          "betaz",
+          "gxx",
+          "gxy",
+          "gxz",
+          "gyy",
+          "gyz",
+          "gzz"
+        ],
+        "units": "geometrized code units; no SI conversion",
+        "time_coverage": [
+          0.0,
+          1.0
+        ],
+        "snapshots": 2,
+        "snapshot_times": [
+          0.0,
+          1.0
+        ],
+        "native_regions": [
+          {
+            "level": 0,
+            "provenance": "analytic_sampling",
+            "lower": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "upper": [
+              18.0,
+              8.0,
+              8.0
+            ]
+          },
+          {
+            "level": 1,
+            "provenance": "analytic_sampling",
+            "lower": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "upper": [
+              14.0,
+              4.0,
+              4.0
+            ]
+          },
+          {
+            "level": 2,
+            "provenance": "analytic_sampling",
+            "lower": [
+              8.0,
+              -2.0,
+              -2.0
+            ],
+            "upper": [
+              12.0,
+              2.0,
+              2.0
+            ]
+          }
+        ],
+        "fixed_geometry": true,
+        "raw_bytes_per_snapshot": 1179120,
+        "cache_budget": 1073741824,
+        "source_series": null,
+        "source_time_unit_si": null,
+        "patches": [
+          {
+            "level": 0,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "centering": "vertex",
+            "file": "patch-0.bin"
+          },
+          {
+            "level": 1,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "spacing": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "centering": "vertex",
+            "file": "patch-1.bin"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              8.0,
+              -2.0,
+              -2.0
+            ],
+            "spacing": [
+              0.25,
+              0.25,
+              0.25
+            ],
+            "centering": "vertex",
+            "file": "patch-2.bin"
+          }
+        ],
+        "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+      }
+    },
+    {
+      "mode": "cubic",
+      "backend": "numpy",
+      "real": false,
+      "requested_events": 512,
+      "valid_events": 189,
+      "rejections": {
+        "numerical_refinement_intersection": 281,
+        "numerical_missing_stencil": 42
+      },
+      "query_sha256": "978ce79167150a00c68f1980577919ef2f8f734ce93bff130536e64789b8ea9b",
+      "constructor_seconds": 0.0058882999983325135,
+      "first_lookup_seconds": 0.01033100000131526,
+      "metric": {
+        "seconds": [
+          0.09173390000069048,
+          0.09133370000199648,
+          0.09143019999828539
+        ],
+        "median_seconds": 0.09143019999828539,
+        "minimum_seconds": 0.09133370000199648,
+        "maximum_seconds": 0.09173390000069048,
+        "stdev_seconds": 0.00020884842178770744
+      },
+      "rejected": {
+        "seconds": [
+          0.029447000000800472,
+          0.02968429999964428,
+          0.029378700000961544
+        ],
+        "median_seconds": 0.029447000000800472,
+        "minimum_seconds": 0.029378700000961544,
+        "maximum_seconds": 0.02968429999964428,
+        "stdev_seconds": 0.00016039926154451722
+      },
+      "evaluations_per_second": 2067.150678917298,
+      "spatial": {
+        "seconds": [
+          0.029844799999409588,
+          0.028909799999382813,
+          0.02885660000174539
+        ],
+        "median_seconds": 0.028909799999382813,
+        "minimum_seconds": 0.02885660000174539,
+        "maximum_seconds": 0.029844799999409588,
+        "stdev_seconds": 0.0005558168875901202
+      },
+      "validation": {
+        "seconds": [
+          0.0033409999996365514,
+          0.0031644999980926514,
+          0.0032021999977587257
+        ],
+        "median_seconds": 0.0032021999977587257,
+        "minimum_seconds": 0.0031644999980926514,
+        "maximum_seconds": 0.0033409999996365514,
+        "stdev_seconds": 9.295068678346163e-05
+      },
+      "reconstruction": {
+        "seconds": [
+          0.025422800001251744,
+          0.025113400002737762,
+          0.024793200002022786
+        ],
+        "median_seconds": 0.025113400002737762,
+        "minimum_seconds": 0.024793200002022786,
+        "maximum_seconds": 0.025422800001251744,
+        "stdev_seconds": 0.00031481543761581606
+      },
+      "gather": {
+        "seconds": [
+          0.005013300000427989,
+          0.005471699998452095,
+          0.004706799998530187
+        ],
+        "median_seconds": 0.005013300000427989,
+        "minimum_seconds": 0.004706799998530187,
+        "maximum_seconds": 0.005471699998452095,
+        "stdev_seconds": 0.00038495558601661856
+      },
+      "rhs": {
+        "seconds": [
+          0.10045930000342196,
+          0.1019482000010612,
+          0.11409110000022338
+        ],
+        "median_seconds": 0.1019482000010612,
+        "minimum_seconds": 0.10045930000342196,
+        "maximum_seconds": 0.11409110000022338,
+        "stdev_seconds": 0.0074776646838592845
+      },
+      "python_allocations": {
+        "current_bytes": 1672,
+        "peak_bytes": 19616
+      },
+      "backend_reconstruction": {
+        "seconds": [
+          0.014295799999672454,
+          0.014480300000286661,
+          0.01448770000206423
+        ],
+        "median_seconds": 0.014480300000286661,
+        "minimum_seconds": 0.014295799999672454,
+        "maximum_seconds": 0.01448770000206423,
+        "stdev_seconds": 0.00010872029952352823
+      },
+      "backend_gather": null,
+      "reference_coordinate_stencil_construction": {
+        "seconds": [
+          0.002289500000188127,
+          0.0021750999985670205,
+          0.0021707999985665083
+        ],
+        "median_seconds": 0.0021750999985670205,
+        "minimum_seconds": 0.0021707999985665083,
+        "maximum_seconds": 0.002289500000188127,
+        "stdev_seconds": 6.732451355918577e-05
+      },
+      "compiled_reconstruction_prototype": null,
+      "process_memory_before": {
+        "rss_bytes": 81502208,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "process_memory_after": {
+        "rss_bytes": 85082112,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "backend_fallbacks": 0,
+      "memory_after_first_lookup": {
+        "rss_bytes": 84574208,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "mapped_bytes": 2358240,
+      "pickled_provider_bytes": 4020,
+      "profile": [
+        {
+          "file": "numerical_benchmark.py",
+          "line": 99,
+          "function": "evaluate",
+          "calls": 1,
+          "own_seconds": 0.0001965,
+          "cumulative_seconds": 0.1323792
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 222,
+          "function": "evaluate",
+          "calls": 189,
+          "own_seconds": 0.0018045000000000001,
+          "cumulative_seconds": 0.13218270000000001
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 208,
+          "function": "evaluate_adm",
+          "calls": 189,
+          "own_seconds": 0.0002176,
+          "cumulative_seconds": 0.1046581
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 212,
+          "function": "_adm_reference",
+          "calls": 189,
+          "own_seconds": 0.0040742,
+          "cumulative_seconds": 0.1044405
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 180,
+          "function": "_spatial_reference",
+          "calls": 378,
+          "own_seconds": 0.0015795000000000002,
+          "cumulative_seconds": 0.0871165
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 129,
+          "function": "_interpolate",
+          "calls": 378,
+          "own_seconds": 0.0339462,
+          "cumulative_seconds": 0.07385860000000001
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 6,
+          "function": "reconstruct",
+          "calls": 189,
+          "own_seconds": 0.0113244,
+          "cumulative_seconds": 0.0254686
+        },
+        {
+          "file": "numerical_data.py",
+          "line": 20,
+          "function": "validate_fields",
+          "calls": 378,
+          "own_seconds": 0.0046407,
+          "cumulative_seconds": 0.017023700000000003
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 111,
+          "function": "_nodes",
+          "calls": 378,
+          "own_seconds": 0.0004666,
+          "cumulative_seconds": 0.0169693
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 32,
+          "function": "nodes",
+          "calls": 378,
+          "own_seconds": 0.008236700000000001,
+          "cumulative_seconds": 0.016502700000000002
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 151,
+          "function": "_candidate",
+          "calls": 378,
+          "own_seconds": 0.0002568,
+          "cumulative_seconds": 0.0106876
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 27,
+          "function": "candidate",
+          "calls": 378,
+          "own_seconds": 0.004749300000000001,
+          "cumulative_seconds": 0.0104308
+        },
+        {
+          "file": "_linalg.py",
+          "line": 789,
+          "function": "cholesky",
+          "calls": 378,
+          "own_seconds": 0.0039692,
+          "cumulative_seconds": 0.0082714
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 3325,
+          "function": "prod",
+          "calls": 1512,
+          "own_seconds": 0.0015469000000000001,
+          "cumulative_seconds": 0.008065300000000001
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 4369,
+          "own_seconds": 0.0080265,
+          "cumulative_seconds": 0.0080265
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 66,
+          "function": "_wrapreduction",
+          "calls": 1890,
+          "own_seconds": 0.0031831000000000003,
+          "cumulative_seconds": 0.007822800000000001
+        }
+      ],
+      "dataset": {
+        "identifier": "synthetic-observatory",
+        "directory": "D:\\numerical-observatory\\examples\\numerical_optimization\\controlled-final\\numpy\\synthetic\\fixtures\\manufactured-3",
+        "format": "GMDS v1, converted physical CarpetX ADM",
+        "manifest_sha256": "463276de8f2c0f5957ae23b61c6ac7bf29116a6bef5e4934397e5c56a62923ee",
+        "fields": [
+          "alp",
+          "betax",
+          "betay",
+          "betaz",
+          "gxx",
+          "gxy",
+          "gxz",
+          "gyy",
+          "gyz",
+          "gzz"
+        ],
+        "units": "geometrized code units; no SI conversion",
+        "time_coverage": [
+          0.0,
+          1.0
+        ],
+        "snapshots": 2,
+        "snapshot_times": [
+          0.0,
+          1.0
+        ],
+        "native_regions": [
+          {
+            "level": 0,
+            "provenance": "analytic_sampling",
+            "lower": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "upper": [
+              18.0,
+              8.0,
+              8.0
+            ]
+          },
+          {
+            "level": 1,
+            "provenance": "analytic_sampling",
+            "lower": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "upper": [
+              14.0,
+              4.0,
+              4.0
+            ]
+          },
+          {
+            "level": 2,
+            "provenance": "analytic_sampling",
+            "lower": [
+              8.0,
+              -2.0,
+              -2.0
+            ],
+            "upper": [
+              12.0,
+              2.0,
+              2.0
+            ]
+          }
+        ],
+        "fixed_geometry": true,
+        "raw_bytes_per_snapshot": 1179120,
+        "cache_budget": 1073741824,
+        "source_series": null,
+        "source_time_unit_si": null,
+        "patches": [
+          {
+            "level": 0,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "centering": "vertex",
+            "file": "patch-0.bin"
+          },
+          {
+            "level": 1,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "spacing": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "centering": "vertex",
+            "file": "patch-1.bin"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              8.0,
+              -2.0,
+              -2.0
+            ],
+            "spacing": [
+              0.25,
+              0.25,
+              0.25
+            ],
+            "centering": "vertex",
+            "file": "patch-2.bin"
+          }
+        ],
+        "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+      }
+    },
+    {
+      "mode": "cubic_amr_c1",
+      "backend": "numpy",
+      "real": false,
+      "requested_events": 512,
+      "valid_events": 448,
+      "rejections": {
+        "numerical_spatial_boundary": 64
+      },
+      "query_sha256": "978ce79167150a00c68f1980577919ef2f8f734ce93bff130536e64789b8ea9b",
+      "constructor_seconds": 0.004206400000839494,
+      "first_lookup_seconds": 0.018994999998540152,
+      "metric": {
+        "seconds": [
+          0.30839230000128737,
+          0.33950109999932465,
+          0.3017978000025323
+        ],
+        "median_seconds": 0.30839230000128737,
+        "minimum_seconds": 0.3017978000025323,
+        "maximum_seconds": 0.33950109999932465,
+        "stdev_seconds": 0.02013613542117581
+      },
+      "rejected": {
+        "seconds": [
+          0.002164599998650374,
+          0.0021209999977145344,
+          0.00212439999813796
+        ],
+        "median_seconds": 0.00212439999813796,
+        "minimum_seconds": 0.0021209999977145344,
+        "maximum_seconds": 0.002164599998650374,
+        "stdev_seconds": 2.4250636162386065e-05
+      },
+      "evaluations_per_second": 1452.6951548340535,
+      "spatial": {
+        "seconds": [
+          0.10201530000267667,
+          0.10188729999936186,
+          0.10076109999863547
+        ],
+        "median_seconds": 0.10188729999936186,
+        "minimum_seconds": 0.10076109999863547,
+        "maximum_seconds": 0.10201530000267667,
+        "stdev_seconds": 0.00069013622962205
+      },
+      "validation": {
+        "seconds": [
+          0.008989300000393996,
+          0.0075523999985307455,
+          0.00805449999825214
+        ],
+        "median_seconds": 0.00805449999825214,
+        "minimum_seconds": 0.0075523999985307455,
+        "maximum_seconds": 0.008989300000393996,
+        "stdev_seconds": 0.0007292275672562998
+      },
+      "reconstruction": {
+        "seconds": [
+          0.06117720000111149,
+          0.06092410000201198,
+          0.060988700002781115
+        ],
+        "median_seconds": 0.060988700002781115,
+        "minimum_seconds": 0.06092410000201198,
+        "maximum_seconds": 0.06117720000111149,
+        "stdev_seconds": 0.0001315072995528455
+      },
+      "gather": {
+        "seconds": [
+          0.014725299999554409,
+          0.0156079000007594,
+          0.013407600003120024
+        ],
+        "median_seconds": 0.014725299999554409,
+        "minimum_seconds": 0.013407600003120024,
+        "maximum_seconds": 0.0156079000007594,
+        "stdev_seconds": 0.001107296717411528
+      },
+      "rhs": {
+        "seconds": [
+          0.3267465999997512,
+          0.32450059999973746,
+          0.30689630000051693
+        ],
+        "median_seconds": 0.32450059999973746,
+        "minimum_seconds": 0.30689630000051693,
+        "maximum_seconds": 0.3267465999997512,
+        "stdev_seconds": 0.010870374913208051
+      },
+      "python_allocations": {
+        "current_bytes": 1576,
+        "peak_bytes": 19952
+      },
+      "backend_reconstruction": {
+        "seconds": [
+          0.035054200001468416,
+          0.03486230000271462,
+          0.035318500002176734
+        ],
+        "median_seconds": 0.035054200001468416,
+        "minimum_seconds": 0.03486230000271462,
+        "maximum_seconds": 0.035318500002176734,
+        "stdev_seconds": 0.00022905550251898824
+      },
+      "backend_gather": null,
+      "reference_coordinate_stencil_construction": {
+        "seconds": [
+          0.005406500000390224,
+          0.005616499998723157,
+          0.00529399999868474
+        ],
+        "median_seconds": 0.005406500000390224,
+        "minimum_seconds": 0.00529399999868474,
+        "maximum_seconds": 0.005616499998723157,
+        "stdev_seconds": 0.00016368796520022718
+      },
+      "compiled_reconstruction_prototype": null,
+      "process_memory_before": {
+        "rss_bytes": 82735104,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "process_memory_after": {
+        "rss_bytes": 86478848,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "backend_fallbacks": 0,
+      "memory_after_first_lookup": {
+        "rss_bytes": 84590592,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "mapped_bytes": 1572160,
+      "pickled_provider_bytes": 3380,
+      "profile": [
+        {
+          "file": "numerical_benchmark.py",
+          "line": 99,
+          "function": "evaluate",
+          "calls": 1,
+          "own_seconds": 0.0005218,
+          "cumulative_seconds": 0.42090520000000003
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 222,
+          "function": "evaluate",
+          "calls": 448,
+          "own_seconds": 0.0045869000000000005,
+          "cumulative_seconds": 0.4203834
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 208,
+          "function": "evaluate_adm",
+          "calls": 448,
+          "own_seconds": 0.0005114000000000001,
+          "cumulative_seconds": 0.3544763
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 212,
+          "function": "_adm_reference",
+          "calls": 448,
+          "own_seconds": 0.010838,
+          "cumulative_seconds": 0.3539649
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 180,
+          "function": "_spatial_reference",
+          "calls": 896,
+          "own_seconds": 0.0027332000000000003,
+          "cumulative_seconds": 0.31445460000000003
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 156,
+          "function": "_independent",
+          "calls": 1046,
+          "own_seconds": 0.0047624,
+          "cumulative_seconds": 0.30243790000000004
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 129,
+          "function": "_interpolate",
+          "calls": 1046,
+          "own_seconds": 0.0921739,
+          "cumulative_seconds": 0.2102571
+        },
+        {
+          "file": "numerical_data.py",
+          "line": 20,
+          "function": "validate_fields",
+          "calls": 2092,
+          "own_seconds": 0.026271500000000003,
+          "cumulative_seconds": 0.0963939
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 6,
+          "function": "reconstruct",
+          "calls": 448,
+          "own_seconds": 0.027915600000000002,
+          "cumulative_seconds": 0.060689700000000006
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 111,
+          "function": "_nodes",
+          "calls": 1046,
+          "own_seconds": 0.0013456000000000002,
+          "cumulative_seconds": 0.050558700000000005
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 32,
+          "function": "nodes",
+          "calls": 1046,
+          "own_seconds": 0.024253900000000002,
+          "cumulative_seconds": 0.0492131
+        },
+        {
+          "file": "_linalg.py",
+          "line": 789,
+          "function": "cholesky",
+          "calls": 2092,
+          "own_seconds": 0.022346400000000002,
+          "cumulative_seconds": 0.0461746
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 151,
+          "function": "_candidate",
+          "calls": 1046,
+          "own_seconds": 0.0007963,
+          "cumulative_seconds": 0.035344400000000005
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 27,
+          "function": "candidate",
+          "calls": 1046,
+          "own_seconds": 0.0177742,
+          "cumulative_seconds": 0.034548100000000005
+        },
+        {
+          "file": "~",
+          "line": 0,
+          "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+          "calls": 13896,
+          "own_seconds": 0.0268211,
+          "cumulative_seconds": 0.0268211
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 86,
+          "function": "_wrapreduction_any_all",
+          "calls": 4184,
+          "own_seconds": 0.0095528,
+          "cumulative_seconds": 0.0249059
+        }
+      ],
+      "dataset": {
+        "identifier": "synthetic-observatory",
+        "directory": "D:\\numerical-observatory\\examples\\numerical_optimization\\controlled-final\\numpy\\synthetic\\fixtures\\manufactured-2",
+        "format": "GMDS v1, converted physical CarpetX ADM",
+        "manifest_sha256": "ed649b2318726e8a1aacf2b3094d7ef96a17f9983f8cb85149821a8eb166ccdb",
+        "fields": [
+          "alp",
+          "betax",
+          "betay",
+          "betaz",
+          "gxx",
+          "gxy",
+          "gxz",
+          "gyy",
+          "gyz",
+          "gzz"
+        ],
+        "units": "geometrized code units; no SI conversion",
+        "time_coverage": [
+          0.0,
+          1.0
+        ],
+        "snapshots": 2,
+        "snapshot_times": [
+          0.0,
+          1.0
+        ],
+        "native_regions": [
+          {
+            "level": 0,
+            "provenance": "analytic_sampling",
+            "lower": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "upper": [
+              18.0,
+              8.0,
+              8.0
+            ]
+          },
+          {
+            "level": 1,
+            "provenance": "analytic_sampling",
+            "lower": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "upper": [
+              14.0,
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "fixed_geometry": true,
+        "raw_bytes_per_snapshot": 786080,
+        "cache_budget": 1073741824,
+        "source_series": null,
+        "source_time_unit_si": null,
+        "patches": [
+          {
+            "level": 0,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "centering": "vertex",
+            "file": "patch-0.bin"
+          },
+          {
+            "level": 1,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "spacing": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "centering": "vertex",
+            "file": "patch-1.bin"
+          }
+        ],
+        "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+      }
+    },
+    {
+      "mode": "cubic_amr_c1_box",
+      "backend": "numpy",
+      "real": false,
+      "requested_events": 512,
+      "valid_events": 512,
+      "rejections": {},
+      "query_sha256": "978ce79167150a00c68f1980577919ef2f8f734ce93bff130536e64789b8ea9b",
+      "constructor_seconds": 0.08524540000144043,
+      "first_lookup_seconds": 0.007249700000102166,
+      "metric": {
+        "seconds": [
+          0.37113099999987753,
+          0.389447100002144,
+          0.36996799999906216
+        ],
+        "median_seconds": 0.37113099999987753,
+        "minimum_seconds": 0.36996799999906216,
+        "maximum_seconds": 0.389447100002144,
+        "stdev_seconds": 0.01092601959563336
+      },
+      "rejected": null,
+      "evaluations_per_second": 1379.5667836967782,
+      "spatial": {
+        "seconds": [
+          0.14428989999942132,
+          0.14203679999991436,
+          0.14152099999773782
+        ],
+        "median_seconds": 0.14203679999991436,
+        "minimum_seconds": 0.14152099999773782,
+        "maximum_seconds": 0.14428989999942132,
+        "stdev_seconds": 0.001472487491137955
+      },
+      "validation": {
+        "seconds": [
+          0.009032699999806937,
+          0.008861199999955716,
+          0.008886100000381703
+        ],
+        "median_seconds": 0.008886100000381703,
+        "minimum_seconds": 0.008861199999955716,
+        "maximum_seconds": 0.009032699999806937,
+        "stdev_seconds": 9.266770365276649e-05
+      },
+      "reconstruction": {
+        "seconds": [
+          0.07155310000234749,
+          0.07151169999997364,
+          0.07061909999902127
+        ],
+        "median_seconds": 0.07151169999997364,
+        "minimum_seconds": 0.07061909999902127,
+        "maximum_seconds": 0.07155310000234749,
+        "stdev_seconds": 0.0005277001560403569
+      },
+      "gather": {
+        "seconds": [
+          0.014708899998367997,
+          0.014469300000200747,
+          0.014931100002286257
+        ],
+        "median_seconds": 0.014708899998367997,
+        "minimum_seconds": 0.014469300000200747,
+        "maximum_seconds": 0.014931100002286257,
+        "stdev_seconds": 0.0002309546285850675
+      },
+      "rhs": {
+        "seconds": [
+          0.39508890000070096,
+          0.39190270000108285,
+          0.379667100001825
+        ],
+        "median_seconds": 0.39190270000108285,
+        "minimum_seconds": 0.379667100001825,
+        "maximum_seconds": 0.39508890000070096,
+        "stdev_seconds": 0.008141393134109323
+      },
+      "python_allocations": {
+        "current_bytes": 1576,
+        "peak_bytes": 19696
+      },
+      "backend_reconstruction": {
+        "seconds": [
+          0.04122389999974985,
+          0.04047809999974561,
+          0.041185499998391606
+        ],
+        "median_seconds": 0.041185499998391606,
+        "minimum_seconds": 0.04047809999974561,
+        "maximum_seconds": 0.04122389999974985,
+        "stdev_seconds": 0.00041994185275959927
+      },
+      "backend_gather": null,
+      "reference_coordinate_stencil_construction": {
+        "seconds": [
+          0.006191799999214709,
+          0.0062350999978662,
+          0.00620119999803137
+        ],
+        "median_seconds": 0.00620119999803137,
+        "minimum_seconds": 0.006191799999214709,
+        "maximum_seconds": 0.0062350999978662,
+        "stdev_seconds": 2.2775937045391687e-05
+      },
+      "compiled_reconstruction_prototype": null,
+      "process_memory_before": {
+        "rss_bytes": 82362368,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "process_memory_after": {
+        "rss_bytes": 85471232,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "backend_fallbacks": 0,
+      "memory_after_first_lookup": {
+        "rss_bytes": 84033536,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "mapped_bytes": 1572160,
+      "pickled_provider_bytes": 3660,
+      "profile": [
+        {
+          "file": "numerical_benchmark.py",
+          "line": 99,
+          "function": "evaluate",
+          "calls": 1,
+          "own_seconds": 0.0005268,
+          "cumulative_seconds": 0.5141911
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 222,
+          "function": "evaluate",
+          "calls": 512,
+          "own_seconds": 0.0046936,
+          "cumulative_seconds": 0.5136643000000001
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 208,
+          "function": "evaluate_adm",
+          "calls": 512,
+          "own_seconds": 0.0005505,
+          "cumulative_seconds": 0.4439287
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 212,
+          "function": "_adm_reference",
+          "calls": 512,
+          "own_seconds": 0.01141,
+          "cumulative_seconds": 0.4433782
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 180,
+          "function": "_spatial_reference",
+          "calls": 1024,
+          "own_seconds": 0.0013908,
+          "cumulative_seconds": 0.4019975
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 168,
+          "function": "_composite",
+          "calls": 1664,
+          "own_seconds": 0.0029436,
+          "cumulative_seconds": 0.40015690000000004
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 156,
+          "function": "_independent",
+          "calls": 1344,
+          "own_seconds": 0.005676400000000001,
+          "cumulative_seconds": 0.3506559
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 129,
+          "function": "_interpolate",
+          "calls": 1344,
+          "own_seconds": 0.108687,
+          "cumulative_seconds": 0.2454147
+        },
+        {
+          "file": "numerical_data.py",
+          "line": 20,
+          "function": "validate_fields",
+          "calls": 2688,
+          "own_seconds": 0.0302748,
+          "cumulative_seconds": 0.11273280000000001
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 6,
+          "function": "reconstruct",
+          "calls": 512,
+          "own_seconds": 0.029883800000000002,
+          "cumulative_seconds": 0.0643324
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 111,
+          "function": "_nodes",
+          "calls": 1344,
+          "own_seconds": 0.0015942,
+          "cumulative_seconds": 0.059047800000000004
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 32,
+          "function": "nodes",
+          "calls": 1344,
+          "own_seconds": 0.028895800000000003,
+          "cumulative_seconds": 0.0574536
+        },
+        {
+          "file": "_linalg.py",
+          "line": 789,
+          "function": "cholesky",
+          "calls": 2688,
+          "own_seconds": 0.0261428,
+          "cumulative_seconds": 0.0544533
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 151,
+          "function": "_candidate",
+          "calls": 1344,
+          "own_seconds": 0.0009497,
+          "cumulative_seconds": 0.039111900000000005
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 27,
+          "function": "candidate",
+          "calls": 1344,
+          "own_seconds": 0.0199437,
+          "cumulative_seconds": 0.0381622
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 86,
+          "function": "_wrapreduction_any_all",
+          "calls": 8510,
+          "own_seconds": 0.014514500000000001,
+          "cumulative_seconds": 0.0361029
+        }
+      ],
+      "dataset": {
+        "identifier": "synthetic-observatory",
+        "directory": "D:\\numerical-observatory\\examples\\numerical_optimization\\controlled-final\\numpy\\synthetic\\fixtures\\manufactured-2",
+        "format": "GMDS v1, converted physical CarpetX ADM",
+        "manifest_sha256": "ed649b2318726e8a1aacf2b3094d7ef96a17f9983f8cb85149821a8eb166ccdb",
+        "fields": [
+          "alp",
+          "betax",
+          "betay",
+          "betaz",
+          "gxx",
+          "gxy",
+          "gxz",
+          "gyy",
+          "gyz",
+          "gzz"
+        ],
+        "units": "geometrized code units; no SI conversion",
+        "time_coverage": [
+          0.0,
+          1.0
+        ],
+        "snapshots": 2,
+        "snapshot_times": [
+          0.0,
+          1.0
+        ],
+        "native_regions": [
+          {
+            "level": 0,
+            "provenance": "analytic_sampling",
+            "lower": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "upper": [
+              18.0,
+              8.0,
+              8.0
+            ]
+          },
+          {
+            "level": 1,
+            "provenance": "analytic_sampling",
+            "lower": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "upper": [
+              14.0,
+              4.0,
+              4.0
+            ]
+          }
+        ],
+        "fixed_geometry": true,
+        "raw_bytes_per_snapshot": 786080,
+        "cache_budget": 1073741824,
+        "source_series": null,
+        "source_time_unit_si": null,
+        "patches": [
+          {
+            "level": 0,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "centering": "vertex",
+            "file": "patch-0.bin"
+          },
+          {
+            "level": 1,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "spacing": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "centering": "vertex",
+            "file": "patch-1.bin"
+          }
+        ],
+        "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+      }
+    },
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "backend": "numpy",
+      "real": false,
+      "requested_events": 512,
+      "valid_events": 512,
+      "rejections": {},
+      "query_sha256": "978ce79167150a00c68f1980577919ef2f8f734ce93bff130536e64789b8ea9b",
+      "constructor_seconds": 0.7931553999987955,
+      "first_lookup_seconds": 0.010335599999962142,
+      "metric": {
+        "seconds": [
+          0.392919100002473,
+          0.3852895999989414,
+          0.42048350000186474
+        ],
+        "median_seconds": 0.392919100002473,
+        "minimum_seconds": 0.3852895999989414,
+        "maximum_seconds": 0.42048350000186474,
+        "stdev_seconds": 0.018514030783193067
+      },
+      "rejected": null,
+      "evaluations_per_second": 1303.067221717594,
+      "spatial": {
+        "seconds": [
+          0.1549578999984078,
+          0.15151669999977457,
+          0.15314979999675415
+        ],
+        "median_seconds": 0.15314979999675415,
+        "minimum_seconds": 0.15151669999977457,
+        "maximum_seconds": 0.1549578999984078,
+        "stdev_seconds": 0.0017213414655779396
+      },
+      "validation": {
+        "seconds": [
+          0.008852599999954691,
+          0.008829599999444326,
+          0.008692700001120102
+        ],
+        "median_seconds": 0.008829599999444326,
+        "minimum_seconds": 0.008692700001120102,
+        "maximum_seconds": 0.008852599999954691,
+        "stdev_seconds": 8.64471121475931e-05
+      },
+      "reconstruction": {
+        "seconds": [
+          0.0676629999979923,
+          0.06718330000148853,
+          0.06711929999801214
+        ],
+        "median_seconds": 0.06718330000148853,
+        "minimum_seconds": 0.06711929999801214,
+        "maximum_seconds": 0.0676629999979923,
+        "stdev_seconds": 0.00029715814450365286
+      },
+      "gather": {
+        "seconds": [
+          0.014239699998142896,
+          0.014179800000420073,
+          0.013882399998692563
+        ],
+        "median_seconds": 0.014179800000420073,
+        "minimum_seconds": 0.013882399998692563,
+        "maximum_seconds": 0.014239699998142896,
+        "stdev_seconds": 0.00019135397407332377
+      },
+      "rhs": {
+        "seconds": [
+          0.407179099998757,
+          0.4117958999995608,
+          0.4072182000018074
+        ],
+        "median_seconds": 0.4072182000018074,
+        "minimum_seconds": 0.407179099998757,
+        "maximum_seconds": 0.4117958999995608,
+        "stdev_seconds": 0.00265429552257881
+      },
+      "python_allocations": {
+        "current_bytes": 1576,
+        "peak_bytes": 19696
+      },
+      "backend_reconstruction": {
+        "seconds": [
+          0.03932920000079321,
+          0.03983910000169999,
+          0.038959799996518996
+        ],
+        "median_seconds": 0.03932920000079321,
+        "minimum_seconds": 0.038959799996518996,
+        "maximum_seconds": 0.03983910000169999,
+        "stdev_seconds": 0.00044151686891024153
+      },
+      "backend_gather": null,
+      "reference_coordinate_stencil_construction": {
+        "seconds": [
+          0.006013000001985347,
+          0.005980699999781791,
+          0.006018300002324395
+        ],
+        "median_seconds": 0.006013000001985347,
+        "minimum_seconds": 0.005980699999781791,
+        "maximum_seconds": 0.006018300002324395,
+        "stdev_seconds": 2.035165978959057e-05
+      },
+      "compiled_reconstruction_prototype": null,
+      "process_memory_before": {
+        "rss_bytes": 82337792,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "process_memory_after": {
+        "rss_bytes": 86265856,
+        "lifetime_peak_rss_bytes": 87818240
+      },
+      "backend_fallbacks": 0,
+      "memory_after_first_lookup": {
+        "rss_bytes": 85352448,
+        "lifetime_peak_rss_bytes": 87027712
+      },
+      "mapped_bytes": 2358240,
+      "pickled_provider_bytes": 4792,
+      "profile": [
+        {
+          "file": "numerical_benchmark.py",
+          "line": 99,
+          "function": "evaluate",
+          "calls": 1,
+          "own_seconds": 0.0005065,
+          "cumulative_seconds": 0.5412626
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 222,
+          "function": "evaluate",
+          "calls": 512,
+          "own_seconds": 0.0045465,
+          "cumulative_seconds": 0.5407561000000001
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 208,
+          "function": "evaluate_adm",
+          "calls": 512,
+          "own_seconds": 0.0005294000000000001,
+          "cumulative_seconds": 0.47313700000000003
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 212,
+          "function": "_adm_reference",
+          "calls": 512,
+          "own_seconds": 0.011117100000000001,
+          "cumulative_seconds": 0.4726076
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 180,
+          "function": "_spatial_reference",
+          "calls": 1024,
+          "own_seconds": 0.0013221,
+          "cumulative_seconds": 0.43128960000000005
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 168,
+          "function": "_composite",
+          "calls": 2496,
+          "own_seconds": 0.0042836,
+          "cumulative_seconds": 0.4295274
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 156,
+          "function": "_independent",
+          "calls": 1492,
+          "own_seconds": 0.0061666,
+          "cumulative_seconds": 0.3605298
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 129,
+          "function": "_interpolate",
+          "calls": 1492,
+          "own_seconds": 0.10313800000000001,
+          "cumulative_seconds": 0.24657210000000002
+        },
+        {
+          "file": "numerical_data.py",
+          "line": 20,
+          "function": "validate_fields",
+          "calls": 2984,
+          "own_seconds": 0.032803700000000005,
+          "cumulative_seconds": 0.12262400000000001
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 111,
+          "function": "_nodes",
+          "calls": 1492,
+          "own_seconds": 0.0016134,
+          "cumulative_seconds": 0.062437000000000006
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 6,
+          "function": "reconstruct",
+          "calls": 512,
+          "own_seconds": 0.028774800000000003,
+          "cumulative_seconds": 0.062393300000000006
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 32,
+          "function": "nodes",
+          "calls": 1492,
+          "own_seconds": 0.030545500000000003,
+          "cumulative_seconds": 0.060823600000000005
+        },
+        {
+          "file": "_linalg.py",
+          "line": 789,
+          "function": "cholesky",
+          "calls": 2984,
+          "own_seconds": 0.028636,
+          "cumulative_seconds": 0.059526100000000005
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 151,
+          "function": "_candidate",
+          "calls": 1492,
+          "own_seconds": 0.0010211,
+          "cumulative_seconds": 0.0425257
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 27,
+          "function": "candidate",
+          "calls": 1492,
+          "own_seconds": 0.0217781,
+          "cumulative_seconds": 0.0415046
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 86,
+          "function": "_wrapreduction_any_all",
+          "calls": 10580,
+          "own_seconds": 0.0167389,
+          "cumulative_seconds": 0.041139600000000005
+        }
+      ],
+      "dataset": {
+        "identifier": "synthetic-observatory",
+        "directory": "D:\\numerical-observatory\\examples\\numerical_optimization\\controlled-final\\numpy\\synthetic\\fixtures\\manufactured-3",
+        "format": "GMDS v1, converted physical CarpetX ADM",
+        "manifest_sha256": "463276de8f2c0f5957ae23b61c6ac7bf29116a6bef5e4934397e5c56a62923ee",
+        "fields": [
+          "alp",
+          "betax",
+          "betay",
+          "betaz",
+          "gxx",
+          "gxy",
+          "gxz",
+          "gyy",
+          "gyz",
+          "gzz"
+        ],
+        "units": "geometrized code units; no SI conversion",
+        "time_coverage": [
+          0.0,
+          1.0
+        ],
+        "snapshots": 2,
+        "snapshot_times": [
+          0.0,
+          1.0
+        ],
+        "native_regions": [
+          {
+            "level": 0,
+            "provenance": "analytic_sampling",
+            "lower": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "upper": [
+              18.0,
+              8.0,
+              8.0
+            ]
+          },
+          {
+            "level": 1,
+            "provenance": "analytic_sampling",
+            "lower": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "upper": [
+              14.0,
+              4.0,
+              4.0
+            ]
+          },
+          {
+            "level": 2,
+            "provenance": "analytic_sampling",
+            "lower": [
+              8.0,
+              -2.0,
+              -2.0
+            ],
+            "upper": [
+              12.0,
+              2.0,
+              2.0
+            ]
+          }
+        ],
+        "fixed_geometry": true,
+        "raw_bytes_per_snapshot": 1179120,
+        "cache_budget": 1073741824,
+        "source_series": null,
+        "source_time_unit_si": null,
+        "patches": [
+          {
+            "level": 0,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              2.0,
+              -8.0,
+              -8.0
+            ],
+            "spacing": [
+              1.0,
+              1.0,
+              1.0
+            ],
+            "centering": "vertex",
+            "file": "patch-0.bin"
+          },
+          {
+            "level": 1,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              6.0,
+              -4.0,
+              -4.0
+            ],
+            "spacing": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "centering": "vertex",
+            "file": "patch-1.bin"
+          },
+          {
+            "level": 2,
+            "shape": [
+              17,
+              17,
+              17
+            ],
+            "origin": [
+              8.0,
+              -2.0,
+              -2.0
+            ],
+            "spacing": [
+              0.25,
+              0.25,
+              0.25
+            ],
+            "centering": "vertex",
+            "file": "patch-2.bin"
+          }
+        ],
+        "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+      }
+    }
+  ],
+  "seams": [
+    {
+      "mode": "linear",
+      "events": 512,
+      "timing": {
+        "seconds": [
+          0.2878481000007014,
+          0.2845687999979418,
+          0.2838424000001396
+        ],
+        "median_seconds": 0.2845687999979418,
+        "minimum_seconds": 0.2838424000001396,
+        "maximum_seconds": 0.2878481000007014,
+        "stdev_seconds": 0.0021341312814744423
+      },
+      "evaluations_per_second": 1799.2134064019074
+    },
+    {
+      "mode": "cubic",
+      "events": 512,
+      "timing": {
+        "seconds": [
+          0.3436227999991388,
+          0.31943820000014966,
+          0.31661239999812096
+        ],
+        "median_seconds": 0.31943820000014966,
+        "minimum_seconds": 0.31661239999812096,
+        "maximum_seconds": 0.3436227999991388,
+        "stdev_seconds": 0.014846109091709045
+      },
+      "evaluations_per_second": 1602.8139402230545
+    }
+  ]
+}

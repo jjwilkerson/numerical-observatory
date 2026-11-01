@@ -1,0 +1,120 @@
+{
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.67.0",
+    "cpu": "Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz",
+    "logical_cpus": 20,
+    "affinity": null,
+    "topology": {
+      "logical": 20,
+      "physical": 10,
+      "source": "Windows core topology intersected with process affinity"
+    },
+    "source_sha256": {
+      "numerical_metric": "ff6e0e13d8569ee650edcd524b0d0753f81daa6a474b76ef63e17559a24165d5",
+      "numerical_numpy": "42982db3c0321545ae7f16244eda09889daaa436a39c7a6d495e0c68f0fd2c79",
+      "numerical_kernels": "c2c6857f11ce7053e72f55b0afeee4d6b8d70020184ffdf08681959d7afd9a14",
+      "numerical_acceleration": "dabcad548bb66abd7444525ee682ff0bd131d16fac26d2e2cfe82c665239311b",
+      "numerical_data": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+      "amr_geometry": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+      "numerical_trace": "55fad05c32f87b636a832f3eedf12cd612319ed18e9c3ac4791ecd648a98be64",
+      "numerical_benchmark": "6080cc868c1214e2a5896ce4aa042ddf5bef98e5e2e1a55d9ac5c0729c2592c6"
+    }
+  },
+  "backend": "numba",
+  "comparisons": [
+    {
+      "mode": "linear",
+      "real": false,
+      "valid": 1024,
+      "rejected": 0,
+      "events": 1024,
+      "max_inverse_error": 0.0,
+      "max_derivative_error": 0.0,
+      "rms_errors": [
+        0.0,
+        0.0
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    },
+    {
+      "mode": "cubic",
+      "real": false,
+      "valid": 379,
+      "rejected": 645,
+      "events": 1024,
+      "max_inverse_error": 0.0,
+      "max_derivative_error": 0.0,
+      "rms_errors": [
+        0.0,
+        0.0
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 645
+    },
+    {
+      "mode": "cubic_amr_c1",
+      "real": false,
+      "valid": 896,
+      "rejected": 128,
+      "events": 1024,
+      "max_inverse_error": 0.0,
+      "max_derivative_error": 0.0,
+      "rms_errors": [
+        0.0,
+        0.0
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 128
+    },
+    {
+      "mode": "cubic_amr_c1_box",
+      "real": false,
+      "valid": 1064,
+      "rejected": 0,
+      "events": 1064,
+      "max_inverse_error": 0.0,
+      "max_derivative_error": 0.0,
+      "rms_errors": [
+        0.0,
+        0.0
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    },
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "real": false,
+      "valid": 1104,
+      "rejected": 0,
+      "events": 1104,
+      "max_inverse_error": 0.0,
+      "max_derivative_error": 0.0,
+      "rms_errors": [
+        0.0,
+        0.0
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    },
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "real": true,
+      "valid": 1104,
+      "rejected": 0,
+      "events": 1104,
+      "max_inverse_error": 0.0,
+      "max_derivative_error": 0.0,
+      "rms_errors": [
+        0.0,
+        0.0
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    }
+  ]
+}

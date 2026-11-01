@@ -80,6 +80,7 @@ def trace_numerical(metric,event,momentum,settings,return_solution=False,surface
     slab=metric.interval(state[0],direction);wrapper=SlabMetric(metric,slab)
     times=[0.];states=[state.copy()];pieces=[];slabs_used=set();rejections=0;lookup_rejections=0;nfev=0
     start_eval=metric.evaluations;start_stencils=metric.stencils;start_failures=dict(metric.failures);reason='affine_limit';status='unresolved';source=None;capture_index=0
+    start_backend_fallbacks=metric.backend_fallbacks
     solver=None;complete=True
     def rhs(lam,y):
         nonlocal nfev
@@ -173,6 +174,7 @@ def trace_numerical(metric,event,momentum,settings,return_solution=False,surface
             evaluations=metric.evaluations-start_eval,stencils=metric.stencils-start_stencils,
             lookup_failures={k:v-start_failures.get(k,0) for k,v in metric.failures.items() if v>start_failures.get(k,0)},
             temporal_stage_rejections=rejections,lookup_stage_rejections=lookup_rejections,
+            metric_backend=metric.backend,backend_fallbacks=metric.backend_fallbacks-start_backend_fallbacks,
             slabs=len(slabs_used),last_event=states[-1][:4].tolist()))
     sol=SimpleNamespace(t=np.array(times),y=np.array(states).T,sol=solution,nfev=nfev,
                         success=status!='unresolved',message=reason,t_events=[np.array([times[-1]]) if status==label else np.array([]) for label in ('captured','escaped')])

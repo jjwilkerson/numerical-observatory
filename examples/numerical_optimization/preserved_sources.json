@@ -1,0 +1,13 @@
+{
+  "numerical_data": true,
+  "amr_geometry": true,
+  "metric": true,
+  "kerr": true,
+  "binary_ks_approx": true,
+  "binary_ks_orbit_approx": true,
+  "boosted_ks": true,
+  "camera": true,
+  "kerr_carter": true,
+  "disk": true,
+  "emitter_motion": true
+}

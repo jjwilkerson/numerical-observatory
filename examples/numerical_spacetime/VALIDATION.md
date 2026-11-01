@@ -200,9 +200,13 @@ See `validation/metric_profile.json`; no acceleration framework was introduced.
 
 A 12-ray real-data serial/spawn check took 18.58 / 18.73 s (0.992× speedup).
 **Every saved numerical array is exactly equal**, including statuses, directions,
-null residuals and diagnostics. This tiny grid has only three row tasks and
+null residuals and diagnostics. This tiny grid has only one batch task and
 significant process/validation overhead; it is not evidence against larger-scale
-parallelism or an optimal worker-count study. Synthetic supersampled serial/spawn
+parallelism or an optimal worker-count study. Correction from the optimization
+audit: the scheduler batches 64 rays, so this 12-ray check used one actual child
+despite requesting two; it was a spawn-equivalence check, not two-core scaling.
+The optimization phase adds explicitly verified two-process batch measurements.
+Synthetic supersampled serial/spawn
 equality is also tested. See `validation/parallel_performance.json`.
 
 The initial full regression suite passed **246 tests in 413.03 s**. The expanded

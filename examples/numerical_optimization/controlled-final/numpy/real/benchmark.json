@@ -1,0 +1,744 @@
+{
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.67.0",
+    "cpu": "Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz",
+    "logical_cpus": 20,
+    "affinity": null,
+    "topology": {
+      "logical": 20,
+      "physical": 10,
+      "source": "Windows core topology intersected with process affinity"
+    },
+    "source_sha256": {
+      "numerical_metric": "ff6e0e13d8569ee650edcd524b0d0753f81daa6a474b76ef63e17559a24165d5",
+      "numerical_numpy": "42982db3c0321545ae7f16244eda09889daaa436a39c7a6d495e0c68f0fd2c79",
+      "numerical_kernels": "c2c6857f11ce7053e72f55b0afeee4d6b8d70020184ffdf08681959d7afd9a14",
+      "numerical_acceleration": "dabcad548bb66abd7444525ee682ff0bd131d16fac26d2e2cfe82c665239311b",
+      "numerical_data": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+      "amr_geometry": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+      "numerical_trace": "55fad05c32f87b636a832f3eedf12cd612319ed18e9c3ac4791ecd648a98be64",
+      "numerical_benchmark": "6080cc868c1214e2a5896ce4aa042ddf5bef98e5e2e1a55d9ac5c0729c2592c6"
+    }
+  },
+  "parameters": {
+    "output": "examples\\numerical_optimization\\controlled-final\\numpy\\real",
+    "backend": "numpy",
+    "count": 512,
+    "repeats": 3,
+    "real": "D:\\numerical-observatory\\reference\\geodesics-cpp\\results\\amr-composite-multilevel\\carpetx-native-gmds",
+    "modes": [
+      "cubic_amr_c1_hierarchy"
+    ],
+    "trajectories": true,
+    "renders": true,
+    "seams": false,
+    "suite": false
+  },
+  "cases": [
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "backend": "numpy",
+      "real": true,
+      "requested_events": 512,
+      "valid_events": 512,
+      "rejections": {},
+      "query_sha256": "2e1e589158fb55693b5607eb8628f8b1af44b2dd3ab8005ae95e3c205cb99608",
+      "constructor_seconds": 0.8598114000014903,
+      "first_lookup_seconds": 0.04922219999934896,
+      "metric": {
+        "seconds": [
+          0.374068699999043,
+          0.3882524000000558,
+          0.37961929999801214
+        ],
+        "median_seconds": 0.37961929999801214,
+        "minimum_seconds": 0.374068699999043,
+        "maximum_seconds": 0.3882524000000558,
+        "stdev_seconds": 0.007147457843090921
+      },
+      "rejected": null,
+      "evaluations_per_second": 1348.7196251683754,
+      "spatial": {
+        "seconds": [
+          0.14662280000266037,
+          0.14602989999912097,
+          0.1461964000009175
+        ],
+        "median_seconds": 0.1461964000009175,
+        "minimum_seconds": 0.14602989999912097,
+        "maximum_seconds": 0.14662280000266037,
+        "stdev_seconds": 0.0003057966716304549
+      },
+      "validation": {
+        "seconds": [
+          0.008939299998019123,
+          0.009243700002116384,
+          0.008806400001049042
+        ],
+        "median_seconds": 0.008939299998019123,
+        "minimum_seconds": 0.008806400001049042,
+        "maximum_seconds": 0.009243700002116384,
+        "stdev_seconds": 0.00022418484286504796
+      },
+      "reconstruction": {
+        "seconds": [
+          0.06896810000034748,
+          0.06645529999877908,
+          0.06772189999901457
+        ],
+        "median_seconds": 0.06772189999901457,
+        "minimum_seconds": 0.06645529999877908,
+        "maximum_seconds": 0.06896810000034748,
+        "stdev_seconds": 0.0012564138020440554
+      },
+      "gather": {
+        "seconds": [
+          0.014701600000989856,
+          0.014130800002021715,
+          0.014160700000502402
+        ],
+        "median_seconds": 0.014160700000502402,
+        "minimum_seconds": 0.014130800002021715,
+        "maximum_seconds": 0.014701600000989856,
+        "stdev_seconds": 0.0003212681795786045
+      },
+      "rhs": {
+        "seconds": [
+          0.398533799998404,
+          0.4236541999998735,
+          0.41514679999818327
+        ],
+        "median_seconds": 0.41514679999818327,
+        "minimum_seconds": 0.398533799998404,
+        "maximum_seconds": 0.4236541999998735,
+        "stdev_seconds": 0.012776293933265992
+      },
+      "python_allocations": {
+        "current_bytes": 1576,
+        "peak_bytes": 19696
+      },
+      "backend_reconstruction": {
+        "seconds": [
+          0.03932169999825419,
+          0.040974900002765935,
+          0.03990150000026915
+        ],
+        "median_seconds": 0.03990150000026915,
+        "minimum_seconds": 0.03932169999825419,
+        "maximum_seconds": 0.040974900002765935,
+        "stdev_seconds": 0.0008387913787720878
+      },
+      "backend_gather": null,
+      "reference_coordinate_stencil_construction": {
+        "seconds": [
+          0.0072934999989229254,
+          0.006745900001988048,
+          0.00703100000100676
+        ],
+        "median_seconds": 0.00703100000100676,
+        "minimum_seconds": 0.006745900001988048,
+        "maximum_seconds": 0.0072934999989229254,
+        "stdev_seconds": 0.00027387771449728394
+      },
+      "compiled_reconstruction_prototype": null,
+      "process_memory_before": {
+        "rss_bytes": 79732736,
+        "lifetime_peak_rss_bytes": 80396288
+      },
+      "process_memory_after": {
+        "rss_bytes": 100737024,
+        "lifetime_peak_rss_bytes": 102477824
+      },
+      "backend_fallbacks": 0,
+      "memory_after_first_lookup": {
+        "rss_bytes": 98177024,
+        "lifetime_peak_rss_bytes": 102477824
+      },
+      "mapped_bytes": 17249760,
+      "pickled_provider_bytes": 16663,
+      "profile": [
+        {
+          "file": "numerical_benchmark.py",
+          "line": 99,
+          "function": "evaluate",
+          "calls": 1,
+          "own_seconds": 0.0005387,
+          "cumulative_seconds": 0.5447077
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 222,
+          "function": "evaluate",
+          "calls": 512,
+          "own_seconds": 0.0048335,
+          "cumulative_seconds": 0.544169
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 208,
+          "function": "evaluate_adm",
+          "calls": 512,
+          "own_seconds": 0.0005542,
+          "cumulative_seconds": 0.474619
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 212,
+          "function": "_adm_reference",
+          "calls": 512,
+          "own_seconds": 0.0114313,
+          "cumulative_seconds": 0.4740648
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 180,
+          "function": "_spatial_reference",
+          "calls": 1024,
+          "own_seconds": 0.0012968,
+          "cumulative_seconds": 0.43154180000000003
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 168,
+          "function": "_composite",
+          "calls": 2236,
+          "own_seconds": 0.0038542000000000003,
+          "cumulative_seconds": 0.4297824
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 156,
+          "function": "_independent",
+          "calls": 1434,
+          "own_seconds": 0.0057954,
+          "cumulative_seconds": 0.3594003
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 129,
+          "function": "_interpolate",
+          "calls": 1434,
+          "own_seconds": 0.10403000000000001,
+          "cumulative_seconds": 0.24632230000000002
+        },
+        {
+          "file": "numerical_data.py",
+          "line": 20,
+          "function": "validate_fields",
+          "calls": 2868,
+          "own_seconds": 0.03252,
+          "cumulative_seconds": 0.12068930000000001
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 6,
+          "function": "reconstruct",
+          "calls": 512,
+          "own_seconds": 0.0295026,
+          "cumulative_seconds": 0.0639893
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 111,
+          "function": "_nodes",
+          "calls": 1434,
+          "own_seconds": 0.0016038,
+          "cumulative_seconds": 0.0626503
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 32,
+          "function": "nodes",
+          "calls": 1434,
+          "own_seconds": 0.030597600000000003,
+          "cumulative_seconds": 0.061046500000000004
+        },
+        {
+          "file": "_linalg.py",
+          "line": 789,
+          "function": "cholesky",
+          "calls": 2868,
+          "own_seconds": 0.0279414,
+          "cumulative_seconds": 0.058351200000000006
+        },
+        {
+          "file": "fromnumeric.py",
+          "line": 86,
+          "function": "_wrapreduction_any_all",
+          "calls": 11452,
+          "own_seconds": 0.0180664,
+          "cumulative_seconds": 0.0433033
+        },
+        {
+          "file": "numerical_metric.py",
+          "line": 151,
+          "function": "_candidate",
+          "calls": 1434,
+          "own_seconds": 0.0009847,
+          "cumulative_seconds": 0.0428411
+        },
+        {
+          "file": "numerical_numpy.py",
+          "line": 27,
+          "function": "candidate",
+          "calls": 1434,
+          "own_seconds": 0.0228171,
+          "cumulative_seconds": 0.0418564
+        }
+      ],
+      "dataset": {
+        "identifier": "experiment-j-three-level",
+        "directory": "D:\\numerical-observatory\\reference\\geodesics-cpp\\results\\amr-composite-multilevel\\carpetx-native-gmds",
+        "format": "GMDS v1, converted physical CarpetX ADM",
+        "manifest_sha256": "57607c50b1916e8f0e304f220ec2bb7f73a1df6fc21440bb9b3b3b5593b16a20",
+        "fields": [
+          "alp",
+          "betax",
+          "betay",
+          "betaz",
+          "gxx",
+          "gxy",
+          "gxz",
+          "gyy",
+          "gyz",
+          "gzz"
+        ],
+        "units": "CarpetX code units, c=G=1",
+        "time_coverage": [
+          0.0,
+          8.0
+        ],
+        "snapshots": 17,
+        "snapshot_times": [
+          0.0,
+          0.5,
+          1.0,
+          1.5,
+          2.0,
+          2.5,
+          3.0,
+          3.5,
+          4.0,
+          4.5,
+          5.0,
+          5.5,
+          6.0,
+          6.5,
+          7.0,
+          7.5,
+          8.0
+        ],
+        "native_regions": [
+          {
+            "level": 0,
+            "provenance": "carpetx_valid_chunks",
+            "lower": [
+              -16,
+              -16,
+              -16
+            ],
+            "upper": [
+              16,
+              16,
+              16
+            ]
+          },
+          {
+            "level": 1,
+            "provenance": "carpetx_valid_chunks",
+            "lower": [
+              -8,
+              -8,
+              -8
+            ],
+            "upper": [
+              8,
+              8,
+              8
+            ]
+          },
+          {
+            "level": 2,
+            "provenance": "carpetx_valid_chunks",
+            "lower": [
+              -4,
+              -4,
+              -4
+            ],
+            "upper": [
+              4,
+              4,
+              4
+            ]
+          }
+        ],
+        "fixed_geometry": true,
+        "raw_bytes_per_snapshot": 8624880,
+        "cache_budget": 1073741824,
+        "source_series": "/mnt/data/numerical-relativity/geodesics/results/amr-composite-multilevel/carpetx-native-source/j-native.it%08T.bp5",
+        "source_time_unit_si": 4.925639893961039e-06,
+        "patches": [
+          {
+            "level": 0,
+            "shape": [
+              33,
+              33,
+              33
+            ],
+            "origin": [
+              -16,
+              -16,
+              -16
+            ],
+            "spacing": [
+              1,
+              1,
+              1
+            ],
+            "centering": "vertex",
+            "file": "patch-0.bin"
+          },
+          {
+            "level": 1,
+            "shape": [
+              33,
+              33,
+              33
+            ],
+            "origin": [
+              -8,
+              -8,
+              -8
+            ],
+            "spacing": [
+              0.5,
+              0.5,
+              0.5
+            ],
+            "centering": "vertex",
+            "file": "patch-1.bin"
+          },
+          {
+            "level": 2,
+            "shape": [
+              33,
+              33,
+              33
+            ],
+            "origin": [
+              -4,
+              -4,
+              -4
+            ],
+            "spacing": [
+              0.25,
+              0.25,
+              0.25
+            ],
+            "centering": "vertex",
+            "file": "patch-2.bin"
+          }
+        ],
+        "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+      }
+    }
+  ],
+  "trajectories": [
+    {
+      "case": "real_escape",
+      "backend": "numpy",
+      "timing": {
+        "seconds": [
+          1.3823745000008785,
+          1.4281244999983755,
+          1.4151664000019082
+        ],
+        "median_seconds": 1.4151664000019082,
+        "minimum_seconds": 1.3823745000008785,
+        "maximum_seconds": 1.4281244999983755,
+        "stdev_seconds": 0.023580654362446354
+      },
+      "statuses": [
+        "escaped",
+        "escaped",
+        "escaped"
+      ],
+      "reasons": [
+        "numerical_finite_background",
+        "numerical_finite_background",
+        "numerical_finite_background"
+      ],
+      "rhs_evaluations": [
+        1282,
+        1282,
+        1282
+      ],
+      "null_max": 1.0243599945099381e-09,
+      "fallbacks": 0
+    },
+    {
+      "case": "schwarzschild_capture",
+      "backend": "numpy",
+      "timing": {
+        "seconds": [
+          7.742271899998741,
+          7.596631999997044,
+          7.675439099999494
+        ],
+        "median_seconds": 7.675439099999494,
+        "minimum_seconds": 7.596631999997044,
+        "maximum_seconds": 7.742271899998741,
+        "stdev_seconds": 0.07290194629208001
+      },
+      "statuses": [
+        "captured",
+        "captured",
+        "captured"
+      ],
+      "reasons": [
+        "numerical_supplied_capture",
+        "numerical_supplied_capture",
+        "numerical_supplied_capture"
+      ],
+      "rhs_evaluations": [
+        12937,
+        12937,
+        12937
+      ],
+      "null_max": 6.190492679491606e-08,
+      "fallbacks": 0
+    },
+    {
+      "case": "schwarzschild_escape",
+      "backend": "numpy",
+      "timing": {
+        "seconds": [
+          11.18397670000195,
+          11.593310700001894,
+          11.204094500000792
+        ],
+        "median_seconds": 11.204094500000792,
+        "minimum_seconds": 11.18397670000195,
+        "maximum_seconds": 11.593310700001894,
+        "stdev_seconds": 0.23074094412567425
+      },
+      "statuses": [
+        "escaped",
+        "escaped",
+        "escaped"
+      ],
+      "reasons": [
+        "numerical_finite_background",
+        "numerical_finite_background",
+        "numerical_finite_background"
+      ],
+      "rhs_evaluations": [
+        18861,
+        18861,
+        18861
+      ],
+      "null_max": 1.1183198997871565e-07,
+      "fallbacks": 0
+    },
+    {
+      "case": "kerr05_capture",
+      "backend": "numpy",
+      "timing": {
+        "seconds": [
+          7.075450699998328,
+          7.193213800001104,
+          7.225522900000215
+        ],
+        "median_seconds": 7.193213800001104,
+        "minimum_seconds": 7.075450699998328,
+        "maximum_seconds": 7.225522900000215,
+        "stdev_seconds": 0.07898701462732409
+      },
+      "statuses": [
+        "captured",
+        "captured",
+        "captured"
+      ],
+      "reasons": [
+        "numerical_supplied_capture",
+        "numerical_supplied_capture",
+        "numerical_supplied_capture"
+      ],
+      "rhs_evaluations": [
+        12085,
+        12085,
+        12085
+      ],
+      "null_max": 9.748142364626205e-08,
+      "fallbacks": 0
+    },
+    {
+      "case": "kerr05_escape",
+      "backend": "numpy",
+      "timing": {
+        "seconds": [
+          10.532301899998856,
+          10.737863400001515,
+          10.830587699998432
+        ],
+        "median_seconds": 10.737863400001515,
+        "minimum_seconds": 10.532301899998856,
+        "maximum_seconds": 10.830587699998432,
+        "stdev_seconds": 0.15265852120263296
+      },
+      "statuses": [
+        "escaped",
+        "escaped",
+        "escaped"
+      ],
+      "reasons": [
+        "numerical_finite_background",
+        "numerical_finite_background",
+        "numerical_finite_background"
+      ],
+      "rhs_evaluations": [
+        18045,
+        18045,
+        18045
+      ],
+      "null_max": 6.533703031878599e-08,
+      "fallbacks": 0
+    }
+  ],
+  "renders": [
+    {
+      "workers": 1,
+      "backend": "numpy",
+      "rays": 16,
+      "timing": {
+        "seconds": [
+          19.974074599998858,
+          19.939689999999246,
+          20.011843299998873
+        ],
+        "median_seconds": 19.974074599998858,
+        "minimum_seconds": 19.939689999999246,
+        "maximum_seconds": 20.011843299998873,
+        "stdev_seconds": 0.03608987419775949
+      },
+      "counts": [
+        {
+          "captured": 0,
+          "escaped": 16,
+          "unresolved": 0
+        },
+        {
+          "captured": 0,
+          "escaped": 16,
+          "unresolved": 0
+        },
+        {
+          "captured": 0,
+          "escaped": 16,
+          "unresolved": 0
+        }
+      ],
+      "rhs_evaluations": [
+        17652,
+        17652,
+        17652
+      ],
+      "parent_memory": {
+        "rss_bytes": 146018304,
+        "lifetime_peak_rss_bytes": 232099840
+      },
+      "execution": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "workers": 2,
+      "backend": "numpy",
+      "rays": 16,
+      "timing": {
+        "seconds": [
+          21.12579299999925,
+          20.916629600000306,
+          21.113451900000655
+        ],
+        "median_seconds": 21.113451900000655,
+        "minimum_seconds": 20.916629600000306,
+        "maximum_seconds": 21.12579299999925,
+        "stdev_seconds": 0.11736030591425163
+      },
+      "counts": [
+        {
+          "captured": 0,
+          "escaped": 16,
+          "unresolved": 0
+        },
+        {
+          "captured": 0,
+          "escaped": 16,
+          "unresolved": 0
+        },
+        {
+          "captured": 0,
+          "escaped": 16,
+          "unresolved": 0
+        }
+      ],
+      "rhs_evaluations": [
+        17652,
+        17652,
+        17652
+      ],
+      "parent_memory": {
+        "rss_bytes": 145166336,
+        "lifetime_peak_rss_bytes": 232099840
+      },
+      "execution": [
+        {
+          "workers": 1,
+          "requested_workers": 2,
+          "start_method": "spawn",
+          "task_count": 1,
+          "worker_cpu_seconds": 19.359375,
+          "worker_task_seconds": 19.40520049999759,
+          "worker_peak_memory_bytes": {
+            "40604": 100675584
+          },
+          "startup_span_seconds": 1.6371039000005112,
+          "pool_wall_seconds": 21.096927599999617
+        },
+        {
+          "workers": 1,
+          "requested_workers": 2,
+          "start_method": "spawn",
+          "task_count": 1,
+          "worker_cpu_seconds": 19.21875,
+          "worker_task_seconds": 19.284972299999936,
+          "worker_peak_memory_bytes": {
+            "22156": 100491264
+          },
+          "startup_span_seconds": 1.5613329999978305,
+          "pool_wall_seconds": 20.902173099999345
+        },
+        {
+          "workers": 1,
+          "requested_workers": 2,
+          "start_method": "spawn",
+          "task_count": 1,
+          "worker_cpu_seconds": 19.390625,
+          "worker_task_seconds": 19.494903200000408,
+          "worker_peak_memory_bytes": {
+            "8848": 100368384
+          },
+          "startup_span_seconds": 1.5513357000018004,
+          "pool_wall_seconds": 21.10087779999958
+        }
+      ]
+    }
+  ]
+}

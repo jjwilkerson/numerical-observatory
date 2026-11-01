@@ -1,0 +1,46 @@
+{
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "numba": "0.67.0",
+    "llvmlite": "0.49.0",
+    "pytest": "9.2.0"
+  },
+  "source_sha256": {
+    "src/numerical_observatory/numerical_acceleration.py": "dabcad548bb66abd7444525ee682ff0bd131d16fac26d2e2cfe82c665239311b",
+    "src/numerical_observatory/numerical_benchmark.py": "6080cc868c1214e2a5896ce4aa042ddf5bef98e5e2e1a55d9ac5c0729c2592c6",
+    "src/numerical_observatory/numerical_comparison.py": "56a214b8fbb62f1ba5734caa1594850737a6a7ad92f0763cb79713cb04978776",
+    "src/numerical_observatory/numerical_data.py": "91755ed0388262c56f3dbaed3b43bc0dd57afdffd2d9cd7f4b0f7687bbf4f8d9",
+    "src/numerical_observatory/numerical_experiments.py": "29a1582b2d884db0d9ecdd44f8581c5d240bb6c2aa8a5e464efc4ac6b8d0d4aa",
+    "src/numerical_observatory/numerical_fixtures.py": "efd195ceafb6090c6f2afadd4153c474f139aba33dfad2c489b504bf2aeae894",
+    "src/numerical_observatory/numerical_initialization_benchmark.py": "137878acde163086cce503dec84e15bbb0e40ec19ec8aa6f7f61a65821d5ec08",
+    "src/numerical_observatory/numerical_kernels.py": "c2c6857f11ce7053e72f55b0afeee4d6b8d70020184ffdf08681959d7afd9a14",
+    "src/numerical_observatory/numerical_metric.py": "ff6e0e13d8569ee650edcd524b0d0753f81daa6a474b76ef63e17559a24165d5",
+    "src/numerical_observatory/numerical_numpy.py": "42982db3c0321545ae7f16244eda09889daaa436a39c7a6d495e0c68f0fd2c79",
+    "src/numerical_observatory/numerical_parallel_benchmark.py": "8b034f6e37f65d4462ab614f85abc520b4e740641aee05f058898fdb4d0c786f",
+    "src/numerical_observatory/numerical_trace.py": "55fad05c32f87b636a832f3eedf12cd612319ed18e9c3ac4791ecd648a98be64",
+    "src/numerical_observatory/numerical_validation.py": "715351800d4964915300739c490e66f86f1988ed03e5d18f465a8facf524bc53",
+    "src/numerical_observatory/amr_geometry.py": "9051a44c715ba37c1922ef60979eba7a46ee30a7f68d2cba78746de4d9977f07",
+    "src/numerical_observatory/render.py": "7b1543dd3d75b1f4806a83e9241b39e538ce07f0644bbaba373314d13430c2c0",
+    "src/numerical_observatory/cli.py": "49b18bb64247c441bd1fbf7101e7940e2cb918cbb094fcb3e03752cedf7d18d6",
+    "src/numerical_observatory/geodesic.py": "2205bae74ba217cdd97416a6e28b56f872f72954077b087307e43eee3530021d",
+    "pyproject.toml": "47373e89effc6a493e6f47d50fa7e98e9670d192ef122799f94053a40cbb228e",
+    "tests/test_numerical_acceleration.py": "0b98a5697bfb4b3d198a97754b73341933d48f184d6056a30df39668407c686c",
+    "tools/numerical_performance_report.py": "4875baffce47619ff553b3025f71c32c8193450edeb26978b46f3e75df5982c0"
+  },
+  "preserved_sources": {
+    "numerical_data": true,
+    "amr_geometry": true,
+    "metric": true,
+    "kerr": true,
+    "binary_ks_approx": true,
+    "binary_ks_orbit_approx": true,
+    "boosted_ks": true,
+    "camera": true,
+    "kerr_carter": true,
+    "disk": true,
+    "emitter_motion": true
+  }
+}

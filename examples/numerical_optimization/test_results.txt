@@ -1,0 +1,17 @@
+........................................................................ [ 24%]
+........................................................................ [ 49%]
+........................................................................ [ 74%]
+........................................................................ [ 99%]
+..                                                                       [100%]
+============================ slowest 10 durations =============================
+52.75s call     tests/test_numerical_acceleration.py::test_strong_field_capture_escape_and_radial_turning[schwarzschild-numpy]
+51.06s call     tests/test_numerical_acceleration.py::test_strong_field_capture_escape_and_radial_turning[kerr05-numpy]
+49.84s call     tests/test_binary_ks_approx.py::test_serial_spawn_supersampling_and_saved_provisional_data
+46.36s call     tests/test_binary_ks_orbit.py::test_spawn_supersampling_determinism_and_saved_time_diagnostics
+38.44s call     tests/test_kerr_carter.py::test_spawn_supersampling_data_and_image_equivalence
+37.14s call     tests/test_kerr_disk.py::test_saved_data_spawn_supersampling_repaint_and_diagnostics
+12.69s call     tests/test_parallel.py::test_serial_parallel_exact_equality[gray-grid-1-False-ode]
+12.66s call     tests/test_parallel.py::test_serial_parallel_exact_equality[None-starfield-1-False-ode]
+10.59s call     tests/test_kerr.py::test_config_optimizations_and_spawn
+10.53s call     tests/test_parallel.py::test_off_center_camera_uses_general_parallel_path
+290 passed in 559.84s (0:09:19)

@@ -57,6 +57,11 @@ checked both on native samples and on required interpolants. Cubic overshoot is
 reported rather than clipped. Active snapshot pairs are physically validated
 globally, including levels not selected by a particular ray.
 
+Optional `spacetime.backend = "numpy"` or `"numba"` accelerates this same
+evaluation pipeline; `"python"` remains the default reference. See the
+[optimization guide](../numerical_optimization/README.md) for installation,
+backend semantics, measured performance and additional parity tests.
+
 ## Setup and conversion
 
 Core evaluation uses existing NumPy/SciPy dependencies. Native BP conversion

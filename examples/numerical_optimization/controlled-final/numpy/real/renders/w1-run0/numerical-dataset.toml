@@ -1,0 +1,486 @@
+schema_version = 1
+identifier = "experiment-j-three-level"
+coordinates = "cartesian_txyz"
+signature = "-+++"
+units = "CarpetX code units, c=G=1"
+symmetry = "none"
+fields = "alp betax betay betaz gxx gxy gxz gyy gyz gzz"
+source_series = "/mnt/data/numerical-relativity/geodesics/results/amr-composite-multilevel/carpetx-native-source/j-native.it%08T.bp5"
+source_time_unit_si = 4.925639893961039e-06
+
+[[snapshots]]
+time = 0
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-0.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-1.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-2.bin"
+
+[[snapshots]]
+time = 0.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-3.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-4.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-5.bin"
+
+[[snapshots]]
+time = 1
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-6.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-7.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-8.bin"
+
+[[snapshots]]
+time = 1.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-9.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-10.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-11.bin"
+
+[[snapshots]]
+time = 2
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-12.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-13.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-14.bin"
+
+[[snapshots]]
+time = 2.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-15.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-16.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-17.bin"
+
+[[snapshots]]
+time = 3
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-18.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-19.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-20.bin"
+
+[[snapshots]]
+time = 3.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-21.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-22.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-23.bin"
+
+[[snapshots]]
+time = 4
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-24.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-25.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-26.bin"
+
+[[snapshots]]
+time = 4.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-27.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-28.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-29.bin"
+
+[[snapshots]]
+time = 5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-30.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-31.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-32.bin"
+
+[[snapshots]]
+time = 5.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-33.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-34.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-35.bin"
+
+[[snapshots]]
+time = 6
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-36.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-37.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-38.bin"
+
+[[snapshots]]
+time = 6.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-39.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-40.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-41.bin"
+
+[[snapshots]]
+time = 7
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-42.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-43.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-44.bin"
+
+[[snapshots]]
+time = 7.5
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-45.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-46.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-47.bin"
+
+[[snapshots]]
+time = 8
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 0
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-16, -16, -16]
+spacing = [1, 1, 1]
+file = "patch-48.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 1
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-8, -8, -8]
+spacing = [0.5, 0.5, 0.5]
+file = "patch-49.bin"
+[[snapshots.patches]]
+source_length_unit_si = 1476.6696910334392
+level = 2
+centering = "vertex"
+shape = [33, 33, 33]
+origin = [-4, -4, -4]
+spacing = [0.25, 0.25, 0.25]
+file = "patch-50.bin"
+
+[[native_regions]]
+level = 0
+provenance = "carpetx_valid_chunks"
+lower = [-16, -16, -16]
+upper = [16, 16, 16]
+
+[[native_regions]]
+level = 1
+provenance = "carpetx_valid_chunks"
+lower = [-8, -8, -8]
+upper = [8, 8, 8]
+
+[[native_regions]]
+level = 2
+provenance = "carpetx_valid_chunks"
+lower = [-4, -4, -4]
+upper = [4, 4, 4]

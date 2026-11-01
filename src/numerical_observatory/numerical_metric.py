@@ -33,7 +33,9 @@ def reconstruct(fields,derivatives):
 
 class NumericalMetric:
     def __init__(self,dataset,spatial_interpolation='linear',cache_bytes=1024**3,
-                 transition=None,box_transition=None,hierarchy_override=None,domain=None):
+                 transition=None,box_transition=None,hierarchy_override=None,domain=None,backend='python'):
+        require(backend in ('python','numpy','numba'),'backend must be python, numpy, or numba')
+        self.backend=backend;self._accelerator=None;self._geometry=None;self.backend_fallbacks=0
         require(spatial_interpolation in MODES,'unknown interpolation mode')
         self.data=GMDSDataset(dataset,cache_bytes);self.mode=spatial_interpolation
         self.domain_options=domain or {};self.transition=transition;self.bands=[];self.support_strata_count=0
@@ -53,6 +55,9 @@ class NumericalMetric:
             require(self.levels==[self.bands[0].coarse_level,self.bands[0].fine_level],'box mode requires exactly two declared levels')
             self.support_strata_count=certify(self.bands,ps,self.anchors.__getitem__)
         if self.mode=='cubic_amr_c1_hierarchy':self._hierarchy(hierarchy_override)
+        if backend!='python':
+            from .numerical_numpy import Geometry
+            self._geometry=Geometry(self)
 
     def _ratios(self):
         for a,b in zip(self.levels,self.levels[1:]):
@@ -95,10 +100,18 @@ class NumericalMetric:
     def interval(self,time,direction=1):
         times=self.data.times
         if not np.isfinite(time) or time<times[0] or time>times[-1]:raise NumericalLookupError('numerical_temporal_boundary','time outside saved interval')
+        if self.backend!='python':
+            from bisect import bisect_left,bisect_right
+            index=(bisect_left if direction<0 else bisect_right)(times,time)
+            hi=max(1,min(index,len(times)-1))
+            return hi-1,hi
         hi=int(np.clip(np.searchsorted(times,time,side='left' if direction<0 else 'right'),1,len(times)-1))
         return hi-1,hi
 
     def _nodes(self,si,level,points):
+        if self.backend=='numpy':
+            value=self._geometry.nodes(self,si,level,points)
+            if value is not None:return value
         values=np.zeros((len(points),10));found=np.zeros(len(points),dtype=bool)
         for pi,p in enumerate(self.data.snapshots[si]):
             if p.level!=level:continue
@@ -136,6 +149,7 @@ class NumericalMetric:
         return coeff@nodes
 
     def _candidate(self,si,x,level=None):
+        if self.backend=='numpy':return self._geometry.candidate(x,level)
         return [p for p in self.data.snapshots[si] if (level is None or p.level==level)
                 and np.all(x>=p.origin) and np.all(x<=np.asarray(p.origin)+np.array(p.shape)*p.spacing)]
 
@@ -160,6 +174,10 @@ class NumericalMetric:
         return self._blend(coarse,fine,*b.weight(x))
 
     def spatial(self,si,x):
+        if self.backend=='numba':return self._compiled().spatial(self,si,x)
+        return self._spatial_reference(si,x)
+
+    def _spatial_reference(self,si,x):
         x=np.asarray(x)
         if self.bands:return self._composite(si,x,len(self.bands))
         if self.mode=='cubic_amr_c1':
@@ -181,13 +199,23 @@ class NumericalMetric:
                 if exc.code!='numerical_missing_stencil':raise
         raise NumericalLookupError('numerical_missing_stencil','no complete linear AMR stencil; coarser candidates exhausted')
 
+    def _compiled(self):
+        if self._accelerator is None:
+            from .numerical_acceleration import CompiledEvaluator
+            self._accelerator=CompiledEvaluator(self)
+        return self._accelerator
+
     def evaluate_adm(self,event,slab=None):
+        if self.backend=='numba':return self._compiled().adm(self,event,slab)
+        return self._adm_reference(event,slab)
+
+    def _adm_reference(self,event,slab=None):
         x=np.asarray(event,dtype=float)
         if x.shape!=(4,) or not np.isfinite(x).all():raise NumericalLookupError('numerical_invalid_event','expected finite txyz')
         lo,hi=self.interval(x[0]) if slab is None else slab
         times=self.data.times
         if x[0]<times[lo] or x[0]>times[hi]:raise NumericalLookupError('numerical_temporal_boundary','outside selected closed slab')
-        self.data.activate(lo,hi);a=self.spatial(lo,x[1:]);b=self.spatial(hi,x[1:]);dt=times[hi]-times[lo];w=(x[0]-times[lo])/dt
+        self.data.activate(lo,hi);a=self._spatial_reference(lo,x[1:]);b=self._spatial_reference(hi,x[1:]);dt=times[hi]-times[lo];w=(x[0]-times[lo])/dt
         f=(1-w)*a[0]+w*b[0];df=np.empty((4,10));df[0]=(b[0]-a[0])/dt;df[1:]=(1-w)*a[1:]+w*b[1:]
         validate_fields(f);return f,df
 
@@ -196,7 +224,12 @@ class NumericalMetric:
         if self._last_key==key:return self._last
         self.last_levels=set()
         self.evaluations+=1
-        try:result=reconstruct(*self.evaluate_adm(event,slab))
+        try:
+            if self.backend=='numba':result=self._compiled().evaluate(self,event,slab)
+            elif self.backend=='numpy':
+                from .numerical_numpy import reconstruct as reconstruct_fast
+                result=reconstruct_fast(*self.evaluate_adm(event,slab))
+            else:result=reconstruct(*self.evaluate_adm(event,slab))
         except NumericalLookupError as exc:
             self.failures[exc.code]=self.failures.get(exc.code,0)+1;raise
         self._last_key=key;self._last=result;return result
@@ -207,10 +240,21 @@ class NumericalMetric:
 
     def __getstate__(self):
         state=self.__dict__.copy();state['_last_key']=state['_last']=None;state['selected_levels']=set()
+        state['_accelerator']=None;state['backend_fallbacks']=0
         state['failures']={};state['evaluations']=state['stencils']=0;return state
 
     def description(self):
+        versions={}
+        if self.backend=='numba':
+            from importlib.metadata import version,PackageNotFoundError
+            for name in ('numba','llvmlite'):
+                try:versions[name]=version(name)
+                except PackageNotFoundError:versions[name]=None
         return dict(type='numerical',dataset=self.data.identity(),spatial_interpolation=self.mode,
+                    evaluation_backend=self.backend,
+                    acceleration_versions=versions,
+                    acceleration_policy=('strict float64 CPU ADM interpolation kernels; reference NumPy reconstruction; no fastmath; reference evaluation resolves rejected/ill-conditioned queries; fallback counts include rejected queries'
+                                         if self.backend=='numba' else 'original Python interpolation' if self.backend=='python' else 'cached geometry and broadcast reconstruction; original seam/overlap evaluator'),
                     temporal_interpolation='piecewise linear saved ADM; right-sided standalone knots, incoming closed-slab tracing',
                     derivative_method='analytic interpolation-weight and ADM inverse chain rule; AMR weight gradients included',
                     levels=self.levels,transitions=[asdict(b) for b in self.bands],support_strata_certified=self.support_strata_count,

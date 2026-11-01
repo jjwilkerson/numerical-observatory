@@ -1,0 +1,7 @@
+{
+  "passed": 290,
+  "seconds": 559.84,
+  "command": "python -m pytest -q --durations=10",
+  "existing_tests": 252,
+  "new_tests": 38
+}

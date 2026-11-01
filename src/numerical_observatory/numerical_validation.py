@@ -33,7 +33,7 @@ def fixture(output,levels):
     return p
 
 
-def parity(output,oracle):
+def parity(output,oracle,backend='python'):
     output=Path(output);records=[];golden={}
     for mode,levels in [('linear',3),('cubic',3),('cubic_amr_c1',2),('cubic_amr_c1_box',2),('cubic_amr_c1_hierarchy',3)]:
         p=fixture(output/'fixtures',levels);options={}
@@ -41,7 +41,7 @@ def parity(output,oracle):
         if mode=='cubic_amr_c1_box':options['box_transition']=asdict(auto.bands[0])
         if mode=='cubic_amr_c1':
             b=auto.bands[0];options['transition']=dict(axis=0,coarse_level=0,fine_level=1,lower=b.inner_upper[0],upper=b.outer_upper[0],fine_on_lower=True)
-        m=NumericalMetric(p,mode,**options)
+        m=NumericalMetric(p,mode,backend=backend,**options)
         xs=[4.,6.,6.5,7.,7.5,8.,8.5,9.,10.,11.,11.5,12.,12.5,13.,14.,15.]
         events=[np.array([.37,x,.173,.219]) for x in xs]
         # Every face/edge/corner branch, including exact/one-ULP endpoints.
@@ -70,7 +70,7 @@ def parity(output,oracle):
         records.append(row);golden[mode+'_events']=np.array(events);golden[mode+'_values']=np.array([v if v is not None else np.full((5,4,4),np.nan) for v in values])
     np.savez_compressed(output/'synthetic_cpp_golden.npz',**golden)
     # Independent raw file reading and common Eulerian frame/momentum.
-    p=fixture(output/'fixtures',3);m=NumericalMetric(p,'cubic_amr_c1_hierarchy')
+    p=fixture(output/'fixtures',3);m=NumericalMetric(p,'cubic_amr_c1_hierarchy',backend=backend)
     patch=m.data.snapshots[0][0];nodes=[0,17,129,1000]
     raw=oracle.run(p/patch.file,'linear','raw',[[i] for i in nodes])
     expected=np.array([list(map(float,line.split())) for line in raw]);actual=np.memmap(p/patch.file,dtype='<f8',mode='r').reshape(-1,10)[nodes]
@@ -101,8 +101,8 @@ def parity(output,oracle):
     return result
 
 
-def real_parity(output,oracle,dataset=REAL):
-    output=Path(output);m=NumericalMetric(dataset,'cubic_amr_c1_hierarchy')
+def real_parity(output,oracle,dataset=REAL,backend='python'):
+    output=Path(output);m=NumericalMetric(dataset,'cubic_amr_c1_hierarchy',backend=backend)
     events=[np.array([4.,x,.23,.17]) for x in (2.,3.,3.25,3.5,4.,5.,6.,6.5,7.,8.,10.,12.)]
     cpp,ids=oracle.probes(dataset,m.mode,events);errors=[]
     for x,expected,levels in zip(events,cpp,ids):
@@ -180,11 +180,12 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output',type=Path,default=Path('output/numerical-validation'))
     parser.add_argument('--oracle',type=Path)
+    parser.add_argument('--backend',choices=('python','numpy','numba'),default='python',help='backend for independent C++ parity probes and trajectories')
     parser.add_argument('--analytic',action='store_true');parser.add_argument('--demo',action='store_true')
     parser.add_argument('--workers',type=int,default=1);parser.add_argument('--real-dataset',type=Path,default=REAL)
     args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=True)
     if args.oracle:
-        oracle=CppOracle(args.oracle);parity(args.output,oracle);real_parity(args.output,oracle,args.real_dataset)
+        oracle=CppOracle(args.oracle);parity(args.output,oracle,args.backend);real_parity(args.output,oracle,args.real_dataset,args.backend)
     if args.analytic:analytic_studies(args.output)
     if args.demo:demo(args.output,args.real_dataset,args.workers)
 

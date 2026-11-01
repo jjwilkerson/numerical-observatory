@@ -1,0 +1,125 @@
+{
+  "metric": [
+    {
+      "workload": "synthetic linear",
+      "rates": {
+        "python": 1720.921055776565,
+        "numpy": 2023.0813029707115,
+        "numba": 7332.050224567834
+      },
+      "numba_speedup": 4.260538390158315
+    },
+    {
+      "workload": "synthetic cubic",
+      "rates": {
+        "python": 1591.3310347381369,
+        "numpy": 2067.150678917298,
+        "numba": 6193.269325449179
+      },
+      "numba_speedup": 3.891879935885445
+    },
+    {
+      "workload": "synthetic cubic_amr_c1",
+      "rates": {
+        "python": 1373.2861511483006,
+        "numpy": 1452.6951548340535,
+        "numba": 6107.686141255329
+      },
+      "numba_speedup": 4.447497075644624
+    },
+    {
+      "workload": "synthetic cubic_amr_c1_box",
+      "rates": {
+        "python": 1146.9266845040822,
+        "numpy": 1379.5667836967782,
+        "numba": 6041.012813588693
+      },
+      "numba_speedup": 5.267130754918965
+    },
+    {
+      "workload": "synthetic cubic_amr_c1_hierarchy",
+      "rates": {
+        "python": 1121.4249105284264,
+        "numpy": 1303.067221717594,
+        "numba": 5757.356653663578
+      },
+      "numba_speedup": 5.133965368176685
+    },
+    {
+      "workload": "real cubic_amr_c1_hierarchy",
+      "rates": {
+        "python": 1159.6322063325078,
+        "numpy": 1348.7196251683754,
+        "numba": 6017.031018290051
+      },
+      "numba_speedup": 5.188740865795473
+    }
+  ],
+  "trajectories": [
+    {
+      "case": "real_escape",
+      "seconds": {
+        "python": 1.5583799999985786,
+        "numpy": 1.4151664000019082,
+        "numba": 0.5924152999978105
+      },
+      "speedup": 2.6305532622205035
+    },
+    {
+      "case": "schwarzschild_capture",
+      "seconds": {
+        "python": 8.742532299998857,
+        "numpy": 7.675439099999494,
+        "numba": 3.0182696000010765
+      },
+      "speedup": 2.896537903703413
+    },
+    {
+      "case": "schwarzschild_escape",
+      "seconds": {
+        "python": 12.74740390000079,
+        "numpy": 11.204094500000792,
+        "numba": 4.398160799999459
+      },
+      "speedup": 2.8983487597821247
+    },
+    {
+      "case": "kerr05_capture",
+      "seconds": {
+        "python": 8.113462100001925,
+        "numpy": 7.193213800001104,
+        "numba": 2.833100800002285
+      },
+      "speedup": 2.8638098933844436
+    },
+    {
+      "case": "kerr05_escape",
+      "seconds": {
+        "python": 12.157548699997278,
+        "numpy": 10.737863400001515,
+        "numba": 4.157373399997596
+      },
+      "speedup": 2.9243340759346537
+    }
+  ],
+  "parallel": [
+    {
+      "backend": "python",
+      "serial": 21.435635900001216,
+      "parallel": 14.013861700001144,
+      "speedup": 1.5296023579281839
+    },
+    {
+      "backend": "numpy",
+      "serial": 19.805342499999824,
+      "parallel": 13.041140699999232,
+      "speedup": 1.5186817591808506
+    },
+    {
+      "backend": "numba",
+      "serial": 9.010440399997606,
+      "parallel": 8.738085700002557,
+      "speedup": 1.031168691787375
+    }
+  ]
+}

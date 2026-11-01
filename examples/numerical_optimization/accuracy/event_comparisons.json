@@ -1,0 +1,104 @@
+{
+  "machine": {
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "cpu": "Intel(R) Core(TM) i9-10850K CPU @ 3.60GHz",
+    "logical_cpus": 20,
+    "affinity": null
+  },
+  "backend": "numba",
+  "comparisons": [
+    {
+      "mode": "linear",
+      "real": false,
+      "valid": 1024,
+      "rejected": 0,
+      "events": 1024,
+      "max_inverse_error": 4.440892098500626e-16,
+      "max_derivative_error": 1.012211148232467e-15,
+      "rms_errors": [
+        4.3648850448674706e-17,
+        5.694592612510102e-17
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    },
+    {
+      "mode": "cubic",
+      "real": false,
+      "valid": 379,
+      "rejected": 645,
+      "events": 1024,
+      "max_inverse_error": 4.440892098500626e-16,
+      "max_derivative_error": 1.5888766844373518e-15,
+      "rms_errors": [
+        4.870125139086504e-17,
+        1.203448286252549e-16
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 645
+    },
+    {
+      "mode": "cubic_amr_c1",
+      "real": false,
+      "valid": 896,
+      "rejected": 128,
+      "events": 1024,
+      "max_inverse_error": 5.551115123125783e-16,
+      "max_derivative_error": 9.020562075079397e-16,
+      "rms_errors": [
+        4.907923382110017e-17,
+        5.805286477233694e-17
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 128
+    },
+    {
+      "mode": "cubic_amr_c1_box",
+      "real": false,
+      "valid": 1064,
+      "rejected": 0,
+      "events": 1064,
+      "max_inverse_error": 5.551115123125783e-16,
+      "max_derivative_error": 8.503113882766481e-16,
+      "rms_errors": [
+        4.8169955513933164e-17,
+        5.240209321489275e-17
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    },
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "real": false,
+      "valid": 1104,
+      "rejected": 0,
+      "events": 1104,
+      "max_inverse_error": 5.551115123125783e-16,
+      "max_derivative_error": 1.5888766844373518e-15,
+      "rms_errors": [
+        4.693896033731883e-17,
+        7.601468964647065e-17
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    },
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "real": true,
+      "valid": 1104,
+      "rejected": 0,
+      "events": 1104,
+      "max_inverse_error": 1.3322676295501878e-15,
+      "max_derivative_error": 4.9960036108132044e-15,
+      "rms_errors": [
+        6.969706721125186e-17,
+        1.6152169575634487e-16
+      ],
+      "classifications_and_levels_equal": true,
+      "backend_fallbacks": 0
+    }
+  ]
+}

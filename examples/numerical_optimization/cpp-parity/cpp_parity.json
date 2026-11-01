@@ -1,0 +1,108 @@
+{
+  "probes": [
+    {
+      "mode": "linear",
+      "events": 16,
+      "valid": 16,
+      "classification_matches": 16,
+      "max_component_difference": 1.1102230246251565e-16,
+      "options": {}
+    },
+    {
+      "mode": "cubic",
+      "events": 16,
+      "valid": 7,
+      "classification_matches": 16,
+      "max_component_difference": 1.1102230246251565e-16,
+      "options": {}
+    },
+    {
+      "mode": "cubic_amr_c1",
+      "events": 16,
+      "valid": 14,
+      "classification_matches": 16,
+      "max_component_difference": 1.1102230246251565e-16,
+      "options": {
+        "transition": {
+          "axis": 0,
+          "coarse_level": 0,
+          "fine_level": 1,
+          "lower": 12.0,
+          "upper": 13.0,
+          "fine_on_lower": true
+        }
+      }
+    },
+    {
+      "mode": "cubic_amr_c1_box",
+      "events": 16,
+      "valid": 16,
+      "classification_matches": 16,
+      "max_component_difference": 1.1102230246251565e-16,
+      "options": {
+        "box_transition": {
+          "coarse_level": 0,
+          "fine_level": 1,
+          "outer_lower": [
+            7.0,
+            -3.0,
+            -3.0
+          ],
+          "inner_lower": [
+            8.0,
+            -2.0,
+            -2.0
+          ],
+          "inner_upper": [
+            12.0,
+            2.0,
+            2.0
+          ],
+          "outer_upper": [
+            13.0,
+            3.0,
+            3.0
+          ]
+        }
+      }
+    },
+    {
+      "mode": "cubic_amr_c1_hierarchy",
+      "events": 96,
+      "valid": 96,
+      "classification_matches": 96,
+      "max_component_difference": 1.1102230246251565e-16,
+      "options": {}
+    }
+  ],
+  "raw_nodes_bitwise_equal": true,
+  "frame_orthonormality_error": 2.220446049250313e-16,
+  "initial_momentum_error": 1.3877787807814457e-17,
+  "trajectories": [
+    {
+      "label": "manufactured",
+      "python_status": "unresolved",
+      "reason": "affine_limit",
+      "cpp_status": "lambda_limit ",
+      "max_event_error": 3.6422775906430616e-10,
+      "max_momentum_error": 7.376859123553459e-10,
+      "null_error": 3.418313410516e-10,
+      "selected_levels": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "oracle": {
+    "command": [
+      "wsl",
+      "--exec",
+      "/mnt/d/numerical-observatory/output/numerical_cpp_parity"
+    ],
+    "path_map": {
+      "local": "D:/numerical-observatory",
+      "remote": "/mnt/d/numerical-observatory"
+    }
+  }
+}

@@ -25,6 +25,11 @@ needed. See the [setup and example](examples/numerical_spacetime/README.md),
 are unresolved; finite background boundaries must be explicit. Dynamic AMR and
 numerical-spacetime disks are outside this phase.
 
+Numerical metrics also offer explicit `backend = "numpy"` and optional
+`backend = "numba"` acceleration; `python` remains the reference/default.
+See the [backend and benchmark guide](examples/numerical_optimization/README.md)
+and [performance/accuracy report](examples/numerical_optimization/PERFORMANCE.md).
+
 ## Experimental binary KS approximation
 
 An optional `spacetime.type = "binary_ks_approx"` superposes two fixed,

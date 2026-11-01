@@ -1,0 +1,257 @@
+{
+  "dataset": {
+    "type": "numerical",
+    "dataset": {
+      "identifier": "experiment-j-three-level",
+      "directory": "D:\\numerical-observatory\\reference\\geodesics-cpp\\results\\amr-composite-multilevel\\carpetx-native-gmds",
+      "format": "GMDS v1, converted physical CarpetX ADM",
+      "manifest_sha256": "57607c50b1916e8f0e304f220ec2bb7f73a1df6fc21440bb9b3b3b5593b16a20",
+      "fields": [
+        "alp",
+        "betax",
+        "betay",
+        "betaz",
+        "gxx",
+        "gxy",
+        "gxz",
+        "gyy",
+        "gyz",
+        "gzz"
+      ],
+      "units": "CarpetX code units, c=G=1",
+      "time_coverage": [
+        0.0,
+        8.0
+      ],
+      "snapshots": 17,
+      "snapshot_times": [
+        0.0,
+        0.5,
+        1.0,
+        1.5,
+        2.0,
+        2.5,
+        3.0,
+        3.5,
+        4.0,
+        4.5,
+        5.0,
+        5.5,
+        6.0,
+        6.5,
+        7.0,
+        7.5,
+        8.0
+      ],
+      "native_regions": [
+        {
+          "level": 0,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -16,
+            -16,
+            -16
+          ],
+          "upper": [
+            16,
+            16,
+            16
+          ]
+        },
+        {
+          "level": 1,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -8,
+            -8,
+            -8
+          ],
+          "upper": [
+            8,
+            8,
+            8
+          ]
+        },
+        {
+          "level": 2,
+          "provenance": "carpetx_valid_chunks",
+          "lower": [
+            -4,
+            -4,
+            -4
+          ],
+          "upper": [
+            4,
+            4,
+            4
+          ]
+        }
+      ],
+      "fixed_geometry": true,
+      "raw_bytes_per_snapshot": 8624880,
+      "cache_budget": 1073741824,
+      "source_series": "/mnt/data/numerical-relativity/geodesics/results/amr-composite-multilevel/carpetx-native-source/j-native.it%08T.bp5",
+      "source_time_unit_si": 4.925639893961039e-06,
+      "patches": [
+        {
+          "level": 0,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -16,
+            -16,
+            -16
+          ],
+          "spacing": [
+            1,
+            1,
+            1
+          ],
+          "centering": "vertex",
+          "file": "patch-0.bin"
+        },
+        {
+          "level": 1,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -8,
+            -8,
+            -8
+          ],
+          "spacing": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "centering": "vertex",
+          "file": "patch-1.bin"
+        },
+        {
+          "level": 2,
+          "shape": [
+            33,
+            33,
+            33
+          ],
+          "origin": [
+            -4,
+            -4,
+            -4
+          ],
+          "spacing": [
+            0.25,
+            0.25,
+            0.25
+          ],
+          "centering": "vertex",
+          "file": "patch-2.bin"
+        }
+      ],
+      "payload_policy": "immutable read-only mmap; active snapshots globally physically validated; payload never pickled"
+    },
+    "spatial_interpolation": "cubic_amr_c1_hierarchy",
+    "evaluation_backend": "numba",
+    "acceleration_policy": "strict float64 CPU ADM interpolation kernels; reference NumPy reconstruction; no fastmath; reference evaluation resolves rejected/ill-conditioned queries; fallback counts include rejected queries",
+    "temporal_interpolation": "piecewise linear saved ADM; right-sided standalone knots, incoming closed-slab tracing",
+    "derivative_method": "analytic interpolation-weight and ADM inverse chain rule; AMR weight gradients included",
+    "levels": [
+      0,
+      1,
+      2
+    ],
+    "transitions": [
+      {
+        "coarse_level": 0,
+        "fine_level": 1,
+        "outer_lower": [
+          -7.0,
+          -7.0,
+          -7.0
+        ],
+        "inner_lower": [
+          -6.0,
+          -6.0,
+          -6.0
+        ],
+        "inner_upper": [
+          6.0,
+          6.0,
+          6.0
+        ],
+        "outer_upper": [
+          7.0,
+          7.0,
+          7.0
+        ]
+      },
+      {
+        "coarse_level": 1,
+        "fine_level": 2,
+        "outer_lower": [
+          -3.5,
+          -3.5,
+          -3.5
+        ],
+        "inner_lower": [
+          -3.0,
+          -3.0,
+          -3.0
+        ],
+        "inner_upper": [
+          3.0,
+          3.0,
+          3.0
+        ],
+        "outer_upper": [
+          3.5,
+          3.5,
+          3.5
+        ]
+      }
+    ],
+    "support_strata_certified": 3375,
+    "background": "none unless explicit finite-boundary model configured; data exits are unresolved",
+    "domain": {
+      "background": "finite_direction_sphere",
+      "background_radius": 8.0
+    }
+  },
+  "events": 12,
+  "max_metric_derivative_difference": 2.525757381022231e-15,
+  "python_status": "escaped",
+  "cpp_status": "terminal_event finite_background",
+  "max_event_error": 1.2467449295172628e-10,
+  "max_momentum_error": 2.2734503168919673e-10,
+  "endpoint_error": 1.4335777009932826e-10,
+  "source_direction_error": 1.3993584929234193e-11,
+  "null_error": 2.2007434574117388e-10,
+  "trace_diagnostics": {
+    "capture_index": 0,
+    "complete": true,
+    "selected_levels": [
+      0,
+      1
+    ],
+    "evaluations": 1461,
+    "stencils": 3906,
+    "lookup_failures": {},
+    "temporal_stage_rejections": 3,
+    "lookup_stage_rejections": 0,
+    "metric_backend": "numba",
+    "backend_fallbacks": 0,
+    "slabs": 4,
+    "last_event": [
+      2.2593874358219694,
+      7.987152280980314,
+      0.3811406659806676,
+      0.24521466751970256
+    ]
+  }
+}

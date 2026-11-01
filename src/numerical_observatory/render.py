@@ -110,6 +110,7 @@ def _render(metric, camera, integration, output, progress=None, background=None,
                        'capture_index':np.zeros(statuses.shape,dtype=np.uint16),'time_slabs':np.zeros(statuses.shape,dtype=np.uint32),
                        'temporal_stage_rejections':np.zeros(statuses.shape,dtype=np.uint32),
                        'lookup_stage_rejections':np.zeros(statuses.shape,dtype=np.int32),
+                       'metric_backend_fallbacks':np.zeros(statuses.shape,dtype=np.int32),
                        'constraint_diagnostics_complete':np.zeros(statuses.shape,dtype=bool)} if is_numerical else {})
     numerical_reasons=np.empty(statuses.shape,dtype=object) if is_numerical else None
     level_counts=Counter();numerical_failures=Counter();numerical_metric_calls=numerical_stencils=0
@@ -145,6 +146,7 @@ def _render(metric, camera, integration, output, progress=None, background=None,
                 numerical_arrays['time_slabs'][row,col]=info['slabs']
                 numerical_arrays['temporal_stage_rejections'][row,col]=info['temporal_stage_rejections']
                 numerical_arrays['lookup_stage_rejections'][row,col]=info['lookup_stage_rejections']
+                numerical_arrays['metric_backend_fallbacks'][row,col]=info['backend_fallbacks']
                 numerical_arrays['constraint_diagnostics_complete'][row,col]=info['complete']
                 numerical_reasons[row,col]=result.reason
             if is_binary:
@@ -245,6 +247,7 @@ def _render(metric, camera, integration, output, progress=None, background=None,
             invalid_lookup_counts={k:v for k,v in reasons.items() if k.startswith('numerical_') and k not in ('numerical_supplied_capture','numerical_finite_background')},
             temporal_stage_rejections=int(numerical_arrays['temporal_stage_rejections'].sum()),
             lookup_stage_rejections=int(numerical_arrays['lookup_stage_rejections'].sum()),
+            metric_backend_fallbacks=int(numerical_arrays['metric_backend_fallbacks'].sum()),
             incomplete_diagnostics=int((~numerical_arrays['constraint_diagnostics_complete']).sum()),
             termination_codes={str(i):v for i,v in enumerate(names)},
             background_direction='Explicit finite direction-sphere only; normalized outgoing Cartesian tangent; no infinity or horizon inference',

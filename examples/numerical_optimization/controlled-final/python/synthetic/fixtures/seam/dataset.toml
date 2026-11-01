@@ -1,0 +1,48 @@
+schema_version = 1
+identifier = "synthetic-observatory"
+coordinates = "cartesian_txyz"
+signature = "-+++"
+units = "geometrized code units; no SI conversion"
+symmetry = "none"
+fields = "alp betax betay betaz gxx gxy gxz gyy gyz gzz"
+synthetic_temporal_model = "sampled_time_dependent_fields"
+
+[[snapshots]]
+time = 0.0
+[[snapshots.patches]]
+level = 0
+centering = "cell"
+shape = [6, 9, 9]
+origin = [-3.0, -4.0, -4.0]
+spacing = [0.5, 1.0, 1.0]
+file = "patch-0.bin"
+[[snapshots.patches]]
+level = 0
+centering = "cell"
+shape = [7, 9, 9]
+origin = [0.0, -4.0, -4.0]
+spacing = [0.5, 1.0, 1.0]
+file = "patch-1.bin"
+
+[[snapshots]]
+time = 1.0
+[[snapshots.patches]]
+level = 0
+centering = "cell"
+shape = [6, 9, 9]
+origin = [-3.0, -4.0, -4.0]
+spacing = [0.5, 1.0, 1.0]
+file = "patch-2.bin"
+[[snapshots.patches]]
+level = 0
+centering = "cell"
+shape = [7, 9, 9]
+origin = [0.0, -4.0, -4.0]
+spacing = [0.5, 1.0, 1.0]
+file = "patch-3.bin"
+
+[[native_regions]]
+level = 0
+provenance = "analytic_sampling"
+lower = [-3, -4, -4]
+upper = [3.0, 4.0, 4.0]
